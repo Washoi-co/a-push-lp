@@ -900,7 +900,7 @@ body{padding-bottom:86px}
   <div class="wrap reveal">
     <p class="label">OUTPUT GAP</p>
     <h2>足りていないのは、<em>アウトプットの量。</em></h2>
-    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
+    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px;align-items:center">
       <div>
         <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人は、話していない。<br>でも、<b>文法・単語の知識はハイレベル</b>です。</p>
         <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">海外の英語教育は、アウトプットの時間が圧倒的に多い。<b>だから、話せるようになる。</b></p>
@@ -909,37 +909,32 @@ body{padding-bottom:86px}
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
         <p class="sub">一般的な傾向を示す概念図です。特定の統計データに基づくものではありません。</p>
-        <svg viewBox="0 0 500 380" role="img" aria-label="日本と、アウトプット重視で知られる4カ国の英語教育における時間配分の違いを示す概念図">
+        <svg viewBox="0 0 500 300" role="img" aria-label="日本と、アウトプット重視で知られる3カ国の英語教育における時間配分の違いを示す概念図">
           <text class="cv-tick" x="0" y="16" style="font-weight:900">日本</text>
           <rect x="0" y="24" width="500" height="34" rx="4" fill="#E4E4E7"/>
           <rect x="0" y="24" width="400" height="34" rx="4" fill="#C6C6CB"/>
           <rect x="392" y="24" width="108" height="34" rx="4" fill="var(--red)"/>
 
-          <text class="cv-tick" x="0" y="88" style="font-weight:900">フィリピン</text>
+          <text class="cv-tick" x="0" y="88" style="font-weight:900">オランダ</text>
           <rect x="0" y="96" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="96" width="225" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="217" y="96" width="283" height="34" rx="4" fill="var(--red)"/>
+          <rect x="0" y="96" width="175" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="167" y="96" width="333" height="34" rx="4" fill="var(--red)"/>
 
-          <text class="cv-tick" x="0" y="160" style="font-weight:900">オランダ</text>
+          <text class="cv-tick" x="0" y="160" style="font-weight:900">スウェーデン</text>
           <rect x="0" y="168" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="168" width="175" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="167" y="168" width="333" height="34" rx="4" fill="var(--red)"/>
+          <rect x="0" y="168" width="200" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="192" y="168" width="308" height="34" rx="4" fill="var(--red)"/>
 
-          <text class="cv-tick" x="0" y="232" style="font-weight:900">スウェーデン</text>
+          <text class="cv-tick" x="0" y="232" style="font-weight:900">デンマーク</text>
           <rect x="0" y="240" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="240" width="200" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="192" y="240" width="308" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="304" style="font-weight:900">デンマーク</text>
-          <rect x="0" y="312" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="312" width="190" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="182" y="312" width="318" height="34" rx="4" fill="var(--red)"/>
+          <rect x="0" y="240" width="190" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="182" y="240" width="318" height="34" rx="4" fill="var(--red)"/>
         </svg>
         <div class="curve-legend">
           <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
           <span class="on"><i></i>アウトプット（話す・書く）</span>
         </div>
-        <p class="ev-ref">参考：<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>／フィリピン・オランダ・スウェーデン・デンマークは、英語非母語国の中でも英語運用力の上位常連国として知られています。</p>
+        <p class="ev-ref">参考：<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>／オランダ・スウェーデン・デンマークは、英語非母語国の中でも英語運用力の上位常連国として知られています。</p>
       </div>
     </div>
   </div>
@@ -972,9 +967,8 @@ body{padding-bottom:86px}
         <summary><span class="lbl" aria-hidden="true"></span></summary>
         <div class="mth-long">
 
-          <!-- MEMO（表示されません）: 要差し替えA-PUSH Method の実演動画（2日以内にご送付予定）。届いたら下の .vid-slot ごと <video> か YouTube/Vimeo の <iframe> に置き換えてください。 -->
-          <div class="vid-slot">
-            <p>VIDEO<span>A-PUSH Method の実演動画がここに入ります</span></p>
+          <div class="vid-slot" style="padding:0;overflow:hidden">
+            <video src="assets/method-demo.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;display:block;object-fit:cover"></video>
           </div>
 
           <h4>なぜ回数、慣れなのか</h4>
