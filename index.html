@@ -798,6 +798,15 @@ body{padding-bottom:86px}
 .head-access:hover{color:#fff}
 @media(max-width:900px){.head-access{display:none}}
 
+.hero-access{
+  display:flex;align-items:center;gap:.5em;color:#fff;font-weight:900;
+  font-size:.85rem;letter-spacing:.04em;margin-bottom:1.1em;
+}
+.hero-access::before{
+  content:"";width:.9em;height:.9em;flex:none;background:var(--red);
+  -webkit-mask:var(--pin) center/contain no-repeat;mask:var(--pin) center/contain no-repeat;
+}
+
 /* ---------- SNS（⑰） ---------- */
 .f-sns{display:flex;flex-wrap:wrap;gap:12px;max-width:1140px;margin:2em auto 0}
 .f-sns a{display:inline-flex;align-items:center;gap:.5em;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.5em 1.1em;font-size:.78rem;font-weight:900;color:rgba(255,255,255,.8);text-decoration:none;transition:all .22s}
@@ -827,13 +836,14 @@ body{padding-bottom:86px}
   </div>
   <p class="hero-word" aria-hidden="true">PUSH</p>
   <div class="wrap hero-inner">
+    <p class="hero-access">目黒駅 徒歩1分</p>
     <span class="vline top" aria-hidden="true"></span>
     <a class="logo hero-logo" href="#top" aria-label="A-Push"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
     <span class="vline bot" aria-hidden="true"></span>
     <p class="eyebrow">海外式スピーキング特化型コーチング</p>
     <h1>
-      <span class="l">3ヶ月後、社内で</span>
-      <span class="l"><em>一番英語が話せる</em>あなたに。</span>
+      <span class="l">とにかく話す、</span>
+      <span class="l"><em>3ヶ月。</em></span>
     </h1>
     <div class="btns hero-btns">
       <!-- ▼ Google Meet の予約サイトURLが決まったら href を差し替えてください -->
