@@ -380,9 +380,12 @@ h2 em{font-style:normal;color:var(--red)}
 .more.more-mat>summary:hover{background:var(--red);border-color:var(--red);color:#fff}
 .more.more-mat>summary .lbl::before{content:"教材を見る"}
 .more.more-mat[open]>summary .lbl::before{content:"閉じる"}
-.mat-photo{margin-top:1.2em;aspect-ratio:4/3;border-radius:3px;background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.3);display:grid;place-items:center;text-align:center;padding:1.2em}
-.mat-photo p{font-family:var(--en);font-weight:900;font-size:.7rem;letter-spacing:.16em;color:rgba(255,255,255,.5)}
-.mat-photo p span{display:block;font-family:var(--jp);font-size:.76rem;letter-spacing:0;color:rgba(255,255,255,.38);margin-top:.7em}
+.mat-photo{margin-top:1.2em;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16)}
+.mat-photo img{width:100%;display:block}
+.mat-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.2em}
+.mat-gallery figure{border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16)}
+.mat-gallery img{width:100%;display:block}
+.mat-gallery figcaption{padding:.5em .7em;font-size:.66rem;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.55);background:rgba(255,255,255,.05)}
 .mat-note{margin-top:1.1em;font-size:.86rem;line-height:1.95;color:rgba(255,255,255,.72)}
 .mat-note b{color:#fff}
 .more>summary:hover{background:var(--red);color:#fff}
@@ -1054,7 +1057,7 @@ body{padding-bottom:86px}
 <section class="sec-dark">
   <div class="wrap reveal">
     <p class="label">WHAT'S INSIDE</p>
-    <h2>私たちの<em>コース</em></h2>
+    <h2 style="font-size:clamp(1.3rem,3vw,2rem)">私たちの<em>コース</em></h2>
 
     <div class="prods prods-2">
       <div class="prod">
@@ -1062,7 +1065,16 @@ body{padding-bottom:86px}
         <p class="ptag">圧倒的反復で<em>“英語脳”</em>を作る</p>
         <details class="more more-mat">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="mat-photo" aria-hidden="true"><p>PHOTO<span>教材の写真がここに入ります</span></p></div>
+          <div class="mat-gallery">
+            <figure>
+              <img src="assets/mat-ch14.png" alt="教材 Chapter14 5W1H — Why（Beginner）" loading="lazy">
+              <figcaption>Chapter 14 ／ Why（Beginner）</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/mat-ch13.png" alt="教材 Chapter13 If／Whether（Intermediate）" loading="lazy">
+              <figcaption>Chapter 13 ／ If・Whether（Intermediate）</figcaption>
+            </figure>
+          </div>
           <p class="mat-note">「こんにちは」「それ、どう思う？」——生活の中で毎日使う、基礎の英語（BICS）を鍛える教材です。難しい文法用語は出てきません。<b>同じ型を、ひたすら声に出して体に入れる</b>。それだけです。</p>
         </details>
       </div>
@@ -1071,7 +1083,7 @@ body{padding-bottom:86px}
         <p class="ptag">本番を想定した、<em>リアルな表現</em></p>
         <details class="more more-mat">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="mat-photo" aria-hidden="true"><p>PHOTO<span>教材の写真がここに入ります</span></p></div>
+          <div class="mat-photo"><img src="assets/mat-biztalk.png" alt="教材 A-PUSH Biz Talk Chapter2 経過 — Present Perfect Continuous" loading="lazy"></div>
           <p class="mat-note">会議・交渉・プレゼンなど、仕事で成果に直結する高度な英語（CALP）の教材です。<b>BICS で土台ができた人だけ</b>が進める内容で、実際の業務シーンを想定した表現を扱います。</p>
         </details>
       </div>
