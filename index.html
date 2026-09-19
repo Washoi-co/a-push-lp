@@ -384,6 +384,10 @@ h2 em{font-style:normal;color:var(--red)}
 .mat-spread-cap{padding:.55em .8em;font-size:.68rem;font-weight:800;letter-spacing:.05em;color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
 .mat-note{margin-top:1.3em;font-size:.86rem;line-height:1.95;color:rgba(255,255,255,.72)}
 .mat-note b{color:#fff}
+.mat-tiers{margin-top:1.6em;padding-top:1.4em;border-top:1px dashed rgba(255,255,255,.16)}
+.mat-tiers h5{font-weight:900;font-size:.88rem;color:#fff;margin:1.1em 0 .4em}
+.mat-tiers h5:first-child{margin-top:0}
+.mat-tiers p{font-size:.84rem;line-height:1.9;color:rgba(255,255,255,.62)}
 
 /* 画像拡大ライトボックス */
 .lightbox{position:fixed;inset:0;z-index:2000;background:rgba(11,11,12,.92);display:none;align-items:center;justify-content:center;padding:5vw;cursor:zoom-out}
@@ -895,14 +899,14 @@ body{padding-bottom:86px}
 <section class="sec-dark">
   <div class="wrap reveal">
     <p class="label">WHY IT SHOULD BE FUN</p>
-    <p class="agi-punch" style="margin-top:0">日本はとにかく、文法文法、単語単語……<em>正解</em>か<em>不正解</em>か。</p>
+    <p class="agi-punch" style="margin-top:0;border-left:0;padding-left:0;font-size:clamp(1.3rem,2.8vw,1.7rem)">日本はとにかく、文法文法、単語単語……<em>正解</em>か<em>不正解</em>か。</p>
     <p class="lead" style="margin-top:1.2em">楽しくないでしょ。話して、伝わって、楽しくて、脳内のアハ体験があって、英語は伸びるものです。</p>
-    <p class="agi-punch" style="margin-top:1.6em">使うために勉強してましたか？<br><em>楽しんでましたか？</em></p>
+    <p class="agi-punch" style="margin-top:1.6em;border-left:0;padding-left:0">使うために勉強してましたか？<br><em>楽しんでましたか？</em></p>
     <p class="lead" style="margin-top:2em">海外の英語教育はアウトプットが多い。<br>そして日本は実は文法・単語の知識面はハイレベルだから、<b>アウトプットに集中すれば伸びる。</b></p>
     <p class="agi-punch" style="margin-top:1.6em">だから A-PUSH は<em>とにかく、話す。</em></p>
 
     <h2 style="margin-top:1.8em">日本人に足りないのは、<br><em>慣れと度胸。</em></h2>
-    <p class="agi-punch" style="margin-top:0">コーチ <em>×</em> スピーキング。<br>3ヶ月間、<em>英語漬け。</em></p>
+    <p class="agi-punch" style="margin-top:0;border-left:0;padding-left:0">コーチ <em>×</em> スピーキング。<br>3ヶ月間、<em>英語漬け。</em></p>
   </div>
 </section>
 
@@ -991,16 +995,6 @@ body{padding-bottom:86px}
           <h4>先生と共に、が絶対条件</h4>
           <p>話して覚える学習には、大きな落とし穴があります。間違ったまま、形が固まってしまうことです。一度崩れた発音や語順は、独学では自分で気づきにくいもの。繰り返した回数だけ、そのくせも強くなります。</p>
           <p>A-PUSH では、常にネイティブ講師が隣にいます。ズレた瞬間にその場で直すので、<b>間違った形のまま固まることを防ぎます。</b></p>
-
-          <h4>教材</h4>
-          <h5>A-PUSH Beginner ── 疑問系5W1Hと時制に集中する</h5>
-          <p>英語の幹にあたる部分です。ここを頭で考えているうちは、先へ行くほど苦しくなります。感覚でつかめるまで徹底的にこなす。ここを飛ばして次へは進みません。</p>
-          <h5>A-PUSH Intermediate ── つなぐ、広げる</h5>
-          <p>完了形、不定詞、動名詞、関係代名詞、接続詞。扱う型が増えるぶん、会話は一段深くなります。決まった答えのない質問も、ここから増えていきます。</p>
-          <h5>A-PUSH Advanced ── ありません</h5>
-          <p>上級者向けの教材は、あえて作っていません。必要なのは、基礎を使い切ることだからです。この先は、実践あるのみ。だから私たちは、A-PUSH Biz Talk に進みます。</p>
-          <h5>A-PUSH Biz Talk ── 実務で、使い倒す</h5>
-          <p>ここまでの表現を、仕事の場面で使い倒していきます。自由に答える比率がさらに上がり、あなた自身の言い方が形になっていきます。</p>
 
           <h4>BICS と CALP ── 2つの英語力</h4>
           <p>日本の英語学習は、読解・語彙・文法といった <b>CALP 寄りの内容が中心</b>になりやすい。私たちはそう考えています。一方で、会話の土台になる BICS は、意識して練習する機会が少ないまま残りやすい領域です。</p>
@@ -1096,6 +1090,14 @@ body{padding-bottom:86px}
             </figure>
           </div>
           <p class="mat-note">「こんにちは」「それ、どう思う？」——生活の中で毎日使う、基礎の英語（BICS）を鍛える教材です。難しい文法用語は出てきません。<b>同じ型を、ひたすら声に出して体に入れる</b>。それだけです。</p>
+          <div class="mat-tiers">
+            <h5>A-PUSH Beginner ── 疑問系5W1Hと時制に集中する</h5>
+            <p>英語の幹にあたる部分です。ここを頭で考えているうちは、先へ行くほど苦しくなります。感覚でつかめるまで徹底的にこなす。ここを飛ばして次へは進みません。</p>
+            <h5>A-PUSH Intermediate ── つなぐ、広げる</h5>
+            <p>完了形、不定詞、動名詞、関係代名詞、接続詞。扱う型が増えるぶん、会話は一段深くなります。決まった答えのない質問も、ここから増えていきます。</p>
+            <h5>A-PUSH Advanced ── ありません</h5>
+            <p>上級者向けの教材は、あえて作っていません。必要なのは、基礎を使い切ることだからです。この先は、実践あるのみ。だから私たちは、A-PUSH Biz Talk に進みます。</p>
+          </div>
         </details>
       </div>
       <div class="prod">
@@ -1113,104 +1115,11 @@ body{padding-bottom:86px}
             </figure>
           </div>
           <p class="mat-note">会議・交渉・プレゼンなど、仕事で成果に直結する高度な英語（CALP）の教材です。<b>BICS で土台ができた人だけ</b>が進める内容で、実際の業務シーンを想定した表現を扱います。</p>
+          <div class="mat-tiers">
+            <h5>A-PUSH Biz Talk ── 実務で、使い倒す</h5>
+            <p>ここまでの表現を、仕事の場面で使い倒していきます。自由に答える比率がさらに上がり、あなた自身の言い方が形になっていきます。</p>
+          </div>
         </details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3-2b. 長期記憶（忘却曲線 × 公式LINE） ============ -->
-<section id="memory">
-  <div class="wrap reveal">
-    <p class="label">MANAGEMENT</p>
-    <h2>長期記憶を、<em>作り上げる。</em></h2>
-    <p class="lead">人は、忘れます。だから A-PUSH の学習管理は根性論ではありません。「人はいつ忘れるのか」という研究をもとに<b>復習のタイミングそのものを設計</b>し、コーチが見つけたあなたの苦手を、そのタイミングに乗せて出し続けます。</p>
-
-    <div class="mgmt-grid">
-      <!-- 忘却曲線 -->
-      <div class="curve-card">
-        <h3>忘却曲線と、復習のタイミング</h3>
-        <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
-        <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
-          <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
-          <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
-          <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
-          <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
-          <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
-          <text class="cv-ylab" x="14" y="150" transform="rotate(-90 14 150)" text-anchor="middle">覚えている量</text>
-          <text class="cv-tick" x="66"  y="274" text-anchor="start">直後</text>
-          <text class="cv-tick" x="205" y="274" text-anchor="middle">1日後</text>
-          <text class="cv-tick" x="395" y="274" text-anchor="middle">1週間後</text>
-          <text class="cv-tick" x="604" y="274" text-anchor="end">1か月後</text>
-          <path class="cv-line forget" d="M70,30 C120,115 160,150 200,165 C280,182 330,190 390,195 C470,203 530,208 590,212"/>
-          <path class="cv-line keep" d="M70,30 C105,68 130,95 150,115 L150,30 C190,62 220,80 250,95 L250,30 C310,55 350,70 390,80 L390,30 C470,42 530,50 590,58"/>
-          <circle class="cv-dot" cx="150" cy="30" r="7"/>
-          <circle class="cv-dot" cx="250" cy="30" r="7"/>
-          <circle class="cv-dot" cx="390" cy="30" r="7"/>
-          <text class="cv-badge" x="272" y="18">↑ ここで復習</text>
-        </svg>
-        <div class="curve-legend">
-          <span><i></i>復習しない（よくある英語学習）</span>
-          <span class="on"><i></i>A-PUSH の学習管理</span>
-        </div>
-        <p class="curve-read">覚えたことは、<b>1日後にはその多くを忘れます</b>。逆に言えば、忘れかけた瞬間に短く復習を挟むだけで、記憶は高い水準のまま保てる。A-PUSH は<b><em>この「忘れかけ」のタイミングに合わせて</em></b>、その日の課題をお渡しします。</p>
-        <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve（忘却曲線）</a></p>
-      </div>
-
-      <!-- 公式LINE風モック -->
-      <div>
-        <div class="phone">
-          <div class="li-head">
-            <span class="back" aria-hidden="true">‹</span>
-            <span class="ttl">A-PUSH<small>担当コーチが返信します</small></span>
-          </div>
-          <div class="li-body">
-            <div class="li-row">
-              <span class="li-av" aria-hidden="true">AP</span>
-              <div class="li-card">
-                <p class="c-ttl">こんにちは！</p>
-                <p class="c-sub">昨日の夜＆今朝は復習できましたか？</p>
-                <div class="c-q">
-                  <p class="c-lab">chapter 5 初回</p>
-                  <div class="c-btns"><span class="b on">✓ はい</span><span class="b">いいえ</span></div>
-                  <p class="c-lab">chapter 6 初回</p>
-                  <div class="c-btns"><span class="b">はい</span><span class="b">いいえ</span></div>
-                </div>
-                <p class="c-note">「はい」を押すと、チャプターごとに音声の送信をご案内します🎤</p>
-              </div>
-              <span class="li-time">12:35</span>
-            </div>
-
-            <div class="li-row">
-              <span class="li-av" aria-hidden="true">AP</span>
-              <div class="li-b">先に chapter 5 のボイスメモを送ってください、間違ってても大丈夫です！</div>
-              <span class="li-time">12:35</span>
-            </div>
-
-            <div class="li-row me">
-              <div class="li-voice"><span class="play" aria-hidden="true">▶</span><svg class="wave" viewBox="0 0 124 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0.0" y="2" width="2.4" height="36" rx="1.2"/><rect x="4.2" y="15" width="2.4" height="10" rx="1.2"/><rect x="8.4" y="10" width="2.4" height="20" rx="1.2"/><rect x="12.6" y="16" width="2.4" height="8" rx="1.2"/><rect x="16.8" y="7" width="2.4" height="26" rx="1.2"/><rect x="21.0" y="7" width="2.4" height="26" rx="1.2"/><rect x="25.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="29.4" y="2" width="2.4" height="36" rx="1.2"/><rect x="33.6" y="13" width="2.4" height="14" rx="1.2"/><rect x="37.8" y="6" width="2.4" height="28" rx="1.2"/><rect x="42.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="46.2" y="14" width="2.4" height="12" rx="1.2"/><rect x="50.4" y="7" width="2.4" height="26" rx="1.2"/><rect x="54.6" y="8" width="2.4" height="24" rx="1.2"/><rect x="58.8" y="4" width="2.4" height="32" rx="1.2"/><rect x="63.0" y="16" width="2.4" height="8" rx="1.2"/><rect x="67.2" y="16" width="2.4" height="8" rx="1.2"/><rect x="71.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="75.6" y="4" width="2.4" height="32" rx="1.2"/><rect x="79.8" y="11" width="2.4" height="18" rx="1.2"/><rect x="84.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="88.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="92.4" y="16" width="2.4" height="8" rx="1.2"/><rect x="96.6" y="3" width="2.4" height="34" rx="1.2"/><rect x="100.8" y="16" width="2.4" height="8" rx="1.2"/><rect x="105.0" y="14" width="2.4" height="12" rx="1.2"/><rect x="109.2" y="8" width="2.4" height="24" rx="1.2"/><rect x="113.4" y="2" width="2.4" height="36" rx="1.2"/><rect x="117.6" y="12" width="2.4" height="16" rx="1.2"/><rect x="121.8" y="8" width="2.4" height="24" rx="1.2"/></svg><span class="dur">00:46</span></div>
-              <span class="li-time read">既読<br>12:36</span>
-            </div>
-
-            <div class="li-row">
-              <span class="li-av" aria-hidden="true">AP</span>
-              <div class="li-b"><b>chapter 5 の音声を受け取りました！</b><br>これで全部完了です。お疲れ様でした！</div>
-              <span class="li-time">12:36</span>
-            </div>
-
-            <div class="li-row">
-              <span class="li-av ghost" aria-hidden="true"></span>
-              <div class="li-b">🎤 chapter 6 のボイスメモを送ってください、間違ってても大丈夫です！</div>
-              <span class="li-time">12:36</span>
-            </div>
-
-            <div class="li-row me">
-              <div class="li-voice"><span class="play" aria-hidden="true">▶</span><svg class="wave" viewBox="0 0 124 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="4.2" y="7" width="2.4" height="26" rx="1.2"/><rect x="8.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="12.6" y="2" width="2.4" height="36" rx="1.2"/><rect x="16.8" y="7" width="2.4" height="26" rx="1.2"/><rect x="21.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="25.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="29.4" y="5" width="2.4" height="30" rx="1.2"/><rect x="33.6" y="3" width="2.4" height="34" rx="1.2"/><rect x="37.8" y="6" width="2.4" height="28" rx="1.2"/><rect x="42.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="46.2" y="16" width="2.4" height="8" rx="1.2"/><rect x="50.4" y="6" width="2.4" height="28" rx="1.2"/><rect x="54.6" y="11" width="2.4" height="18" rx="1.2"/><rect x="58.8" y="9" width="2.4" height="22" rx="1.2"/><rect x="63.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="67.2" y="4" width="2.4" height="32" rx="1.2"/><rect x="71.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="75.6" y="6" width="2.4" height="28" rx="1.2"/><rect x="79.8" y="9" width="2.4" height="22" rx="1.2"/><rect x="84.0" y="7" width="2.4" height="26" rx="1.2"/><rect x="88.2" y="4" width="2.4" height="32" rx="1.2"/><rect x="92.4" y="12" width="2.4" height="16" rx="1.2"/><rect x="96.6" y="2" width="2.4" height="36" rx="1.2"/><rect x="100.8" y="10" width="2.4" height="20" rx="1.2"/><rect x="105.0" y="5" width="2.4" height="30" rx="1.2"/><rect x="109.2" y="10" width="2.4" height="20" rx="1.2"/><rect x="113.4" y="9" width="2.4" height="22" rx="1.2"/><rect x="117.6" y="14" width="2.4" height="12" rx="1.2"/><rect x="121.8" y="4" width="2.4" height="32" rx="1.2"/></svg><span class="dur">00:37</span></div>
-              <span class="li-time read">既読<br>12:37</span>
-            </div>
-          </div>
-          <p class="li-foot">チャプターごとに、復習 → 音読の提出 → 確認。<br>これを、3か月毎日。</p>
-        </div>
       </div>
     </div>
   </div>
@@ -1229,17 +1138,17 @@ body{padding-bottom:86px}
         <p class="role">FOUNDER</p>
         <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
         <p class="aff">米国テンプル大学 日本校 所属</p>
-      </div>
-    </div>
 
-    <div class="founder-story">
         <p class="quote">17歳、フィリピンに語学留学。<br>中学から英語をやったのに、<em>何を言っているかわからない。</em><br>"Slow please."とお願いして、ゆっくり言ってもらっても、やっぱりわからない。</p>
         <p class="agi-punch" style="color:var(--ink)!important;border-color:var(--red)">あのときの恥ずかしさ —— <em>いまでもトラウマです。</em></p>
 
         <p style="font-weight:900;font-size:1.1rem;margin-top:1.4em">だから、逆をやる。</p>
         <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">英語コーチングという事業は、本来「いかに長く通っていただくか」で設計されます。継続率が上がれば経営は安定する。事業としては、それが正解です。</p>
         <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em"><b style="color:var(--ink)">でも私は、早く卒業してほしい。</b>生徒が本当に話せるようになるかどうか。そこにだけコミットします。</p>
+      </div>
+    </div>
 
+    <div class="founder-story">
         <details class="more more-story">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
           <div class="ev-long">
@@ -1350,6 +1259,103 @@ body{padding-bottom:86px}
             <b>どこでも</b>
             <p>目黒の教室でも、自宅でも、出張先のホテルでも。オンラインと対面を自由に組み合わせて受講できます。</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3-2b. 長期記憶（忘却曲線 × 公式LINE） ============ -->
+<section id="memory">
+  <div class="wrap reveal">
+    <p class="label">MANAGEMENT</p>
+    <h2>長期記憶を、<em>作り上げる。</em></h2>
+    <p class="lead">人は、忘れます。だから A-PUSH の学習管理は根性論ではありません。「人はいつ忘れるのか」という研究をもとに<b>復習のタイミングそのものを設計</b>し、コーチが見つけたあなたの苦手を、そのタイミングに乗せて出し続けます。</p>
+
+    <div class="mgmt-grid">
+      <!-- 忘却曲線 -->
+      <div class="curve-card">
+        <h3>忘却曲線と、復習のタイミング</h3>
+        <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
+        <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
+          <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
+          <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
+          <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
+          <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
+          <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
+          <text class="cv-ylab" x="14" y="150" transform="rotate(-90 14 150)" text-anchor="middle">覚えている量</text>
+          <text class="cv-tick" x="66"  y="274" text-anchor="start">直後</text>
+          <text class="cv-tick" x="205" y="274" text-anchor="middle">1日後</text>
+          <text class="cv-tick" x="395" y="274" text-anchor="middle">1週間後</text>
+          <text class="cv-tick" x="604" y="274" text-anchor="end">1か月後</text>
+          <path class="cv-line forget" d="M70,30 C120,115 160,150 200,165 C280,182 330,190 390,195 C470,203 530,208 590,212"/>
+          <path class="cv-line keep" d="M70,30 C105,68 130,95 150,115 L150,30 C190,62 220,80 250,95 L250,30 C310,55 350,70 390,80 L390,30 C470,42 530,50 590,58"/>
+          <circle class="cv-dot" cx="150" cy="30" r="7"/>
+          <circle class="cv-dot" cx="250" cy="30" r="7"/>
+          <circle class="cv-dot" cx="390" cy="30" r="7"/>
+          <text class="cv-badge" x="272" y="18">↑ ここで復習</text>
+        </svg>
+        <div class="curve-legend">
+          <span><i></i>復習しない（よくある英語学習）</span>
+          <span class="on"><i></i>A-PUSH の学習管理</span>
+        </div>
+        <p class="curve-read">覚えたことは、<b>1日後にはその多くを忘れます</b>。逆に言えば、忘れかけた瞬間に短く復習を挟むだけで、記憶は高い水準のまま保てる。A-PUSH は<b><em>この「忘れかけ」のタイミングに合わせて</em></b>、その日の課題をお渡しします。</p>
+        <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve（忘却曲線）</a></p>
+      </div>
+
+      <!-- 公式LINE風モック -->
+      <div>
+        <div class="phone">
+          <div class="li-head">
+            <span class="back" aria-hidden="true">‹</span>
+            <span class="ttl">A-PUSH<small>担当コーチが返信します</small></span>
+          </div>
+          <div class="li-body">
+            <div class="li-row">
+              <span class="li-av" aria-hidden="true">AP</span>
+              <div class="li-card">
+                <p class="c-ttl">こんにちは！</p>
+                <p class="c-sub">昨日の夜＆今朝は復習できましたか？</p>
+                <div class="c-q">
+                  <p class="c-lab">chapter 5 初回</p>
+                  <div class="c-btns"><span class="b on">✓ はい</span><span class="b">いいえ</span></div>
+                  <p class="c-lab">chapter 6 初回</p>
+                  <div class="c-btns"><span class="b">はい</span><span class="b">いいえ</span></div>
+                </div>
+                <p class="c-note">「はい」を押すと、チャプターごとに音声の送信をご案内します🎤</p>
+              </div>
+              <span class="li-time">12:35</span>
+            </div>
+
+            <div class="li-row">
+              <span class="li-av" aria-hidden="true">AP</span>
+              <div class="li-b">先に chapter 5 のボイスメモを送ってください、間違ってても大丈夫です！</div>
+              <span class="li-time">12:35</span>
+            </div>
+
+            <div class="li-row me">
+              <div class="li-voice"><span class="play" aria-hidden="true">▶</span><svg class="wave" viewBox="0 0 124 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0.0" y="2" width="2.4" height="36" rx="1.2"/><rect x="4.2" y="15" width="2.4" height="10" rx="1.2"/><rect x="8.4" y="10" width="2.4" height="20" rx="1.2"/><rect x="12.6" y="16" width="2.4" height="8" rx="1.2"/><rect x="16.8" y="7" width="2.4" height="26" rx="1.2"/><rect x="21.0" y="7" width="2.4" height="26" rx="1.2"/><rect x="25.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="29.4" y="2" width="2.4" height="36" rx="1.2"/><rect x="33.6" y="13" width="2.4" height="14" rx="1.2"/><rect x="37.8" y="6" width="2.4" height="28" rx="1.2"/><rect x="42.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="46.2" y="14" width="2.4" height="12" rx="1.2"/><rect x="50.4" y="7" width="2.4" height="26" rx="1.2"/><rect x="54.6" y="8" width="2.4" height="24" rx="1.2"/><rect x="58.8" y="4" width="2.4" height="32" rx="1.2"/><rect x="63.0" y="16" width="2.4" height="8" rx="1.2"/><rect x="67.2" y="16" width="2.4" height="8" rx="1.2"/><rect x="71.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="75.6" y="4" width="2.4" height="32" rx="1.2"/><rect x="79.8" y="11" width="2.4" height="18" rx="1.2"/><rect x="84.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="88.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="92.4" y="16" width="2.4" height="8" rx="1.2"/><rect x="96.6" y="3" width="2.4" height="34" rx="1.2"/><rect x="100.8" y="16" width="2.4" height="8" rx="1.2"/><rect x="105.0" y="14" width="2.4" height="12" rx="1.2"/><rect x="109.2" y="8" width="2.4" height="24" rx="1.2"/><rect x="113.4" y="2" width="2.4" height="36" rx="1.2"/><rect x="117.6" y="12" width="2.4" height="16" rx="1.2"/><rect x="121.8" y="8" width="2.4" height="24" rx="1.2"/></svg><span class="dur">00:46</span></div>
+              <span class="li-time read">既読<br>12:36</span>
+            </div>
+
+            <div class="li-row">
+              <span class="li-av" aria-hidden="true">AP</span>
+              <div class="li-b"><b>chapter 5 の音声を受け取りました！</b><br>これで全部完了です。お疲れ様でした！</div>
+              <span class="li-time">12:36</span>
+            </div>
+
+            <div class="li-row">
+              <span class="li-av ghost" aria-hidden="true"></span>
+              <div class="li-b">🎤 chapter 6 のボイスメモを送ってください、間違ってても大丈夫です！</div>
+              <span class="li-time">12:36</span>
+            </div>
+
+            <div class="li-row me">
+              <div class="li-voice"><span class="play" aria-hidden="true">▶</span><svg class="wave" viewBox="0 0 124 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="4.2" y="7" width="2.4" height="26" rx="1.2"/><rect x="8.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="12.6" y="2" width="2.4" height="36" rx="1.2"/><rect x="16.8" y="7" width="2.4" height="26" rx="1.2"/><rect x="21.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="25.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="29.4" y="5" width="2.4" height="30" rx="1.2"/><rect x="33.6" y="3" width="2.4" height="34" rx="1.2"/><rect x="37.8" y="6" width="2.4" height="28" rx="1.2"/><rect x="42.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="46.2" y="16" width="2.4" height="8" rx="1.2"/><rect x="50.4" y="6" width="2.4" height="28" rx="1.2"/><rect x="54.6" y="11" width="2.4" height="18" rx="1.2"/><rect x="58.8" y="9" width="2.4" height="22" rx="1.2"/><rect x="63.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="67.2" y="4" width="2.4" height="32" rx="1.2"/><rect x="71.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="75.6" y="6" width="2.4" height="28" rx="1.2"/><rect x="79.8" y="9" width="2.4" height="22" rx="1.2"/><rect x="84.0" y="7" width="2.4" height="26" rx="1.2"/><rect x="88.2" y="4" width="2.4" height="32" rx="1.2"/><rect x="92.4" y="12" width="2.4" height="16" rx="1.2"/><rect x="96.6" y="2" width="2.4" height="36" rx="1.2"/><rect x="100.8" y="10" width="2.4" height="20" rx="1.2"/><rect x="105.0" y="5" width="2.4" height="30" rx="1.2"/><rect x="109.2" y="10" width="2.4" height="20" rx="1.2"/><rect x="113.4" y="9" width="2.4" height="22" rx="1.2"/><rect x="117.6" y="14" width="2.4" height="12" rx="1.2"/><rect x="121.8" y="4" width="2.4" height="32" rx="1.2"/></svg><span class="dur">00:37</span></div>
+              <span class="li-time read">既読<br>12:37</span>
+            </div>
+          </div>
+          <p class="li-foot">チャプターごとに、復習 → 音読の提出 → 確認。<br>これを、3か月毎日。</p>
         </div>
       </div>
     </div>
@@ -1597,26 +1603,14 @@ body{padding-bottom:86px}
   </div>
 </section>
 
-<!-- ============ 6-0. このままでいるコスト ============ -->
+<!-- ============ 6-0. キャリア以外の広がり ============ -->
 <section class="sec-dark" style="padding-top:0">
   <div class="wrap reveal">
-    <p class="label">THE COST OF WAITING</p>
-    <h2>このまま何もしないと、<br><em>何を失うのか。</em></h2>
-    <div class="cost">
-      <div class="cost-i">
-        <span class="n">01 / TIME</span>
-        <p>来年の今日も、同じ会議で黙ったままです。3ヶ月は、待っていても勝手には過ぎません。</p>
-      </div>
-      <div class="cost-i">
-        <span class="n">02 / CHANCE</span>
-        <p>海外案件も、異動も、英語が条件の求人も。すべて「話せる人」に回っていきます。</p>
-      </div>
-      <div class="cost-i">
-        <span class="n">03 / CONFIDENCE</span>
-        <p>言いたいことを飲み込む回数が増えるほど、「自分は英語が苦手だ」という前提が固まっていきます。</p>
-      </div>
-    </div>
-    <p class="cost-close">迷っている時間も、<em>コストです。</em></p>
+    <p class="label">00 / 広がりはキャリアだけではない</p>
+    <h2>出会う人も、<br><em>広くなる。</em></h2>
+    <p class="lead">まったく違う教育、暮らしのなかで育った人と、誰かを挟まずに話せる。相手の言葉のまま、相手の温度のまま受け取れる。そこで受ける刺激が、また価値観を広げてくれます。教養とは、たぶんこういうことの積み重ねです。</p>
+    <p class="cost-close" style="margin-top:1.8em">そして、一番は<em>自信です。</em></p>
+    <p class="lead" style="margin-top:1em">世界のどこでも、やっていける。生きていける。困ったときに、どこにいても助けてくれる友人がいる。この安心感は、想像以上に大きいです。</p>
   </div>
 </section>
 
@@ -1755,13 +1749,12 @@ body{padding-bottom:86px}
       <p class="f-tag">英語をキャリアで活かすための、<br>海外式スピーキング特化の3ヶ月。</p>
     </div>
     <nav class="f-links">
-      <!-- ▼ リンク先URLが確定したら href を差し替えてください -->
-      <a href="#">会社概要</a>
-      <a href="#">特定商取引法に基づく表記</a>
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">受講規約</a>
-      <a href="#">個人情報の取扱いについて</a>
-      <a href="#">お問い合わせ</a>
+      <a href="company.html">会社概要</a>
+      <a href="tokusho.html">特定商取引法に基づく表記</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="kiyaku.html">受講規約</a>
+      <a href="privacy.html">個人情報の取扱いについて</a>
+      <a href="mailto:washoi@japanwashoi.com">お問い合わせ</a>
     </nav>
   </div>
   <div class="f-sns">
