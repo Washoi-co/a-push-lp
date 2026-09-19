@@ -258,11 +258,6 @@ h2 em{font-style:normal;color:var(--red)}
   display:flex;flex-wrap:wrap;justify-content:center;margin-top:3.4em;
   border-top:1px solid var(--line-d);
 }
-/* アジテート右カラムの締め */
-.agi-last{
-  font-weight:500;color:#fff!important;font-size:clamp(1.15rem,2.5vw,1.6rem);
-  line-height:1.7;border-left:3px solid var(--red);padding-left:1em;margin-top:1.6em!important;
-}
 .hero-stats div{padding:1.4em 2.2em 0;border-right:1px solid var(--line-d);text-align:center}
 .hero-stats div:last-child{border-right:0}
 .hero-stats b{display:block;font-family:var(--en);font-weight:900;font-size:1.9rem;color:var(--red);line-height:1}
@@ -380,14 +375,22 @@ h2 em{font-style:normal;color:var(--red)}
 .more.more-mat>summary:hover{background:var(--red);border-color:var(--red);color:#fff}
 .more.more-mat>summary .lbl::before{content:"教材を見る"}
 .more.more-mat[open]>summary .lbl::before{content:"閉じる"}
-.mat-photo{margin-top:1.2em;border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16)}
-.mat-photo img{width:100%;display:block}
-.mat-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1.2em}
-.mat-gallery figure{border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16)}
-.mat-gallery img{width:100%;display:block}
-.mat-gallery figcaption{padding:.5em .7em;font-size:.66rem;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.55);background:rgba(255,255,255,.05)}
-.mat-note{margin-top:1.1em;font-size:.86rem;line-height:1.95;color:rgba(255,255,255,.72)}
+.mat-spreads{display:flex;flex-direction:column;gap:16px;margin-top:1.2em}
+.mat-spread{border-radius:3px;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:#000}
+.mat-spread-pages{display:flex}
+.mat-spread img{width:50%;display:block;cursor:zoom-in;transition:opacity .2s}
+.mat-spread img:first-child{border-right:2px solid rgba(0,0,0,.55);box-shadow:2px 0 8px -2px rgba(0,0,0,.5)}
+.mat-spread img:hover{opacity:.86}
+.mat-spread-cap{padding:.55em .8em;font-size:.68rem;font-weight:800;letter-spacing:.05em;color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
+.mat-note{margin-top:1.3em;font-size:.86rem;line-height:1.95;color:rgba(255,255,255,.72)}
 .mat-note b{color:#fff}
+
+/* 画像拡大ライトボックス */
+.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(11,11,12,.92);display:none;align-items:center;justify-content:center;padding:5vw;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:100%;max-height:100%;border-radius:3px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.lightbox .lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;font-weight:300;line-height:1;background:none;border:0;cursor:pointer;opacity:.8}
+.lightbox .lb-close:hover{opacity:1}
 .more>summary:hover{background:var(--red);color:#fff}
 @keyframes fadeUp{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
@@ -888,26 +891,7 @@ body{padding-bottom:86px}
   <span>SPEAK FIRST <i>/</i></span><span>A-PUSH METHOD <i>/</i></span><span>COACH × SPEAKING <i>/</i></span>
 </div></div>
 
-<!-- ============ 2. アジテート ============ -->
-<section class="sec-dark">
-  <div class="wrap reveal">
-    <p class="label">THE REAL PROBLEM</p>
-    <h2>足りないのは、能力ではない。<br><em>「度胸」と「慣れ」</em>だけ。</h2>
-    <div class="agi-grid">
-      <div>
-        <p class="agi-big">日本人は極端にスピーキングが弱い。<br>けれど英語の効率や知識量では、<br>世界的に見ても<em style="font-size:1.15em">劣っていません。</em></p>
-        <p class="agi-punch">コーチ <em>×</em> スピーキング。<br>3ヶ月で、英語がバリバリなあなたを作る。</p>
-      </div>
-      <div class="agi-body">
-        <p>海外の英語教育は、日本よりも<b>アウトプットが多い。</b><br>だから、話せる。</p>
-        <p>だから私たちは、<b>とにかくアウトプットする。</b></p>
-        <p class="agi-last">アウトプットで、インプットする。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 2-2. 英語学習は楽しくあるべき ============ -->
+<!-- ============ 2. なぜ、楽しむべきか ============ -->
 <section class="sec-dark">
   <div class="wrap reveal">
     <p class="label">WHY IT SHOULD BE FUN</p>
@@ -916,6 +900,9 @@ body{padding-bottom:86px}
     <p class="agi-punch" style="margin-top:1.6em">使うために勉強してましたか？<br><em>楽しんでましたか？</em></p>
     <p class="lead" style="margin-top:2em">海外の英語教育はアウトプットが多い。<br>そして日本は実は文法・単語の知識面はハイレベルだから、<b>アウトプットに集中すれば伸びる。</b></p>
     <p class="agi-punch" style="margin-top:1.6em">だから A-PUSH は<em>とにかく、話す。</em></p>
+
+    <h2 style="margin-top:1.8em">日本人に足りないのは、<br><em>慣れと度胸。</em></h2>
+    <p class="agi-punch" style="margin-top:0">コーチ <em>×</em> スピーキング。<br>3ヶ月間、<em>英語漬け。</em></p>
   </div>
 </section>
 
@@ -951,11 +938,11 @@ body{padding-bottom:86px}
             <p>VIDEO<span>A-PUSH Method の実演動画がここに入ります</span></p>
           </div>
 
-          <h4>なぜ、たったひとつのフレーズなのか</h4>
-          <p>英語を話せない理由は、単語を知らないからでも、文法を知らないからでもありません。<b>知っているのに、口が動かない。</b>ほとんどの人はここで止まっています。</p>
-          <p>だから A-PUSH では、1チャプターで扱う型をひとつに絞ります。このチャプターなら「<b>have been -ing</b>（ずっと〜し続けている）」。これだけです。</p>
+          <h4>なぜ回数、慣れなのか</h4>
+          <p>英語を話せない原因は、単語でも文法でもない。知っているのに、口が動かない。これは脳（知識）と口が運動的にリンクしていないからです。</p>
+          <p>だから各フレーズ、一つ一つみっちり慣れていきます。このチャプターなら「<b>have been -ing</b>（ずっと〜し続けている）」。これだけです。</p>
 
-          <h4>型はひとつ。中身だけ入れかえる</h4>
+          <h4>型はひとつ、中身だけ入れ替える</h4>
           <div class="formula">We have been <i>→</i> working on <i>→</i> this project <i>→</i> for two weeks.</div>
           <p>主語のあとに「have been」、そのあとに動詞、そのあとに対象、最後に「どれだけ続いているか」。この並びだけを、中身を変えながら繰り返します。</p>
           <div class="qa">
@@ -973,43 +960,66 @@ body{padding-bottom:86px}
             </div>
           </div>
 
-          <h4>200〜300回で、何が起きるか</h4>
-          <p>最初は「We have been のあとは何だっけ」と考えます。<b>50回</b>でつまずきが減り、<b>100回</b>で文の頭が勝手に出て、<b>200回</b>を超えると考える前に口が動いています。</p>
+          <h4>練習は、3つの段階で進みます</h4>
+          <h5>STEP 1　文を見ながら、とにかく声に出す</h5>
+          <p>まずは書かれた文を見ながら、何度も言います。この段階で大事なのは、正確さより回数。口が形を覚えるまで、ひたすら声に出します。</p>
+          <h5>STEP 2　文を消して、絵だけで言う</h5>
+          <p>文字を外します。手元にあるのは絵だけ。見た瞬間に言えるまで、また繰り返します。この段階まで来ると、絵と口のあいだに日本語が入る隙がなくなっていきます。</p>
+          <h5>STEP 3　覚えた型を、混ぜる</h5>
+          <p>これまでのチャプターで扱った型を混ぜて出します。どれが来るか分からない状態で、絵を見て、選んで、言う。実際の会話にいちばん近いのが、この段階です。</p>
+
+          <h4>同じ文を、ただ繰り返すわけではありません</h4>
+          <p>STEP 1 だけを見れば、単なる反復に見えるかもしれません。違うのは、見本が消えることと、中身が毎回変わることです。</p>
+          <p>絵だけになった瞬間、頼れるものは自分の中の型だけになります。そこへ講師が、場面を次々に変えて振ってきます。3年付き合いのあるクライアントの話。2週間前に始まったプロジェクトの話。去年から任されている案件の話。</p>
+          <p>出てくる文は、毎回違う。使っている型は、ひとつ。繰り返しているのは、文ではありません。型です。</p>
+
+          <h4>200〜300回を目安にしている理由</h4>
+          <p>最初は「We have been のあとは何だっけ」と考えます。次に何を置くか、頭の中で探しているからです。</p>
+          <p>私たちがレッスンで見ているのは、この「探している時間」です。回数を重ねるほど一拍は短くなり、やがて探す工程そのものが要らなくなっていく。1チャプターで200〜300回という目安は、ここまで持っていくために置いています。</p>
           <p><small>※変化の現れ方や必要な回数には個人差があります。一定の回数を繰り返すことで特定の状態に達することをお約束するものではありません。</small></p>
-          <p>このとき、3つのことが同時に起きています。</p>
+          <p>この繰り返しのあいだに、3つのことが同時に起きています。</p>
 
           <h5>口と舌が覚える</h5>
-          <p>スポーツのフォームと同じです。繰り返した動きは、意識しなくても出るようになります。</p>
+          <p>スポーツのフォームと同じです。繰り返した動きほど、意識せずに再現しやすくなります。</p>
 
           <h5>耳が覚える</h5>
-          <p>自分の声は、自分の耳に入ります。話した回数だけ、聞き取りも鍛えられます。</p>
+          <p>自分の声は、自分の耳に入ります。話した回数だけ、英語の音を聞く回数も増えていきます。</p>
 
           <h5>イメージが結びつく</h5>
-          <p>絵と一緒に練習するので、「日本語に訳してから理解する」という遠回りがなくなります。</p>
+          <p>絵と一緒に練習します。日本語に訳してから理解する、という遠回りを挟まない設計です。</p>
 
           <h4>先生と共に、が絶対条件</h4>
-          <p>話して覚える学習には、大きな落とし穴があります。<b>間違ったまま、形が固まってしまうこと</b>です。一度崩れた発音や語順は、独学では自分で気づけません。300回繰り返せば、間違いも300回定着します。</p>
-          <!-- MEMO（表示されません）: 要確認いただいた原稿がこの文の途中（「ズレた瞬間にその場で直るので、」）で切れていたため、続きを仮で補っています。正しい続きを教えてください。 -->
-          <p>A-PUSH では、常にネイティブ講師が隣にいます。ズレた瞬間にその場で直るので、<b>間違った形のまま定着することがありません。</b></p>
+          <p>話して覚える学習には、大きな落とし穴があります。間違ったまま、形が固まってしまうことです。一度崩れた発音や語順は、独学では自分で気づきにくいもの。繰り返した回数だけ、そのくせも強くなります。</p>
+          <p>A-PUSH では、常にネイティブ講師が隣にいます。ズレた瞬間にその場で直すので、<b>間違った形のまま固まることを防ぎます。</b></p>
+
+          <h4>教材</h4>
+          <h5>A-PUSH Beginner ── 疑問系5W1Hと時制に集中する</h5>
+          <p>英語の幹にあたる部分です。ここを頭で考えているうちは、先へ行くほど苦しくなります。感覚でつかめるまで徹底的にこなす。ここを飛ばして次へは進みません。</p>
+          <h5>A-PUSH Intermediate ── つなぐ、広げる</h5>
+          <p>完了形、不定詞、動名詞、関係代名詞、接続詞。扱う型が増えるぶん、会話は一段深くなります。決まった答えのない質問も、ここから増えていきます。</p>
+          <h5>A-PUSH Advanced ── ありません</h5>
+          <p>上級者向けの教材は、あえて作っていません。必要なのは、基礎を使い切ることだからです。この先は、実践あるのみ。だから私たちは、A-PUSH Biz Talk に進みます。</p>
+          <h5>A-PUSH Biz Talk ── 実務で、使い倒す</h5>
+          <p>ここまでの表現を、仕事の場面で使い倒していきます。自由に答える比率がさらに上がり、あなた自身の言い方が形になっていきます。</p>
 
           <h4>BICS と CALP ── 2つの英語力</h4>
-          <p>多くの英語学習者は、この違いを知らないまま <b>CALP ばかりを鍛えて挫折</b>しています。大学受験も、資格も、学校も、学習塾も、そちらに偏っているからです。</p>
+          <p>日本の英語学習は、読解・語彙・文法といった <b>CALP 寄りの内容が中心</b>になりやすい。私たちはそう考えています。一方で、会話の土台になる BICS は、意識して練習する機会が少ないまま残りやすい領域です。</p>
 
           <div class="bc">
             <div class="bc-col hot">
               <p class="bc-tag">BICS</p>
-              <h3>生活での基礎英語（小学生レベル）</h3>
-              <p>「はじめまして」「それ、どう思う？」といった、会話を成立させるための土台。話す瞬発力そのものです。ここが抜けていると、どれだけ知識があっても口が動きません。</p>
+              <h3>日常会話の土台となる英語</h3>
+              <p>「はじめまして」「それ、どう思う？」といった、会話を成立させるための土台。話す瞬発力にあたる部分です。ここが弱いままだと、知識があっても会話の場面では使いにくくなります。</p>
               <p class="bc-prod"><span class="pill">A-PUSH METHOD</span>で鍛える</p>
             </div>
             <div class="bc-col">
               <p class="bc-tag">CALP</p>
               <h3>ビジネス・大学での高度な英語</h3>
-              <p>会議での主張、交渉、プレゼン、論理的な説明。仕事の現場で成果に直結する運用力です。BICS の土台があって初めて積み上がります。</p>
+              <p>会議での主張、交渉、プレゼン、論理的な説明。仕事の場面で使う運用力です。私たちは、BICS の土台があるほうが積み上げやすいと考えています。</p>
               <p class="bc-prod"><span class="pill">A-PUSH BUSINESS TALK</span>で鍛える</p>
             </div>
           </div>
-          <p class="bc-warn">A-PUSH は、この2つを<em>分けて</em>鍛えます。<br>順番を間違えないことが、最短ルートです。</p>
+          <p class="bc-warn">A-PUSH は、この2つを<em>分けて</em>、順番を意識して鍛えます。</p>
 
           <div class="ev-cards">
             <div class="ev">
@@ -1069,14 +1079,20 @@ body{padding-bottom:86px}
         <p class="ptag">圧倒的反復で<em>“英語脳”</em>を作る</p>
         <details class="more more-mat">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="mat-gallery">
-            <figure>
-              <img src="assets/mat-ch14.png" alt="教材 Chapter14 5W1H — Why（Beginner）" loading="lazy">
-              <figcaption>Chapter 14 ／ Why（Beginner）</figcaption>
+          <div class="mat-spreads">
+            <figure class="mat-spread">
+              <div class="mat-spread-pages">
+                <img class="zoomable" src="assets/mat-ch14.png" alt="教材 Chapter14 5W1H — Why（Beginner） 本文ページ" loading="lazy">
+                <img class="zoomable" src="assets/mat-ch14-p2.png" alt="教材 Chapter14 5W1H — Why（Beginner） イラストページ" loading="lazy">
+              </div>
+              <figcaption class="mat-spread-cap">Chapter 14 ／ Why（Beginner）</figcaption>
             </figure>
-            <figure>
-              <img src="assets/mat-ch13.png" alt="教材 Chapter13 If／Whether（Intermediate）" loading="lazy">
-              <figcaption>Chapter 13 ／ If・Whether（Intermediate）</figcaption>
+            <figure class="mat-spread">
+              <div class="mat-spread-pages">
+                <img class="zoomable" src="assets/mat-ch13.png" alt="教材 Chapter13 If／Whether（Intermediate） 本文ページ" loading="lazy">
+                <img class="zoomable" src="assets/mat-ch13-p2.png" alt="教材 Chapter13 If／Whether（Intermediate） イラストページ" loading="lazy">
+              </div>
+              <figcaption class="mat-spread-cap">Chapter 13 ／ If・Whether（Intermediate）</figcaption>
             </figure>
           </div>
           <p class="mat-note">「こんにちは」「それ、どう思う？」——生活の中で毎日使う、基礎の英語（BICS）を鍛える教材です。難しい文法用語は出てきません。<b>同じ型を、ひたすら声に出して体に入れる</b>。それだけです。</p>
@@ -1087,7 +1103,15 @@ body{padding-bottom:86px}
         <p class="ptag">本番を想定した、<em>リアルな表現</em></p>
         <details class="more more-mat">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="mat-photo"><img src="assets/mat-biztalk.png" alt="教材 A-PUSH Biz Talk Chapter2 経過 — Present Perfect Continuous" loading="lazy"></div>
+          <div class="mat-spreads">
+            <figure class="mat-spread">
+              <div class="mat-spread-pages">
+                <img class="zoomable" src="assets/mat-biztalk.png" alt="教材 A-PUSH Biz Talk Chapter2 経過 — Present Perfect Continuous 本文ページ" loading="lazy">
+                <img class="zoomable" src="assets/mat-biztalk-p2.png" alt="教材 A-PUSH Biz Talk Chapter2 経過 — Present Perfect Continuous イラストページ" loading="lazy">
+              </div>
+              <figcaption class="mat-spread-cap">Chapter 2 ／ 経過（Intermediate）</figcaption>
+            </figure>
+          </div>
           <p class="mat-note">会議・交渉・プレゼンなど、仕事で成果に直結する高度な英語（CALP）の教材です。<b>BICS で土台ができた人だけ</b>が進める内容で、実際の業務シーンを想定した表現を扱います。</p>
         </details>
       </div>
@@ -1759,6 +1783,26 @@ body{padding-bottom:86px}
   </div>
 </div>
 
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" type="button" aria-label="閉じる">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+/* ---------- 画像クリックで拡大 ---------- */
+(function(){
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lightboxImg');
+  function open(src,alt){ lbImg.src=src; lbImg.alt=alt||''; lb.classList.add('on'); }
+  function close(){ lb.classList.remove('on'); lbImg.src=''; }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('.zoomable');
+    if(t){ open(t.src,t.alt); return; }
+    if(e.target===lb || e.target.closest('.lb-close')){ close(); }
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
 <script>
 /* ---------- スクロールで表示 ---------- */
 const io=new IntersectionObserver(es=>{
