@@ -318,6 +318,9 @@ h2 em{font-style:normal;color:var(--red)}
 .card .num{font-family:var(--en);font-weight:900;font-size:2.4rem;line-height:1;color:var(--red);display:block;margin-bottom:.4em}
 .card h3{font-weight:900;font-size:1.12rem;line-height:1.55;margin-bottom:.6em}
 .card p{font-size:.92rem;color:#5C5C64;line-height:1.95}
+.card-visual{margin:-2em -1.7em 1.6em;border-bottom:1px solid var(--line-l);overflow:hidden;background:var(--ink);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.card-visual img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.card-visual svg{width:62%;height:auto}
 
 /* ---------- BICS / CALP ---------- */
 .bc{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:2.4em}
@@ -349,6 +352,8 @@ h2 em{font-style:normal;color:var(--red)}
 .more[open]>summary .lbl::before{content:"閉じる"}
 .more.more-mth>summary .lbl::before{content:"詳しく見る ＆ 動画"}
 .more.more-mth[open]>summary .lbl::before{content:"閉じる"}
+.more.more-story>summary .lbl::before{content:"詳しく見る"}
+.more.more-story[open]>summary .lbl::before{content:"閉じる"}
 .more>summary:hover{background:var(--red);color:#fff}
 @keyframes fadeUp{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
@@ -783,7 +788,7 @@ body{padding-bottom:86px}
 .head-access{
   display:inline-flex;align-items:center;gap:.4em;white-space:nowrap;text-decoration:none;
   margin-left:1.2em;padding-left:1.2em;border-left:1px solid rgba(255,255,255,.22);
-  font-size:.78rem;font-weight:900;letter-spacing:.03em;color:rgba(255,255,255,.78);
+  font-size:.92rem;font-weight:900;letter-spacing:.03em;color:#fff;
   transition:color .22s;
 }
 .head-access::before{
@@ -856,7 +861,7 @@ body{padding-bottom:86px}
     <h2>足りないのは、能力ではない。<br><em>「話す度胸」と「話し慣れ」</em>だけ。</h2>
     <div class="agi-grid">
       <div>
-        <p class="agi-big">日本人は極端にスピーキングが弱い。<br>けれど<span class="strike">仕事の効率や知識量</span>では、<br>世界的に見ても<em>劣っていません。</em></p>
+        <p class="agi-big">日本人は極端にスピーキングが弱い。<br>けれど<span class="strike">仕事の効率や知識量</span>では、<br>世界的に見ても<em style="font-size:1.15em">劣っていません。</em></p>
         <p class="agi-punch">コーチ <em>×</em> スピーキング。<br>3ヶ月で、英語がバリバリなあなたを作る。</p>
       </div>
       <div class="agi-body">
@@ -924,6 +929,7 @@ body{padding-bottom:86px}
 
           <h4>200〜300回で、何が起きるか</h4>
           <p>最初は「We have been のあとは何だっけ」と考えます。<b>50回</b>でつまずきが減り、<b>100回</b>で文の頭が勝手に出て、<b>200回</b>を超えると考える前に口が動いています。</p>
+          <p><small>※変化の現れ方や必要な回数には個人差があります。一定の回数を繰り返すことで特定の状態に達することをお約束するものではありません。</small></p>
           <p>このとき、3つのことが同時に起きています。</p>
 
           <h5>口と舌が覚える</h5>
@@ -1035,7 +1041,7 @@ body{padding-bottom:86px}
       <!-- 忘却曲線 -->
       <div class="curve-card">
         <h3>忘却曲線と、復習のタイミング</h3>
-        <p class="sub">エビングハウスの研究をもとにした概念図です。</p>
+        <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
         <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
           <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
           <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
@@ -1059,6 +1065,7 @@ body{padding-bottom:86px}
           <span class="on"><i></i>A-PUSH の学習管理</span>
         </div>
         <p class="curve-read">覚えたことは、<b>1日後にはその多くを忘れます</b>。逆に言えば、忘れかけた瞬間に短く復習を挟むだけで、記憶は高い水準のまま保てる。A-PUSH は<b><em>この「忘れかけ」のタイミングに合わせて</em></b>、その日の課題をお渡しします。</p>
+        <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve（忘却曲線）</a></p>
       </div>
 
       <!-- 公式LINE風モック -->
@@ -1132,9 +1139,21 @@ body{padding-bottom:86px}
       <div>
         <p class="role">FOUNDER</p>
         <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
-        <p class="aff">米国ペンシルバニア州立 テンプル大学 日本校 所属</p>
-        <p class="quote">フィリピン留学での、<br><em>アウトプットだけの2週間。</em><br>そこで自分の英語は変わった。</p>
-        <!-- MEMO（表示されません）: 要追加⑧ 代表プロフィール本文（LINEで別途ご送付予定）がここに入ります。届いたらこのコメントの位置に <p> で追記してください。 -->
+        <p class="aff">米国テンプル大学 日本校 所属</p>
+        <p class="quote">17歳、フィリピンに語学留学。<br><em>"Slow please."と頼んでも、</em><br>何を言っているかわからなかった。</p>
+
+        <details class="more more-story">
+          <summary><span class="lbl" aria-hidden="true"></span></summary>
+          <div class="ev-long">
+            <p>高校2年の2月、セブ島の語学学校に短期留学。中学からずっと英語をやってきて、文法は解ける、長文も読める、テストの点数も悪くはなかった。だから正直、少しは通じるだろうと思っていました。</p>
+            <p><b>通じませんでした。</b>何度も聞き返して、それでも分からなくて「Slow please.」とお願いする。それでも分からない。相手が困った顔をするのが、一番つらかった。</p>
+            <p>滞在は6週間。普通より速いペースで英語を浴びて、そのまま真似して口に出す。同じ型を何度も繰り返す学習法に出会い、2週間ほど経った頃、はっきりと変化がありました。<b>英語が、ゆっくり聞こえるんです。</b>相手の話す速度は変わっていません。変わったのは、自分のほうでした。</p>
+            <p>繰り返すうちに分かったのは、英語の「音」をそもそも知らなかったということ。口が音をつくれるようになると、耳がその音を拾えるようになる。話す練習が、そのまま聞く力になっていました。</p>
+            <p>音がわかってからは早かった。英語を「考えなくてよくなった」からです。話すときに文法を組み立てない、聞くときに日本語に訳さない。その2つがなくなるだけで、会話はまったく別物になりました。</p>
+            <p>17歳の私がフィリピンで受け取ったものを、日本でも渡せるようにする。それが A-PUSH をつくった理由です。</p>
+            <p class="ev-ref">出典：Ullman, Declarative/Procedural Model（手続き記憶）／ Cummins, BICS &amp; CALP</p>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -1144,22 +1163,45 @@ body{padding-bottom:86px}
 <section>
   <div class="wrap reveal">
     <p class="label">WHY YOU CAN FINISH</p>
-    <h2>忙しくても、<br><em>やるしかない。</em></h2>
+    <h2>忙しくても、<br><em>やるしかない、3ヶ月。</em></h2>
     <p class="lead">「本当に動いている」現場の仕組みを、そのままお見せします。</p>
     <div class="cards">
       <div class="card">
+        <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
         <span class="num">01</span>
         <h3>公式LINEでの個別リマインド</h3>
-        <p>やるべきことを、忘れさせません。毎日の課題の案内から、提出された音声の確認・フィードバックまで、コーチが1対1でやりとりします。</p>
-        <!-- MEMO（表示されません）: 要差し替え既存の公式LINE画面のスクリーンショットをここに配置します。 -->
+        <p>やるべきことを、忘れさせません。毎日の課題の案内から、提出された音声の確認・フィードバックまで。</p>
       </div>
       <div class="card">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="14" width="172" height="122" rx="6" fill="#141417" stroke="rgba(255,255,255,.18)"/>
+            <rect x="14" y="14" width="172" height="20" rx="6" fill="rgba(255,255,255,.06)"/>
+            <circle cx="24" cy="24" r="3" fill="#FF2D16"/><circle cx="34" cy="24" r="3" fill="rgba(255,255,255,.3)"/><circle cx="44" cy="24" r="3" fill="rgba(255,255,255,.3)"/>
+            <rect x="26" y="48" width="60" height="8" rx="2" fill="rgba(255,255,255,.55)"/>
+            <rect x="26" y="62" width="40" height="6" rx="2" fill="rgba(255,255,255,.28)"/>
+            <rect x="26" y="82" width="148" height="10" rx="5" fill="rgba(255,255,255,.12)"/>
+            <rect x="26" y="82" width="96" height="10" rx="5" fill="#FF2D16"/>
+            <rect x="26" y="104" width="70" height="20" rx="4" fill="rgba(255,255,255,.08)"/>
+            <rect x="104" y="104" width="70" height="20" rx="4" fill="rgba(255,45,22,.18)"/>
+            <text x="32" y="118" font-family="Archivo,sans-serif" font-size="9" font-weight="800" fill="#fff">Chapter 7</text>
+            <text x="110" y="118" font-family="Archivo,sans-serif" font-size="9" font-weight="800" fill="#FF6647">Today</text>
+          </svg>
+        </div>
         <span class="num">02</span>
         <h3>ダッシュボードで、今日やることが常に明確</h3>
         <p>「今日、何をやればいいんだっけ」で迷う時間をゼロに。進捗と次にやるべきことが、開いた瞬間に分かります。</p>
-        <!-- MEMO（表示されません）: 要差し替え実際のダッシュボード画面のスクリーンショットをここに配置します。 -->
       </div>
       <div class="card">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+            <rect x="40" y="24" width="120" height="76" rx="4" fill="#141417" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+            <rect x="48" y="32" width="104" height="60" rx="2" fill="rgba(255,255,255,.06)"/>
+            <path d="M78 60 l14 14 26-30" fill="none" stroke="#FF2D16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 118 h160 l-8 12 h-144 z" fill="#141417" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+            <rect x="92" y="100" width="16" height="18" fill="#141417" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+          </svg>
+        </div>
         <span class="num">03</span>
         <h3>オンラインで、いつでもどこでも</h3>
         <p>移動時間も、出張先も、在宅の日も。忙しい社会人が3ヶ月をやり切れるように、場所に縛られない設計にしています。</p>
@@ -1296,6 +1338,14 @@ body{padding-bottom:86px}
           <p>家庭環境も学校環境もなしで、ネイティブレベルまで持っていった経験のすべてを、あなたのキャリアのために注ぎます。</p>
         </div>
       </div>
+      <div class="member">
+        <div class="ph"><img src="assets/phoebe.jpg" alt="講師 Phoebe" loading="lazy"></div>
+        <div class="info">
+          <p class="role">TEACHER</p>
+          <h3>Phoebe</h3>
+          <p>緊張がいちばんの敵です。フィビィは生徒さんが肩の力を抜いて、リラックスした雰囲気を作るのが上手です。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1310,12 +1360,11 @@ body{padding-bottom:86px}
     <div class="school">
       <p class="area">目黒</p>
       <dl>
-        <dt>OPEN</dt><dd>週5日</dd>
+        <dt>OPEN</dt><dd>土・日・月・火・木</dd>
         <dt>TIME</dt><dd>18:00 – 22:00</dd>
-        <dt>ACCESS</dt><dd class="jp">目黒駅 徒歩1分</dd>
+        <dt>ACCESS</dt><dd class="jp">目黒駅 徒歩1分／BLOCKS MEGURO 621号室</dd>
       </dl>
     </div>
-    <!-- MEMO（表示されません）: 要更新番地までの所在地・開講曜日の詳細が未確定です（「目黒駅徒歩1分」のみ反映済み）。 -->
   </div>
 </section>
 
@@ -1529,6 +1578,10 @@ body{padding-bottom:86px}
         <summary>どのくらいの期間で話せるようになりますか？</summary>
         <p class="a">到達度には個人差がありますが、A-PUSH は3ヶ月を一区切りとして設計しています。具体的な目標と現在地は、体験会でお伝えします。</p>
       </details>
+      <details>
+        <summary>1日だけの研修や体験も可能ですか？</summary>
+        <p class="a">はい。日曜日に日帰りのスピーキング研修（30分のコーチング付き）をご用意しています。<b>1日研修会 2万円〜</b>。詳細・お申し込みは<a href="https://reserva.be/washoiii" target="_blank" rel="noopener">こちら</a>からご確認ください。</p>
+      </details>
     </div>
     <!-- MEMO（表示されません）: 要差し替え上記は仮のFAQです。実際のDM・問い合わせ履歴と照らし合わせて、内容と順番を差し替えてください。 -->
   </div>
@@ -1565,16 +1618,15 @@ body{padding-bottom:86px}
       <a href="#">お問い合わせ</a>
     </nav>
   </div>
-  <!-- MEMO（表示されません）: 要差し替え⑰ Instagram の href が未確定です。アカウントURLが決まったら下の href を差し替えてください。 -->
   <div class="f-sns">
-    <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+    <a href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener" aria-label="Instagram">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
       Instagram
     </a>
   </div>
   <p class="f-bottom">
     © 2026 A-PUSH<br>
-    出典：Ullman, Declarative/Procedural Model ／ Direct Method（直接教授法）／ Cummins, BICS &amp; CALP
+    出典：Ullman, Declarative/Procedural Model ／ Direct Method（直接教授法）／ Cummins, BICS &amp; CALP ／ Ebbinghaus, Forgetting Curve
   </p>
 </footer>
 
