@@ -427,6 +427,11 @@ h2 em{font-style:normal;color:var(--red)}
   .pc-content .pc-media{background:#f4f4f5;display:flex;align-items:center}
   .pc-content .pc-media img,.pc-content .pc-media svg{width:100%;display:block}
 }
+.pc-media-line{padding:1.6em 1.8em;justify-content:center}
+.pc-media-line .pc-img{border-radius:14px;box-shadow:0 14px 40px -12px rgba(0,0,0,.35)}
+@media(min-width:720px){
+  .pc-media-line{max-width:340px;margin-left:auto}
+}
 .more-btn{
   margin-top:1.3em;list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6em;
   font-weight:900;font-size:.86rem;color:var(--red);border:1px solid var(--red);background:none;
@@ -1902,15 +1907,19 @@ body{padding-bottom:86px}
 </div>
 
 <div class="popup" id="lineModal" aria-hidden="true">
-  <div class="popup-card">
+  <div class="popup-card pc-wide">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
-    <img class="pc-img" src="assets/line-remind.png" alt="公式LINEでのやり取り全体">
+    <div class="pc-content">
     <div class="pc-body">
       <p class="role">01 ／ 公式LINE</p>
       <h4>個別リマインドの中身</h4>
       <p class="lead-sm">リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。</p>
       <p>エビングハウスの忘却曲線にあわせて、復習のタイミングを設計しています。忘れかけたころに、ちょうど思い出せる。</p>
       <p>だから、一度覚えたことが長期的にしっかり定着します。</p>
+    </div>
+    <div class="pc-media pc-media-line">
+      <img class="pc-img" src="assets/line-remind.png" alt="公式LINEでのやり取り全体">
+    </div>
     </div>
   </div>
 </div>
