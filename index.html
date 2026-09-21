@@ -400,6 +400,25 @@ h2 em{font-style:normal;color:var(--red)}
 .lightbox img{max-width:100%;max-height:100%;border-radius:3px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
 .lightbox .lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:2rem;font-weight:300;line-height:1;background:none;border:0;cursor:pointer;opacity:.8}
 .lightbox .lb-close:hover{opacity:1}
+
+/* 詳細ポップアップ */
+.popup{position:fixed;inset:0;z-index:2100;background:rgba(11,11,12,.86);display:none;align-items:center;justify-content:center;padding:5vw}
+.popup.on{display:flex}
+.popup-card{background:#fff;border-radius:6px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.popup-card .pc-close{position:absolute;top:10px;right:12px;width:2em;height:2em;border-radius:50%;background:rgba(11,11,12,.55);color:#fff;font-size:1.5rem;font-weight:300;line-height:1;border:0;cursor:pointer;display:grid;place-items:center;z-index:2}
+.popup-card .pc-close:hover{background:var(--red)}
+.popup-card .pc-img{width:100%;display:block}
+.popup-card .pc-body{padding:1.7em 1.9em}
+.popup-card .pc-body .role{font-family:var(--en);font-weight:800;font-size:.68rem;letter-spacing:.16em;color:var(--red)}
+.popup-card .pc-body h4{font-weight:900;font-size:1.15rem;margin:.3em 0 .8em}
+.popup-card .pc-body p{font-size:.92rem;color:#5C5C64;line-height:2.05}
+.popup-card .pc-body b{color:var(--ink)}
+.more-btn{
+  margin-top:1.3em;list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6em;
+  font-weight:900;font-size:.86rem;color:var(--red);border:1px solid var(--red);background:none;
+  border-radius:2px;padding:.75em 1.5em;transition:all .22s;font-family:var(--jp);
+}
+.more-btn:hover{background:var(--red);color:#fff}
 .more>summary:hover{background:var(--red);color:#fff}
 @keyframes fadeUp{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
@@ -1248,38 +1267,44 @@ body{padding-bottom:86px}
         <span class="num">01</span>
         <h3>公式LINEでの個別リマインド</h3>
         <p>やるべきことを、忘れさせません。毎日の課題の案内から、提出された音声の確認・フィードバックまで。</p>
-        <details class="more more-detail">
-          <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="ev-long">
-            <p>リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。エビングハウスの忘却曲線にあわせて復習のタイミングを設計しているので、忘れかけたころにちょうど思い出せる。だから、一度覚えたことが長期的にしっかり定着します。</p>
-          </div>
-        </details>
+        <button type="button" class="more-btn" data-popup="lineModal">▼ 詳しく見る</button>
       </div>
       <div class="card">
         <div class="card-visual" aria-hidden="true">
-          <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-            <rect x="14" y="14" width="172" height="122" rx="6" fill="#141417" stroke="rgba(255,255,255,.18)"/>
-            <rect x="14" y="14" width="172" height="20" rx="6" fill="rgba(255,255,255,.06)"/>
-            <circle cx="24" cy="24" r="3" fill="#FF2D16"/><circle cx="34" cy="24" r="3" fill="rgba(255,255,255,.3)"/><circle cx="44" cy="24" r="3" fill="rgba(255,255,255,.3)"/>
-            <rect x="26" y="48" width="60" height="8" rx="2" fill="rgba(255,255,255,.55)"/>
-            <rect x="26" y="62" width="40" height="6" rx="2" fill="rgba(255,255,255,.28)"/>
-            <rect x="26" y="82" width="148" height="10" rx="5" fill="rgba(255,255,255,.12)"/>
-            <rect x="26" y="82" width="96" height="10" rx="5" fill="#FF2D16"/>
-            <rect x="26" y="104" width="70" height="20" rx="4" fill="rgba(255,255,255,.08)"/>
-            <rect x="104" y="104" width="70" height="20" rx="4" fill="rgba(255,45,22,.18)"/>
-            <text x="32" y="118" font-family="Archivo,sans-serif" font-size="9" font-weight="800" fill="#fff">Chapter 7</text>
-            <text x="110" y="118" font-family="Archivo,sans-serif" font-size="9" font-weight="800" fill="#FF6647">Today</text>
+          <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="480" fill="#141417"/>
+            <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
+            <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
+            <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
+            <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
+            <circle cx="32" cy="86" r="14" fill="#FF2D16"/><text x="32" y="91" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
+            <text x="56" y="91" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
+            <text x="600" y="91" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+            <rect x="56" y="102" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="102" width="374" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="176" r="14" fill="#FF2D16"/><text x="32" y="181" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
+            <text x="56" y="181" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
+            <text x="600" y="181" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+            <rect x="56" y="192" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="192" width="234" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="266" r="14" fill="#FF2D16"/><text x="32" y="271" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
+            <text x="56" y="271" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
+            <text x="600" y="271" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+            <rect x="56" y="282" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="282" width="312" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="356" r="14" fill="#FF2D16"/><text x="32" y="361" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
+            <text x="56" y="361" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
+            <text x="600" y="361" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+            <rect x="56" y="372" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="372" width="156" height="10" rx="5" fill="#FF2D16"/>
+            <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
+            <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
           </svg>
         </div>
         <span class="num">02</span>
         <h3>ダッシュボードで、今日やることが常に明確</h3>
         <p>「今日、何をやればいいんだっけ」で迷う時間をゼロに。進捗と次にやるべきことが、開いた瞬間に分かります。</p>
-        <details class="more more-detail">
-          <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="ev-long">
-            <p>ダッシュボードでまとめて見えるのは、<b>A-PUSH Method</b>（反復練習）・<b>A-PUSH シャドーイング</b>（聞きながら話す練習）・<b>A-PUSHリーディング</b>（読解）・<b>A-PUSH Writing</b>（英作文）の4つ。それぞれの進捗と、今日やるべきことが一目でわかります。</p>
-          </div>
-        </details>
+        <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
       </div>
     </div>
 
@@ -1845,6 +1870,58 @@ body{padding-bottom:86px}
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<div class="popup" id="lineModal" aria-hidden="true">
+  <div class="popup-card">
+    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <img class="pc-img" src="assets/line-remind.png" alt="公式LINEでのやり取り全体">
+    <div class="pc-body">
+      <p class="role">01</p>
+      <h4>公式LINEでの個別リマインド</h4>
+      <p>リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。エビングハウスの忘却曲線にあわせて復習のタイミングを設計しているので、忘れかけたころにちょうど思い出せる。だから、一度覚えたことが長期的にしっかり定着します。</p>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="dashModal" aria-hidden="true">
+  <div class="popup-card">
+    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <svg class="pc-img" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+      <rect width="640" height="480" fill="#141417"/>
+      <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
+      <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
+      <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
+      <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
+      <circle cx="32" cy="86" r="14" fill="#FF2D16"/><text x="32" y="91" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
+      <text x="56" y="91" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
+      <text x="600" y="91" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+      <rect x="56" y="102" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="102" width="374" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="176" r="14" fill="#FF2D16"/><text x="32" y="181" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
+      <text x="56" y="181" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
+      <text x="600" y="181" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+      <rect x="56" y="192" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="192" width="234" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="266" r="14" fill="#FF2D16"/><text x="32" y="271" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
+      <text x="56" y="271" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
+      <text x="600" y="271" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+      <rect x="56" y="282" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="282" width="312" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="356" r="14" fill="#FF2D16"/><text x="32" y="361" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
+      <text x="56" y="361" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
+      <text x="600" y="361" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+      <rect x="56" y="372" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="372" width="156" height="10" rx="5" fill="#FF2D16"/>
+      <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
+      <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
+    </svg>
+    <div class="pc-body">
+      <p class="role">02</p>
+      <h4>ダッシュボードで、今日やることが常に明確</h4>
+      <p>ダッシュボードでまとめて見えるのは、<b>A-PUSH Method</b>（反復練習）・<b>A-PUSH シャドーイング</b>（聞きながら話す練習）・<b>A-PUSHリーディング</b>（読解）・<b>A-PUSH Writing</b>（英作文）の4つ。それぞれの進捗と、今日やるべきことが一目でわかります。</p>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ---------- 画像クリックで拡大 ---------- */
 (function(){
@@ -1858,6 +1935,20 @@ body{padding-bottom:86px}
     if(e.target===lb || e.target.closest('.lb-close')){ close(); }
   });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+<script>
+/* ---------- 詳細ポップアップ ---------- */
+(function(){
+  document.addEventListener('click',function(e){
+    var opener=e.target.closest('[data-popup]');
+    if(opener){ var p=document.getElementById(opener.dataset.popup); if(p) p.classList.add('on'); return; }
+    var openPopup=document.querySelector('.popup.on');
+    if(openPopup && (e.target===openPopup || e.target.closest('.pc-close'))){ openPopup.classList.remove('on'); }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){ document.querySelectorAll('.popup.on').forEach(function(p){ p.classList.remove('on'); }); }
+  });
 })();
 </script>
 <script>
