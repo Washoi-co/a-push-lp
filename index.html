@@ -382,12 +382,17 @@ h2 em{font-style:normal;color:var(--red)}
 .mat-spread img:first-child{border-right:2px solid rgba(0,0,0,.55);box-shadow:2px 0 8px -2px rgba(0,0,0,.5)}
 .mat-spread img:hover{opacity:.86}
 .mat-spread-cap{padding:.55em .8em;font-size:.68rem;font-weight:800;letter-spacing:.05em;color:rgba(255,255,255,.6);background:rgba(255,255,255,.06)}
-.mat-note{margin-top:1.3em;font-size:.86rem;line-height:1.95;color:rgba(255,255,255,.72)}
-.mat-note b{color:#fff}
-.mat-tiers{margin-top:1.6em;padding-top:1.4em;border-top:1px dashed rgba(255,255,255,.16)}
-.mat-tiers h5{font-weight:900;font-size:.88rem;color:#fff;margin:1.1em 0 .4em}
+.more.more-detail{margin-top:1.3em}
+.more.more-detail>summary{font-size:.76rem;padding:.65em 1.2em}
+.more.more-detail>summary .lbl::before{content:"詳しく見る"}
+.more.more-detail[open]>summary .lbl::before{content:"閉じる"}
+.more.more-detail .ev-long{border-top:0;padding-top:0;margin-top:1.2em}
+.mat-note{margin-top:1.3em;font-size:.98rem;font-weight:700;line-height:1.9;color:#fff}
+.mat-note b{color:var(--red)}
+.mat-tiers{margin-top:1.8em;padding-top:1.6em;border-top:1px dashed rgba(255,255,255,.16)}
+.mat-tiers h5{font-weight:900;font-size:1.02rem;color:var(--red);letter-spacing:.01em;margin:1.6em 0 .5em}
 .mat-tiers h5:first-child{margin-top:0}
-.mat-tiers p{font-size:.84rem;line-height:1.9;color:rgba(255,255,255,.62)}
+.mat-tiers p{font-size:.84rem;line-height:1.9;color:rgba(255,255,255,.6)}
 
 /* 画像拡大ライトボックス */
 .lightbox{position:fixed;inset:0;z-index:2000;background:rgba(11,11,12,.92);display:none;align-items:center;justify-content:center;padding:5vw;cursor:zoom-out}
@@ -899,12 +904,12 @@ body{padding-bottom:86px}
 <section>
   <div class="wrap reveal">
     <p class="label">OUTPUT GAP</p>
-    <h2>足りていないのは、<em>アウトプットの量。</em></h2>
-    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+    <h2>日本人に足りてないのは、<em>アウトプット量。</em></h2>
+    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
       <div>
         <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人は、話していない。<br>でも、<b>文法・単語の知識はハイレベル</b>です。</p>
         <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">海外の英語教育は、アウトプットの時間が圧倒的に多い。<b>だから、話せるようになる。</b></p>
-        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
+        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
@@ -1102,10 +1107,10 @@ body{padding-bottom:86px}
         <p class="ptag">圧倒的反復で<em>“英語脳”</em>を作る</p>
         <details class="more more-mat">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <p class="mat-note" style="margin-top:0">「こんにちは」「それ、どう思う？」——生活の中で毎日使う、基礎の英語（BICS）を鍛える教材です。難しい文法用語は出てきません。<b>同じ型を、ひたすら声に出して体に入れる</b>。それだけです。</p>
+          <p class="mat-note" style="margin-top:0">日常のちょっとした会話を、ぜんぶ英語で言えるようにする教材です。むずかしい文法は出てきません。<b>とにかく声に出して、体で覚える</b>。それだけです。</p>
           <div class="mat-tiers" style="border-top:0;padding-top:0">
-            <h5>A-PUSH Beginner ── 疑問系5W1Hと時制に集中する</h5>
-            <p>英語の幹にあたる部分です。ここを頭で考えているうちは、先へ行くほど苦しくなります。感覚でつかめるまで徹底的にこなす。ここを飛ばして次へは進みません。</p>
+            <h5>A-PUSH Beginner ── まずは基本のカタチ</h5>
+            <p>英語の土台になる部分です。むずかしく考えず、口が勝手に動くようになるまで、何度も繰り返します。ここができると、このあとがぐっと楽になります。</p>
             <div class="mat-spreads" style="margin-top:1em">
               <figure class="mat-spread">
                 <div class="mat-spread-pages">
@@ -1115,8 +1120,8 @@ body{padding-bottom:86px}
               </figure>
             </div>
 
-            <h5>A-PUSH Intermediate ── つなぐ、広げる</h5>
-            <p>完了形、不定詞、動名詞、関係代名詞、接続詞。扱う型が増えるぶん、会話は一段深くなります。決まった答えのない質問も、ここから増えていきます。</p>
+            <h5>A-PUSH Intermediate ── 話せる内容を増やす</h5>
+            <p>「〜だったら」「〜かどうか」のような、少し複雑な言い方ができるようになります。会話の幅が、ぐっと広がる段階です。</p>
             <div class="mat-spreads" style="margin-top:1em">
               <figure class="mat-spread">
                 <div class="mat-spread-pages">
@@ -1126,8 +1131,8 @@ body{padding-bottom:86px}
               </figure>
             </div>
 
-            <h5>A-PUSH Advanced ── ありません</h5>
-            <p>上級者向けの教材は、あえて作っていません。必要なのは、基礎を使い切ることだからです。この先は、実践あるのみ。だから私たちは、A-PUSH Biz Talk に進みます。</p>
+            <h5>A-PUSH Advanced ── あえて、ありません</h5>
+            <p>むずかしい教材は用意していません。基礎を使いこなせるようになったら、あとは実践あるのみ。次は A-PUSH Biz Talk で、実際の仕事に活かします。</p>
           </div>
         </details>
       </div>
@@ -1136,10 +1141,10 @@ body{padding-bottom:86px}
         <p class="ptag">本番を想定した、<em>リアルな表現</em></p>
         <details class="more more-mat">
           <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <p class="mat-note" style="margin-top:0">会議・交渉・プレゼンなど、仕事で成果に直結する高度な英語（CALP）の教材です。<b>BICS で土台ができた人だけ</b>が進める内容で、実際の業務シーンを想定した表現を扱います。</p>
+          <p class="mat-note" style="margin-top:0">会議やプレゼンなど、仕事で使う英語の教材です。<b>基礎ができている人向け</b>で、実際の仕事の場面をそのまま練習します。</p>
           <div class="mat-tiers" style="border-top:0;padding-top:0">
-            <h5>A-PUSH Biz Talk ── 実務で、使い倒す</h5>
-            <p>ここまでの表現を、仕事の場面で使い倒していきます。自由に答える比率がさらに上がり、あなた自身の言い方が形になっていきます。</p>
+            <h5>A-PUSH Biz Talk ── 仕事でそのまま使う</h5>
+            <p>ここまで練習した言い方を、実際の仕事のシーンで使います。自由に答える場面が増えて、だんだん自分らしい言い回しになっていきます。</p>
             <div class="mat-spreads" style="margin-top:1em">
               <figure class="mat-spread">
                 <div class="mat-spread-pages">
@@ -1169,7 +1174,7 @@ body{padding-bottom:86px}
         <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
         <p class="aff">米国テンプル大学 日本校 所属</p>
 
-        <p class="quote" style="font-size:.9rem;font-weight:700;line-height:1.9;border-left-width:2px">17歳、フィリピンに語学留学。<br>中学から英語をやったのに、<em>何を言っているかわからない。</em><br>"Slow please."とお願いして、ゆっくり言ってもらっても、やっぱりわからない。</p>
+        <p class="quote" style="font-size:.9rem;font-weight:700;line-height:1.9;border-left:0;padding-left:0">17歳、フィリピンに語学留学。<br>中学から英語をやったのに、<em>何を言っているかわからない。</em><br>"Slow please."とお願いして、ゆっくり言ってもらっても、やっぱりわからない。</p>
         <p class="agi-punch" style="color:var(--ink)!important;border-color:var(--red)">あのときの恥ずかしさ —— <em>いまでもトラウマです。</em></p>
 
         <p style="font-weight:900;font-size:1.1rem;margin-top:1.4em">だから、逆をやる。</p>
@@ -1243,6 +1248,12 @@ body{padding-bottom:86px}
         <span class="num">01</span>
         <h3>公式LINEでの個別リマインド</h3>
         <p>やるべきことを、忘れさせません。毎日の課題の案内から、提出された音声の確認・フィードバックまで。</p>
+        <details class="more more-detail">
+          <summary><span class="lbl" aria-hidden="true"></span></summary>
+          <div class="ev-long">
+            <p>リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。エビングハウスの忘却曲線にあわせて復習のタイミングを設計しているので、忘れかけたころにちょうど思い出せる。だから、一度覚えたことが長期的にしっかり定着します。</p>
+          </div>
+        </details>
       </div>
       <div class="card">
         <div class="card-visual" aria-hidden="true">
@@ -1263,6 +1274,12 @@ body{padding-bottom:86px}
         <span class="num">02</span>
         <h3>ダッシュボードで、今日やることが常に明確</h3>
         <p>「今日、何をやればいいんだっけ」で迷う時間をゼロに。進捗と次にやるべきことが、開いた瞬間に分かります。</p>
+        <details class="more more-detail">
+          <summary><span class="lbl" aria-hidden="true"></span></summary>
+          <div class="ev-long">
+            <p>ダッシュボードでまとめて見えるのは、<b>A-PUSH Method</b>（反復練習）・<b>A-PUSH シャドーイング</b>（聞きながら話す練習）・<b>A-PUSHリーディング</b>（読解）・<b>A-PUSH Writing</b>（英作文）の4つ。それぞれの進捗と、今日やるべきことが一目でわかります。</p>
+          </div>
+        </details>
       </div>
     </div>
 
@@ -1403,10 +1420,10 @@ body{padding-bottom:86px}
     <div class="vscroll">
       <div class="vcard">
         <figure class="vphoto">
-          <img src="assets/voice-student.jpg" alt="受講生 田中さん" loading="lazy">
+          <img src="assets/voice-student.jpg" alt="受講生 Kさん" loading="lazy">
           <figcaption class="cap">
             <p class="role">STUDENT'S VOICE</p>
-            <h3>田中 さん</h3>
+            <h3>K さん</h3>
             <p>3ヶ月プラン受講／国際学会でプレゼン</p>
           </figcaption>
         </figure>
