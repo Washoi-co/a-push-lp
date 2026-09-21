@@ -405,20 +405,38 @@ h2 em{font-style:normal;color:var(--red)}
 .popup{position:fixed;inset:0;z-index:2100;background:rgba(11,11,12,.86);display:none;align-items:center;justify-content:center;padding:5vw}
 .popup.on{display:flex}
 .popup-card{background:#fff;border-radius:6px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+.popup-card.pc-wide{max-width:920px}
 .popup-card .pc-close{position:absolute;top:10px;right:12px;width:2em;height:2em;border-radius:50%;background:rgba(11,11,12,.55);color:#fff;font-size:1.5rem;font-weight:300;line-height:1;border:0;cursor:pointer;display:grid;place-items:center;z-index:2}
 .popup-card .pc-close:hover{background:var(--red)}
 .popup-card .pc-img{width:100%;display:block}
 .popup-card .pc-body{padding:1.7em 1.9em}
-.popup-card .pc-body .role{font-family:var(--en);font-weight:800;font-size:.68rem;letter-spacing:.16em;color:var(--red)}
-.popup-card .pc-body h4{font-weight:900;font-size:1.15rem;margin:.3em 0 .8em}
+.popup-card .pc-body .role{font-family:var(--en);font-weight:800;font-size:.7rem;letter-spacing:.18em;color:var(--red);display:flex;align-items:center;gap:.8em}
+.popup-card .pc-body .role::after{content:"";height:1px;flex:1;background:var(--line-l)}
+.popup-card .pc-body h4{font-weight:900;font-size:1.2rem;margin:.4em 0 .9em;line-height:1.5}
+.popup-card .pc-body .lead-sm{font-weight:900;font-size:1.02rem;color:var(--ink);line-height:1.85;margin-bottom:1em}
 .popup-card .pc-body p{font-size:.92rem;color:#5C5C64;line-height:2.05}
+.popup-card .pc-body p+p{margin-top:.9em}
 .popup-card .pc-body b{color:var(--ink)}
+.popup-card .pc-body ul{list-style:none;margin-top:.2em;display:flex;flex-direction:column;gap:.7em}
+.popup-card .pc-body ul li{font-size:.92rem;color:#5C5C64;line-height:1.75;padding-left:1.3em;position:relative}
+.popup-card .pc-body ul li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:2px;background:var(--red)}
+.popup-card .pc-body ul li b{color:var(--ink)}
+@media(min-width:720px){
+  .pc-content{display:grid;grid-template-columns:1.05fr .95fr}
+  .pc-content .pc-body{padding:2.4em 2.2em}
+  .pc-content .pc-media{background:#f4f4f5;display:flex;align-items:center}
+  .pc-content .pc-media img,.pc-content .pc-media svg{width:100%;display:block}
+}
 .more-btn{
   margin-top:1.3em;list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6em;
   font-weight:900;font-size:.86rem;color:var(--red);border:1px solid var(--red);background:none;
   border-radius:2px;padding:.75em 1.5em;transition:all .22s;font-family:var(--jp);
 }
 .more-btn:hover{background:var(--red);color:#fff}
+
+.note-sm{display:block;margin-top:.8em;font-size:.78rem;line-height:1.8;color:#5C5C64}
+.sec-dark .note-sm{color:rgba(255,255,255,.62)}
+.note-sm a{color:inherit;text-decoration:underline}
 .more>summary:hover{background:var(--red);color:#fff}
 @keyframes fadeUp{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
@@ -880,8 +898,8 @@ body{padding-bottom:86px}
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
     <!-- ▼ Google Meet の予約サイトURLが決まったら href を差し替え -->
-    <a class="hbtn ghost" href="#" data-cta="consult">オンライン説明会</a>
-    <a class="hbtn solid" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約</a>
+    <a class="hbtn ghost" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">オンライン説明会</a>
+    <a class="hbtn solid" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約<small>5,000円</small></a>
   </div>
 </header>
 
@@ -902,8 +920,8 @@ body{padding-bottom:86px}
     </h1>
     <div class="btns hero-btns">
       <!-- ▼ Google Meet の予約サイトURLが決まったら href を差し替えてください -->
-      <a class="btn btn-primary" href="#" data-cta="consult">無料オンライン説明会はこちら<small>所要30分</small></a>
-      <a class="btn btn-ghost" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験レッスンを予約する<small>オンライン可・所要60分</small></a>
+      <a class="btn btn-primary" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">無料オンライン説明会はこちら<small>無料・所要30分／レッスン体験なし</small></a>
+      <a class="btn btn-ghost" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・5,000円（税込）／オンライン可・所要60分</small></a>
       <p class="access-note">体験会会場は<b>目黒駅 徒歩1分</b>／オンラインでの受講も可能です。</p>
     </div>
     <div class="hero-stats">
@@ -958,7 +976,7 @@ body{padding-bottom:86px}
           <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
           <span class="on"><i></i>アウトプット（話す・書く）</span>
         </div>
-        <p class="ev-ref">参考：<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>／オランダ・スウェーデン・デンマークは、英語非母語国の中でも英語運用力の上位常連国として知られています。</p>
+        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。<br>※ オランダ・スウェーデン・デンマークが英語非母語国の中で英語運用力の上位に位置することについては、<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>を参照しています。EF EPI は英語運用力の指標であり、各国の授業時間配分を示すものではありません。</p>
       </div>
     </div>
   </div>
@@ -1191,7 +1209,7 @@ body{padding-bottom:86px}
       <div>
         <p class="role">FOUNDER</p>
         <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
-        <p class="aff">米国テンプル大学 日本校 所属</p>
+        <p class="aff">テンプル大学ジャパンキャンパス 在学</p>
 
         <p class="quote" style="font-size:.9rem;font-weight:700;line-height:1.9;border-left:0;padding-left:0">17歳、フィリピンに語学留学。<br>中学から英語をやったのに、<em>何を言っているかわからない。</em><br>"Slow please."とお願いして、ゆっくり言ってもらっても、やっぱりわからない。</p>
         <p class="agi-punch" style="color:var(--ink)!important;border-color:var(--red)">あのときの恥ずかしさ —— <em>いまでもトラウマです。</em></p>
@@ -1304,6 +1322,7 @@ body{padding-bottom:86px}
         <span class="num">02</span>
         <h3>ダッシュボードで、今日やることが常に明確</h3>
         <p>「今日、何をやればいいんだっけ」で迷う時間をゼロに。進捗と次にやるべきことが、開いた瞬間に分かります。</p>
+        <p class="note-sm">※ 画面は開発中のイメージです。2026年11月に正式版の提供を開始予定です。</p>
         <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
       </div>
     </div>
@@ -1440,6 +1459,7 @@ body{padding-bottom:86px}
   <div class="wrap reveal">
     <p class="label">VOICE</p>
     <h2>すでに、変化は<em>始まっている。</em></h2>
+    <p class="note-sm" style="margin-top:0">掲載している体験談は、ご本人の同意を得て掲載しています。感想は個人の体験に基づくものであり、効果を保証するものではありません。</p>
     <p class="voice-hint" aria-hidden="true">横にスクロールできます</p>
 
     <div class="vscroll">
@@ -1459,6 +1479,7 @@ body{padding-bottom:86px}
             <p class="bub">レッスンは反復が中心で、最初は必死でしたが、回数を重ねるうちに不思議と脳が英語に順応していく感覚がありました。気がついた時には、<b>頭で日本語を作らなくても自然と英語が口から出てくる</b>ように。</p>
             <p class="bub win">本番では自信を持ってプレゼンができ、国境を越えて充実した人脈を築くことができました。<b>あの時踏み出して本当に良かったです。</b></p>
           </div>
+          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
         </div>
       </div>
 
@@ -1478,6 +1499,7 @@ body{padding-bottom:86px}
             <p class="bub">昔からとにかく英語が苦手でした。文法も単語もややこしくて、覚えることが多すぎて勉強が続かない。だから英会話は自分には無理かも…と諦めていました。</p>
             <p class="bub">でも「<b>世界中のいろんな人ともっと話したい</b>」という思いだけはずっと消えなくて、勇気を出してスタート。続けるうちに、気づけば<b>英語が自然と頭に浮かび、口からも出てくる</b>ように。自分でもびっくり、革命的でした。</p>
           </div>
+          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
         </div>
       </div>
     </div>
@@ -1494,7 +1516,8 @@ body{padding-bottom:86px}
     <div class="grt">
       <div class="grt-mark"><b>+1</b><span>MONTH FREE</span></div>
       <div class="grt-txt">
-        <h3>条件を満たして成績が伸びなかった場合、<br>受講期間を1ヶ月、無償で延長します。</h3>
+        <h3>条件を満たして Versant スコアが所定の伸びに達しなかった場合、<br>受講期間を1ヶ月、無償で延長します。</h3>
+        <span class="note-sm">本保証は「受講期間の無償延長」を保証するものであり、スコアの到達、英語力の習得、転職・昇進等の成果を保証するものではありません。学習効果には個人差があります。保証の適用条件・申請方法は受講規約第20条に定めます。</span>
         <p>途中で投げ出さず取り組んでいただいた方が、結果だけを理由に損をすることがないように。返金ではなく、<b>伸びるまで一緒に続ける</b>という形での保証です。</p>
         <div class="grt-cond">
           <span>学習進捗の提出 80%以上</span>
@@ -1526,7 +1549,7 @@ body{padding-bottom:86px}
       <p class="gscore-f">テストは<b>入会時と受講終了時の2回</b>実施します。</p>
     </div>
 
-    <p class="price-note">※ 成績の判定は、受講開始時と受講終了時に実施する Versant のスコアで行います。申請方法の詳細は、体験会でご説明のうえ、受講規約に明記します。</p>
+    <p class="price-note">※ 成績の判定は、受講開始時と受講終了時に実施する Versant のスコアで行います。受験費用は当社が負担します。終了時テストは受講期間終了日から14日以内にお受けいただき、保証のお申請は判定結果の通知から14日以内にお願いします。条件を満たさない場合（提出率・出席率が80%未満、期限内に終了時テストを受験されなかった場合等）は保証の対象外となります。詳細は受講規約第20条をご確認ください。</p>
   </div>
 </section>
 
@@ -1602,7 +1625,8 @@ body{padding-bottom:86px}
     <!-- 料金・サービス比較 -->
     <div class="vs-head">
       <p class="vs-eyebrow">英会話コーチング 3ヶ月コース ／ 料金・サービス比較</p>
-      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 <em>30万円。</em></h3>
+      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 モニター価格 <em>30万円</em>（通常 50万円）。</h3>
+      <span class="note-sm">A-PUSH の30万円は2026年10月31日までのモニター価格です。他社の金額は各社の通常価格のため、同一条件の比較ではありません。</span>
     </div>
 
     <div class="vs-scroll">
@@ -1659,16 +1683,17 @@ body{padding-bottom:86px}
     <p class="scroll-hint">← 横にスクロールできます →</p>
 
     <div class="vs-sum">
-      <span class="t1">他社3社の平均</span>
-      <span class="v1">620,767円</span>
+      <span class="t1">マンツーマン型2社の平均</span>
+      <span class="v1">614,900円</span>
       <span class="ar">→</span>
       <span class="v2">300,000円</span>
-      <span class="off">▲320,767円 ／ 約51%オフ</span>
+      <span class="off">▲314,900円 ／ 約51%オフ（モニター価格）</span>
     </div>
 
     <div class="vs-foot">
-      <p class="cond">※ 比較条件：マンツーマンレッスン24回相当以上を含むコースを比較。レッスンを持たないコンサルティング型・オンライン英会話併用型は対象外。</p>
-      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHのモニター価格・募集枠は2026年10月31日まで。</p>
+      <p class="cond">※ 比較条件：3ヶ月間・マンツーマンレッスン24回相当を含むコースの総額（税込・入会金込み）を比較しています。B社はマンツーマンレッスンを持たず週1回のコンサルティング面談のみのため、参考として掲載し、平均額の算出には含めていません。</p>
+      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHのモニター価格・募集枠は2026年10月31日まで。</p>
+      <p class="note-sm" style="margin-top:1em">モニター価格は、受講後に匿名（顔出しなし）でのインタビュー記事へのご協力をお願いする条件付きの価格です。顔出しでの掲載、動画・レッスン風景の撮影は任意で、ご協力いただかない場合も価格は変わりません。詳細は<a href="kiyaku.html">受講規約第21条</a>をご確認ください。</p>
     </div>
 
     <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。募集期限（10月31日）を過ぎたら、この表の日付と枠数も必ず更新してください。 -->
@@ -1710,6 +1735,7 @@ body{padding-bottom:86px}
     <p class="label">PRICE</p>
     <h2>プランは、<em>3つだけ。</em></h2>
     <p class="lead">コーチが1対1で伴走するため、各期の受け入れ人数には上限があります。<b>枠が埋まるごとに、料金は段階的に上がります。</b></p>
+    <p class="note-sm">モニター価格は、受講後に匿名でのインタビュー記事へのご協力をお願いする条件付きの価格です。顔出しでの掲載や動画撮影は任意で、ご協力いただかない場合も価格は変わりません。詳細は<a href="kiyaku.html">受講規約第21条</a>をご確認ください。</p>
 
     <div class="plans">
       <div class="plan" data-plan="m1">
@@ -1752,12 +1778,12 @@ body{padding-bottom:86px}
 
       <div class="plan" data-plan="m6">
         <h3>半年 プラン</h3>
-        <p class="term">毎月6回 ／ 毎月コーチング4回</p>
+        <p class="term">毎月6回 ／ 毎月コーチング2回</p>
         <p class="now">¥1,000,000<small>（税込）</small></p>
         <p class="now-lab">現在の価格</p>
         <ul>
           <li>マンツーマンレッスン 毎月6回</li>
-          <li>コーチングセッション 毎月4回</li>
+          <li>コーチングセッション 毎月2回（全12回）</li>
           <li>A-PUSH METHOD / BUSINESS TALK</li>
           <li>公式LINEでの学習管理</li>
           <li>成績保証（1ヶ月無償延長）の対象</li>
@@ -1773,7 +1799,8 @@ body{padding-bottom:86px}
     <p class="price-note">
       * 料金は<b>お申し込み時点の段階</b>が適用されます。受講途中で値上がりすることはありません。<br>
       * 分割払いはご相談ください。<br>
-      * 成績保証（1ヶ月無償延長）は<b>3ヶ月以上のプラン</b>が対象です。
+      * 成績保証（1ヶ月無償延長）は<b>3ヶ月以上のプラン</b>が対象です。<br>
+      * 学習効果には個人差があり、特定の成果、スコアまたは転職・昇進等を保証するものではありません。本ページに記載した回数・期間・到達イメージは、当社の指導方針および設計意図を説明したものです。
     </p>
     <!-- MEMO（表示されません）: 要確定金額・人数の刻みは、実際の月間受け入れキャパシティ（講師数・時間割）を確認してから確定してください。現在2名体制のため、無理な集客数にならないようご注意ください。 / 現在の申込人数は index.html 冒頭の window.APUSH_SEATS で設定でき、バーの「今ここ」表示と見出しの価格が自動で切り替わります。 -->
   </div>
@@ -1800,8 +1827,12 @@ body{padding-bottom:86px}
         <p class="a">現在はマンツーマンのみです。話す時間がそのままレッスン時間になるため、スピーキングを伸ばす目的では最も効率が高い形式だと考えています。</p>
       </details>
       <details>
-        <summary>返金は可能ですか？</summary>
-        <p class="a">返金ではなく、<b>受講期間の1ヶ月無償延長</b>という形での保証をご用意しています。学習進捗の提出80%以上・レッスン出席率80%以上を満たしていただいたうえで、所定のテストで成績が伸びなかった場合が対象です（3ヶ月以上のプラン）。</p>
+        <summary>返金・解約はできますか？</summary>
+        <p class="a">できます。3ヶ月プラン・半年プランは特定商取引法上の「特定継続的役務提供」に該当するため、次のとおりです。<br>
+        <b>クーリング・オフ</b>：概要書面または契約書面のうち遅く受け取った日から8日以内は、書面またはメールで無条件に解約でき、お支払い済みの金額は全額返金します。<br>
+        <b>中途解約</b>：8日を過ぎた後も、契約期間中はいつでも解約できます。受講済みレッスン分の対価と所定の解約手数料（50,000円または契約残額の20%のいずれか低い額）を差し引いた残額を返金します。<br>
+        <b>成績保証</b>：上記とは別に、学習進捗の提出80%以上・レッスン出席率80%以上を満たしたうえで所定のテストで基準の伸びに達しなかった場合、受講期間を1ヶ月無償延長します（3ヶ月以上のプランが対象。返金ではありません）。<br>
+        詳細は<a href="kiyaku.html">受講規約</a>および<a href="tokusho.html">特定商取引法に基づく表記</a>をご確認ください。</p>
       </details>
       <details>
         <summary>どのくらいの期間で話せるようになりますか？</summary>
@@ -1820,9 +1851,9 @@ body{padding-bottom:86px}
 <section class="final" id="contact">
   <div class="wrap-n inner reveal">
     <h2>3ヶ月後、社内で<em>一番英語が話せる</em>あなたに。</h2>
-    <p class="lead">まずは体験会で、いまの英語力と、3ヶ月で届く場所をお伝えします。<br>その場でお申し込みいただく必要はありません。</p>
+    <p class="lead">まずは体験会で、いまの英語力と、3ヶ月で届く場所をお伝えします。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（5,000円・税込／オンライン可・所要60分）。無料でサービス内容だけをお聞きになりたい方は、無料オンライン説明会（30分）をご利用ください。</span></p>
     <div class="btns">
-      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>オンライン可・所要60分</small></a>
+      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・5,000円（税込）／オンライン可・所要60分</small></a>
     </div>
   </div>
 </section>
@@ -1843,7 +1874,7 @@ body{padding-bottom:86px}
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="kiyaku.html">受講規約</a>
       <a href="privacy.html">個人情報の取扱いについて</a>
-      <a href="mailto:washoi@japanwashoi.com">お問い合わせ</a>
+      <a href="mailto:ei.commit@japanwashoi.com">お問い合わせ</a>
     </nav>
   </div>
   <div class="f-sns">
@@ -1861,7 +1892,7 @@ body{padding-bottom:86px}
 <div class="bottombar">
   <div class="bb-in">
     <p class="bb-txt"><b>海外式コーチとお話ししましょう。</b></p>
-    <a class="bb-btn" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>オンライン可・所要60分</small></a>
+    <a class="bb-btn" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・5,000円（税込）／オンライン可・所要60分</small></a>
   </div>
 </div>
 
@@ -1875,16 +1906,32 @@ body{padding-bottom:86px}
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <img class="pc-img" src="assets/line-remind.png" alt="公式LINEでのやり取り全体">
     <div class="pc-body">
-      <p class="role">01</p>
-      <h4>公式LINEでの個別リマインド</h4>
-      <p>リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。エビングハウスの忘却曲線にあわせて復習のタイミングを設計しているので、忘れかけたころにちょうど思い出せる。だから、一度覚えたことが長期的にしっかり定着します。</p>
+      <p class="role">01 ／ 公式LINE</p>
+      <h4>個別リマインドの中身</h4>
+      <p class="lead-sm">リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。</p>
+      <p>エビングハウスの忘却曲線にあわせて、復習のタイミングを設計しています。忘れかけたころに、ちょうど思い出せる。</p>
+      <p>だから、一度覚えたことが長期的にしっかり定着します。</p>
     </div>
   </div>
 </div>
 
 <div class="popup" id="dashModal" aria-hidden="true">
-  <div class="popup-card">
+  <div class="popup-card pc-wide">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="pc-content">
+    <div class="pc-body">
+      <p class="role">02 ／ ダッシュボード</p>
+      <h4>まとめて見える、4つの進捗</h4>
+      <ul>
+        <li><b>A-PUSH Method</b> —— 反復練習</li>
+        <li><b>A-PUSH シャドーイング</b> —— 聞きながら話す練習</li>
+        <li><b>A-PUSHリーディング</b> —— 読解</li>
+        <li><b>A-PUSH Writing</b> —— 英作文</li>
+      </ul>
+      <p style="margin-top:1.2em">それぞれの進捗と、今日やるべきことが、開いた瞬間に分かります。</p>
+      <p class="note-sm">※ 画面は開発中のイメージです。学習ダッシュボードは2026年11月に正式版の提供を開始予定です。提供開始までの間は、公式LINEによる学習サポートで学習進捗を管理します。</p>
+    </div>
+    <div class="pc-media">
     <svg class="pc-img" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
       <rect width="640" height="480" fill="#141417"/>
       <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
@@ -1914,10 +1961,7 @@ body{padding-bottom:86px}
       <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
       <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
     </svg>
-    <div class="pc-body">
-      <p class="role">02</p>
-      <h4>ダッシュボードで、今日やることが常に明確</h4>
-      <p>ダッシュボードでまとめて見えるのは、<b>A-PUSH Method</b>（反復練習）・<b>A-PUSH シャドーイング</b>（聞きながら話す練習）・<b>A-PUSHリーディング</b>（読解）・<b>A-PUSH Writing</b>（英作文）の4つ。それぞれの進捗と、今日やるべきことが一目でわかります。</p>
+    </div>
     </div>
   </div>
 </div>
