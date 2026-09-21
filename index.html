@@ -432,6 +432,17 @@ h2 em{font-style:normal;color:var(--red)}
 @media(min-width:720px){
   .pc-media-line{max-width:340px;margin-left:auto}
 }
+
+/* ---------- 1日研修ポップアップ（派手仕様） ---------- */
+.pc-oneday{max-width:600px}
+.pc-od-head{background:linear-gradient(135deg,#FF8A00,#FF5A00);padding:2em 1.9em 1.7em;border-radius:6px 6px 0 0}
+.pc-od-badge{display:inline-block;font-family:var(--en);font-weight:900;font-size:.66rem;letter-spacing:.12em;color:var(--ink);background:#fff;padding:.5em 1.1em;border-radius:20px}
+.pc-od-head h4{font-weight:900;font-size:1.35rem;line-height:1.5;color:#fff;margin-top:.8em}
+.pc-oneday .pc-body{padding-top:1.6em}
+.pc-oneday .pc-body .lead-sm{color:var(--red)}
+.pc-od-gift{margin-top:1.3em;background:#FFF1E4;border-left:4px solid #FF5A00;padding:.9em 1.1em;font-size:.92rem;border-radius:0 4px 4px 0}
+.pc-od-gift b{color:#FF5A00}
+
 .more-btn{
   margin-top:1.3em;list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6em;
   font-weight:900;font-size:.86rem;color:var(--red);border:1px solid var(--red);background:none;
@@ -592,24 +603,29 @@ h2 em{font-style:normal;color:var(--red)}
 
 /* ---------- 1日研修（プランの前に差し込み） ---------- */
 .oneday{
-  background:#fff;border:1px solid var(--line-l);border-radius:3px;
+  background:linear-gradient(135deg,#FF8A00,#FF5A00);border:none;border-radius:6px;
   padding:1.9em 2em;margin-top:2.4em;display:flex;flex-wrap:wrap;align-items:center;gap:1.4em 2em;
+  box-shadow:0 24px 54px -26px rgba(255,90,0,.6);
 }
 .oneday-top{display:flex;flex-wrap:wrap;align-items:center;gap:.9em;flex-basis:100%}
 .oneday-tag{font-family:var(--en);font-weight:900;font-size:.64rem;letter-spacing:.12em;color:#fff;background:var(--ink);padding:.45em 1em;border-radius:2px}
-.oneday-date{font-size:.82rem;font-weight:700;color:#7A7A82}
-.oneday h3{font-weight:900;font-size:1.25rem;letter-spacing:-.01em;flex-basis:100%}
-.oneday-lead{font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.75;flex:1 1 320px}
+.oneday-date{font-family:var(--en);font-size:.82rem;font-weight:900;color:var(--ink)}
+.oneday-date small{font-family:var(--jp);font-weight:700;font-size:.9em;margin-left:.3em;opacity:.85}
+.oneday h3{font-weight:900;font-size:1.35rem;letter-spacing:-.01em;flex-basis:100%;color:#fff}
+.oneday-lead{font-size:.98rem;font-weight:900;color:#fff;line-height:1.75;flex:1 1 320px}
 .oneday-foot{display:flex;align-items:center;gap:1.4em;flex-wrap:wrap}
 .oneday-time{font-family:var(--en);font-weight:900;font-size:1rem;color:var(--ink)}
-.oneday-price{font-family:var(--en);font-weight:900;font-size:1.7rem;color:var(--red);letter-spacing:-.02em}
+.oneday-price{font-family:var(--en);font-weight:900;font-size:1.7rem;color:var(--ink);letter-spacing:-.02em}
 .oneday-price small{font-size:.34em;font-family:var(--jp);font-weight:900;color:var(--ink);margin-left:.25em}
-.oneday .more-btn{margin-top:0}
-.timetable{margin-top:1.4em;display:flex;flex-direction:column;gap:.55em}
-.tt-row{display:flex;gap:1.1em;font-size:.9rem;line-height:1.75}
-.tt-time{flex:0 0 108px;font-family:var(--en);font-weight:900;color:var(--red);font-size:.86rem}
-.tt-txt{color:#3a3a3f}
-.tt-row.tt-break .tt-txt{color:#9a9aa0;font-size:.84rem}
+.oneday .more-btn{margin-top:0;background:var(--ink);color:#fff;border-color:var(--ink)}
+.oneday .more-btn:hover{background:#fff;color:var(--ink);border-color:#fff}
+.timetable{margin-top:1.4em;display:flex;flex-direction:column;gap:.6em}
+.tt-row{display:flex;align-items:center;gap:1.1em;font-size:.9rem;line-height:1.6}
+.tt-time{flex:0 0 108px;font-family:var(--en);font-weight:900;color:#fff;font-size:.78rem;text-align:center;background:linear-gradient(135deg,#FF8A00,#FF5A00);padding:.4em .3em;border-radius:5px}
+.tt-txt{color:#3a3a3f;font-weight:700}
+.tt-row.tt-break{gap:0;padding-left:126px}
+.tt-row.tt-break .tt-time{display:none}
+.tt-row.tt-break .tt-txt{color:#9a9aa0;font-size:.82rem;font-weight:500}
 
 /* ---------- 料金 ---------- */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:2.8em;align-items:stretch}
@@ -1763,10 +1779,10 @@ body{padding-bottom:86px}
     <div class="oneday">
       <div class="oneday-top">
         <span class="oneday-tag">1日だけのお試し研修</span>
-        <span class="oneday-date">2026年9月27日（日）開催</span>
+        <span class="oneday-date">毎週日曜開催<small>（次回：9/27）</small></span>
       </div>
       <h3>英語1日研修</h3>
-      <p class="oneday-lead">ネイティブマンツーマン3時間！<br>10個のフレーズを叩き込む。</p>
+      <p class="oneday-lead">ネイティブマンツーマン3時間！<br>8個のフレーズを叩き込む。</p>
       <div class="oneday-foot">
         <p class="oneday-time">13:00〜17:00</p>
         <p class="oneday-price">¥40,000<small>（税込）</small></p>
@@ -2012,11 +2028,13 @@ body{padding-bottom:86px}
 </div>
 
 <div class="popup" id="onedayModal" aria-hidden="true">
-  <div class="popup-card">
+  <div class="popup-card pc-oneday">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="pc-od-head">
+      <span class="pc-od-badge">毎週日曜開催 ／ 次回 9.27</span>
+      <h4>あなたのレベルに合わせて、<br>ネイティブマンツーマンで叩き込む</h4>
+    </div>
     <div class="pc-body">
-      <p class="role">英語1日研修 ／ 2026.9.27（日）</p>
-      <h4>あなたのレベルに合わせて、ネイティブマンツーマンで叩き込む</h4>
       <p class="lead-sm">まずは、レベルチェックから。</p>
       <div class="timetable">
         <div class="tt-row"><span class="tt-time">13:00</span><span class="tt-txt">集合／自己紹介＆A-PUSH Method・1日の流れの説明＆レベルチェック</span></div>
@@ -2028,7 +2046,7 @@ body{padding-bottom:86px}
         <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（塾の説明 15分間）</span></div>
         <div class="tt-row"><span class="tt-time">16:45</span><span class="tt-txt">解散</span></div>
       </div>
-      <p style="margin-top:1.3em"><b>お土産：</b>学習管理システム2週間アクセス＆教材冊子付き</p>
+      <p class="pc-od-gift"><b>お土産：</b>学習管理システム2週間アクセス＆教材冊子付き</p>
       <p class="note-sm">※ 8つは目安です。フレーズの進み具合には個人差があります。</p>
     </div>
   </div>
