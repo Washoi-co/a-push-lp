@@ -590,6 +590,27 @@ h2 em{font-style:normal;color:var(--red)}
 .cost-close{margin-top:2.4em;font-weight:900;font-size:clamp(1.1rem,2.4vw,1.5rem);line-height:1.75;color:#fff!important}
 .cost-close em{font-style:normal;color:var(--red)}
 
+/* ---------- 1日研修（プランの前に差し込み） ---------- */
+.oneday{
+  background:#fff;border:1px solid var(--line-l);border-radius:3px;
+  padding:1.9em 2em;margin-top:2.4em;display:flex;flex-wrap:wrap;align-items:center;gap:1.4em 2em;
+}
+.oneday-top{display:flex;flex-wrap:wrap;align-items:center;gap:.9em;flex-basis:100%}
+.oneday-tag{font-family:var(--en);font-weight:900;font-size:.64rem;letter-spacing:.12em;color:#fff;background:var(--ink);padding:.45em 1em;border-radius:2px}
+.oneday-date{font-size:.82rem;font-weight:700;color:#7A7A82}
+.oneday h3{font-weight:900;font-size:1.25rem;letter-spacing:-.01em;flex-basis:100%}
+.oneday-lead{font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.75;flex:1 1 320px}
+.oneday-foot{display:flex;align-items:center;gap:1.4em;flex-wrap:wrap}
+.oneday-time{font-family:var(--en);font-weight:900;font-size:1rem;color:var(--ink)}
+.oneday-price{font-family:var(--en);font-weight:900;font-size:1.7rem;color:var(--red);letter-spacing:-.02em}
+.oneday-price small{font-size:.34em;font-family:var(--jp);font-weight:900;color:var(--ink);margin-left:.25em}
+.oneday .more-btn{margin-top:0}
+.timetable{margin-top:1.4em;display:flex;flex-direction:column;gap:.55em}
+.tt-row{display:flex;gap:1.1em;font-size:.9rem;line-height:1.75}
+.tt-time{flex:0 0 108px;font-family:var(--en);font-weight:900;color:var(--red);font-size:.86rem}
+.tt-txt{color:#3a3a3f}
+.tt-row.tt-break .tt-txt{color:#9a9aa0;font-size:.84rem}
+
 /* ---------- 料金 ---------- */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:2.8em;align-items:stretch}
 .plan{
@@ -1738,6 +1759,21 @@ body{padding-bottom:86px}
 <section id="price">
   <div class="wrap reveal">
     <p class="label">PRICE</p>
+
+    <div class="oneday">
+      <div class="oneday-top">
+        <span class="oneday-tag">1日だけのお試し研修</span>
+        <span class="oneday-date">2026年9月27日（日）開催</span>
+      </div>
+      <h3>英語1日研修</h3>
+      <p class="oneday-lead">ネイティブマンツーマン3時間！<br>10個のフレーズを叩き込む。</p>
+      <div class="oneday-foot">
+        <p class="oneday-time">13:00〜17:00</p>
+        <p class="oneday-price">¥40,000<small>（税込）</small></p>
+        <button type="button" class="more-btn" data-popup="onedayModal">▼ 詳しく見る</button>
+      </div>
+    </div>
+
     <h2>プランは、<em>3つだけ。</em></h2>
     <p class="lead">コーチが1対1で伴走するため、各期の受け入れ人数には上限があります。<b>枠が埋まるごとに、料金は段階的に上がります。</b></p>
     <p class="note-sm">モニター価格は、受講後に匿名でのインタビュー記事へのご協力をお願いする条件付きの価格です。顔出しでの掲載や動画撮影は任意で、ご協力いただかない場合も価格は変わりません。詳細は<a href="kiyaku.html">受講規約第21条</a>をご確認ください。</p>
@@ -1971,6 +2007,29 @@ body{padding-bottom:86px}
       <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
     </svg>
     </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="onedayModal" aria-hidden="true">
+  <div class="popup-card">
+    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="pc-body">
+      <p class="role">英語1日研修 ／ 2026.9.27（日）</p>
+      <h4>あなたのレベルに合わせて、ネイティブマンツーマンで叩き込む</h4>
+      <p class="lead-sm">まずは、レベルチェックから。</p>
+      <div class="timetable">
+        <div class="tt-row"><span class="tt-time">13:00</span><span class="tt-txt">集合／自己紹介＆A-PUSH Method・1日の流れの説明＆レベルチェック</span></div>
+        <div class="tt-row"><span class="tt-time">13:30–14:20</span><span class="tt-txt">最初の4つのフレーズ</span></div>
+        <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（10分休憩）</span></div>
+        <div class="tt-row"><span class="tt-time">14:30–15:20</span><span class="tt-txt">次の4つのフレーズ</span></div>
+        <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（10分休憩）</span></div>
+        <div class="tt-row"><span class="tt-time">15:30–16:20</span><span class="tt-txt">簡単ディスカッション＋フリートーク</span></div>
+        <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（塾の説明 15分間）</span></div>
+        <div class="tt-row"><span class="tt-time">16:45</span><span class="tt-txt">解散</span></div>
+      </div>
+      <p style="margin-top:1.3em"><b>お土産：</b>学習管理システム2週間アクセス＆教材冊子付き</p>
+      <p class="note-sm">※ 8つは目安です。フレーズの進み具合には個人差があります。</p>
     </div>
   </div>
 </div>
