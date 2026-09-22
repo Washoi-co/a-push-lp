@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A-PUSH｜3ヶ月後、社内で一番英語が話せるあなたに。</title>
+<title>A-PUSH｜英語を、使う側へ。海外式スピーキング特化の3ヶ月</title>
 <meta name="description" content="A-PUSH — 英語をキャリアで活かすための、海外式スピーキング特化の3ヶ月。コーチ×スピーキングで「話す度胸」と「話し慣れ」を鍛えます。体験会 受付中。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230B0B0C'/%3E%3Cpath d='M50 14 L90 86 H70 L50 50 L30 86 H10 Z' fill='%23FF2D16'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
 <!-- ===== OGP ===== -->
 <!-- ▼ 本番ドメイン確定後、この2つのURLを差し替えてください -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="A-PUSH｜3ヶ月後、社内で一番英語が話せるあなたに。">
+<meta property="og:title" content="A-PUSH｜英語を、使う側へ。海外式スピーキング特化の3ヶ月">
 <meta property="og:description" content="英語をキャリアで活かすための、海外式スピーキング特化の3ヶ月。コーチ×スピーキング。">
 <meta property="og:url" content="">
 <meta property="og:image" content="">
@@ -22,34 +22,31 @@
 
 <!-- ===== 計測タグの設定 =====================================================
      ここに ID を入れるだけで計測が有効になります。空のままなら何も読み込みません。
-     アカウントはすべて甲名義で開設し、乙は管理者として招待を受けてください。
 ========================================================================== -->
 <script>
 window.EC_CONFIG = {
   GTM_ID:     '',   // 例: 'GTM-XXXXXXX'
   GA4_ID:     '',   // 例: 'G-XXXXXXXXXX'（GTMを使うなら空でOK）
-  META_PIXEL: '',   // 例: '123456789012345'
+  META_PIXEL: '',   // ★ここにIDを入れる前に privacy.html 第10条の更新を完了すること。詳細マッチング（Advanced Matching）は有効にしないこと。例: '123456789012345'
   NOINDEX:    true  // ★確認用URLの間は true。本番公開のタイミングで false に
 };
 if (window.EC_CONFIG.NOINDEX) {
   document.write('<meta name="robots" content="noindex,nofollow">');
 }
 
-/* ===== 残枠の設定 ==========================================================
-   現在の申込人数を入れると、料金セクションのバーが自動で該当の段階に光ります。
-   1ヶ月／3ヶ月：1〜3名＝第1段階、4〜6名＝第2段階、7名以降＝通常料金
-   半年　　　　：1〜2名＝第1段階、3〜4名＝第2段階、5名以降＝通常料金
+/* ===== 料金スケジュール =====================================================
+   価格は「契約書面を取り交わした日」で決まります（PRICE_BASIS）。
+   seatCapPhase1 を設定した場合のみ、第1期の残枠を表示します。
+   seatsTakenPhase1 には契約が成立した人数だけを入れてください（予約・体験会の人数は入れない）。
 ========================================================================== */
-window.APUSH_SEATS = { m1: 0, m3: 0, m6: 0 };
-
-/* ===== 比較表の「オープニング価格 募集枠」 =========================
-   比較表の中の A-PUSH カードに出る、残枠バーの表示を切り替えます。
-====================================================================== */
-window.APUSH_OPENING = {
-  monthLabel: '10月枠',      // バー左のラベル
-  capacity:   6,             // 今月の定員
-  taken:      3,             // 申込済みの人数
-  deadline:   '10月31日'     // オープニング価格の期限
+window.APUSH_PRICING = {
+  phases: [
+    { until: '2026-09-30T23:59:59+09:00', start: null,      m1: 150000, m3: 300000, m6: 1000000 },
+    { until: '2026-10-31T23:59:59+09:00', start: '10月1日', m1: 200000, m3: 400000, m6: 1250000 },
+    { until: null,                        start: '11月1日', m1: 250000, m3: 500000, m6: 1500000 }
+  ],
+  seatCapPhase1:    null,              // 例：{ m1: 3, m3: 3, m6: 2 }（SEAT_CAP_PHASE1 が空欄のため null のまま。TODO(owner): 定員を設ける場合はここに人数を入れてください）
+  seatsTakenPhase1: { m1: 0, m3: 0, m6: 0 }
 };
 </script>
 
@@ -999,38 +996,28 @@ body{padding-bottom:86px}
     <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
       <div>
         <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人は、話していない。<br>でも、<b>文法・単語の知識はハイレベル</b>です。</p>
-        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">海外の英語教育は、アウトプットの時間が圧倒的に多い。<b>だから、話せるようになる。</b></p>
-        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
+        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)"><b>話せるようになるには、話す量が欠かせません。</b></p>
+        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>レッスン時間の大部分をアウトプットに使う。</em></p>
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
         <p class="sub">一般的な傾向を示す概念図です。特定の統計データに基づくものではありません。</p>
-        <svg viewBox="0 0 500 300" role="img" aria-label="日本と、アウトプット重視で知られる3カ国の英語教育における時間配分の違いを示す概念図">
-          <text class="cv-tick" x="0" y="16" style="font-weight:900">日本</text>
+        <svg viewBox="0 0 500 160" role="img" aria-label="座学中心の学習と、A-PUSHのレッスンにおける時間配分の違いを示す概念図（イメージ）">
+          <text class="cv-tick" x="0" y="16" style="font-weight:900">座学中心の学習（イメージ）</text>
           <rect x="0" y="24" width="500" height="34" rx="4" fill="#E4E4E7"/>
           <rect x="0" y="24" width="400" height="34" rx="4" fill="#C6C6CB"/>
           <rect x="392" y="24" width="108" height="34" rx="4" fill="var(--red)"/>
 
-          <text class="cv-tick" x="0" y="88" style="font-weight:900">オランダ</text>
+          <text class="cv-tick" x="0" y="88" style="font-weight:900">A-PUSH のレッスン（イメージ）</text>
           <rect x="0" y="96" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="96" width="175" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="167" y="96" width="333" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="160" style="font-weight:900">スウェーデン</text>
-          <rect x="0" y="168" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="168" width="200" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="192" y="168" width="308" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="232" style="font-weight:900">デンマーク</text>
-          <rect x="0" y="240" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="240" width="190" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="182" y="240" width="318" height="34" rx="4" fill="var(--red)"/>
+          <rect x="0" y="96" width="120" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="112" y="96" width="388" height="34" rx="4" fill="var(--red)"/>
         </svg>
         <div class="curve-legend">
           <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
           <span class="on"><i></i>アウトプット（話す・書く）</span>
         </div>
-        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。<br>※ オランダ・スウェーデン・デンマークが英語非母語国の中で英語運用力の上位に位置することについては、<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>を参照しています。EF EPI は英語運用力の指標であり、各国の授業時間配分を示すものではありません。</p>
+        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。</p>
       </div>
     </div>
   </div>
@@ -1143,13 +1130,13 @@ body{padding-bottom:86px}
           <div class="ev-cards">
             <div class="ev">
                 <div class="ev-h"><span class="n">01</span><h4>手続き記憶で覚える</h4></div>
-                <p class="ev-lead">自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れないからです。英語も、その覚え方ができます。</p>
+                <p class="ev-lead">自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れにくいからです。英語も、その覚え方ができます。</p>
                 <details class="more">
                   <summary><span class="lbl" aria-hidden="true"></span></summary>
                   <div class="ev-long">
                   <p>記憶には2種類あります。ひとつは<b>宣言的記憶</b>。知識として頭に置いておくもので、思い出そうとすれば思い出せますが、忘れることもあります。もうひとつが<b>手続き記憶</b>。自転車、泳ぎ方、箸の持ち方のように、体が覚えている動作です。</p>
                   <p>第二言語習得研究の Ullman は、学習が進むほど言葉の処理が<b>宣言的記憶から手続き記憶へ移っていく</b>と整理しました。単語帳で覚えた英語が会話で出てこないのは、まだ前者に留まっているからです。「えーと、あの単語は…」と思い出している間に、会話は次へ進んでしまう。</p>
-                  <p>そして手続き記憶を作る方法は、ひとつしかありません。<b>繰り返し、体を通すこと。</b>自転車を本で学んでも乗れないのと同じです。</p>
+                  <p>そして手続き記憶をつくる基本は、<b>繰り返し、体を通すこと。</b>自転車を本で学んでも乗れないのと同じです。</p>
                   <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Declarative/procedural_model" target="_blank" rel="noopener">Ullman, Declarative/Procedural Model</a></p>
                 </div>
                 </details>
@@ -1173,7 +1160,7 @@ body{padding-bottom:86px}
                   <summary><span class="lbl" aria-hidden="true"></span></summary>
                   <div class="ev-long">
                   <p>難しい会話には、高度な論理的思考力が求められます。ただでさえ「英語を処理する」こと自体に脳のエネルギーを奪われている状態で、さらに難しい論理思考までやろうとすれば、脳は<b>キャパシティオーバー</b>を起こしてフリーズします。</p>
-                  <p>やさしい表現に徹底的に慣れ、何も考えなくても処理できるようにする。すると英語の処理にかかる負担がゼロに近づき、<b>論理的な思考に脳のエネルギーを100%使える</b>ようになります。だから A-PUSH は、まず「簡単な表現」を無意識レベルで完璧に処理できる回路を鍛え上げます。</p>
+                  <p>やさしい表現に徹底的に慣れ、何も考えなくても処理できるようにする。すると<b>英語の処理にかかる負担が小さくなり、話す内容を考えることに、より多くの力を使える</b>ようになります。だから A-PUSH は、まず「簡単な表現」を無意識レベルで完璧に処理できる回路を鍛え上げます。</p>
                   <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Jim_Cummins_(academic)" target="_blank" rel="noopener">Cummins, BICS &amp; CALP</a></p>
                 </div>
                 </details>
@@ -1332,7 +1319,7 @@ body{padding-bottom:86px}
   <div class="wrap reveal">
     <p class="label">WHY YOU CAN FINISH</p>
     <h2>忙しくても、<br><em>やるしかない、3ヶ月。</em></h2>
-    <p class="lead">「本当に動いている」現場の仕組みを、そのままお見せします。</p>
+    <p class="lead">3ヶ月をやり切るための仕組みです（学習ダッシュボードは開発中の画面イメージです）。</p>
     <div class="cards cards-half">
       <div class="card">
         <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
@@ -1376,7 +1363,7 @@ body{padding-bottom:86px}
         <span class="num">02</span>
         <h3>ダッシュボードで、今日やることが常に明確</h3>
         <p>「今日、何をやればいいんだっけ」で迷う時間をゼロに。進捗と次にやるべきことが、開いた瞬間に分かります。</p>
-        <p class="note-sm">※ 画面は開発中のイメージです。2026年11月に正式版の提供を開始予定です。</p>
+        <p class="note-sm">※ 表示している学習メニューは開発中のイメージです。提供内容は契約書面の記載によります。2026年11月に正式版の提供を開始予定です。<!-- TODO(owner): DASHBOARD_MODULES_PROVIDED 未入力のため、有料サービスに実際に含まれるモジュール（Method／シャドーイング／リーディング／Writing）を確認のうえ、提供されないものはこの画面から削除してください --></p>
         <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
       </div>
     </div>
@@ -1398,7 +1385,7 @@ body{padding-bottom:86px}
         <div class="online-pts">
           <div>
             <b>いつでも</b>
-            <p>早朝も、深夜も、隙間時間も。レッスンは事前予約制なので、あなたの生活リズムに合わせて組めます。</p>
+            <p>早朝も、深夜も、隙間時間も。レッスンは事前予約制なので、あなたの生活リズムに合わせて組めます。<!-- TODO(owner): ONLINE_LESSON_HOURS 未入力のため、オンラインレッスンの受講可能時間帯を確認して本文に反映してください --></p>
           </div>
           <div>
             <b>どこでも</b>
@@ -1524,6 +1511,7 @@ body{padding-bottom:86px}
             <p class="role">STUDENT'S VOICE</p>
             <h3>K さん</h3>
             <p>3ヶ月プラン受講／国際学会でプレゼン</p>
+            <!-- TODO(owner): TESTIMONIAL_K 未回答。(1) 体験談が原文どおりか、(2) 掲載協力割引の適用有無、(3) 実際に受講したプログラム・受講時期 を確認し、キャプションと下の注記に反映してください。原文どおりでない場合は書き換えず、正しい原文の提供を求めてください。 -->
           </figcaption>
         </figure>
         <div>
@@ -1533,7 +1521,7 @@ body{padding-bottom:86px}
             <p class="bub">レッスンは反復が中心で、最初は必死でしたが、回数を重ねるうちに不思議と脳が英語に順応していく感覚がありました。気がついた時には、<b>頭で日本語を作らなくても自然と英語が口から出てくる</b>ように。</p>
             <p class="bub win">本番では自信を持ってプレゼンができ、国境を越えて充実した人脈を築くことができました。<b>あの時踏み出して本当に良かったです。</b></p>
           </div>
-          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
+          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。<!-- TODO(owner): 受講時期・受講プログラム（例：2025年○月受講／3ヶ月プラン）と掲載協力割引の適用有無を確認して、この行に事実を1行追加してください --></p>
         </div>
       </div>
 
@@ -1557,7 +1545,7 @@ body{padding-bottom:86px}
             <p class="bub">昔からとにかく英語が苦手でした。文法も単語もややこしくて、覚えることが多すぎて勉強が続かない。だから英会話は自分には無理かも…と諦めていました。</p>
             <p class="bub">でも「<b>世界中のいろんな人ともっと話したい</b>」という思いだけはずっと消えなくて、勇気を出してスタート。続けるうちに、気づけば<b>英語が自然と頭に浮かび、口からも出てくる</b>ように。自分でもびっくり、革命的でした。</p>
           </div>
-          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
+          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。<!-- TODO(owner): TESTIMONIAL_KEIRA 未回答。原文どおりか、掲載協力割引の適用有無、受講プログラム・受講時期を確認して、この行に事実を1行追加してください。原文どおりでない場合は書き換えず、正しい原文の提供を求めてください。 --></p>
         </div>
       </div>
     </div>
@@ -1575,6 +1563,7 @@ body{padding-bottom:86px}
       <div class="grt-mark"><b>+1</b><span>MONTH FREE</span></div>
       <div class="grt-txt">
         <h3>条件を満たして Versant スコアが所定の伸びに達しなかった場合、<br>受講期間を1ヶ月、無償で延長します。</h3>
+        <!-- TODO(owner): VERSANT_PRODUCT 未入力のため「Versant」表記のままです。保証判定に使うテストの正式名称とスコア範囲が確定したら、本セクション・tokusho.html・kiyaku.html第20条の「Versant」表記を「{VERSANT_PRODUCT}（スコア範囲○〜○）」に置き換えてください。 -->
         <span class="note-sm">本保証は「受講期間の無償延長」を保証するものであり、スコアの到達、英語力の習得、転職・昇進等の成果を保証するものではありません。学習効果には個人差があります。保証の適用条件・申請方法は受講規約第20条に定めます。</span>
         <p>途中で投げ出さず取り組んでいただいた方が、結果だけを理由に損をすることがないように。返金ではなく、<b>伸びるまで一緒に続ける</b>という形での保証です。</p>
         <div class="grt-cond">
@@ -1677,14 +1666,14 @@ body{padding-bottom:86px}
 <section class="sec-grey">
   <div class="wrap reveal">
     <p class="label">POSITIONING</p>
-    <h2>英語コーチは、<br><em>大きく2種類</em>に分かれます。</h2>
-    <p class="lead">「なんとなく英会話を教えるサービス」と、A-PUSH のように<b>転職・異動という明確なゴールから逆算して設計されたプログラム</b>です。多くの英会話スクールやアプリは日常会話の練習が中心で、ビジネスの現場で本当に必要な運用力（CALP）まで踏み込みません。独学では、そもそも「話す機会」自体が作れません。</p>
+    <h2>料金と中身を、<br><em>比べてください。</em></h2>
+    <p class="lead">英語学習サービスには、日常会話の練習を中心にしたものから、仕事での利用を想定したものまで、さまざまな形があります。A-PUSH は、仕事で英語を使う場面を想定し、まず話す土台（BICS）を固めてから、仕事の表現（CALP）へ進む順番で設計しています。</p>
 
     <!-- 料金・サービス比較 -->
     <div class="vs-head">
       <p class="vs-eyebrow">英会話コーチング 3ヶ月コース ／ 料金・サービス比較</p>
-      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 オープニング価格 <em>30万円</em>（通常 50万円）。</h3>
-      <span class="note-sm">A-PUSH の30万円は、目黒校舎オープニングに伴う定員制の価格です（2026年10月31日まで、または各価格帯の定員に達するまで）。<br>他社の金額は各社の通常価格のため、同一条件の比較ではありません。</span>
+      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 オープニング価格 <em>30万円</em>（11月1日以降の価格 50万円）。</h3>
+      <span class="note-sm">A-PUSHのオープニング価格は、ご契約日に応じて 〜9月30日：30万円、10月1日〜10月31日：40万円、11月1日以降：50万円 です。<br>他社の金額は各社の通常価格のため、同一条件の比較ではありません。</span>
     </div>
 
     <div class="vs-scroll">
@@ -1728,10 +1717,8 @@ body{padding-bottom:86px}
         <div class="vs-l last">3ヶ月 総額<small>税込・入会金含む</small></div>
         <div class="vs-u b">
           <span class="vs-div"></span>
-          <p class="vs-total">300,000<span class="y">円</span></p>
-          <p class="vs-cap">オープニング価格 ／ <span id="vsDeadline">10月31日</span>まで</p>
-          <div class="vs-bar"><span id="vsBar" style="width:50%"></span></div>
-          <p class="vs-barl"><span id="vsMonth">10月枠</span><span id="vsLeft">残り 3名</span></p>
+          <p class="vs-total" id="vsTotal">300,000<span class="y">円</span></p>
+          <p class="vs-cap" id="vsCap">オープニング価格 ／ 9月30日までのご契約</p>
         </div>
         <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">635,800<span class="y">円</span></p><span class="vs-plus">+335,800円</span></div>
         <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">632,500<span class="y">円</span></p><span class="vs-plus">+332,500円</span></div>
@@ -1741,20 +1728,21 @@ body{padding-bottom:86px}
     <p class="scroll-hint">← 横にスクロールできます →</p>
 
     <div class="vs-sum">
-      <span class="t1">マンツーマン型2社の平均</span>
+      <span class="t1">マンツーマンレッスン24回を含む2社（A社・C社）の平均</span>
       <span class="v1">614,900<span class="jp">円</span></span>
       <span class="ar">→</span>
-      <span class="v2">300,000<span class="jp">円</span></span>
-      <span class="off">▲314,900円 ／ 約51%オフ（オープニング価格）</span>
-      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.1em;color:rgba(255,255,255,.62)">通常価格（500,000円）との比較では ▲114,900円／約19%です。</span>
+      <span class="v2" id="vsV2">300,000<span class="jp">円</span></span>
+      <span class="off">差額 ▲314,900円（約51%）</span>
+      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.1em;color:rgba(255,255,255,.62)">11月1日以降の価格（500,000円）との比較では ▲114,900円／約19%です。</span>
     </div>
 
     <div class="vs-foot">
       <p class="cond">※ 比較条件：3ヶ月間・マンツーマンレッスン24回相当を含むコースの総額（税込・入会金込み）を比較しています。B社はマンツーマンレッスンを持たず週1回のコンサルティング面談のみのため、参考として掲載し、平均額の算出には含めていません。</p>
-      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHのオープニング価格・募集枠は2026年10月31日まで（各価格帯の定員に達した時点で、次の価格帯へ移行します）。</p>
+      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHの価格は、ご契約日により 〜9月30日：300,000円／10月1日〜10月31日：400,000円／11月1日以降：500,000円 です。</p>
     </div>
 
-    <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。募集期限（10月31日）を過ぎたら、この表の日付と枠数も必ず更新してください。 -->
+    <!-- TODO(owner): LESSON_MINUTES / COMPETITOR_LESSON_MINUTES が未入力のため、比較表に「レッスン1回の時間」の行を追加できていません。入力後、この比較表（vs グリッド）に行を追加し、下の注記に「※ レッスン1回あたりの時間は各社で異なります。A-PUSH は1回{LESSON_MINUTES}分です。」を加えてください。 -->
+    <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。 -->
   </div>
 </section>
 
@@ -1795,12 +1783,12 @@ body{padding-bottom:86px}
     <div class="oneday">
       <div class="oneday-top">
         <span class="oneday-tag">1日だけのお試し研修</span>
-        <span class="oneday-date">毎週日曜開催<small>（次回：9/27）</small></span>
+        <span class="oneday-date">毎週日曜開催<small id="onedayNextInline"></small></span>
       </div>
       <h3>英語1日研修</h3>
-      <p class="oneday-lead">ネイティブマンツーマン3時間！<br>8個のフレーズを叩き込む。</p>
+      <p class="oneday-lead">ネイティブとマンツーマン 50分×3コマ<br>8個のフレーズを叩き込む。</p>
       <div class="oneday-foot">
-        <p class="oneday-time">13:00〜17:00</p>
+        <p class="oneday-time">13:00〜16:45<!-- TODO(owner): ONE_DAY_END_TIME 未回答。タイムテーブルの解散時刻（16:45）に合わせて暫定表記しています。確定時刻をご確認ください。 --></p>
         <p class="oneday-price">¥20,000<small>（税込）</small></p>
         <button type="button" class="more-btn" data-popup="onedayModal">▼ 詳しく見る</button>
         <a class="oneday-book" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=73eJwzNTUytDABAARMATo" target="_blank" rel="noopener">予約する</a>
@@ -1809,34 +1797,36 @@ body{padding-bottom:86px}
 
     <h2>プランは、<em>3つだけ。</em></h2>
     <p class="vs-eyebrow" style="margin-bottom:.6em">MEGURO OPENING ／ 目黒校舎オープニング価格（2026年10月31日まで）</p>
-    <p class="lead">コーチが1対1で伴走するため、各期の受け入れ人数には上限があります。<b>枠が埋まるごとに、料金は段階的に上がります。</b></p>
-    <p class="note-sm">目黒校舎のオープニングに伴う定員制の価格です。各価格帯の定員に達した時点で、次の価格帯の価格へ移行します。<br>お客様に適用される価格は、ご契約が成立した時点の受付状況により決まり、ご契約手続きの際に明示のうえご案内します。<br>一度ご契約が成立した後に、価格帯の移行を理由として受講料が増額されることはありません。</p>
+    <p class="lead">目黒校舎のオープニングに伴う<b>期間限定の価格</b>です。料金は、ご契約（契約書面の取り交わし）の日に応じて次のとおり変わります。</p>
+    <p class="note-sm">お客様に適用される価格は、契約書面を取り交わした日により決まります。ご契約手続きの際に、適用される価格を明示のうえご案内します。<br>一度ご契約が成立した後に、価格帯の移行を理由として受講料が増額されることはありません。<!-- TODO(owner): GRACE_DAYS 未入力のため、体験会・説明会参加者への価格据え置き猶予規定は未実装 --></p>
 
+    <!-- TODO(owner): LESSON_MINUTES が未入力のため、各プランの「マンツーマンレッスン」表記に（1回◯分）を追記できていません。入力後、下の3プランの箇条書きと tokusho.html の「役務の内容」にレッスン時間を追記してください。 -->
     <div class="plans">
       <div class="plan" data-plan="m1">
         <h3>1ヶ月 プラン</h3>
         <p class="term">レッスン12回 ／ コーチング2回</p>
         <p class="now">¥150,000<small>（税込）</small></p>
-        <p class="now-lab">オープニング価格</p>
+        <p class="now-lab" data-until></p>
+        <p class="note-sm" data-future style="margin-top:.4em"></p>
         <ul>
           <li>マンツーマンレッスン 12回</li>
           <li>コーチングセッション 2回</li>
           <li>A-PUSH METHOD</li>
           <li>公式LINEでの学習管理</li>
         </ul>
-        <div class="seats"><div class="seats-in">
-          <p class="seats-h"><span>今月の残枠</span><span class="left"></span></p>
+        <div class="seats" data-seats-wrap style="display:none"><div class="seats-in">
+          <p class="seats-h"></p>
           <div class="sbar"><span class="fill"></span><span class="pips"></span></div>
-          <p class="seats-f"><span class="cur"></span><span class="next"></span></p>
         </div></div>
       </div>
 
       <div class="plan reco" data-plan="m3">
-        <span class="badge">MOST POPULAR</span>
+        <span class="badge">おすすめ</span>
         <h3>3ヶ月 プラン</h3>
         <p class="term">毎月8回 ／ 毎月コーチング1回</p>
         <p class="now">¥300,000<small>（税込）</small></p>
-        <p class="now-lab">オープニング価格</p>
+        <p class="now-lab" data-until></p>
+        <p class="note-sm" data-future style="margin-top:.4em"></p>
         <ul>
           <li>マンツーマンレッスン 毎月8回</li>
           <li>コーチングセッション 毎月1回</li>
@@ -1844,10 +1834,9 @@ body{padding-bottom:86px}
           <li>公式LINEでの学習管理</li>
           <li>成績保証（1ヶ月無償延長）の対象</li>
         </ul>
-        <div class="seats"><div class="seats-in">
-          <p class="seats-h"><span>今月の残枠</span><span class="left"></span></p>
+        <div class="seats" data-seats-wrap style="display:none"><div class="seats-in">
+          <p class="seats-h"></p>
           <div class="sbar"><span class="fill"></span><span class="pips"></span></div>
-          <p class="seats-f"><span class="cur"></span><span class="next"></span></p>
         </div></div>
       </div>
 
@@ -1855,7 +1844,8 @@ body{padding-bottom:86px}
         <h3>半年 プラン</h3>
         <p class="term">毎月6回 ／ 毎月コーチング2回</p>
         <p class="now">¥1,000,000<small>（税込）</small></p>
-        <p class="now-lab">オープニング価格</p>
+        <p class="now-lab" data-until></p>
+        <p class="note-sm" data-future style="margin-top:.4em"></p>
         <ul>
           <li>マンツーマンレッスン 毎月6回</li>
           <li>コーチングセッション 毎月2回（全12回）</li>
@@ -1863,21 +1853,20 @@ body{padding-bottom:86px}
           <li>公式LINEでの学習管理</li>
           <li>成績保証（1ヶ月無償延長）の対象</li>
         </ul>
-        <div class="seats"><div class="seats-in">
-          <p class="seats-h"><span>今月の残枠</span><span class="left"></span></p>
+        <div class="seats" data-seats-wrap style="display:none"><div class="seats-in">
+          <p class="seats-h"></p>
           <div class="sbar"><span class="fill"></span><span class="pips"></span></div>
-          <p class="seats-f"><span class="cur"></span><span class="next"></span></p>
         </div></div>
       </div>
     </div>
 
     <p class="price-note">
-      * 料金は<b>お申し込み時点の段階</b>が適用されます。受講途中で値上がりすることはありません。<br>
+      * 料金は、ご契約日の価格が適用されます。受講途中で値上がりすることはありません。<br>
       * 分割払いはご相談ください。<br>
       * 成績保証（1ヶ月無償延長）は<b>3ヶ月以上のプラン</b>が対象です。<br>
       * 学習効果には個人差があり、特定の成果、スコアまたは転職・昇進等を保証するものではありません。本ページに記載した回数・期間・到達イメージは、当社の指導方針および設計意図を説明したものです。
     </p>
-    <!-- MEMO（表示されません）: 要確定金額・人数の刻みは、実際の月間受け入れキャパシティ（講師数・時間割）を確認してから確定してください。現在2名体制のため、無理な集客数にならないようご注意ください。 / 現在の申込人数は index.html 冒頭の window.APUSH_SEATS で設定でき、バーの「今ここ」表示と見出しの価格が自動で切り替わります。 -->
+    <!-- MEMO（表示されません）: 価格は index.html 冒頭の window.APUSH_PRICING.phases で設定します。第1期に定員を設ける場合は seatCapPhase1 と seatsTakenPhase1 を入力してください。 -->
   </div>
 </section>
 
@@ -1899,14 +1888,19 @@ body{padding-bottom:86px}
       </details>
       <details>
         <summary>マンツーマン以外の形式はありますか？</summary>
-        <p class="a">現在はマンツーマンのみです。話す時間がそのままレッスン時間になるため、スピーキングを伸ばす目的では最も効率が高い形式だと考えています。</p>
+        <p class="a">現在はマンツーマンのみです。話す時間がそのままレッスン時間になるため、スピーキングを伸ばす目的では効率が高い形式だと考えています。</p>
       </details>
       <details>
         <summary>返金・解約はできますか？</summary>
-        <p class="a">できます。3ヶ月プラン・半年プランは特定商取引法上の「特定継続的役務提供」に該当するため、次のとおりです。<br>
-        <b>クーリング・オフ</b>：概要書面または契約書面のうち遅く受け取った日から8日以内は、書面またはメールで無条件に解約でき、お支払い済みの金額は全額返金します。<br>
-        <b>中途解約</b>：8日を過ぎた後も、契約期間中はいつでも解約できます。受講済みレッスン分の対価と所定の解約手数料（50,000円または契約残額の20%のいずれか低い額）を差し引いた残額を返金します。<br>
-        <b>成績保証</b>：上記とは別に、学習進捗の提出80%以上・レッスン出席率80%以上を満たしたうえで所定のテストで基準の伸びに達しなかった場合、受講期間を1ヶ月無償延長します（3ヶ月以上のプランが対象。返金ではありません）。<br>
+        <p class="a">プランにより異なります。<br><br>
+        <b>3ヶ月プラン・半年プラン（特定継続的役務提供に該当します）</b><br>
+        ・クーリング・オフ：概要書面または契約書面のうち遅く受け取った日から8日以内は、書面またはメールで無条件に解約でき、お支払い済みの金額は全額返金します。<br>
+        ・中途解約（レッスン開始前）：15,000円を上限とする費用を差し引いた残額を返金します。<br>
+        ・中途解約（レッスン開始後）：受講済みレッスン分の対価と、解約手数料（50,000円または契約残額の20%のいずれか低い額）を差し引いた残額を返金します。<br><br>
+        <b>1ヶ月プラン・有料体験会・1日研修</b><br>
+        ・特定継続的役務提供に該当しないため、開始後のお客様のご都合による返金はお受けしていません。開始前のキャンセルは、特定商取引法に基づく表記のキャンセル規定によります。<br><br>
+        <b>成績保証</b><br>
+        ・学習進捗の提出80%以上・レッスン出席率80%以上を満たしたうえで所定のテストで基準の伸びに達しなかった場合、受講期間を1ヶ月無償延長します（3ヶ月以上のプランが対象。返金ではありません）。<br><br>
         詳細は<a href="kiyaku.html">受講規約</a>および<a href="tokusho.html">特定商取引法に基づく表記</a>をご確認ください。</p>
       </details>
       <details>
@@ -1915,7 +1909,7 @@ body{padding-bottom:86px}
       </details>
       <details>
         <summary>1日だけの研修や体験も可能ですか？</summary>
-        <p class="a">はい。毎週日曜日に、ネイティブとマンツーマンで3時間話し切る<b>スピーキング特化1日英語研修</b>をご用意しています。<br>13:00〜17:00・<b>20,000円（税込）</b>で、30分のコーチングセッションが付きます。<br>詳細・お申し込みは<a href="1day.html">1日研修のご案内ページ</a>からご確認ください。</p>
+        <p class="a">はい。毎週日曜日に、ネイティブとマンツーマンで話し切る<b>スピーキング特化1日英語研修</b>をご用意しています。<br>13:00〜16:45・<b>20,000円（税込）</b>で、30分のコーチングセッションが付きます。<!-- TODO(owner): ONE_DAY_COACHING_30MIN 未回答。実際に30分のコーチングを含めない場合は、この一文を削除してください。 --><br>詳細・お申し込みは<a href="1day.html">1日研修のご案内ページ</a>からご確認ください。</p>
       </details>
     </div>
     <!-- MEMO（表示されません）: 要差し替え上記は仮のFAQです。実際のDM・問い合わせ履歴と照らし合わせて、内容と順番を差し替えてください。 -->
@@ -1925,8 +1919,8 @@ body{padding-bottom:86px}
 <!-- ============ 13. クロージング ============ -->
 <section class="final" id="contact">
   <div class="wrap-n inner reveal">
-    <h2>3ヶ月後、社内で<em>一番英語が話せる</em>あなたに。</h2>
-    <p class="lead">まずは体験会で、いまの英語力と、3ヶ月で届く場所をお伝えします。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（5,000円・税込／オンライン可・所要60分）。無料でサービス内容だけをお聞きになりたい方は、無料オンライン説明会（30分）をご利用ください。</span></p>
+    <h2>英語を、<em>使う側へ。</em></h2>
+    <p class="lead">まずは体験会で、いまの英語力を確認し、3ヶ月の目標を一緒に考えます。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（5,000円・税込／オンライン可・所要60分）。無料でサービス内容だけをお聞きになりたい方は、無料オンライン説明会（30分）をご利用ください。</span></p>
     <div class="btns">
       <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・5,000円（税込）／オンライン可・所要60分</small></a>
     </div>
@@ -2049,11 +2043,12 @@ body{padding-bottom:86px}
   <div class="popup-card pc-oneday">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-od-head">
-      <span class="pc-od-badge"><span class="jp">毎週日曜開催 ／ 次回</span> 9.27</span>
+      <span class="pc-od-badge"><span class="jp">毎週日曜開催</span><span id="onedayNextModal"></span></span>
       <h4>あなたのレベルに合わせて、<br>ネイティブマンツーマンで叩き込む</h4>
     </div>
     <div class="pc-body">
       <p class="lead-sm">まずは、レベルチェックから。</p>
+      <!-- TODO(owner): ONE_DAY_COACHING_30MIN 未回答。yesの場合はこのタイムテーブルに「コーチングセッション（30分）」の行を追加してください（時刻未定のためTODO）。noの場合は本ページ・tokusho.htmlの「コーチングセッション30分」表記を削除してください。 -->
       <div class="timetable">
         <div class="tt-row"><span class="tt-time">13:00</span><span class="tt-txt">集合／自己紹介＆A-PUSH Method・1日の流れの説明＆レベルチェック</span></div>
         <div class="tt-row"><span class="tt-time">13:30–14:20</span><span class="tt-txt">最初の4つのフレーズ</span></div>
@@ -2061,11 +2056,12 @@ body{padding-bottom:86px}
         <div class="tt-row"><span class="tt-time">14:30–15:20</span><span class="tt-txt">次の4つのフレーズ</span></div>
         <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（10分休憩）</span></div>
         <div class="tt-row"><span class="tt-time">15:30–16:20</span><span class="tt-txt">簡単ディスカッション＋フリートーク</span></div>
-        <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（塾の説明 15分間）</span></div>
+        <div class="tt-row tt-break"><span class="tt-time"></span><span class="tt-txt">（3ヶ月コースのご案内 15分）</span></div>
         <div class="tt-row"><span class="tt-time">16:45</span><span class="tt-txt">解散</span></div>
       </div>
-      <p class="pc-od-gift"><b>お土産：</b>学習管理システム2週間アクセス＆教材冊子付き</p>
+      <p class="pc-od-gift"><b>お土産：</b>公式LINEの25日間リマインドサポート＆教材冊子付き</p>
       <p class="note-sm">※ 8つは目安です。フレーズの進み具合には個人差があります。</p>
+      <p class="note-sm">終了前に15分、3ヶ月コースのご案内の時間があります。その場でのお申込みは必要ありません。</p>
       <a class="oneday-book pc-od-book" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=73eJwzNTUytDABAARMATo" target="_blank" rel="noopener">この日程で予約する</a>
     </div>
   </div>
@@ -2108,72 +2104,132 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.classList.add('on')),6000);
 
-/* ---------- 比較表：オープニング価格 残枠バー ---------- */
+/* ---------- 1日研修：次回開催日（毎週日曜13:00〜。中止日は SKIP_DATES に 'YYYY-MM-DD' で追加） ---------- */
 (function(){
-  var m=window.APUSH_OPENING; if(!m) return;
-  var cap=Math.max(1,Number(m.capacity)||1), taken=Math.min(cap,Math.max(0,Number(m.taken)||0));
-  var left=cap-taken;
-  var bar=document.getElementById('vsBar');
-  if(bar) bar.style.width=Math.round(taken/cap*100)+'%';
-  var el;
-  if((el=document.getElementById('vsMonth')))    el.textContent=m.monthLabel||'';
-  if((el=document.getElementById('vsLeft')))     el.textContent=left>0?('残り '+left+'名'):'満席';
-  if((el=document.getElementById('vsDeadline'))) el.textContent=m.deadline||'';
+  var SKIP_DATES=[];
+  try{
+    function pad(n){ return String(n).length<2 ? '0'+n : String(n); }
+    function jstNow(){ return new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Tokyo'})); }
+    function key(d){ return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+    var now=jstNow(), day=now.getDay(), diff=(7-day)%7;
+    var cand=new Date(now.getFullYear(),now.getMonth(),now.getDate()+diff);
+    if(diff===0 && now.getHours()>=13){ cand.setDate(cand.getDate()+7); }
+    for(var guard=0; SKIP_DATES.indexOf(key(cand))!==-1 && guard<12; guard++){ cand.setDate(cand.getDate()+7); }
+    var md=(cand.getMonth()+1)+'/'+cand.getDate();
+    var mdDot=(cand.getMonth()+1)+'.'+cand.getDate();
+    var inl=document.getElementById('onedayNextInline'); if(inl) inl.textContent='（次回：'+md+'）';
+    var mod=document.getElementById('onedayNextModal'); if(mod) mod.textContent=' ／ 次回 '+mdDot;
+  }catch(e){ /* 失敗時は「毎週日曜開催」のまま表示 */ }
 })();
 
-/* ---------- 料金：残枠バー ----------
-   ・現在の価格と「次の価格」までしか出さない（その先は段階が進むまで非表示）
-   ・あと何人で値上がりかを、横バーで見せる                                   */
-(function(){
-  var seats=window.APUSH_SEATS||{};
-  // 各段階の[上限人数, 価格]。最後は上限なし（通常料金）
-  var PLANS={
-    m1:[[3,150000],[6,200000],[null,250000]],
-    m3:[[3,300000],[6,400000],[null,500000]],
-    m6:[[2,1000000],[4,1250000],[null,1500000]]
+/* ---------- 料金：期間による自動切り替え ----------
+   currentPhase(planKey, now) は、その時点で適用される価格帯の情報を返す。
+   seatCapPhase1 が設定されていて第1期の定員に達している場合は、
+   期限前でも第2期として扱う。                                               */
+window.currentPhase = function(planKey, now){
+  now = now || new Date();
+  var cfg = window.APUSH_PRICING;
+  var phases = cfg.phases;
+  var idx = phases.length - 1;
+  for (var i=0; i<phases.length; i++){
+    if (!phases[i].until || now.getTime() <= new Date(phases[i].until).getTime()){ idx = i; break; }
+  }
+  var cap = cfg.seatCapPhase1 ? cfg.seatCapPhase1[planKey] : null;
+  var takenP1 = (cfg.seatsTakenPhase1 && cfg.seatsTakenPhase1[planKey]) || 0;
+  var seatsLeft = null;
+  if (idx === 0 && cap != null){
+    seatsLeft = Math.max(0, cap - takenP1);
+    if (seatsLeft <= 0){ idx = 1; seatsLeft = null; }
+  }
+  var phase = phases[idx], next = phases[idx+1] || null;
+  return {
+    index: idx,
+    price: phase[planKey],
+    until: phase.until,
+    nextPrice: next ? next[planKey] : null,
+    nextStart: next ? next.start : null,
+    seatsLeft: seatsLeft
   };
-  var yen=function(v){ return '¥'+v.toLocaleString('ja-JP'); };
+};
 
-  Object.keys(PLANS).forEach(function(key){
+(function(){
+  var phases = window.APUSH_PRICING.phases;
+  var yen = function(v){ return '¥'+v.toLocaleString('ja-JP'); };
+  function fmtMD(iso){
+    var m = String(iso).match(/-(\d{2})-(\d{2})T/);
+    return m ? (parseInt(m[1],10)+'月'+parseInt(m[2],10)+'日') : '';
+  }
+  function phaseLabel(p){
+    if (!p.until) return p.start+'以降';
+    return p.start ? (p.start+'〜'+fmtMD(p.until)) : (fmtMD(p.until)+'まで');
+  }
+
+  ['m1','m3','m6'].forEach(function(key){
     var plan=document.querySelector('.plan[data-plan="'+key+'"]'); if(!plan) return;
-    var tiers=PLANS[key], taken=Math.max(0,Number(seats[key]||0));
+    var ph=window.currentPhase(key);
 
-    // 現在の段階
-    var tier=tiers.length-1, base=0;
-    for(var i=0;i<tiers.length;i++){
-      if(tiers[i][0]===null || taken<tiers[i][0]){ tier=i; break; }
-      base=tiers[i][0];
-    }
-    var cur=tiers[tier], limit=cur[0], next=tiers[tier+1]||null;
-
-    // 見出しの価格
     var now=plan.querySelector('.now');
-    if(now) now.innerHTML=yen(cur[1])+'<small>（税込）</small>';
+    if(now) now.innerHTML=yen(ph.price)+'<small>（税込）</small>';
 
-    var slots = limit===null ? 0 : (limit-base);        // この段階の枠数
-    var used  = limit===null ? 0 : (taken-base);        // うち埋まった数
-    var left  = limit===null ? 0 : (slots-used);
+    var untilEl=plan.querySelector('[data-until]');
+    if(untilEl) untilEl.textContent = ph.until ? (fmtMD(ph.until)+'までのご契約に適用') : '';
 
-    var fill=plan.querySelector('.sbar .fill');
-    var pips=plan.querySelector('.sbar .pips');
-    var lab =plan.querySelector('.seats-h .left');
-    var cl  =plan.querySelector('.seats-f .cur');
-    var nx  =plan.querySelector('.seats-f .next');
-
-    if(limit===null){                                    // 通常料金に到達
-      if(fill) fill.style.width='100%';
-      if(lab)  lab.innerHTML='<span class="full">今月分 満席</span>';
-      if(cl)   cl.innerHTML='現在の価格 <b>'+yen(cur[1])+'</b>（通常料金）';
-      if(nx)   nx.textContent='';
-      return;
+    var futureEl=plan.querySelector('[data-future]');
+    if(futureEl){
+      var rest=phases.slice(ph.index+1);
+      futureEl.textContent = rest.length
+        ? rest.map(function(p){ return phaseLabel(p)+'：'+yen(p[key]); }).join(' ／ ')
+        : '';
     }
-    if(pips){ pips.innerHTML=new Array(slots+1).join('<i></i>'); }
-    if(fill) setTimeout(function(){ fill.style.width=Math.round(used/slots*100)+'%'; },120);
-    if(lab)  lab.innerHTML='残り<b>'+left+'</b>名';
-    if(cl)   cl.innerHTML='現在の価格 <b>'+yen(cur[1])+'</b>';
-    // 次の価格だけを出す（そのさらに先は出さない）
-    if(nx)   nx.innerHTML = next ? ('残り'+left+'名で <b>'+yen(next[1])+'</b> に') : '';
+
+    var wrap=plan.querySelector('[data-seats-wrap]');
+    if(wrap){
+      if(ph.seatsLeft==null){
+        wrap.style.display='none';
+      }else{
+        wrap.style.display='';
+        var cap=window.APUSH_PRICING.seatCapPhase1[key];
+        var taken=cap-ph.seatsLeft;
+        var head=plan.querySelector('.seats-h');
+        if(head) head.innerHTML='第1期の残り<b>'+ph.seatsLeft+'</b>名（定員に達した時点で '+yen(ph.nextPrice)+' に移行）';
+        var fill=plan.querySelector('.sbar .fill');
+        var pips=plan.querySelector('.sbar .pips');
+        if(pips) pips.innerHTML=new Array(cap+1).join('<i></i>');
+        if(fill) setTimeout(function(){ fill.style.width=Math.round(taken/cap*100)+'%'; },120);
+      }
+    }
   });
+
+  /* ---------- 比較表：A-PUSH 側の価格・適用期限 ---------- */
+  var m3=window.currentPhase('m3');
+  var vsTotal=document.getElementById('vsTotal');
+  if(vsTotal) vsTotal.innerHTML=m3.price.toLocaleString('ja-JP')+'<span class="y">円</span>';
+  var vsCap=document.getElementById('vsCap');
+  if(vsCap){
+    if(m3.until){ vsCap.textContent='オープニング価格 ／ '+fmtMD(m3.until)+'までのご契約'; vsCap.style.display=''; }
+    else{ vsCap.style.display='none'; }
+  }
+  var vsV2=document.getElementById('vsV2');
+  if(vsV2) vsV2.innerHTML=m3.price.toLocaleString('ja-JP')+'<span class="jp">円</span>';
+
+  /* ---------- 比較表：差額サマリー ---------- */
+  var COMPETITOR_AVG=614900;
+  var finalPrice=phases[phases.length-1].m3;
+  var offEl=document.querySelector('.vs-sum .off');
+  if(offEl){
+    var diff=COMPETITOR_AVG-m3.price, pct=Math.round(diff/COMPETITOR_AVG*100);
+    offEl.textContent='差額 ▲'+diff.toLocaleString('ja-JP')+'円（約'+pct+'%）';
+  }
+  var noteEl=document.querySelector('.vs-sum .note-sm');
+  if(noteEl){
+    if(m3.price!==finalPrice){
+      var diff2=COMPETITOR_AVG-finalPrice, pct2=Math.round(diff2/COMPETITOR_AVG*100);
+      noteEl.textContent='11月1日以降の価格（'+yen(finalPrice)+'）との比較では ▲'+diff2.toLocaleString('ja-JP')+'円／約'+pct2+'%です。';
+      noteEl.style.display='';
+    }else{
+      noteEl.style.display='none';
+    }
+  }
 })();
 
 /* ============================================================
