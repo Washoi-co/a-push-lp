@@ -775,7 +775,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.55);padding:3.5em 24px 2.6e
 @media(max-width:720px){.f-in{grid-template-columns:1fr}.f-links{justify-content:flex-start}}
 
 /* ---------- 画面最下部の予約バナー（全デバイス） ---------- */
-body{padding-bottom:86px}
+body{padding-bottom:92px}
 .bottombar{
   position:fixed;left:0;right:0;bottom:0;z-index:1200;
   background:rgba(11,11,12,.94);backdrop-filter:blur(14px);
@@ -795,11 +795,14 @@ body{padding-bottom:86px}
 }
 .bb-btn small{font-size:.66rem;font-weight:700;opacity:.85}
 .bb-btn:hover{transform:translateY(-2px);background:#fff;color:var(--ink)}
+.bb-btn.bb-ghost{background:transparent;border:1px solid rgba(255,255,255,.45);box-shadow:none}
+.bb-btn.bb-ghost:hover{background:#fff;border-color:#fff}
 @media(max-width:720px){
-  body{padding-bottom:76px}
+  body{padding-bottom:94px}
   .bb-in{padding:.7em 12px;gap:0}
   .bb-txt{display:none}
-  .bb-btn{flex:1;padding:.9em 1em}
+  .bb-btn{flex:1;padding:.85em .3em;font-size:.72rem;text-align:center;gap:.25em}
+  .bb-btn small{font-size:.56rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 /* ---------- A-PUSH METHOD の解説（①・⑲） ---------- */
@@ -952,7 +955,8 @@ body{padding-bottom:86px}
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
     <!-- ▼ Google Meet の予約サイトURLが決まったら href を差し替え -->
-    <a class="hbtn ghost" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">オンライン説明会</a>
+    <a class="hbtn ghost" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">無料カウンセリング</a>
+    <a class="hbtn ghost" href="1day.html">1日研修</a>
     <a class="hbtn solid" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約<small>5,000円</small></a>
   </div>
 </header>
@@ -1333,6 +1337,13 @@ body{padding-bottom:86px}
     <p class="label">WHY YOU CAN FINISH</p>
     <h2>忙しくても、<br><em>やるしかない、3ヶ月。</em></h2>
     <p class="lead">「本当に動いている」現場の仕組みを、そのままお見せします。</p>
+    <div class="cards">
+      <div class="card">
+        <span class="num">00</span>
+        <h3>コーチから、こちらが連絡します</h3>
+        <p>英会話は、通う日だけ話して終わり。<br>結局それが続かないから、伸びません。<br>だから、こちらから連絡します。<br>私たちが見ているのは、レッスンの外です。</p>
+      </div>
+    </div>
     <div class="cards cards-half">
       <div class="card">
         <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
@@ -1398,7 +1409,7 @@ body{padding-bottom:86px}
         <div class="online-pts">
           <div>
             <b>いつでも</b>
-            <p>早朝も、深夜も、隙間時間も。レッスンは事前予約制なので、あなたの生活リズムに合わせて組めます。</p>
+            <p>曜日が固定されていません。<br>レッスンは事前予約制なので、あなたの空いたタイミングに合わせて組める、通いやすい設計です。</p>
           </div>
           <div>
             <b>どこでも</b>
@@ -1967,7 +1978,9 @@ body{padding-bottom:86px}
 <div class="bottombar">
   <div class="bb-in">
     <p class="bb-txt"><b>海外式コーチとお話ししましょう。</b></p>
-    <a class="bb-btn" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・5,000円（税込）／オンライン可・所要60分</small></a>
+    <a class="bb-btn bb-ghost" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">無料カウンセリング<small>無料・30分</small></a>
+    <a class="bb-btn bb-ghost" href="1day.html">1日研修<small>20,000円・日曜</small></a>
+    <a class="bb-btn" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約<small>5,000円・60分</small></a>
   </div>
 </div>
 
@@ -2066,6 +2079,7 @@ body{padding-bottom:86px}
       </div>
       <p class="pc-od-gift"><b>お土産：</b>学習管理システム2週間アクセス＆教材冊子付き</p>
       <p class="note-sm">※ 8つは目安です。フレーズの進み具合には個人差があります。</p>
+      <p class="note-sm"><a href="1day.html">1日研修のご案内ページで、当日の流れと教材を見る →</a></p>
       <a class="oneday-book pc-od-book" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=73eJwzNTUytDABAARMATo" target="_blank" rel="noopener">この日程で予約する</a>
     </div>
   </div>
