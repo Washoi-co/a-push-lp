@@ -928,8 +928,13 @@ body{padding-bottom:86px}
 .sched h3{font-weight:900;font-size:1.15rem;line-height:1.6;margin-bottom:.2em}
 .sched-note{font-size:.94rem;color:#5C5C64;line-height:2;margin-top:1.4em}
 .sched-note b{color:var(--ink);font-weight:900}
-.mat-block{max-width:880px;margin-top:2.6em}
-.mat-block .mat-note{margin-top:0}
+.mat3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:2.6em}
+.mat3-i{border:1px solid rgba(255,255,255,.16);border-radius:3px;overflow:hidden;background:#000}
+.mat3-i img{width:100%;display:block;cursor:zoom-in;transition:opacity .2s}
+.mat3-i img:hover{opacity:.86}
+.mat3-i figcaption{padding:1em 1.1em 1.2em;background:rgba(255,255,255,.05)}
+.mat3-i figcaption b{display:block;font-family:var(--en);font-weight:900;font-size:.88rem;letter-spacing:.06em;color:var(--red);margin-bottom:.45em}
+.mat3-i figcaption p{font-size:.82rem;line-height:1.85;color:rgba(255,255,255,.66)}
 </style>
 </head>
 <body>
@@ -1072,38 +1077,35 @@ body{padding-bottom:86px}
       </div>
       <div class="prod">
         <p class="pn">02 ／ 教材冊子</p>
-        <p class="ptag">A-PUSH <em>Beginner &amp; Intermediate</em></p>
-        <p style="margin-top:.9em">研修で使う教材を、そのままお持ち帰りいただけます。<br>研修のあとも、同じ型を自分で繰り返せます。</p>
+        <p class="ptag"><em>Beginner / Intermediate / Biz Talk</em></p>
+        <p style="margin-top:.9em">Beginner、Intermediate、Biz Talk。<br>あなたのレベルに合わせた内容の教材を、持って帰ってもらいます。</p>
       </div>
     </div>
 
-    <div class="mat-block">
-      <p class="mat-note">日常のちょっとした会話を、ぜんぶ英語で言えるようにする教材です。むずかしい文法は出てきません。<br><b>とにかく声に出して、体で覚える</b>。それだけです。</p>
-      <div class="mat-tiers">
-        <h5>A-PUSH Beginner ── まずは基本のカタチ</h5>
-        <p>英語の土台になる部分です。むずかしく考えず、口が勝手に動くようになるまで、何度も繰り返します。<br>ここができると、このあとがぐっと楽になります。</p>
-        <div class="mat-spreads">
-          <figure class="mat-spread">
-            <div class="mat-spread-pages">
-              <img class="zoomable" src="assets/mat-ch14.png" alt="教材 Chapter14 5W1H — Why（Beginner） 本文ページ" loading="lazy">
-              <img class="zoomable" src="assets/mat-ch14-p2.png" alt="教材 Chapter14 5W1H — Why（Beginner） イラストページ" loading="lazy">
-            </div>
-          </figure>
-        </div>
-
-        <h5>A-PUSH Intermediate ── 話せる内容を増やす</h5>
-        <p>「〜だったら」「〜かどうか」のような、少し複雑な言い方ができるようになります。<br>会話の幅が、ぐっと広がる段階です。</p>
-        <div class="mat-spreads">
-          <figure class="mat-spread">
-            <div class="mat-spread-pages">
-              <img class="zoomable" src="assets/mat-ch13.png" alt="教材 Chapter13 If／Whether（Intermediate） 本文ページ" loading="lazy">
-              <img class="zoomable" src="assets/mat-ch13-p2.png" alt="教材 Chapter13 If／Whether（Intermediate） イラストページ" loading="lazy">
-            </div>
-          </figure>
-        </div>
-      </div>
-      <p class="note-sm">※ 画像をクリックすると拡大できます。当日お渡しする範囲は、レベルチェックの結果に応じて講師が判断します。</p>
+    <div class="mat3">
+      <figure class="mat3-i">
+        <img class="zoomable" src="assets/mat-ch14.png" alt="教材 A-PUSH Beginner のページ" loading="lazy">
+        <figcaption>
+          <b>Beginner</b>
+          <p>3時制と5W1Hを完璧にする。<br>すべての土台になる部分です。</p>
+        </figcaption>
+      </figure>
+      <figure class="mat3-i">
+        <img class="zoomable" src="assets/mat-ch13.png" alt="教材 A-PUSH Intermediate のページ" loading="lazy">
+        <figcaption>
+          <b>Intermediate</b>
+          <p>関係代名詞、動名詞、助動詞、接続詞など。<br>より深い内容を話せるように。</p>
+        </figcaption>
+      </figure>
+      <figure class="mat3-i">
+        <img class="zoomable" src="assets/mat-biztalk.png" alt="教材 A-PUSH Biz Talk のページ" loading="lazy">
+        <figcaption>
+          <b>Business Talk</b>
+          <p>英語の基礎を固めたあなたに。<br>明日から使える表現を、一緒に学びましょう。</p>
+        </figcaption>
+      </figure>
     </div>
+    <p class="note-sm">※ 画像をクリックすると拡大できます。当日お渡しする教材は、レベルチェックの結果に応じて講師が判断します。</p>
   </div>
 </section>
 
