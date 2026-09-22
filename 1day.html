@@ -924,6 +924,9 @@ body{padding-bottom:86px}
 .f-sns a:hover{border-color:var(--red);color:#fff;background:var(--red)}
 .f-sns svg{width:1.05em;height:1.05em;fill:currentColor}
 .nw{white-space:nowrap}
+.jp{font-family:var(--jp)}
+/* 復習スケジュールのラベルは和文。COURSE の時刻（13:00 など）は var(--en) のまま */
+.sched .tt-time{font-family:var(--jp);letter-spacing:.02em}
 .sched{margin-top:3em;max-width:760px}
 .sched h3{font-weight:900;font-size:1.15rem;line-height:1.6;margin-bottom:.2em}
 .sched-note{font-size:.94rem;color:#5C5C64;line-height:2;margin-top:1.4em}
@@ -1068,12 +1071,12 @@ body{padding-bottom:86px}
 
     <div class="prods prods-2">
       <div class="prod">
-        <p class="pn">01 ／ 公式LINE</p>
+        <p class="pn">01<span class="jp"> ／ 公式LINE</span></p>
         <p class="ptag">25日間の<em>復習リマインド</em></p>
         <p style="margin-top:.9em">研修で叩き込んだフレーズを、<span class="nw">翌日・4日後・11日後・25日後</span>にお届けします。<br>「いつ復習するんだっけ」を、考えなくていい状態にします。</p>
       </div>
       <div class="prod">
-        <p class="pn">02 ／ 教材冊子</p>
+        <p class="pn">02<span class="jp"> ／ 教材冊子</span></p>
         <p class="ptag"><em>Beginner / Intermediate / Biz Talk</em></p>
         <p style="margin-top:.9em">Beginner、Intermediate、Biz Talk。<br>あなたのレベルに合わせた内容の教材を、持って帰ってもらいます。</p>
       </div>
@@ -1593,7 +1596,7 @@ body{padding-bottom:86px}
   <div class="popup-card pc-oneday">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-od-head">
-      <span class="pc-od-badge">毎週日曜開催 ／ 次回 9.27</span>
+      <span class="pc-od-badge"><span class="jp">毎週日曜開催 ／ 次回</span> 9.27</span>
       <h4>あなたのレベルに合わせて、<br>ネイティブマンツーマンで叩き込む</h4>
     </div>
     <div class="pc-body">
