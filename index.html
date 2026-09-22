@@ -1770,7 +1770,7 @@ body{padding-bottom:92px}
     <div class="oneday">
       <div class="oneday-top">
         <span class="oneday-tag">1日だけのお試し研修</span>
-        <span class="oneday-date">毎週日曜開催<small>（次回：9/27）</small></span>
+        <span class="oneday-date">毎週日曜開催<small>（次回：<span data-next-sunday></span>）</small></span>
       </div>
       <h3>英語1日研修</h3>
       <p class="oneday-lead">ネイティブマンツーマン3時間！<br>8個のフレーズを叩き込む。</p>
@@ -2025,7 +2025,7 @@ body{padding-bottom:92px}
   <div class="popup-card pc-oneday">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-od-head">
-      <span class="pc-od-badge"><span class="jp">毎週日曜開催 ／ 次回</span> 9.27</span>
+      <span class="pc-od-badge"><span class="jp">毎週日曜開催 ／ 次回</span> <span data-next-sunday="dot"></span></span>
       <h4>あなたのレベルに合わせて、<br>ネイティブマンツーマンで叩き込む</h4>
     </div>
     <div class="pc-body">
@@ -2159,6 +2159,24 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     a.addEventListener('click',function(){ fire((a.textContent||'').trim().slice(0,40)); });
   });
   window.AP_ATTR=attr;
+})();
+</script>
+<script>
+/* ---------- 次回開催日（毎週日曜）----------
+   休講日は SKIP に 'YYYY-MM-DD' で追加すると、その週を飛ばします。 */
+(function(){
+  var SKIP=[];
+  var d=new Date(); d.setHours(0,0,0,0);
+  d.setDate(d.getDate()+((7-d.getDay())%7||7));
+  for(var i=0;i<52;i++){
+    var iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if(SKIP.indexOf(iso)<0) break;
+    d.setDate(d.getDate()+7);
+  }
+  var slash=(d.getMonth()+1)+'/'+d.getDate(), dot=(d.getMonth()+1)+'.'+d.getDate();
+  document.querySelectorAll('[data-next-sunday]').forEach(function(el){
+    el.textContent = el.dataset.nextSunday==='dot' ? dot : slash;
+  });
 })();
 </script>
 </body>

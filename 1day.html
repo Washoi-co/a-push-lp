@@ -945,7 +945,7 @@ body{padding-bottom:86px}
   <a class="logo" href="#top" aria-label="A-Push">
     <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span>
   </a>
-  <a class="head-access" href="#course">次回開催：9/27（日）</a>
+  <a class="head-access" href="#course">次回開催：<span data-next-sunday></span>（日）</a>
   <div class="head-actions">
     <a class="hbtn ghost" href="index.html">3ヶ月コースを見る</a>
     <a class="hbtn solid" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=73eJwzNTUytDABAARMATo" target="_blank" rel="noopener">1日研修に申し込む<small>¥20,000</small></a>
@@ -967,7 +967,7 @@ body{padding-bottom:86px}
       <span class="l">とにかく話す、<em>3時間。</em></span>
     </h1>
     <div class="btns hero-btns">
-      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=73eJwzNTUytDABAARMATo" target="_blank" rel="noopener" data-cta="oneday">1日研修に申し込む<small>¥20,000（税込）／毎週日曜開催・次回 9/27</small></a>
+      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=73eJwzNTUytDABAARMATo" target="_blank" rel="noopener" data-cta="oneday">1日研修に申し込む<small>¥20,000（税込）／毎週日曜開催・次回 <span data-next-sunday></span></small></a>
       <a class="btn btn-ghost" href="index.html#method">A-PUSH Methodの仕組みを見る<small>反復でつくる「話す度胸」</small></a>
       <p class="access-note">ネイティブとマンツーマンで、8つのフレーズを叩き込む3時間です。</p>
     </div>
@@ -993,7 +993,7 @@ body{padding-bottom:86px}
     <div class="oneday">
       <div class="oneday-top">
         <span class="oneday-tag">1日だけのお試し研修</span>
-        <span class="oneday-date">毎週日曜開催<small>（次回：9/27）</small></span>
+        <span class="oneday-date">毎週日曜開催<small>（次回：<span data-next-sunday></span>）</small></span>
       </div>
       <h3>英語1日研修</h3>
       <p class="oneday-lead">ネイティブマンツーマン3時間！<br>8個のフレーズを叩き込む。</p>
@@ -1599,7 +1599,7 @@ body{padding-bottom:86px}
   <div class="popup-card pc-oneday">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-od-head">
-      <span class="pc-od-badge"><span class="jp">毎週日曜開催 ／ 次回</span> 9.27</span>
+      <span class="pc-od-badge"><span class="jp">毎週日曜開催 ／ 次回</span> <span data-next-sunday="dot"></span></span>
       <h4>あなたのレベルに合わせて、<br>ネイティブマンツーマンで叩き込む</h4>
     </div>
     <div class="pc-body">
@@ -1707,6 +1707,24 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     a.addEventListener('click',function(){ fire((a.textContent||'').trim().slice(0,40)); });
   });
   window.AP_ATTR=attr;
+})();
+</script>
+<script>
+/* ---------- 次回開催日（毎週日曜）----------
+   休講日は SKIP に 'YYYY-MM-DD' で追加すると、その週を飛ばします。 */
+(function(){
+  var SKIP=[];
+  var d=new Date(); d.setHours(0,0,0,0);
+  d.setDate(d.getDate()+((7-d.getDay())%7||7));
+  for(var i=0;i<52;i++){
+    var iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if(SKIP.indexOf(iso)<0) break;
+    d.setDate(d.getDate()+7);
+  }
+  var slash=(d.getMonth()+1)+'/'+d.getDate(), dot=(d.getMonth()+1)+'.'+d.getDate();
+  document.querySelectorAll('[data-next-sunday]').forEach(function(el){
+    el.textContent = el.dataset.nextSunday==='dot' ? dot : slash;
+  });
 })();
 </script>
 </body>
