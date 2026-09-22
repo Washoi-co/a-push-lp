@@ -35,13 +35,6 @@ if (window.EC_CONFIG.NOINDEX) {
   document.write('<meta name="robots" content="noindex,nofollow">');
 }
 
-/* ===== 残枠の設定 ==========================================================
-   現在の申込人数を入れると、料金セクションのバーが自動で該当の段階に光ります。
-   1ヶ月／3ヶ月：1〜3名＝第1段階、4〜6名＝第2段階、7名以降＝通常料金
-   半年　　　　：1〜2名＝第1段階、3〜4名＝第2段階、5名以降＝通常料金
-========================================================================== */
-window.APUSH_SEATS = { m1: 0, m3: 0, m6: 0 };
-
 /* ===== 比較表の「オープニング価格 募集枠」 =========================
    比較表の中の A-PUSH カードに出る、残枠バーの表示を切り替えます。
 ====================================================================== */
@@ -650,6 +643,11 @@ h2 em{font-style:normal;color:var(--red)}
 .plan .now{font-family:var(--en);font-weight:900;font-size:clamp(2.2rem,4.6vw,2.9rem);line-height:1;color:var(--red);margin:.6em 0 .1em;letter-spacing:-.03em}
 .plan .now small{font-size:.28em;font-family:var(--jp);font-weight:900;color:var(--ink);margin-left:.3em}
 .plan .now-lab{font-size:.76rem;font-weight:900;color:var(--ink)}
+.ptier{margin:1.2em 0 .2em;border-top:1px solid var(--line-l)}
+.ptier div{display:flex;justify-content:space-between;align-items:baseline;gap:1em;padding:.55em 0;border-bottom:1px solid var(--line-l);font-size:.8rem;font-weight:700;color:#8C8C94}
+.ptier b{font-family:var(--en);font-weight:900;font-size:1.02rem;color:inherit}
+.ptier .is-current{color:var(--ink)}
+.ptier .is-current b{color:var(--red)}
 .plan ul{list-style:none;margin-top:1.4em;display:flex;flex-direction:column;gap:.6em;font-size:.9rem;font-weight:500}
 .plan ul li{padding-left:1.5em;position:relative;line-height:1.85}
 .plan ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--red)}
@@ -1819,27 +1817,27 @@ body{padding-bottom:92px}
     </div>
 
     <h2>プランは、<em>3つだけ。</em></h2>
-    <p class="vs-eyebrow" style="margin-bottom:.6em">MEGURO OPENING ／ 目黒校舎オープニング価格（2026年10月31日まで）</p>
-    <p class="lead">コーチが1対1で伴走するため、各期の受け入れ人数には上限があります。<b>枠が埋まるごとに、料金は段階的に上がります。</b></p>
-    <p class="note-sm">目黒校舎のオープニングに伴う定員制の価格です。各価格帯の定員に達した時点で、次の価格帯の価格へ移行します。<br>お客様に適用される価格は、ご契約が成立した時点の受付状況により決まり、ご契約手続きの際に明示のうえご案内します。<br>一度ご契約が成立した後に、価格帯の移行を理由として受講料が増額されることはありません。</p>
+    <p class="vs-eyebrow" style="margin-bottom:.6em">LAUNCH PRICE ／ 目黒校舎オープン記念価格（2026年10月31日まで）</p>
+    <p class="lead">受講料は、お申込みの時期に応じて段階的に改定します。<b>お申込みを受領した日が属する期間の価格を適用します。</b></p>
+    <p class="note-sm">・2026年9月30日まで／2026年10月1日〜10月31日／2026年11月1日以降 の3段階です。<br>・お申込みの受領後、ご契約の成立が翌月以降となった場合でも、お申込みを受領した日の価格を適用します。<br>・一度ご契約が成立した後に、価格改定を理由として受講料が増額されることはありません。<br>・適用される受講料は、ご契約手続きの際に明示のうえご案内し、契約書面に記載します。</p>
 
     <div class="plans">
       <div class="plan" data-plan="m1">
         <h3>1ヶ月 プラン</h3>
         <p class="term">レッスン12回 ／ コーチング2回</p>
         <p class="now">¥150,000<small>（税込）</small></p>
-        <p class="now-lab">オープニング価格</p>
+        <p class="now-lab">2026年9月30日までのお申込み</p>
+        <div class="ptier">
+          <div data-p="0"><span>〜9/30</span><b>¥150,000</b></div>
+          <div data-p="1"><span>10/1〜10/31</span><b>¥200,000</b></div>
+          <div data-p="2"><span>11/1〜</span><b>¥250,000</b></div>
+        </div>
         <ul>
           <li>マンツーマンレッスン 12回</li>
           <li>コーチングセッション 2回</li>
           <li>A-PUSH METHOD</li>
           <li>公式LINEでの学習管理</li>
         </ul>
-        <div class="seats"><div class="seats-in">
-          <p class="seats-h"><span>今月の残枠</span><span class="left"></span></p>
-          <div class="sbar"><span class="fill"></span><span class="pips"></span></div>
-          <p class="seats-f"><span class="cur"></span><span class="next"></span></p>
-        </div></div>
       </div>
 
       <div class="plan reco" data-plan="m3">
@@ -1847,7 +1845,12 @@ body{padding-bottom:92px}
         <h3>3ヶ月 プラン</h3>
         <p class="term">毎月8回 ／ 毎月コーチング1回</p>
         <p class="now">¥300,000<small>（税込）</small></p>
-        <p class="now-lab">オープニング価格</p>
+        <p class="now-lab">2026年9月30日までのお申込み</p>
+        <div class="ptier">
+          <div data-p="0"><span>〜9/30</span><b>¥300,000</b></div>
+          <div data-p="1"><span>10/1〜10/31</span><b>¥400,000</b></div>
+          <div data-p="2"><span>11/1〜</span><b>¥500,000</b></div>
+        </div>
         <ul>
           <li>マンツーマンレッスン 毎月8回</li>
           <li>コーチングセッション 毎月1回</li>
@@ -1855,18 +1858,18 @@ body{padding-bottom:92px}
           <li>公式LINEでの学習管理</li>
           <li>成績保証（1ヶ月無償延長）の対象</li>
         </ul>
-        <div class="seats"><div class="seats-in">
-          <p class="seats-h"><span>今月の残枠</span><span class="left"></span></p>
-          <div class="sbar"><span class="fill"></span><span class="pips"></span></div>
-          <p class="seats-f"><span class="cur"></span><span class="next"></span></p>
-        </div></div>
       </div>
 
       <div class="plan" data-plan="m6">
         <h3>半年 プラン</h3>
         <p class="term">毎月6回 ／ 毎月コーチング2回</p>
         <p class="now">¥1,000,000<small>（税込）</small></p>
-        <p class="now-lab">オープニング価格</p>
+        <p class="now-lab">2026年9月30日までのお申込み</p>
+        <div class="ptier">
+          <div data-p="0"><span>〜9/30</span><b>¥1,000,000</b></div>
+          <div data-p="1"><span>10/1〜10/31</span><b>¥1,250,000</b></div>
+          <div data-p="2"><span>11/1〜</span><b>¥1,500,000</b></div>
+        </div>
         <ul>
           <li>マンツーマンレッスン 毎月6回</li>
           <li>コーチングセッション 毎月2回（全12回）</li>
@@ -1874,21 +1877,16 @@ body{padding-bottom:92px}
           <li>公式LINEでの学習管理</li>
           <li>成績保証（1ヶ月無償延長）の対象</li>
         </ul>
-        <div class="seats"><div class="seats-in">
-          <p class="seats-h"><span>今月の残枠</span><span class="left"></span></p>
-          <div class="sbar"><span class="fill"></span><span class="pips"></span></div>
-          <p class="seats-f"><span class="cur"></span><span class="next"></span></p>
-        </div></div>
       </div>
     </div>
 
     <p class="price-note">
-      * 料金は<b>お申し込み時点の段階</b>が適用されます。受講途中で値上がりすることはありません。<br>
-      * 分割払いはご相談ください。<br>
-      * 成績保証（1ヶ月無償延長）は<b>3ヶ月以上のプラン</b>が対象です。<br>
+      * 適用される受講料は、<b>お申込みを受領した日が属する期間の価格</b>です。受講開始後に価格改定期を迎えても、ご契約済みの受講料が増額されることはありません。<br>
+      * 分割払いはご相談ください（分割手数料はいただきません）。<br>
+      * 成績保証（1ヶ月無償延長）は<b>3ヶ月以上のプラン</b>が対象です。所定の条件を満たした場合に受講期間を無償で延長するものであり、スコアの到達を保証するものではありません。<br>
       * 学習効果には個人差があり、特定の成果、スコアまたは転職・昇進等を保証するものではありません。本ページに記載した回数・期間・到達イメージは、当社の指導方針および設計意図を説明したものです。
     </p>
-    <!-- MEMO（表示されません）: 要確定金額・人数の刻みは、実際の月間受け入れキャパシティ（講師数・時間割）を確認してから確定してください。現在2名体制のため、無理な集客数にならないようご注意ください。 / 現在の申込人数は index.html 冒頭の window.APUSH_SEATS で設定でき、バーの「今ここ」表示と見出しの価格が自動で切り替わります。 -->
+    <!-- MEMO（表示されません）: 価格は「申込みを受領した日が属する期間」で決まります。金額を変えるときは tokusho.html の受講料の適用期間の表と、ページ末尾の PRICE_TIERS を必ず揃えてください。 -->
   </div>
 </section>
 
@@ -2135,58 +2133,27 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   if((el=document.getElementById('vsDeadline'))) el.textContent=m.deadline||'';
 })();
 
-/* ---------- 料金：残枠バー ----------
-   ・現在の価格と「次の価格」までしか出さない（その先は段階が進むまで非表示）
-   ・あと何人で値上がりかを、横バーで見せる                                   */
+/* ---------- 料金：適用期間の判定 ----------
+   申込みを受領した日が属する期間の価格を「現在の価格」として表示します。     */
 (function(){
-  var seats=window.APUSH_SEATS||{};
-  // 各段階の[上限人数, 価格]。最後は上限なし（通常料金）
-  var PLANS={
-    m1:[[3,150000],[6,200000],[null,250000]],
-    m3:[[3,300000],[6,400000],[null,500000]],
-    m6:[[2,1000000],[4,1250000],[null,1500000]]
+  var PRICE_TIERS={
+    m1:[150000,200000,250000],
+    m3:[300000,400000,500000],
+    m6:[1000000,1250000,1500000]
   };
+  // 各期間の終了時点（JST）と、カード見出しに出す説明
+  var ENDS=['2026-10-01T00:00:00+09:00','2026-11-01T00:00:00+09:00',null];
+  var CAPS=['2026年9月30日までのお申込み','2026年10月1日〜10月31日のお申込み','2026年11月1日以降のお申込み'];
+  var now=Date.now(), idx=ENDS.length-1;
+  for(var i=0;i<ENDS.length;i++){ if(ENDS[i]===null || now<Date.parse(ENDS[i])){ idx=i; break; } }
   var yen=function(v){ return '¥'+v.toLocaleString('ja-JP'); };
 
-  Object.keys(PLANS).forEach(function(key){
+  Object.keys(PRICE_TIERS).forEach(function(key){
     var plan=document.querySelector('.plan[data-plan="'+key+'"]'); if(!plan) return;
-    var tiers=PLANS[key], taken=Math.max(0,Number(seats[key]||0));
-
-    // 現在の段階
-    var tier=tiers.length-1, base=0;
-    for(var i=0;i<tiers.length;i++){
-      if(tiers[i][0]===null || taken<tiers[i][0]){ tier=i; break; }
-      base=tiers[i][0];
-    }
-    var cur=tiers[tier], limit=cur[0], next=tiers[tier+1]||null;
-
-    // 見出しの価格
-    var now=plan.querySelector('.now');
-    if(now) now.innerHTML=yen(cur[1])+'<small>（税込）</small>';
-
-    var slots = limit===null ? 0 : (limit-base);        // この段階の枠数
-    var used  = limit===null ? 0 : (taken-base);        // うち埋まった数
-    var left  = limit===null ? 0 : (slots-used);
-
-    var fill=plan.querySelector('.sbar .fill');
-    var pips=plan.querySelector('.sbar .pips');
-    var lab =plan.querySelector('.seats-h .left');
-    var cl  =plan.querySelector('.seats-f .cur');
-    var nx  =plan.querySelector('.seats-f .next');
-
-    if(limit===null){                                    // 通常料金に到達
-      if(fill) fill.style.width='100%';
-      if(lab)  lab.innerHTML='<span class="full">今月分 満席</span>';
-      if(cl)   cl.innerHTML='現在の価格 <b>'+yen(cur[1])+'</b>（通常料金）';
-      if(nx)   nx.textContent='';
-      return;
-    }
-    if(pips){ pips.innerHTML=new Array(slots+1).join('<i></i>'); }
-    if(fill) setTimeout(function(){ fill.style.width=Math.round(used/slots*100)+'%'; },120);
-    if(lab)  lab.innerHTML='残り<b>'+left+'</b>名';
-    if(cl)   cl.innerHTML='現在の価格 <b>'+yen(cur[1])+'</b>';
-    // 次の価格だけを出す（そのさらに先は出さない）
-    if(nx)   nx.innerHTML = next ? ('残り'+left+'名で <b>'+yen(next[1])+'</b> に') : '';
+    var el;
+    if((el=plan.querySelector('.now')))     el.innerHTML=yen(PRICE_TIERS[key][idx])+'<small>（税込）</small>';
+    if((el=plan.querySelector('.now-lab'))) el.textContent=CAPS[idx];
+    if((el=plan.querySelector('.ptier [data-p="'+idx+'"]'))) el.classList.add('is-current');
   });
 })();
 
