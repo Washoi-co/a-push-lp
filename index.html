@@ -42,14 +42,14 @@ if (window.EC_CONFIG.NOINDEX) {
 ========================================================================== */
 window.APUSH_SEATS = { m1: 0, m3: 0, m6: 0 };
 
-/* ===== 比較表の「モニター募集枠」 =====================================
+/* ===== 比較表の「オープニング価格 募集枠」 =========================
    比較表の中の A-PUSH カードに出る、残枠バーの表示を切り替えます。
 ====================================================================== */
-window.APUSH_MONITOR = {
+window.APUSH_OPENING = {
   monthLabel: '10月枠',      // バー左のラベル
   capacity:   6,             // 今月の定員
   taken:      3,             // 申込済みの人数
-  deadline:   '10月31日'     // モニター価格の期限
+  deadline:   '10月31日'     // オープニング価格の期限
 };
 </script>
 
@@ -1682,15 +1682,15 @@ body{padding-bottom:86px}
     <!-- 料金・サービス比較 -->
     <div class="vs-head">
       <p class="vs-eyebrow">英会話コーチング 3ヶ月コース ／ 料金・サービス比較</p>
-      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 モニター価格 <em>30万円</em>（通常 50万円）。</h3>
-      <span class="note-sm">A-PUSH の30万円は2026年10月31日までのモニター価格です。他社の金額は各社の通常価格のため、同一条件の比較ではありません。</span>
+      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 オープニング価格 <em>30万円</em>（通常 50万円）。</h3>
+      <span class="note-sm">A-PUSH の30万円は、目黒校舎オープニングに伴う定員制の価格です（2026年10月31日まで、または各価格帯の定員に達するまで）。<br>他社の金額は各社の通常価格のため、同一条件の比較ではありません。</span>
     </div>
 
     <div class="vs-scroll">
       <div class="vs">
         <!-- 見出し行 -->
         <div class="vs-l blank"></div>
-        <div class="vs-u t"><span class="vs-pill">モニター募集中</span><p class="vs-brand">A-PUSH</p></div>
+        <div class="vs-u t"><span class="vs-pill">オープニング価格 実施中</span><p class="vs-brand">A-PUSH</p></div>
         <div class="vs-o t"><p class="vs-co">A社</p><p class="vs-co-sub">マンツーマン型 大手</p></div>
         <div class="vs-o t"><p class="vs-co">B社</p><p class="vs-co-sub">コンサル型 大手</p></div>
         <div class="vs-o t"><p class="vs-co">C社</p><p class="vs-co-sub">通い放題 併用型</p></div>
@@ -1728,7 +1728,7 @@ body{padding-bottom:86px}
         <div class="vs-u b">
           <span class="vs-div"></span>
           <p class="vs-total">300,000<span class="y">円</span></p>
-          <p class="vs-cap">モニター価格 ／ <span id="vsDeadline">10月31日</span>まで</p>
+          <p class="vs-cap">オープニング価格 ／ <span id="vsDeadline">10月31日</span>まで</p>
           <div class="vs-bar"><span id="vsBar" style="width:50%"></span></div>
           <p class="vs-barl"><span id="vsMonth">10月枠</span><span id="vsLeft">残り 3名</span></p>
         </div>
@@ -1744,13 +1744,13 @@ body{padding-bottom:86px}
       <span class="v1">614,900円</span>
       <span class="ar">→</span>
       <span class="v2">300,000円</span>
-      <span class="off">▲314,900円 ／ 約51%オフ（モニター価格）</span>
+      <span class="off">▲314,900円 ／ 約51%オフ（オープニング価格）</span>
+      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.1em;color:rgba(255,255,255,.62)">通常価格（500,000円）との比較では ▲114,900円／約19%です。</span>
     </div>
 
     <div class="vs-foot">
       <p class="cond">※ 比較条件：3ヶ月間・マンツーマンレッスン24回相当を含むコースの総額（税込・入会金込み）を比較しています。B社はマンツーマンレッスンを持たず週1回のコンサルティング面談のみのため、参考として掲載し、平均額の算出には含めていません。</p>
-      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHのモニター価格・募集枠は2026年10月31日まで。</p>
-      <p class="note-sm" style="margin-top:1em">モニター価格は、受講後に匿名（顔出しなし）でのインタビュー記事へのご協力をお願いする条件付きの価格です。顔出しでの掲載、動画・レッスン風景の撮影は任意で、ご協力いただかない場合も価格は変わりません。詳細は<a href="kiyaku.html">受講規約第21条</a>をご確認ください。</p>
+      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHのオープニング価格・募集枠は2026年10月31日まで（各価格帯の定員に達した時点で、次の価格帯へ移行します）。</p>
     </div>
 
     <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。募集期限（10月31日）を過ぎたら、この表の日付と枠数も必ず更新してください。 -->
@@ -1807,15 +1807,16 @@ body{padding-bottom:86px}
     </div>
 
     <h2>プランは、<em>3つだけ。</em></h2>
+    <p class="vs-eyebrow" style="margin-bottom:.6em">MEGURO OPENING ／ 目黒校舎オープニング価格（2026年10月31日まで）</p>
     <p class="lead">コーチが1対1で伴走するため、各期の受け入れ人数には上限があります。<b>枠が埋まるごとに、料金は段階的に上がります。</b></p>
-    <p class="note-sm">モニター価格は、受講後に匿名でのインタビュー記事へのご協力をお願いする条件付きの価格です。顔出しでの掲載や動画撮影は任意で、ご協力いただかない場合も価格は変わりません。詳細は<a href="kiyaku.html">受講規約第21条</a>をご確認ください。</p>
+    <p class="note-sm">目黒校舎のオープニングに伴う定員制の価格です。各価格帯の定員に達した時点で、次の価格帯の価格へ移行します。<br>お客様に適用される価格は、ご契約が成立した時点の受付状況により決まり、ご契約手続きの際に明示のうえご案内します。<br>一度ご契約が成立した後に、価格帯の移行を理由として受講料が増額されることはありません。</p>
 
     <div class="plans">
       <div class="plan" data-plan="m1">
         <h3>1ヶ月 プラン</h3>
         <p class="term">レッスン12回 ／ コーチング2回</p>
         <p class="now">¥150,000<small>（税込）</small></p>
-        <p class="now-lab">現在の価格</p>
+        <p class="now-lab">オープニング価格</p>
         <ul>
           <li>マンツーマンレッスン 12回</li>
           <li>コーチングセッション 2回</li>
@@ -1834,7 +1835,7 @@ body{padding-bottom:86px}
         <h3>3ヶ月 プラン</h3>
         <p class="term">毎月8回 ／ 毎月コーチング1回</p>
         <p class="now">¥300,000<small>（税込）</small></p>
-        <p class="now-lab">現在の価格</p>
+        <p class="now-lab">オープニング価格</p>
         <ul>
           <li>マンツーマンレッスン 毎月8回</li>
           <li>コーチングセッション 毎月1回</li>
@@ -1853,7 +1854,7 @@ body{padding-bottom:86px}
         <h3>半年 プラン</h3>
         <p class="term">毎月6回 ／ 毎月コーチング2回</p>
         <p class="now">¥1,000,000<small>（税込）</small></p>
-        <p class="now-lab">現在の価格</p>
+        <p class="now-lab">オープニング価格</p>
         <ul>
           <li>マンツーマンレッスン 毎月6回</li>
           <li>コーチングセッション 毎月2回（全12回）</li>
@@ -1913,7 +1914,7 @@ body{padding-bottom:86px}
       </details>
       <details>
         <summary>1日だけの研修や体験も可能ですか？</summary>
-        <p class="a">はい。日曜日に日帰りのスピーキング研修（30分のコーチング付き）をご用意しています。<b>1日研修会 2万円〜</b>。詳細・お申し込みは<a href="https://reserva.be/washoiii" target="_blank" rel="noopener">こちら</a>からご確認ください。</p>
+        <p class="a">はい。日曜日に日帰りのスピーキング研修（30分のコーチング付き）をご用意しています。<br>料金は受講者1名あたりの時間単価で、<b>マンツーマンは1時間 10,000円、2名グループは1時間 7,500円、3名グループは1時間 5,000円</b>です（実施時間数は回ごとに異なります）。<br>総額は予約ページに表示され、お申し込み前にご確認いただけます。詳細・お申し込みは<a href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener">こちら</a>からご確認ください。</p>
       </details>
     </div>
     <!-- MEMO（表示されません）: 要差し替え上記は仮のFAQです。実際のDM・問い合わせ履歴と照らし合わせて、内容と順番を差し替えてください。 -->
@@ -2106,9 +2107,9 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.classList.add('on')),6000);
 
-/* ---------- 比較表：モニター残枠バー ---------- */
+/* ---------- 比較表：オープニング価格 残枠バー ---------- */
 (function(){
-  var m=window.APUSH_MONITOR; if(!m) return;
+  var m=window.APUSH_OPENING; if(!m) return;
   var cap=Math.max(1,Number(m.capacity)||1), taken=Math.min(cap,Math.max(0,Number(m.taken)||0));
   var left=cap-taken;
   var bar=document.getElementById('vsBar');
