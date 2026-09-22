@@ -35,15 +35,6 @@ if (window.EC_CONFIG.NOINDEX) {
   document.write('<meta name="robots" content="noindex,nofollow">');
 }
 
-/* ===== 比較表の「オープニング価格 募集枠」 =========================
-   比較表の中の A-PUSH カードに出る、残枠バーの表示を切り替えます。
-====================================================================== */
-window.APUSH_OPENING = {
-  monthLabel: '10月枠',      // バー左のラベル
-  capacity:   6,             // 今月の定員
-  taken:      3,             // 申込済みの人数
-  deadline:   '10月31日'     // オープニング価格の期限
-};
 </script>
 
 <!-- Google タグマネージャー -->
@@ -564,9 +555,6 @@ h2 em{font-style:normal;color:var(--red)}
   display:inline-block;margin-top:.7em;background:rgba(255,45,22,.13);color:var(--red);
   font-size:.74rem;font-weight:900;padding:.35em 1em;border-radius:999px;
 }
-.vs-bar{height:6px;border-radius:99px;background:rgba(255,255,255,.3);margin-top:1em;width:100%;overflow:hidden}
-.vs-bar span{display:block;height:100%;background:#fff;border-radius:99px;transition:width .8s cubic-bezier(.2,1,.3,1)}
-.vs-barl{display:flex;justify-content:space-between;width:100%;margin-top:.5em;font-size:.7rem;font-weight:900}
 
 .vs-sum{
   margin-top:22px;background:var(--ink);color:#fff;border-radius:10px;
@@ -652,30 +640,6 @@ h2 em{font-style:normal;color:var(--red)}
 .plan ul li{padding-left:1.5em;position:relative;line-height:1.85}
 .plan ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--red)}
 
-/* 残枠バー（横バー） */
-.seats{margin-top:auto;padding-top:1.6em}
-.seats-in{padding-top:1.4em;border-top:1px solid var(--line-l)}
-.seats-h{
-  font-size:.74rem;font-weight:900;letter-spacing:.04em;color:#7A7A82;
-  display:flex;justify-content:space-between;align-items:baseline;gap:1em;margin-bottom:.7em;
-}
-.seats-h .left{color:var(--red);font-size:.92rem}
-.seats-h .left b{font-family:var(--en);font-size:1.5em;vertical-align:-.06em;margin:0 .06em}
-.sbar{height:10px;border-radius:99px;background:#E4E4E7;overflow:hidden;position:relative}
-.sbar .fill{
-  display:block;height:100%;border-radius:99px;width:0;
-  background:linear-gradient(90deg,var(--red),#FF6647);
-  transition:width 1s cubic-bezier(.2,1,.3,1);
-}
-.sbar .pips{position:absolute;inset:0;display:flex;pointer-events:none}
-.sbar .pips i{flex:1;border-right:2px solid #fff}
-.sbar .pips i:last-child{border-right:0}
-.seats-f{display:flex;justify-content:space-between;align-items:center;gap:1em;margin-top:.7em;font-size:.74rem;font-weight:900}
-.seats-f .cur{color:var(--ink)}
-.seats-f .cur b{font-family:var(--en);font-size:1.15em}
-.seats-f .next{color:#8C8C94}
-.seats-f .next b{font-family:var(--en);font-size:1.15em;color:var(--ink)}
-.seats-f .full{color:var(--red)}
 .price-note{margin-top:2.4em;font-size:.82rem;color:#7A7A82;line-height:2}
 .price-note b{color:var(--ink);font-weight:900}
 
@@ -1692,15 +1656,15 @@ body{padding-bottom:92px}
     <!-- 料金・サービス比較 -->
     <div class="vs-head">
       <p class="vs-eyebrow">英会話コーチング 3ヶ月コース ／ 料金・サービス比較</p>
-      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 オープニング価格 <em>30万円</em>（通常 50万円）。</h3>
-      <span class="note-sm">A-PUSH の30万円は、目黒校舎オープニングに伴う定員制の価格です（2026年10月31日まで、または各価格帯の定員に達するまで）。<br>他社の金額は各社の通常価格のため、同一条件の比較ではありません。</span>
+      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 <em>300,000円</em>（2026年9月30日までのお申込み）。</h3>
+      <span class="note-sm">A-PUSH の300,000円は、2026年9月30日までのお申込みに適用される価格です。<br>2026年10月1日〜10月31日は400,000円、11月1日以降は500,000円となります。<br>他社の金額は各社の通常価格であり、同一条件の比較ではありません。</span>
     </div>
 
     <div class="vs-scroll">
       <div class="vs">
         <!-- 見出し行 -->
         <div class="vs-l blank"></div>
-        <div class="vs-u t"><span class="vs-pill">オープニング価格 実施中</span><p class="vs-brand">A-PUSH</p></div>
+        <div class="vs-u t"><span class="vs-pill">2026年9月30日までの価格</span><p class="vs-brand">A-PUSH</p></div>
         <div class="vs-o t"><p class="vs-co">A社</p><p class="vs-co-sub">マンツーマン型 大手</p></div>
         <div class="vs-o t"><p class="vs-co">B社</p><p class="vs-co-sub">コンサル型 大手</p></div>
         <div class="vs-o t"><p class="vs-co">C社</p><p class="vs-co-sub">通い放題 併用型</p></div>
@@ -1738,9 +1702,7 @@ body{padding-bottom:92px}
         <div class="vs-u b">
           <span class="vs-div"></span>
           <p class="vs-total">300,000<span class="y">円</span></p>
-          <p class="vs-cap">オープニング価格 ／ <span id="vsDeadline">10月31日</span>まで</p>
-          <div class="vs-bar"><span id="vsBar" style="width:50%"></span></div>
-          <p class="vs-barl"><span id="vsMonth">10月枠</span><span id="vsLeft">残り 3名</span></p>
+          <p class="vs-cap">2026年9月30日までのお申込み</p>
         </div>
         <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">635,800<span class="y">円</span></p><span class="vs-plus">+335,800円</span></div>
         <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">632,500<span class="y">円</span></p><span class="vs-plus">+332,500円</span></div>
@@ -1750,17 +1712,15 @@ body{padding-bottom:92px}
     <p class="scroll-hint">← 横にスクロールできます →</p>
 
     <div class="vs-sum">
-      <span class="t1">マンツーマン型2社の平均</span>
+      <span class="t1">マンツーマン型2社（A社・C社）の総額の平均</span>
       <span class="v1">614,900<span class="jp">円</span></span>
-      <span class="ar">→</span>
-      <span class="v2">300,000<span class="jp">円</span></span>
-      <span class="off">▲314,900円 ／ 約51%オフ（オープニング価格）</span>
-      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.1em;color:rgba(255,255,255,.62)">通常価格（500,000円）との比較では ▲114,900円／約19%です。</span>
+      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.3em;color:rgba(255,255,255,.72)">A-PUSH は、2026年9月30日までのお申込みで300,000円、10月1日〜10月31日で400,000円、11月1日以降で500,000円です。<br>「オフ」「割引」は当社の値下げを意味するものではなく、他社の通常価格との差を示したものです。</span>
     </div>
 
     <div class="vs-foot">
       <p class="cond">※ 比較条件：3ヶ月間・マンツーマンレッスン24回相当を含むコースの総額（税込・入会金込み）を比較しています。B社はマンツーマンレッスンを持たず週1回のコンサルティング面談のみのため、参考として掲載し、平均額の算出には含めていません。</p>
-      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHのオープニング価格・募集枠は2026年10月31日まで（各価格帯の定員に達した時点で、次の価格帯へ移行します）。</p>
+      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHの受講料は、お申込みを受領した日が属する期間の価格を適用します。</p>
+      <p>※ 各社の金額は2026年9月20日時点の各社公式サイトの記載に基づきます。根拠となる画面の記録は当社にて保管しています。比較条件が異なる項目については上記の注記をご確認ください。</p>
     </div>
 
     <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。募集期限（10月31日）を過ぎたら、この表の日付と枠数も必ず更新してください。 -->
@@ -2119,19 +2079,6 @@ const io=new IntersectionObserver(es=>{
 },{threshold:.06,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.classList.add('on')),6000);
-
-/* ---------- 比較表：オープニング価格 残枠バー ---------- */
-(function(){
-  var m=window.APUSH_OPENING; if(!m) return;
-  var cap=Math.max(1,Number(m.capacity)||1), taken=Math.min(cap,Math.max(0,Number(m.taken)||0));
-  var left=cap-taken;
-  var bar=document.getElementById('vsBar');
-  if(bar) bar.style.width=Math.round(taken/cap*100)+'%';
-  var el;
-  if((el=document.getElementById('vsMonth')))    el.textContent=m.monthLabel||'';
-  if((el=document.getElementById('vsLeft')))     el.textContent=left>0?('残り '+left+'名'):'満席';
-  if((el=document.getElementById('vsDeadline'))) el.textContent=m.deadline||'';
-})();
 
 /* ---------- 料金：適用期間の判定 ----------
    申込みを受領した日が属する期間の価格を「現在の価格」として表示します。     */
