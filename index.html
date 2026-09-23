@@ -470,6 +470,36 @@ h2 em{font-style:normal;color:var(--red)}
 
 .jp{font-family:var(--jp)}
 [hidden]{display:none!important}
+
+/* ---------- 残り人数バー・価格のステップ（ファーストビュー） ---------- */
+.seat{margin:1em 0 .2em;text-align:left}
+.seat-lab{display:flex;justify-content:space-between;align-items:baseline;gap:.8em;flex-wrap:wrap;font-size:clamp(.8rem,1.8vw,.92rem);font-weight:700;color:rgba(255,255,255,.85)}
+.seat-lab b{font-weight:900;color:#fff;font-size:1.15em}
+.seat-lab b .en{color:var(--red);font-size:1.3em;margin:0 .1em}
+.seat-bar{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;margin-top:.5em}
+.seat-bar i{height:12px;border-radius:2px;background:rgba(255,255,255,.18)}
+.seat-bar i.on{background:var(--red)}
+.pstep{margin-top:1.1em;display:grid;gap:.5em;text-align:left}
+.pstep-row{display:grid;grid-template-columns:11.5em 1fr 6.5em;align-items:center;gap:.8em;font-size:clamp(.76rem,1.7vw,.88rem);font-weight:700;color:rgba(255,255,255,.7)}
+.pstep-lab{white-space:nowrap}
+.pstep-bar{height:14px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.pstep-bar i{display:block;height:100%;background:rgba(255,255,255,.35)}
+.pstep-row.now{color:#fff}
+.pstep-row.now .pstep-bar i{background:var(--red)}
+.pstep-val{white-space:nowrap;font-weight:900;text-align:right}
+button.btn{border:0;cursor:pointer;font-family:var(--jp)}
+.pstep-val .en{font-size:1.15em}
+@media(max-width:520px){
+  .pstep-row{grid-template-columns:1fr auto;row-gap:.25em}
+  .pstep-bar{grid-column:1/-1;grid-row:2}
+}
+/* ヘッダーの代表Instagram */
+.hbtn-ig{display:inline-flex;align-items:center;gap:.45em}
+.hbtn-ig svg{width:1.15em;height:1.15em;fill:currentColor}
+@media(max-width:720px){
+  .hbtn.ghost.hbtn-ig{display:inline-flex;padding:.7em .75em}
+  .hbtn-ig span{display:none}
+}
 .vnote{margin-top:.5em;font-size:.94rem;font-weight:700;color:#5C5C64}
 .sec-dark .vnote{color:rgba(255,255,255,.7)}
 .note-sm{display:block;margin-top:.8em;font-size:.78rem;line-height:1.8;color:#5C5C64}
@@ -1032,6 +1062,7 @@ body{padding-bottom:92px}
   </a>
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
+    <a class="hbtn ghost hbtn-ig" href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener" aria-label="代表 Kimi の Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg><span>代表 Kimi</span></a>
     <button type="button" class="hbtn solid" data-popup="startModal">説明会／体験会</button>
   </div>
 </header>
@@ -1059,8 +1090,14 @@ body{padding-bottom:92px}
         <p class="offer-tag">【オープン記念価格】3ヶ月コース（マンツーマン全24回）</p>
         <p class="offer-price"><span class="n">200,000</span>円<small>（税込・入会金0円）</small></p>
         <p class="oc" data-cmp>英語コーチング大手3社の3ヶ月コースは<span class="en" data-cmp-range>616,000〜634,000</span>円。<span data-third>その約3分の1。</span></p>
-        <p class="oc">10月31日までのお申込み・全コース先着<span class="en" data-capacity>10</span>名｜<b>残り<span class="en" data-remaining>10</span>名</b></p>
-        <p class="oc">11月1日以降のお申込みは<span class="en">400,000</span>円</p>
+        <div class="seat">
+          <p class="seat-lab"><span>10月31日までのお申込み・全コース先着<span class="en" data-capacity>10</span>名</span><b>残り<span class="en" data-remaining>10</span>名</b></p>
+          <div class="seat-bar" data-seatbar aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-row now"><span class="pstep-lab">10月31日までのお申込み</span><span class="pstep-bar"><i style="width:50%"></i></span><span class="pstep-val"><span class="en">200,000</span>円</span></div>
+          <div class="pstep-row"><span class="pstep-lab">11月1日以降のお申込み</span><span class="pstep-bar"><i style="width:100%"></i></span><span class="pstep-val"><span class="en">400,000</span>円</span></div>
+        </div>
         <p class="offer-note">※他社は<span data-asof>2026年9月24日</span>時点の各社公式サイト記載の通常価格（税込・入会金込）です。C社は別途、教材費等がかかります。A-PUSHはオープン記念割引の価格で、同一条件の比較ではありません。</p>
       </div>
       <div data-launch="closed" hidden>
@@ -1073,10 +1110,7 @@ body{padding-bottom:92px}
     </div>
 
     <div class="hero-cta">
-      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">体験会を予約する<small>60分・3,000円（税込）／オンライン可</small></a>
-      <p class="note-sm">体験レッスン40分（メソッドの説明を含む）＋ご相談20分。最後の20分でコースのご案内があります。その場でお申込みいただく必要はありません。</p>
-      <a class="hero-link" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">話を聞くだけなら → 無料オンライン説明会（30分・レッスン体験なし）</a>
-      <p class="access-note">目黒駅 徒歩1分の教室／オンライン（Google Meet）</p>
+      <button type="button" class="btn btn-primary" data-popup="startModal">説明会／体験会を予約する<small>オンライン説明会（無料）・体験会（3,000円・税込）</small></button>
     </div>
   </div>
 </section>
@@ -1213,6 +1247,32 @@ body{padding-bottom:92px}
   </div>
 </section>
 
+<!-- ============ 3-1. A-PUSH METHOD ============ -->
+<section class="sec-dark" id="method">
+  <div class="wrap reveal">
+    <p class="label">A-PUSH METHOD</p>
+    <h2>正しい環境での反復。<br><em>そして、慣れた後のアウトプット。</em></h2>
+    <p class="lead">一つ一つのフレーズに集中する。<br>その型を動詞、場面を変えながら、ひたすらネイティブと繰り返す。<br>繰り返すうちに、考える前にわかる、出てくる。<br>大切なのは「理解」ではなく、圧倒的な<b>「慣れ」</b>。</p>
+    <div class="formula" style="margin-top:1.8em;background:var(--ink-2);color:#fff;border:1px solid var(--line-d)">
+      What have you been working on?<br>
+      We have been <i>working on</i> this project <i>for two weeks.</i><br>
+      How long have you been working with this client?<br>
+      We have been <i>working with</i> this client <i>for three years.</i>
+    </div>
+    <p class="note-sm">型はひとつ、中身だけ入れ替える。繰り返しているのは、文ではありません。型です。</p>
+
+    <div class="prods">
+      <div class="prod"><p class="pn">STEP 1</p><p class="ptag">文を見ながら、とにかく声に出す</p><p>正確さより回数。口が形を覚えるまで、ひたすら声に出します。</p></div>
+      <div class="prod"><p class="pn">STEP 2</p><p class="ptag">文を消して、絵だけで言う</p><p>見た瞬間に言えるまで繰り返す。絵と口のあいだに、日本語が入る隙がなくなっていきます。</p></div>
+      <div class="prod"><p class="pn">STEP 3</p><p class="ptag">覚えた型を、混ぜる</p><p>どれが来るか分からない状態で、絵を見て、選んで、言う。実際の会話にいちばん近い段階です。</p></div>
+    </div>
+
+    <p class="agi-punch">1チャプター <em><span style="font-family:var(--en)">200〜300</span>回</em>が目安。<br>「探している時間」がなくなるまで、繰り返します。</p>
+    <p class="note-sm">※ 変化の現れ方や必要な回数には個人差があります。一定の回数を繰り返すことで特定の状態に達することをお約束するものではありません。</p>
+    <p class="lead" style="margin-top:1.6em">常にネイティブ講師が隣にいます。<br>ズレた瞬間にその場で直すので、間違った形のまま固まることを防ぎます。</p>
+  </div>
+</section>
+
 <!-- ============ 3-2. 受講できる時間 ============ -->
 <section id="access">
   <div class="wrap reveal">
@@ -1264,12 +1324,22 @@ body{padding-bottom:92px}
         <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
         <p class="aff">テンプル大学ジャパンキャンパス 在学</p>
 
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2">17歳で、フィリピンの語学学校へ。<br>中学から英語をやってきたのに、相手が何を言っているのか分からない。<br>"Slow please." と頼んでも、やっぱり聞き取れませんでした。</p>
+        <p style="font-size:.94rem;color:#5C5C64;line-height:2">17歳で、フィリピンの語学学校へ。<br>中学から英語をやってきたのに、リスニングが本当に苦手でした。<br>ネイティブの英語は速くて、ついていけない。聞き取れないから、結局、言葉も出てこない。<br>"Slow please." と頼んでも、やっぱり聞き取れませんでした。</p>
         <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">変わったのは、とにかく話しまくる学習法に出会ってからです。<br>話すうちに、聞けるようにもなりました。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">1〜2年通わせる英会話の設計が、ずっと嫌でした。<br>だから逆をやります。3ヶ月集中して、卒業してもらう。<br>あの時の学習法を作り直したのが、<b style="color:var(--ink)">A-PUSH Method</b>です。</p>
       </div>
     </div>
 
+
+    <h3 class="sub-h">英会話に通っても、<em style="font-style:normal;color:var(--red)">話せるようにならない理由。</em></h3>
+    <p class="lead">よくある英会話は、1〜2年通い続けることを前提に設計されています。<br>その設計のままでは、次の4つが起きやすいと私たちは考えています。</p>
+    <div class="cards">
+      <div class="card"><span class="num">01</span><h3>話す時間が、短い</h3><p>週1回のレッスンでも、説明を聞いている時間や雑談を除くと、あなたが英語を口に出す時間はわずかです。</p></div>
+      <div class="card"><span class="num">02</span><h3>次のレッスンまでに、忘れる</h3><p>1週間あくと、覚えた表現の多くは抜けてしまいます。毎回、思い出すところから始まります。</p></div>
+      <div class="card"><span class="num">03</span><h3>「分かった」で、終わる</h3><p>文法や表現を理解して終わり。口が覚えるまで繰り返さないので、会話の場面で出てきません。</p></div>
+      <div class="card"><span class="num">04</span><h3>いつまでも、終わらない</h3><p>長く通うほど、1回あたりの密度は上がりにくい。ゴールが見えないまま、月謝だけが続きます。</p></div>
+    </div>
+    <p class="agi-punch" style="color:var(--ink)!important;font-size:clamp(1.2rem,2.7vw,1.6rem)">だから A-PUSH は、だらだら通うのではなく、<br><em>3ヶ月間集中して、英語を身につける期間を買っていただく。</em></p>
+    <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:1em">あの時の学習法を作り直したのが、<b style="color:var(--ink)">A-PUSH Method</b>です。</p>
 
     <h3 class="sub-h">あなたに、伴走する人。</h3>
     <p class="lead">レッスンはネイティブ講師が、日々の学習管理は英会話コーチが担当します。</p>
@@ -1370,44 +1440,6 @@ body{padding-bottom:92px}
   </div>
 </section>
 
-<!-- ============ 7. 保証 ============ -->
-<section>
-  <div class="wrap reveal">
-    <p class="label">GUARANTEE</p>
-    <h2>私たちは、本気です。<br><em>だから、伸ばせる。</em></h2>
-    <div class="grt">
-      <div class="grt-mark"><b>+1</b><span>MONTH FREE</span></div>
-      <div class="grt-txt">
-        <h3>条件を満たして Versant スコアが所定の伸びに達しなかった場合、<br>受講期間を1ヶ月、無償で延長します。</h3>
-        <span class="note-sm">本保証は「受講期間の無償延長」を保証するものであり、スコアの到達、英語力の習得、転職・昇進等の成果を保証するものではありません。学習効果には個人差があります。保証の適用条件・申請方法は受講規約第20条に定めます。</span>
-        <div class="grt-cond">
-          <span>学習進捗の提出 80%以上</span>
-          <span>レッスン出席率 80%以上</span>
-          <span>3ヶ月以上のプランが対象</span>
-        </div>
-      </div>
-    </div>
-    <!-- MEMO（表示されません）: 要確認いただいた画像の見出しは「成績保証／100%返金」でしたが、上の保証ブロックは「返金ではなく1ヶ月無償延長」と明記しています。どちらが正なのか（返金なのか、延長なのか、両方選べるのか）をご確認ください。現状は既存の文言に合わせ、見出しを「成績保証の判定基準」として掲載しています。景品表示法・特定商取引法の対象になる表記のため、公開前に必ず確定させてください。 -->
-    <div class="gscore">
-      <p class="gscore-h">成績保証（受講期間の1ヶ月無償延長）</p>
-      <p class="gscore-t">受講開始時のスコア別・保証するスコアの伸び</p>
-      <table>
-        <thead>
-          <tr><th>受講開始時のスコア</th><th>保証内容</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>45<small>未満</small></td><td><span class="up">+10<small>ポイント保証</small></span></td></tr>
-          <tr><td>45<small>以上</small> 55<small>未満</small></td><td><span class="up">+5<small>ポイント保証</small></span></td></tr>
-          <tr><td>55<small>以上</small></td><td><span class="none">成績保証の対象外</span></td></tr>
-        </tbody>
-      </table>
-      <p class="gscore-f">テストは<b>入会時と受講終了時の2回</b>実施します。</p>
-    </div>
-
-    <p class="price-note">※ 成績の判定は、受講開始時と受講終了時に実施する Versant のスコアで行います。受験費用は当社が負担します。終了時テストは受講期間終了日から14日以内にお受けいただき、保証のお申請は判定結果の通知から14日以内にお願いします。条件を満たさない場合（提出率・出席率が80%未満、期限内に終了時テストを受験されなかった場合等）は保証の対象外となります。詳細は受講規約第20条をご確認ください。</p>
-  </div>
-</section>
-
 <!-- ============ 5. 比較・ポジショニング ============ -->
 <section class="sec-grey" id="compare">
   <div class="wrap reveal">
@@ -1437,9 +1469,11 @@ body{padding-bottom:92px}
         <li>レッスン時間の約9割が、あなたが話す時間（設計値）</li>
         <li>コーチング 月1回（全3回）</li>
         <li>公式LINEでの学習管理</li>
-        <li>入会金・教材費・システム利用料 0円</li>
+        <li>Versant（英語スピーキングテスト）の受験料 2回分（入会時・受講終了時）</li>
+        <li>入会金・教材費・システム利用料 0円。受講料以外に、当社にお支払いいただく費用は一切かかりません</li>
         <li>対面（目黒駅 徒歩1分）とオンラインのどちらでも受講可</li>
       </ul>
+      <p class="note-sm">※ 銀行振込の振込手数料、オンライン受講の通信料、教室までの交通費はお客様のご負担です。</p>
     </div>
 
     <!-- MEMO（表示されません）: 比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。金額を変えるときは <head> の COMPETITORS を直し、各社公式ページの画面を取得日つきで保管してください。 -->
@@ -1490,7 +1524,6 @@ body{padding-bottom:92px}
           <li>コーチングセッション 毎月1回</li>
           <li>A-PUSH METHOD</li>
           <li>公式LINEでの学習管理</li>
-          <li>成績保証（1ヶ月無償延長）の対象</li>
         </ul>
       </div>
 
@@ -1508,7 +1541,6 @@ body{padding-bottom:92px}
           <li>コーチングセッション 毎月1回（全6回）</li>
           <li>A-PUSH METHOD / BUSINESS TALK</li>
           <li>公式LINEでの学習管理</li>
-          <li>成績保証（1ヶ月無償延長）の対象</li>
         </ul>
       </div>
     </div>
@@ -1516,7 +1548,6 @@ body{padding-bottom:92px}
     <p class="price-note">
       * 適用される受講料は、<b>お申込みを受領した日が属する期間の価格</b>です。受講開始後に価格改定期を迎えても、ご契約済みの受講料が増額されることはありません。<br>
       * 分割払いはご相談ください（分割手数料はいただきません）。<br>
-      * 成績保証（1ヶ月無償延長）は<b>3ヶ月以上のプラン</b>が対象です。所定の条件を満たした場合に受講期間を無償で延長するものであり、スコアの到達を保証するものではありません。<br>
       * 学習効果には個人差があり、特定の成果、スコアまたは転職・昇進等を保証するものではありません。本ページに記載した回数・期間・到達イメージは、当社の指導方針および設計意図を説明したものです。
     </p>
     <!-- MEMO（表示されません）: 価格は「申込みを受領した日が属する期間」で決まります。金額を変えるときは tokusho.html の受講料の適用期間の表と、ページ末尾の PRICE_TIERS を必ず揃えてください。 -->
@@ -1813,6 +1844,12 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   $$('[data-launch]').forEach(function(el){ el.hidden = (el.dataset.launch==='open') !== open; });
   $$('[data-remaining]').forEach(function(el){ el.textContent=L.remaining; });
   $$('[data-capacity]').forEach(function(el){ el.textContent=L.capacity; });
+  // 残り人数のバー（定員の数だけマスを並べ、残りの分を赤に）
+  $$('[data-seatbar]').forEach(function(el){
+    var cap=Math.max(+L.capacity||0,0), rem=Math.min(Math.max(+L.remaining||0,0),cap), h='';
+    for(var i=0;i<cap;i++) h+='<i'+(i<rem?' class="on"':'')+'></i>';
+    el.innerHTML=h;
+  });
   $$('[data-soldout]').forEach(function(el){ el.hidden=!soldOut; });
   $$('[data-asof]').forEach(function(el){ el.textContent=C.asOf; });
 
