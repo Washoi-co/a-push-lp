@@ -416,6 +416,7 @@ h2 em{font-style:normal;color:var(--red)}
 .popup.on{display:flex}
 .popup-card{background:#fff;border-radius:6px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
 .popup-card.pc-wide{max-width:920px}
+.popup-card.pc-line-s{max-width:680px}
 .popup-card .pc-close{position:absolute;top:10px;right:12px;width:2em;height:2em;border-radius:50%;background:rgba(11,11,12,.55);color:#fff;font-size:1.5rem;font-weight:300;line-height:1;border:0;cursor:pointer;display:grid;place-items:center;z-index:2}
 .popup-card .pc-close:hover{background:var(--red)}
 .popup-card .pc-img{width:100%;display:block}
@@ -480,12 +481,12 @@ h2 em{font-style:normal;color:var(--red)}
 .lessons .m{font-size:.8rem;font-weight:900;color:#5C5C64;white-space:nowrap}
 .lessons .row{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}
 .lessons .row i{height:20px;border-radius:3px;background:var(--red)}
-.natives{position:relative;background:var(--red);border-radius:3px;display:flex;align-items:flex-end;justify-content:center;gap:0;padding:5.6em 1em 0;overflow:hidden;min-height:300px}
-.natives-t{position:absolute;top:1.1em;left:1.3em;color:#fff;font-weight:900;font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.5;z-index:2}
-.natives figure{position:relative;margin:0}
-.natives img{height:clamp(200px,24vw,270px);width:auto;display:block}
-.natives figure+figure{margin-left:-1.4em}
-.natives figcaption{position:absolute;bottom:.8em;left:50%;transform:translateX(-50%);font-family:var(--en);font-weight:900;font-size:.72rem;letter-spacing:.12em;color:var(--ink);background:#fff;padding:.3em .9em;border-radius:999px}
+.natives{background:var(--red);border-radius:3px;display:flex;flex-direction:column;justify-content:center;gap:1.4em;padding:1.8em 1.4em}
+.natives-t{color:#fff;font-weight:900;font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.5}
+.natives-ph{display:flex;justify-content:center;gap:clamp(16px,4vw,36px)}
+.natives figure{margin:0;text-align:center}
+.natives img{width:clamp(120px,14vw,170px);aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:4px solid #fff;box-shadow:0 14px 30px -14px rgba(0,0,0,.45)}
+.natives figcaption{margin-top:.7em;display:inline-block;font-weight:900;font-size:.82rem;color:var(--ink);background:#fff;padding:.3em 1em;border-radius:999px}
 .demo-vid{margin-top:1.4em;max-width:820px;border-radius:3px;overflow:hidden;background:#000;aspect-ratio:1080/622}
 .demo-vid video{width:100%;height:100%;display:block;object-fit:cover}
 .mth-pop .formula{font-size:clamp(.8rem,1.8vw,.95rem)}
@@ -494,6 +495,8 @@ h2 em{font-style:normal;color:var(--red)}
 .mth-steps .n,.mth-levels .n{display:block;font-family:var(--en);font-weight:900;font-size:.72rem;letter-spacing:.1em;color:var(--red)}
 .mth-levels .n{font-family:var(--jp);font-size:.95rem;letter-spacing:0;color:var(--ink)}
 .mth-steps b{display:block;font-size:1rem;margin:.2em 0 .2em}
+.mth-steps small{display:block;font-size:.74rem;font-weight:700;color:#7A7A82;margin-top:.2em}
+.mth-no{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--red);color:#fff;font-family:var(--en);font-size:.8em;margin-right:.5em;vertical-align:.1em}
 .popup-card .pc-body .mth-steps p,.popup-card .pc-body .mth-levels p{font-size:.84rem;line-height:1.7}
 @media(max-width:620px){.mth-steps,.mth-levels{grid-template-columns:1fr}}
 
@@ -1078,6 +1081,11 @@ body{padding-bottom:92px}
 .faq summary span.qt{flex:1}
 .faq .a .qm{color:var(--smoke)}
 .faq .a a{color:var(--red)}
+.faq div.a{display:block}
+.cite{margin-top:1em;display:grid;gap:1em}
+.cite dt{font-weight:900;color:var(--ink);font-size:.92rem;border-left:3px solid var(--red);padding-left:.7em}
+.cite dd{margin:.3em 0 0;font-size:.88rem;line-height:1.9}
+.cite cite{display:block;margin-top:.4em;font-style:normal;font-size:.72rem;line-height:1.7;color:#8C8C94}
 </style>
 </head>
 <body>
@@ -1192,12 +1200,15 @@ body{padding-bottom:92px}
       </div>
       <div class="natives">
         <p class="natives-t">ネイティブ講師と、<br>マンツーマン。</p>
-        <figure><img src="assets/cut-phoebe.png" alt="講師 Phoebe" loading="lazy"><figcaption>Phoebe</figcaption></figure>
-        <figure><img src="assets/cut-alex.png" alt="講師 Alex" loading="lazy"><figcaption>Alex</figcaption></figure>
+        <div class="natives-ph">
+          <figure><img src="assets/face-phoebe.jpg" alt="フィビィ先生" loading="lazy"><figcaption>フィビィ先生</figcaption></figure>
+          <figure><img src="assets/face-alex.jpg" alt="アレックス先生" loading="lazy"><figcaption>アレックス先生</figcaption></figure>
+        </div>
       </div>
     </div>
 
-    <h3 class="sub-h">レッスン中は、とにかく話す。<br>そして、<em style="font-style:normal;color:var(--red)">使えること</em>がゴールです。</h3>
+    <h3 class="sub-h">レッスン中は、とにかく話す。<br>そして、<em style="font-style:normal;color:var(--red)">使えるようになる事</em>がゴールです。</h3>
+    <p class="lead">話しながら、覚える。アウトプットを通じて、インプットを行います。<br>だから、<b>文法に詳しくなくても大丈夫です。</b></p>
     <div class="demo-vid">
       <video src="assets/method-demo.mp4" poster="assets/method-demo-poster.jpg" controls playsinline preload="none"></video>
     </div>
@@ -1503,6 +1514,25 @@ body{padding-bottom:92px}
         <p class="a"><span class="qm">A.</span>はい、まったく問題ありません。レッスンは初級・中級・ビジネスの3つのクラスに分かれていて、今の英語力に合わせて進めます。<br>・初級："This is a pen." から、5W1H、時制まで<br>・中級：接続詞、比較級、完了形、助動詞、不定詞、動名詞など<br>・ビジネス：仕事の現場で使うフレーズ</p>
       </details>
       <details>
+        <summary><span class="qt"><span class="qm">Q.</span>メソッドの効果を説明できるものなどあるのですか？</span></summary>
+        <div class="a"><span class="qm">A.</span>A-PUSH Method の効果そのものを検証した研究ではありませんが、設計の考え方は次の研究・理論を参考にしています。
+          <dl class="cite">
+            <dt>忘却曲線（復習のタイミング）</dt>
+            <dd>覚えたことは時間とともに急速に忘れられ、間隔をあけて復習すると定着しやすくなります。公式LINEの復習リマインドは、この考え方で組んでいます。<cite>Ebbinghaus, H. (1885). <i>Über das Gedächtnis</i>. ／ Murre, J. M. J., &amp; Dros, J. (2015). Replication and analysis of Ebbinghaus' forgetting curve. <i>PLOS ONE, 10</i>(7), e0120644.</cite></dd>
+            <dt>学習がインプット・文法に偏りやすい</dt>
+            <dd>日本の英語学習は、訳読（英文を日本語に訳して理解する）中心になりやすいと指摘されています。一方で、話す・書くアウトプットは、自分に足りない部分に気づき、文法を使える形にするきっかけになるとされています。<cite>Hino, N. (1988). Yakudoku: Japan's dominant tradition in foreign language learning. <i>JALT Journal, 10</i>(1&amp;2), 45–55. ／ Swain, M. (1985). Communicative competence: Some roles of comprehensible input and comprehensible output in its development. In S. Gass &amp; C. Madden (Eds.), <i>Input in Second Language Acquisition</i> (pp. 235–253). Newbury House.</cite></dd>
+            <dt>BICS と CALP</dt>
+            <dd>言語力は、日常会話の力（BICS）と、学習・議論で使う力（CALP）に分けて考えられます。A-PUSH は、まず会話の土台（BICS）を口に覚えさせることから始めます。<cite>Cummins, J. (1979). Cognitive/academic language proficiency, linguistic interdependence, the optimum age question and some other matters. <i>Working Papers on Bilingualism, 19</i>, 121–129.</cite></dd>
+            <dt>認知負荷</dt>
+            <dd>頭の中で一度に処理できる量には限りがあります。英語を組み立てることに頭を使っていると、話の中身まで手が回りません。だから、やさしい型を考えずに言える状態にしてから、次へ進みます。<cite>Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <i>Cognitive Science, 12</i>(2), 257–285.</cite></dd>
+            <dt>今のレベルの、少し上</dt>
+            <dd>今の力より少しだけ難しいもの（i+1）に取り組むと、習得が進みやすいとされています。A-PUSH では「今のレベルの＋10%」を目安に、課題の難しさを調整します（＋10%は当社の目安で、研究で示された数値ではありません）。<cite>Krashen, S. D. (1982). <i>Principles and Practice in Second Language Acquisition</i>. Pergamon.</cite></dd>
+            <dt>繰り返しで、体が覚える</dt>
+            <dd>知識として知っていることも、繰り返し使ううちに、考えなくても使える技能に変わっていくとされています。思い出して口に出す練習は、読み返すだけより記憶に残りやすいことも示されています。<cite>DeKeyser, R. (2007). Skill acquisition theory. In B. VanPatten &amp; J. Williams (Eds.), <i>Theories in Second Language Acquisition</i> (pp. 97–113). Lawrence Erlbaum. ／ Karpicke, J. D., &amp; Roediger, H. L. (2008). The critical importance of retrieval for learning. <i>Science, 319</i>(5865), 966–968.</cite></dd>
+          </dl>
+        </div>
+      </details>
+      <details>
         <summary><span class="qt"><span class="qm">Q.</span>体験会では何をしますか？ 勧誘はありますか？</span></summary>
         <p class="a"><span class="qm">A.</span>60分のうち、最初にA-PUSH Methodの説明、続いて約35分の体験レッスン、最後の20分で英語学習のお悩みをうかがい、コースのご案内をします。その場でお申込みいただく必要はありません。</p>
       </details>
@@ -1623,20 +1653,13 @@ body{padding-bottom:92px}
 </div>
 
 <div class="popup" id="lineModal" aria-hidden="true">
-  <div class="popup-card pc-wide pc-line">
+  <div class="popup-card pc-line-s">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
-    <div class="pc-content">
     <div class="pc-body">
       <p class="role">01<span class="jp"> ／ 公式LINE</span></p>
-      <h4>個別リマインドの中身</h4>
-      <p>毎日の課題の案内から、提出された音声の確認・フィードバックまで。<br>復習のタイミングは、忘却曲線に基づいて設計しています。</p>
-      <p>エビングハウスの忘却曲線にあわせて、復習のタイミングを設計しています。忘れかけたころに、ちょうど思い出せる。</p>
-      <p>だから、一度覚えたことが長期的にしっかり定着します。</p>
-      <p class="note-sm">＊ ご質問への回答は、質問数にかかわらず原則1日1回にまとめてお送りします。対応時間は原則14:00〜22:00です（緊急対応・即時対応・24時間対応は行っておりません）。</p>
-
-        <div class="curve-card" style="margin-top:1.6em;padding:1.4em 1.4em 1.2em">
-          <h3>忘却曲線と、復習のタイミング</h3>
-          <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
+      <div class="curve-card" style="margin-top:.8em;padding:1.3em 1.3em 1.1em">
+        <h3>忘却曲線と、復習のタイミング</h3>
+        <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
           <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
             <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
             <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
@@ -1659,13 +1682,10 @@ body{padding-bottom:92px}
             <span><i></i>復習しない（よくある英語学習）</span>
             <span class="on"><i></i>A-PUSH の学習管理</span>
           </div>
-          <p class="curve-read">覚えたことは、<b>1日後にはその多くを忘れます</b>。逆に言えば、忘れかけた瞬間に短く復習を挟むだけで、記憶は高い水準のまま保てる。A-PUSH は<b><em>この「忘れかけ」のタイミングに合わせて</em></b>、その日の課題をお渡しします。</p>
-          <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve（忘却曲線）</a></p>
-        </div>
-    </div>
-    <div class="pc-media pc-media-line">
-      <img class="pc-img" src="assets/line-remind.png" alt="公式LINEでのやり取り全体">
-    </div>
+      </div>
+      <h4 style="margin-top:1.3em">個別リマインドの中身</h4>
+      <p>毎日の課題の案内から、提出された音声の確認・フィードバックまで。<br>忘れかけたころに復習が届くので、一度覚えたことが定着しやすくなります。</p>
+      <p class="note-sm">※ ご質問への回答は原則1日1回、対応時間は原則14:00〜22:00です（即時・24時間対応は行っておりません）。<br>参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve</a></p>
     </div>
   </div>
 </div>
@@ -1726,18 +1746,17 @@ body{padding-bottom:92px}
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-body mth-pop">
       <p class="role">A-PUSH METHOD</p>
-      <h4>理解より、慣れ。</h4>
-      <p>自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れないからです。<br>英語も、その覚え方ができます。</p>
 
+      <h4><span class="mth-no">1</span>理解より、慣れ。</h4>
+      <p>自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れないからです。<br>英語も、その覚え方ができます。<br>最初はとにかく形を覚える、そして発展していく。</p>
       <div class="mth-steps">
-        <div><span class="n">STEP 1</span><b>見て、言う</b><p>文を見ながら、とにかく声に出す。</p></div>
-        <div><span class="n">STEP 2</span><b>絵だけで、言う</b><p>文を消して、見た瞬間に言えるまで。</p></div>
-        <div><span class="n">STEP 3</span><b>混ぜて、言う</b><p>どれが来るか分からない状態で、選んで言う。</p></div>
+        <div><span class="n">STEP 1</span><small>形を覚える</small><b>見て、言う</b><p>文を見ながら、とにかく声に出す。</p></div>
+        <div><span class="n">STEP 2</span><small>形をイメージに落とし込む</small><b>絵だけで、言う</b><p>文章を覚えた後に、絵を見ながら答えていく。覚えた文章を、実際のイメージに合わせにいく。</p></div>
+        <div><span class="n">STEP 3</span><small>自分の物にする</small><b>混ぜて、言う</b><p>覚えた単語を入れ替えて、自然と出てくるように鍛える。</p></div>
       </div>
 
-      <p style="margin-top:1.4em"><b>型はひとつ、中身だけ入れ替える。</b></p>
-      <div class="formula">We have been <i>working on</i> this project <i>for two weeks.</i><br>We have been <i>working with</i> this client <i>for three years.</i></div>
-      <p>1チャプター <b><span style="font-family:var(--en)">200〜300</span>回</b>が目安。考えずに口から出てくるまで、ネイティブ講師と繰り返します。<span class="note-sm">※ 必要な回数や変化の現れ方には個人差があります。</span></p>
+      <h4 style="margin-top:1.8em"><span class="mth-no">2</span>アウトプットで、インプットする。</h4>
+      <p>アウトプットを通じて、インプットを行う。<br>イメージから学習できるので、理解が深まる。<br>だから、<b>文法に詳しくなくても大丈夫です。</b></p>
 
       <p style="margin-top:1.6em"><b>3つのクラス</b>（今の英語力に合わせて進めます）</p>
       <div class="mth-levels">
@@ -1745,6 +1764,7 @@ body{padding-bottom:92px}
         <div><span class="n">中級</span><p>接続詞、比較級、完了形、助動詞、不定詞、動名詞など</p></div>
         <div><span class="n">ビジネス</span><p>仕事の現場で使うフレーズ</p></div>
       </div>
+      <p class="note-sm">※ 学習効果には個人差があります。</p>
     </div>
   </div>
 </div>
