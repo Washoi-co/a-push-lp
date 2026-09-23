@@ -1632,6 +1632,35 @@ body{padding-bottom:92px}
       <p class="lead-sm">リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。</p>
       <p>エビングハウスの忘却曲線にあわせて、復習のタイミングを設計しています。忘れかけたころに、ちょうど思い出せる。</p>
       <p>だから、一度覚えたことが長期的にしっかり定着します。</p>
+
+        <div class="curve-card" style="margin-top:1.6em;padding:1.4em 1.4em 1.2em">
+          <h3>忘却曲線と、復習のタイミング</h3>
+          <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
+          <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
+            <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
+            <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
+            <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
+            <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
+            <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
+            <text class="cv-ylab" x="14" y="150" transform="rotate(-90 14 150)" text-anchor="middle">覚えている量</text>
+            <text class="cv-tick" x="66"  y="274" text-anchor="start">直後</text>
+            <text class="cv-tick" x="205" y="274" text-anchor="middle">1日後</text>
+            <text class="cv-tick" x="395" y="274" text-anchor="middle">1週間後</text>
+            <text class="cv-tick" x="604" y="274" text-anchor="end">1か月後</text>
+            <path class="cv-line forget" d="M70,30 C120,115 160,150 200,165 C280,182 330,190 390,195 C470,203 530,208 590,212"/>
+            <path class="cv-line keep" d="M70,30 C105,68 130,95 150,115 L150,30 C190,62 220,80 250,95 L250,30 C310,55 350,70 390,80 L390,30 C470,42 530,50 590,58"/>
+            <circle class="cv-dot" cx="150" cy="30" r="7"/>
+            <circle class="cv-dot" cx="250" cy="30" r="7"/>
+            <circle class="cv-dot" cx="390" cy="30" r="7"/>
+            <text class="cv-badge" x="272" y="18">↑ ここで復習</text>
+          </svg>
+          <div class="curve-legend">
+            <span><i></i>復習しない（よくある英語学習）</span>
+            <span class="on"><i></i>A-PUSH の学習管理</span>
+          </div>
+          <p class="curve-read">覚えたことは、<b>1日後にはその多くを忘れます</b>。逆に言えば、忘れかけた瞬間に短く復習を挟むだけで、記憶は高い水準のまま保てる。A-PUSH は<b><em>この「忘れかけ」のタイミングに合わせて</em></b>、その日の課題をお渡しします。</p>
+          <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve（忘却曲線）</a></p>
+        </div>
     </div>
     <div class="pc-media pc-media-line">
       <img class="pc-img" src="assets/line-remind.png" alt="公式LINEでのやり取り全体">
