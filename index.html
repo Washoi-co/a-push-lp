@@ -1053,6 +1053,11 @@ body{padding-bottom:92px}
 .offer p.oc{font-size:clamp(.84rem,1.8vw,.95rem);font-weight:700;color:rgba(255,255,255,.88);line-height:1.8}
 .offer p.oc b{color:#fff;font-weight:900}
 .offer .en{font-family:var(--en)}
+.offer-mkt{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.3em .7em;margin:.2em 0 .4em;font-weight:900;color:rgba(255,255,255,.75)}
+.offer-mkt .lab{font-size:.72rem;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.25em .9em}
+.offer-mkt .v{font-size:clamp(1rem,2.2vw,1.2rem)}
+.offer-mkt .v .en{font-size:1.35em;margin:0 .05em}
+.offer-mkt .third{color:#fff;background:var(--red);font-size:.8rem;padding:.3em .9em;border-radius:2px}
 .offer-note{margin-top:.9em;padding-top:.8em;border-top:1px solid rgba(255,255,255,.16);font-size:.76rem;line-height:1.85;color:rgba(255,255,255,.72);text-align:left}
 .hero-cta{display:flex;flex-direction:column;align-items:center;gap:.9em;max-width:640px;margin:0 auto}
 .hero-cta .note-sm{margin-top:0;color:rgba(255,255,255,.7)}
@@ -1122,20 +1127,20 @@ body{padding-bottom:92px}
     <div class="offer" id="heroOffer">
       <div data-launch="open">
         <p class="offer-tag">【オープン記念価格】マンツーマン24回コース</p>
-        <p class="offer-price"><span class="n">200,000</span>円<small>（税込・入会金0円）</small></p>
-        <p class="oc" data-cmp>英語コーチング大手3社の3ヶ月コースは<span class="en" data-cmp-range>616,000〜634,000</span>円。<span data-third>その約3分の1。</span></p>
+        <p class="offer-price"><span class="n">200,000</span>円<small>税込・入会金0円</small></p>
+        <p class="offer-mkt" data-cmp><span class="lab">他社相場</span><span class="v">約<span class="en" data-cmp-man>62〜63</span>万円</span><span class="third" data-third>→ 約3分の1</span></p>
         <div class="seat">
-          <p class="seat-lab"><span>10月31日までのお申込み・全コース先着<span class="en" data-capacity>10</span>名</span><b>残り<span class="en" data-remaining>10</span>名</b></p>
+          <p class="seat-lab"><span>10/31まで・先着<span class="en" data-capacity>10</span>名</span><b>残り<span class="en" data-remaining>10</span>名</b></p>
           <div class="seat-bar" data-seatbar aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
         </div>
-        <p class="offer-note">※ 他社は<span data-asof>2026年9月24日</span>時点の各社公式サイト記載の通常価格（税込・入会金込、C社は教材費等別）。同一条件の比較ではありません。</p>
+        <p class="offer-note">※ 他社相場＝英語コーチング大手3社の3ヶ月コース（<span data-asof>2026年9月24日</span>時点・税込・入会金込）。同一条件の比較ではありません。</p>
       </div>
       <div data-launch="closed" hidden>
         <p class="offer-tag">マンツーマン24回コース</p>
-        <p class="offer-price"><span class="n">400,000</span>円<small>（税込・入会金0円）</small></p>
-        <p class="oc" data-cmp>英語コーチング大手3社の3ヶ月コースは<span class="en" data-cmp-range>616,000〜634,000</span>円。</p>
+        <p class="offer-price"><span class="n">400,000</span>円<small>税込・入会金0円</small></p>
+        <p class="offer-mkt" data-cmp><span class="lab">他社相場</span><span class="v">約<span class="en" data-cmp-man>62〜63</span>万円</span></p>
         <p class="oc" data-soldout hidden>オープン記念価格の受付は定員に達したため終了しました</p>
-        <p class="offer-note">※ 他社は<span data-asof>2026年9月24日</span>時点の各社公式サイト記載の通常価格（税込・入会金込、C社は教材費等別）。同一条件の比較ではありません。</p>
+        <p class="offer-note">※ 他社相場＝英語コーチング大手3社の3ヶ月コース（<span data-asof>2026年9月24日</span>時点・税込・入会金込）。同一条件の比較ではありません。</p>
       </div>
     </div>
 
@@ -1158,7 +1163,7 @@ body{padding-bottom:92px}
     <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
       <div>
         <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">海外は、アウトプットが日本より圧倒的に多い。<br><b>だから、話せる。</b></p>
-        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b><em style="font-style:normal;color:var(--red)">今まで話す練習をやってきていないから。</em></b></p>
+        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b><em style="font-style:normal;color:var(--red);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.6;display:inline-block;margin-top:.2em">今まで話す練習を<br>やってきていないから。</em></b></p>
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
@@ -1231,26 +1236,31 @@ body{padding-bottom:92px}
             <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
             <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
             <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
-            <circle cx="32" cy="86" r="14" fill="#FF2D16"/><text x="32" y="91" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
-            <text x="56" y="91" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">シャドーイング</text>
-            <text x="600" y="91" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
-            <rect x="56" y="102" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="102" width="374" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="176" r="14" fill="#FF2D16"/><text x="32" y="181" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
-            <text x="56" y="181" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">リーディング</text>
-            <text x="600" y="181" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
-            <rect x="56" y="192" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="192" width="234" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="266" r="14" fill="#FF2D16"/><text x="32" y="271" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
-            <text x="56" y="271" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">ライティング</text>
-            <text x="600" y="271" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
-            <rect x="56" y="282" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="282" width="312" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="356" r="14" fill="#FF2D16"/><text x="32" y="361" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">V</text>
-            <text x="56" y="361" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">英単語</text>
-            <text x="600" y="361" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
-            <rect x="56" y="372" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="372" width="156" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="80" r="14" fill="#FF2D16"/><text x="32" y="85" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
+            <text x="56" y="85" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">シャドーイング</text>
+            <text x="600" y="85" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+            <rect x="56" y="96" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="96" width="374" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="148" r="14" fill="#FF2D16"/><text x="32" y="153" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
+            <text x="56" y="153" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">リーディング</text>
+            <text x="600" y="153" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+            <rect x="56" y="164" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="164" width="234" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="216" r="14" fill="#FF2D16"/><text x="32" y="221" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
+            <text x="56" y="221" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">ライティング</text>
+            <text x="600" y="221" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+            <rect x="56" y="232" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="232" width="312" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="284" r="14" fill="#FF2D16"/><text x="32" y="289" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">V</text>
+            <text x="56" y="289" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">英単語</text>
+            <text x="600" y="289" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+            <rect x="56" y="300" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="300" width="156" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="352" r="14" fill="#FF2D16"/><text x="32" y="357" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">G</text>
+            <text x="56" y="357" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">文法</text>
+            <text x="600" y="357" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">50%</text>
+            <rect x="56" y="368" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="368" width="260" height="10" rx="5" fill="#FF2D16"/>
             <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
             <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
           </svg>
@@ -1694,14 +1704,15 @@ body{padding-bottom:92px}
     <div class="pc-content">
     <div class="pc-body">
       <p class="role">02<span class="jp"> ／ ダッシュボード</span></p>
-      <h4>まとめて見える、4つの進捗</h4>
+      <h4>まとめて見える、5つの進捗</h4>
       <ul>
         <li><b>A-PUSH Method</b> —— 反復練習</li>
         <li><b>A-PUSH シャドーイング</b> —— 聞きながら話す練習</li>
         <li><b>A-PUSHリーディング</b> —— 読解</li>
         <li><b>A-PUSH Writing</b> —— 英作文</li>
+        <li><b>A-PUSH Grammar</b> —— 文法</li>
       </ul>
-      <p style="margin-top:1.2em">シャドーイング・リーディング・ライティング・英単語の進捗が、開いた瞬間に分かります。</p>
+      <p style="margin-top:1.2em">シャドーイング・リーディング・ライティング・英単語・文法の進捗が、開いた瞬間に分かります。</p>
       <p class="note-sm">＊ 学習ダッシュボードは、2026年9月24日よりプレリリース版の提供を開始しています。正式版は2026年11月に提供を開始する予定です。掲載の画面は開発中のイメージであり、実際の画面とは異なる場合があります。</p>
     </div>
     <div class="pc-media">
@@ -1711,26 +1722,31 @@ body{padding-bottom:92px}
       <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
       <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
       <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
-      <circle cx="32" cy="86" r="14" fill="#FF2D16"/><text x="32" y="91" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
-      <text x="56" y="91" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
-      <text x="600" y="91" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
-      <rect x="56" y="102" width="520" height="10" rx="5" fill="#2a2a2e"/>
-      <rect x="56" y="102" width="374" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="176" r="14" fill="#FF2D16"/><text x="32" y="181" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
-      <text x="56" y="181" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
-      <text x="600" y="181" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
-      <rect x="56" y="192" width="520" height="10" rx="5" fill="#2a2a2e"/>
-      <rect x="56" y="192" width="234" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="266" r="14" fill="#FF2D16"/><text x="32" y="271" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
-      <text x="56" y="271" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
-      <text x="600" y="271" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
-      <rect x="56" y="282" width="520" height="10" rx="5" fill="#2a2a2e"/>
-      <rect x="56" y="282" width="312" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="356" r="14" fill="#FF2D16"/><text x="32" y="361" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
-      <text x="56" y="361" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
-      <text x="600" y="361" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
-      <rect x="56" y="372" width="520" height="10" rx="5" fill="#2a2a2e"/>
-      <rect x="56" y="372" width="156" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="80" r="14" fill="#FF2D16"/><text x="32" y="85" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
+      <text x="56" y="85" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
+      <text x="600" y="85" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+      <rect x="56" y="96" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="96" width="374" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="148" r="14" fill="#FF2D16"/><text x="32" y="153" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
+      <text x="56" y="153" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
+      <text x="600" y="153" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+      <rect x="56" y="164" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="164" width="234" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="216" r="14" fill="#FF2D16"/><text x="32" y="221" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
+      <text x="56" y="221" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
+      <text x="600" y="221" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+      <rect x="56" y="232" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="232" width="312" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="284" r="14" fill="#FF2D16"/><text x="32" y="289" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
+      <text x="56" y="289" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
+      <text x="600" y="289" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+      <rect x="56" y="300" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="300" width="156" height="10" rx="5" fill="#FF2D16"/>
+      <circle cx="32" cy="352" r="14" fill="#FF2D16"/><text x="32" y="357" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">G</text>
+      <text x="56" y="357" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Grammar</text>
+      <text x="600" y="357" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">50%</text>
+      <rect x="56" y="368" width="520" height="10" rx="5" fill="#2a2a2e"/>
+      <rect x="56" y="368" width="260" height="10" rx="5" fill="#FF2D16"/>
       <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
       <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
     </svg>
@@ -1864,7 +1880,8 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   }else{
     var ps=list.map(function(c){ return c.price; });
     var lo=Math.min.apply(null,ps), hi=Math.max.apply(null,ps);
-    $$('[data-cmp-range]').forEach(function(el){ el.textContent=num(lo)+'〜'+num(hi); });
+    var mLo=Math.round(lo/10000), mHi=Math.round(hi/10000);
+    $$('[data-cmp-man]').forEach(function(el){ el.textContent= mLo===mHi ? String(mLo) : mLo+'〜'+mHi; });
     // 「その約3分の1」は、200,000円÷各社の金額がすべて30%以上37%未満の時だけ表示
     var third=ps.every(function(p){ var r=PRICE_TIERS.m3[0]/p; return r>=0.30 && r<0.37; });
     $$('[data-third]').forEach(function(el){ el.hidden=!third; });
