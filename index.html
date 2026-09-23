@@ -648,17 +648,24 @@ h2 em{font-style:normal;color:var(--red)}
 .plan ul li{padding-left:1.5em;position:relative;line-height:1.85}
 .plan ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--red)}
 
-/* 説明会／体験会の選択リスト */
-.startlist{display:grid;gap:10px;margin-top:1.4em}
-.startitem{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1em;
-  border:1px solid var(--line-l);border-radius:4px;padding:1em 1.2em;text-decoration:none;color:var(--ink);transition:all .2s}
-.startitem:hover{border-color:var(--red);background:rgba(255,45,22,.04)}
-.si-n{font-family:var(--en);font-weight:900;font-size:1.1rem;color:var(--red)}
-.si-t b{display:block;font-weight:900;font-size:1rem;line-height:1.5}
-.si-t small{display:block;font-size:.76rem;color:#7A7A82;line-height:1.7;margin-top:.15em}
-.si-p{font-family:var(--en);font-weight:900;font-size:1rem;color:var(--ink);white-space:nowrap}
+/* 説明会／体験会の選択ポップアップ */
+.pc-start{max-width:640px}
+.pc-start-head{background:linear-gradient(135deg,#FF5A3C,var(--red-deep));padding:2em 1.9em 1.7em;border-radius:6px 6px 0 0}
+.pc-start-head h4{font-weight:900;font-size:1.35rem;line-height:1.5;color:#fff;margin-top:.8em}
+.pc-start .pc-body{padding-top:1.6em}
+.pc-start .pc-body .lead-sm{color:var(--red)}
+.startlist{display:grid;gap:12px;margin-top:1.3em}
+.startitem{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.2em;
+  border:1px solid var(--line-l);border-radius:5px;padding:1.15em 1.3em;text-decoration:none;color:var(--ink);transition:all .2s}
+.startitem:hover{border-color:var(--red);background:rgba(255,45,22,.04);transform:translateY(-1px)}
+.si-n{font-family:var(--en);font-weight:900;font-size:1.25rem;color:var(--red);line-height:1}
+.si-t b{display:block;font-weight:900;font-size:1.04rem;line-height:1.5}
+.si-t small{display:block;font-size:.78rem;color:#7A7A82;line-height:1.8;margin-top:.3em}
+.si-p{font-family:var(--en);font-weight:900;font-size:1.05rem;color:var(--ink);white-space:nowrap}
 @media(max-width:520px){
-  .startitem{grid-template-columns:auto 1fr;row-gap:.3em;padding:.9em 1em}
+  .pc-start-head{padding:1.6em 1.4em 1.4em}
+  .pc-start-head h4{font-size:1.15rem}
+  .startitem{grid-template-columns:auto 1fr;row-gap:.4em;gap:.9em;padding:1em 1.1em}
   .si-p{grid-column:2;text-align:right}
 }
 /* 週間スケジュールのグリッド */
@@ -1593,36 +1600,37 @@ body{padding-bottom:92px}
 
 <!-- 説明会／体験会の選択ポップアップ -->
 <div class="popup" id="startModal" aria-hidden="true">
-  <div class="popup-card">
+  <div class="popup-card pc-start">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
-    <div class="pc-content">
-      <div class="pc-body">
-        <p class="role"><span class="jp">はじめての方へ</span></p>
-        <h4>まずは、話してみませんか。</h4>
-        <div class="startlist">
-          <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">
-            <span class="si-n">01</span>
-            <span class="si-t"><b>オンライン説明会</b><small>無料・所要30分／レッスン体験なし</small></span>
-            <span class="si-p">無料</span>
-          </a>
-          <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="meeting">
-            <span class="si-n">02</span>
-            <span class="si-t"><b>個別面談</b><small>無料・あなたの目標と現在地をうかがいます</small></span>
-            <span class="si-p">無料</span>
-          </a>
-          <a class="startitem" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">
-            <span class="si-n">03</span>
-            <span class="si-t"><b>体験会</b><small>オンライン可・所要60分／レッスンを実際に受けられます</small></span>
-            <span class="si-p">¥3,000</span>
-          </a>
-          <a class="startitem" href="1day.html">
-            <span class="si-n">04</span>
-            <span class="si-t"><b>1日研修</b><small>毎週日曜13:00〜／ネイティブとマンツーマン</small></span>
-            <span class="si-p">¥15,000</span>
-          </a>
-        </div>
-        <p class="note-sm">※ 体験会・1日研修は有料です（税込）。表示価格は2026年9月23日時点のものです。</p>
+    <div class="pc-start-head">
+      <span class="pc-od-badge"><span class="jp">はじめての方へ ／ 4つの入口</span></span>
+      <h4>まずは、<br>話してみませんか。</h4>
+    </div>
+    <div class="pc-body">
+      <p class="lead-sm">目的に合わせて、選んでください。</p>
+      <div class="startlist">
+        <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">
+          <span class="si-n">01</span>
+          <span class="si-t"><b>オンライン説明会</b><small>サービスの内容をひととおりご説明します。<br>所要30分／レッスン体験はありません</small></span>
+          <span class="si-p">無料</span>
+        </a>
+        <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="meeting">
+          <span class="si-n">02</span>
+          <span class="si-t"><b>個別オンライン面談</b><small>あなたの目標と、いまの英語力をうかがいます。<br>学習プランのご相談まで</small></span>
+          <span class="si-p">無料</span>
+        </a>
+        <a class="startitem" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">
+          <span class="si-n">03</span>
+          <span class="si-t"><b>体験会</b><small>レッスンを実際に受けていただきます。<br>所要60分／オンライン可</small></span>
+          <span class="si-p">¥3,000</span>
+        </a>
+        <a class="startitem" href="1day.html">
+          <span class="si-n">04</span>
+          <span class="si-t"><b>1日研修</b><small>ネイティブとマンツーマンで3時間。<br>毎週日曜 13:00〜／次回 <span data-next-sunday></span></small></span>
+          <span class="si-p">¥15,000</span>
+        </a>
       </div>
+      <p class="note-sm">※ 体験会・1日研修は有料です（税込）。表示価格は2026年9月23日時点のものです。</p>
     </div>
   </div>
 </div>
