@@ -525,9 +525,12 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
 /* ヘッダーの代表Instagram */
 .hbtn-ig{display:inline-flex;align-items:center;gap:.45em}
 .hbtn-ig svg{width:1.15em;height:1.15em;fill:currentColor}
+.hbtn-note{display:inline-flex;align-items:center;gap:.45em}
+.nt{font-family:var(--en);font-weight:900;letter-spacing:-.01em;font-size:1.05em;line-height:1}
 @media(max-width:720px){
   .hbtn.ghost.hbtn-ig{display:inline-flex;padding:.7em .75em}
-  .hbtn-ig span{display:none}
+  .hbtn.ghost.hbtn-note{display:inline-flex;padding:.7em .75em}
+  .hbtn-ig span,.hbtn-note span{display:none}
 }
 .vnote{margin-top:.5em;font-size:.94rem;font-weight:700;color:#5C5C64}
 .sec-dark .vnote{color:rgba(255,255,255,.7)}
@@ -1102,6 +1105,7 @@ body{padding-bottom:92px}
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
     <a class="hbtn ghost hbtn-ig" href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener" aria-label="代表 Kimi の Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg><span>代表 Kimi</span></a>
+    <a class="hbtn ghost hbtn-note" href="https://note.com/lucky_bear5896" target="_blank" rel="noopener" aria-label="代表 Kimi の note"><b class="nt">note</b><span>代表 Kimi</span></a>
     <button type="button" class="hbtn solid" data-popup="startModal">説明会／体験会</button>
   </div>
 </header>
@@ -1224,7 +1228,7 @@ body{padding-bottom:92px}
       <div class="card">
         <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
         <span class="num">01</span>
-        <h3>公式LINEで、忘却曲線に基づいてサポート</h3>
+        <h3>公式LINEで、忘却曲線の考え方を<br>取り入れたサポート</h3>
         <button type="button" class="more-btn" data-popup="lineModal">▼ 詳しく見る</button>
       </div>
       <div class="card">
@@ -1442,7 +1446,7 @@ body{padding-bottom:92px}
 
     <h2>プランは、<em>3つだけ。</em></h2>
     <p class="vs-eyebrow" style="margin-bottom:.6em">LAUNCH PRICE ／ 目黒校舎オープン記念割引（2026年10月31日まで）</p>
-    <p class="lead">目黒校舎のオープンに伴い、10月31日までのお申込みに<b>オープン記念割引</b>を適用します。<br>11月1日からは通常価格です。</p>
+    <p class="lead">目黒校舎のオープンに伴い、10月31日までのお申込みに<b>オープン記念割引</b>を適用します。<br>11月1日以降のお申込みは、11月1日以降の価格です。</p>
 
     <div class="plans">
       <div class="plan" data-plan="m1">
@@ -1612,6 +1616,7 @@ body{padding-bottom:92px}
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
       Instagram
     </a>
+    <a href="https://note.com/lucky_bear5896" target="_blank" rel="noopener" aria-label="note"><b class="nt">note</b></a>
   </div>
   <p class="f-bottom">
     © 2026 A-PUSH<br>
@@ -1907,7 +1912,7 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   }
 
   // 料金プラン
-  var CAPS=['2026年10月31日までのお申込み', soldOut && Date.now()<Date.parse(L.endDate) ? 'オープン記念価格の受付は定員に達したため終了しました' : '2026年11月1日以降のお申込み（通常価格）'];
+  var CAPS=['2026年10月31日までのお申込み', soldOut && Date.now()<Date.parse(L.endDate) ? 'オープン記念価格の受付は定員に達したため終了しました' : '2026年11月1日以降のお申込み'];
   Object.keys(PRICE_TIERS).forEach(function(key){
     var plan=document.querySelector('.plan[data-plan="'+key+'"]'); if(!plan) return;
     var el;
