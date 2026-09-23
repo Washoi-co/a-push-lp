@@ -642,6 +642,21 @@ h2 em{font-style:normal;color:var(--red)}
 .plan ul li{padding-left:1.5em;position:relative;line-height:1.85}
 .plan ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--red)}
 
+/* 週間スケジュールのグリッド */
+.wk{display:grid;grid-template-columns:auto repeat(7,1fr);gap:5px;margin-top:1.5em;text-align:center}
+.wk .hd{font-family:var(--en);font-weight:900;font-size:.68rem;letter-spacing:.06em;color:#8C8C94;padding:.2em 0}
+.wk .lb{font-size:.68rem;font-weight:900;line-height:1.5;color:#5C5C64;text-align:left;align-self:center;padding-right:.8em}
+.wk .y,.wk .n{font-family:var(--en);font-weight:900;font-size:.76rem;border-radius:3px;padding:.7em .1em}
+.wk .y{background:var(--red);color:#fff}
+.wk .n{background:#E4E4E7;color:#B4B4BA}
+@media(max-width:560px){
+  .wk{grid-template-columns:auto repeat(7,1fr);gap:3px}
+  .wk .y,.wk .n{font-size:.6rem;padding:.7em .05em}
+  .wk .lb{font-size:.6rem}
+}
+/* セクション内の小見出し */
+.sub-h{font-weight:900;font-size:clamp(1.15rem,2.6vw,1.6rem);line-height:1.6;margin-top:3.2em}
+.sec-dark .sub-h{color:#fff}
 .price-note{margin-top:2.4em;font-size:.82rem;color:#7A7A82;line-height:2}
 .price-note b{color:var(--ink);font-weight:900}
 
@@ -959,809 +974,6 @@ body{padding-bottom:92px}
   <span>SPEAK FIRST <i>/</i></span><span>A-PUSH METHOD <i>/</i></span><span>COACH × SPEAKING <i>/</i></span>
 </div></div>
 
-<!-- ============ 2-3. アウトプットの量 ============ -->
-<section>
-  <div class="wrap reveal">
-    <p class="label">OUTPUT GAP</p>
-    <h2>日本人に足りてないのは、<em>アウトプット量。</em></h2>
-    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
-      <div>
-        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人は、話していない。<br>でも、<b>文法・単語の知識はハイレベル</b>です。</p>
-        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">海外の英語教育は、アウトプットの時間が圧倒的に多い。<b>だから、話せるようになる。</b></p>
-        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
-        <p class="note-sm">※ レッスン時間のうち受講者が発話する時間の割合について、当社が標準的なレッスン構成に基づいて算出した設計値です。実際の割合は、受講者のレベル・当日の進行により変動します。</p>
-      </div>
-      <div class="curve-card" style="padding:2.2em 2em">
-        <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
-        <p class="sub">一般的な傾向を示す概念図です。特定の統計データに基づくものではありません。</p>
-        <svg viewBox="0 0 500 300" role="img" aria-label="日本と、アウトプット重視で知られる3カ国の英語教育における時間配分の違いを示す概念図">
-          <text class="cv-tick" x="0" y="16" style="font-weight:900">日本</text>
-          <rect x="0" y="24" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="24" width="400" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="392" y="24" width="108" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="88" style="font-weight:900">オランダ</text>
-          <rect x="0" y="96" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="96" width="175" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="167" y="96" width="333" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="160" style="font-weight:900">スウェーデン</text>
-          <rect x="0" y="168" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="168" width="200" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="192" y="168" width="308" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="232" style="font-weight:900">デンマーク</text>
-          <rect x="0" y="240" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="240" width="190" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="182" y="240" width="318" height="34" rx="4" fill="var(--red)"/>
-        </svg>
-        <div class="curve-legend">
-          <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
-          <span class="on"><i></i>アウトプット（話す・書く）</span>
-        </div>
-        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。<br>※ オランダ・スウェーデン・デンマークが英語非母語国の中で英語運用力の上位に位置することについては、<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>を参照しています。EF EPI は英語運用力の指標であり、各国の授業時間配分を示すものではありません。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3. メカニズム＋エビデンス ============ -->
-<section id="method" style="padding-top:0">
-  <div class="wrap reveal">
-    <p class="label">MECHANISM &amp; EVIDENCE</p>
-    <h2><em>正しい環境での反復。</em><br>そして、慣れた後のアウトプット。</h2>
-
-    <div class="mth">
-      <p class="mth-lead">海外式スピーキング特化<br><em>A-PUSH Method</em></p>
-      <p class="mth-body">一つ一つのフレーズに集中する。<br>その型を動詞、場面を変えながら、ひたすらネイティブと<b>繰り返す。</b></p>
-
-      <div class="qa">
-        <div class="qa-pair">
-          <p class="qa-q">What have you been working on?</p>
-          <p class="qa-a">We have been working on this project for two weeks.</p>
-        </div>
-        <div class="qa-pair">
-          <p class="qa-q">How long have you been working with this client?</p>
-          <p class="qa-a">We have been working with this client for three years.</p>
-        </div>
-      </div>
-
-      <p class="mth-punch">繰り返すうちに、考える前にわかる、出てくる。<br>大切なのは「理解」ではなく、圧倒的な<em>「慣れ」</em>。</p>
-
-      <details class="more more-mth">
-        <summary><span class="lbl" aria-hidden="true"></span></summary>
-        <div class="mth-long">
-
-          <div class="vid-slot" style="padding:0;overflow:hidden">
-            <video src="assets/method-demo.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;display:block;object-fit:cover"></video>
-          </div>
-
-          <h4>なぜ回数、慣れなのか</h4>
-          <p>英語を話せない原因は、単語でも文法でもない。知っているのに、口が動かない。これは脳（知識）と口が運動的にリンクしていないからです。</p>
-          <p>だから各フレーズ、一つ一つみっちり慣れていきます。このチャプターなら「<b>have been -ing</b>（ずっと〜し続けている）」。これだけです。</p>
-
-          <h4>型はひとつ、中身だけ入れ替える</h4>
-          <div class="formula">We have been <i>→</i> working on <i>→</i> this project <i>→</i> for two weeks.</div>
-          <p>主語のあとに「have been」、そのあとに動詞、そのあとに対象、最後に「どれだけ続いているか」。この並びだけを、中身を変えながら繰り返します。</p>
-          <div class="qa">
-            <div class="qa-pair">
-              <p class="qa-q">What have you been working on?</p>
-              <p class="qa-a">We have been working on this project for two weeks.</p>
-            </div>
-            <div class="qa-pair">
-              <p class="qa-q">How long have you been working with this client?</p>
-              <p class="qa-a">We have been working with this client for three years.</p>
-            </div>
-            <div class="qa-pair">
-              <p class="qa-q">How long have you been in charge of this account?</p>
-              <p class="qa-a">I have been in charge of this account since 2023.</p>
-            </div>
-          </div>
-
-          <h4>練習は、3つの段階で進みます</h4>
-          <h5>STEP 1　文を見ながら、とにかく声に出す</h5>
-          <p>まずは書かれた文を見ながら、何度も言います。この段階で大事なのは、正確さより回数。口が形を覚えるまで、ひたすら声に出します。</p>
-          <h5>STEP 2　文を消して、絵だけで言う</h5>
-          <p>文字を外します。手元にあるのは絵だけ。見た瞬間に言えるまで、また繰り返します。この段階まで来ると、絵と口のあいだに日本語が入る隙がなくなっていきます。</p>
-          <h5>STEP 3　覚えた型を、混ぜる</h5>
-          <p>これまでのチャプターで扱った型を混ぜて出します。どれが来るか分からない状態で、絵を見て、選んで、言う。実際の会話にいちばん近いのが、この段階です。</p>
-
-          <h4>同じ文を、ただ繰り返すわけではありません</h4>
-          <p>STEP 1 だけを見れば、単なる反復に見えるかもしれません。違うのは、見本が消えることと、中身が毎回変わることです。</p>
-          <p>絵だけになった瞬間、頼れるものは自分の中の型だけになります。そこへ講師が、場面を次々に変えて振ってきます。3年付き合いのあるクライアントの話。2週間前に始まったプロジェクトの話。去年から任されている案件の話。</p>
-          <p>出てくる文は、毎回違う。使っている型は、ひとつ。繰り返しているのは、文ではありません。型です。</p>
-
-          <h4>200〜300回を目安にしている理由</h4>
-          <p>最初は「We have been のあとは何だっけ」と考えます。次に何を置くか、頭の中で探しているからです。</p>
-          <p>私たちがレッスンで見ているのは、この「探している時間」です。回数を重ねるほど一拍は短くなり、やがて探す工程そのものが要らなくなっていく。1チャプターで200〜300回という目安は、ここまで持っていくために置いています。</p>
-          <p><small>※変化の現れ方や必要な回数には個人差があります。一定の回数を繰り返すことで特定の状態に達することをお約束するものではありません。</small></p>
-          <p>この繰り返しのあいだに、3つのことが同時に起きています。</p>
-
-          <h5>口と舌が覚える</h5>
-          <p>スポーツのフォームと同じです。繰り返した動きほど、意識せずに再現しやすくなります。</p>
-
-          <h5>耳が覚える</h5>
-          <p>自分の声は、自分の耳に入ります。話した回数だけ、英語の音を聞く回数も増えていきます。</p>
-
-          <h5>イメージが結びつく</h5>
-          <p>絵と一緒に練習します。日本語に訳してから理解する、という遠回りを挟まない設計です。</p>
-
-          <h4>先生と共に、が絶対条件</h4>
-          <p>話して覚える学習には、大きな落とし穴があります。間違ったまま、形が固まってしまうことです。一度崩れた発音や語順は、独学では自分で気づきにくいもの。繰り返した回数だけ、そのくせも強くなります。</p>
-          <p>A-PUSH では、常にネイティブ講師が隣にいます。ズレた瞬間にその場で直すので、<b>間違った形のまま固まることを防ぎます。</b></p>
-
-          <h4>BICS と CALP ── 2つの英語力</h4>
-          <p>日本の英語学習は、読解・語彙・文法といった <b>CALP 寄りの内容が中心</b>になりやすい。私たちはそう考えています。一方で、会話の土台になる BICS は、意識して練習する機会が少ないまま残りやすい領域です。</p>
-
-          <div class="bc">
-            <div class="bc-col hot">
-              <p class="bc-tag">BICS</p>
-              <h3>日常会話の土台となる英語</h3>
-              <p>「はじめまして」「それ、どう思う？」といった、会話を成立させるための土台。話す瞬発力にあたる部分です。ここが弱いままだと、知識があっても会話の場面では使いにくくなります。</p>
-              <p class="bc-prod"><span class="pill">A-PUSH METHOD</span>で鍛える</p>
-            </div>
-            <div class="bc-col">
-              <p class="bc-tag">CALP</p>
-              <h3>ビジネス・大学での高度な英語</h3>
-              <p>会議での主張、交渉、プレゼン、論理的な説明。仕事の場面で使う運用力です。私たちは、BICS の土台があるほうが積み上げやすいと考えています。</p>
-              <p class="bc-prod"><span class="pill">A-PUSH BUSINESS TALK</span>で鍛える</p>
-            </div>
-          </div>
-          <p class="bc-warn">A-PUSH は、この2つを<em>分けて</em>、順番を意識して鍛えます。</p>
-
-          <div class="ev-cards">
-            <div class="ev">
-                <div class="ev-h"><span class="n">01</span><h4>手続き記憶で覚える</h4></div>
-                <p class="ev-lead">自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れないからです。英語も、その覚え方ができます。</p>
-                <details class="more">
-                  <summary><span class="lbl" aria-hidden="true"></span></summary>
-                  <div class="ev-long">
-                  <p>記憶には2種類あります。ひとつは<b>宣言的記憶</b>。知識として頭に置いておくもので、思い出そうとすれば思い出せますが、忘れることもあります。もうひとつが<b>手続き記憶</b>。自転車、泳ぎ方、箸の持ち方のように、体が覚えている動作です。</p>
-                  <p>第二言語習得研究の Ullman は、学習が進むほど言葉の処理が<b>宣言的記憶から手続き記憶へ移っていく</b>と整理しました。単語帳で覚えた英語が会話で出てこないのは、まだ前者に留まっているからです。「えーと、あの単語は…」と思い出している間に、会話は次へ進んでしまう。</p>
-                  <p>そして手続き記憶を作る方法は、ひとつしかありません。<b>繰り返し、体を通すこと。</b>自転車を本で学んでも乗れないのと同じです。</p>
-                  <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Declarative/procedural_model" target="_blank" rel="noopener">Ullman, Declarative/Procedural Model</a></p>
-                </div>
-                </details>
-              </div>
-            <div class="ev">
-                <div class="ev-h"><span class="n">02</span><h4>日本語を、挟まない</h4></div>
-                <p class="ev-lead">日本語を挟まず、英語を英語のまま扱う。英語で聞いて、英語のまま返す。この回路を最初から育てます。</p>
-                <details class="more">
-                  <summary><span class="lbl" aria-hidden="true"></span></summary>
-                  <div class="ev-long">
-                  <p>日本の英語教育の多くは、日本語で説明して英語を教える<b>間接教授法</b>です。A-PUSH が採用しているのは、英語を英語のまま扱う<b>直接教授法</b>。19世紀末にヨーロッパで生まれ、いまも海外の語学学校で使われ続けている方式です。</p>
-                  <p>ひとつのフレーズを繰り返し発音することで、口と舌の筋肉が正しい動きを記憶します。同時に大量の英語を聞くことで、耳がその響きを覚える。考えなくても<b>音と口と脳が自動的にリンクする状態</b>。これが本当の「英語を話せる」感覚です。</p>
-                  <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Direct_method_(education)" target="_blank" rel="noopener">Direct Method（直接教授法）</a></p>
-                </div>
-                </details>
-              </div>
-            <div class="ev">
-                <div class="ev-h"><span class="n">03</span><h4>むずかしく勉強しすぎている</h4></div>
-                <p class="ev-lead">TOEICのスコアは高いのに、いざとなると話せない。それは「難しい英語」から手をつけてしまっているからです。</p>
-                <details class="more">
-                  <summary><span class="lbl" aria-hidden="true"></span></summary>
-                  <div class="ev-long">
-                  <p>難しい会話には、高度な論理的思考力が求められます。ただでさえ「英語を処理する」こと自体に脳のエネルギーを奪われている状態で、さらに難しい論理思考までやろうとすれば、脳は<b>キャパシティオーバー</b>を起こしてフリーズします。</p>
-                  <p>やさしい表現に徹底的に慣れ、何も考えなくても処理できるようにする。すると英語の処理にかかる負担がゼロに近づき、<b>論理的な思考に脳のエネルギーを100%使える</b>ようになります。だから A-PUSH は、まず「簡単な表現」を無意識レベルで完璧に処理できる回路を鍛え上げます。</p>
-                  <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Jim_Cummins_(academic)" target="_blank" rel="noopener">Cummins, BICS &amp; CALP</a></p>
-                </div>
-                </details>
-              </div>
-          </div>
-
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3-2. A-PUSH METHOD の中身 ============ -->
-<section class="sec-dark">
-  <div class="wrap reveal">
-    <p class="label">WHAT'S INSIDE</p>
-    <h2 style="font-size:clamp(1.3rem,3vw,2rem)">私たちの<em>コース</em></h2>
-
-    <div class="prods prods-2">
-      <div class="prod">
-        <p class="pn">A-PUSH METHOD</p>
-        <p class="ptag">圧倒的反復で<em>“英語脳”</em>を作る</p>
-        <details class="more more-mat">
-          <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <p class="mat-note" style="margin-top:0">日常のちょっとした会話を、ぜんぶ英語で言えるようにする教材です。むずかしい文法は出てきません。<b>とにかく声に出して、体で覚える</b>。それだけです。</p>
-          <div class="mat-tiers" style="border-top:0;padding-top:0">
-            <h5>A-PUSH Beginner ── まずは基本のカタチ</h5>
-            <p>英語の土台になる部分です。むずかしく考えず、口が勝手に動くようになるまで、何度も繰り返します。ここができると、このあとがぐっと楽になります。</p>
-            <div class="mat-spreads" style="margin-top:1em">
-              <figure class="mat-spread">
-                <div class="mat-spread-pages">
-                  <img class="zoomable" src="assets/mat-ch14.png" alt="教材 Chapter14 5W1H — Why（Beginner） 本文ページ" loading="lazy">
-                  <img class="zoomable" src="assets/mat-ch14-p2.png" alt="教材 Chapter14 5W1H — Why（Beginner） イラストページ" loading="lazy">
-                </div>
-              </figure>
-            </div>
-
-            <h5>A-PUSH Intermediate ── 話せる内容を増やす</h5>
-            <p>「〜だったら」「〜かどうか」のような、少し複雑な言い方ができるようになります。会話の幅が、ぐっと広がる段階です。</p>
-            <div class="mat-spreads" style="margin-top:1em">
-              <figure class="mat-spread">
-                <div class="mat-spread-pages">
-                  <img class="zoomable" src="assets/mat-ch13.png" alt="教材 Chapter13 If／Whether（Intermediate） 本文ページ" loading="lazy">
-                  <img class="zoomable" src="assets/mat-ch13-p2.png" alt="教材 Chapter13 If／Whether（Intermediate） イラストページ" loading="lazy">
-                </div>
-              </figure>
-            </div>
-
-            <h5>A-PUSH Advanced ── あえて、ありません</h5>
-            <p>むずかしい教材は用意していません。基礎を使いこなせるようになったら、あとは実践あるのみ。次は A-PUSH Biz Talk で、実際の仕事に活かします。</p>
-          </div>
-        </details>
-      </div>
-      <div class="prod">
-        <p class="pn">A-PUSH BUSINESS TALK</p>
-        <p class="ptag">本番を想定した、<em>リアルな表現</em></p>
-        <details class="more more-mat">
-          <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <p class="mat-note" style="margin-top:0">会議やプレゼンなど、仕事で使う英語の教材です。<b>基礎ができている人向け</b>で、実際の仕事の場面をそのまま練習します。</p>
-          <div class="mat-tiers" style="border-top:0;padding-top:0">
-            <h5>A-PUSH Biz Talk ── 仕事でそのまま使う</h5>
-            <p>ここまで練習した言い方を、実際の仕事のシーンで使います。自由に答える場面が増えて、だんだん自分らしい言い回しになっていきます。</p>
-            <div class="mat-spreads" style="margin-top:1em">
-              <figure class="mat-spread">
-                <div class="mat-spread-pages">
-                  <img class="zoomable" src="assets/mat-biztalk.png" alt="教材 A-PUSH Biz Talk Chapter2 経過 — Present Perfect Continuous 本文ページ" loading="lazy">
-                  <img class="zoomable" src="assets/mat-biztalk-p2.png" alt="教材 A-PUSH Biz Talk Chapter2 経過 — Present Perfect Continuous イラストページ" loading="lazy">
-                </div>
-              </figure>
-            </div>
-          </div>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3-3. 代表 ============ -->
-<section class="sec-grey">
-  <div class="wrap reveal">
-    <p class="label">FOUNDER</p>
-    <h2>英語は、<em>“話さないから話せない”</em></h2>
-    <div class="founder">
-      <figure class="founder-ph">
-        <img src="assets/founder.jpg" alt="A-PUSH 代表 佐野 公章" loading="lazy">
-      </figure>
-      <div>
-        <p class="role">FOUNDER</p>
-        <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
-        <p class="aff">テンプル大学ジャパンキャンパス 在学</p>
-
-        <p class="quote" style="font-size:.9rem;font-weight:700;line-height:1.9;border-left:0;padding-left:0">17歳、フィリピンに語学留学。<br>中学から英語をやったのに、<em>何を言っているかわからない。</em><br>"Slow please."とお願いして、ゆっくり言ってもらっても、やっぱりわからない。</p>
-        <p class="agi-punch" style="color:var(--ink)!important;border-color:var(--red)">あのときの恥ずかしさ —— <em>いまでもトラウマです。</em></p>
-
-        <p style="font-weight:900;font-size:1.1rem;margin-top:1.4em">だから、逆をやる。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">英語コーチングという事業は、本来「いかに長く通っていただくか」で設計されます。継続率が上がれば経営は安定する。事業としては、それが正解です。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em"><b style="color:var(--ink)">でも私は、早く卒業してほしい。</b>生徒が本当に話せるようになるかどうか。そこにだけコミットします。</p>
-      </div>
-    </div>
-
-    <div class="founder-story">
-        <details class="more more-story">
-          <summary><span class="lbl" aria-hidden="true"></span></summary>
-          <div class="ev-long">
-            <h4>高校2年の2月</h4>
-            <p>私がフィリピンに発ったのは、高校2年の2月でした。</p>
-            <p>中学からずっと英語をやってきました。文法は解ける。長文も読める。テストの点数だって、悪くはなかった。だから正直、少しは通じるだろうと思っていたんです。</p>
-            <p><b>通じませんでした。</b></p>
-            <p>相手が何を言っているのか、本当にわからない。何度も聞き返して、それでもわからなくて、「Slow please.」とお願いする。ゆっくり言ってもらう。それでも、わからない。</p>
-            <p>相手が困った顔をするのが、一番つらかった。何年も勉強してきたのに、自分は何をやっていたんだろう、と思いました。</p>
-
-            <h4>2週間で、英語がゆっくり聞こえた</h4>
-            <p>滞在は6週間。その施設で出会ったのが、この学習法でした。</p>
-            <p>やることは、驚くほど単純です。普通より速いペースで英語を浴びて、そのまま真似して、口に出す。同じ型を、何度も、何度も。</p>
-            <p>始めて2週間ほど経った頃、はっきりと変化がありました。<b>英語が、ゆっくり聞こえるんです。</b>相手の話す速度は変わっていません。変わったのは、私のほうでした。</p>
-
-            <h4>聞き取れなかった理由</h4>
-            <p>繰り返すうちに、自分がなぜリスニングが苦手だったのか、ようやくわかりました。英語の「音」を、そもそも知らなかった。</p>
-            <p>知らない音は、聞こえません。文字では知っている単語も、音としては一度も自分の中を通っていなかった。それに気づけたのは、自分で発音するようになったからでした。口が音をつくれるようになると、耳がその音を拾えるようになる。話す練習が、そのまま聞く力になっていたんです。</p>
-            <p>これは、教室で解説を聞いていても絶対にわからなかったと思います。</p>
-
-            <h4>考えなくてよくなる</h4>
-            <p>音がわかってからは、早かった。言いたいことが言えるようになる。少し難しい話にもついていける。理由はシンプルで、英語を「考えなくてよくなった」からです。</p>
-            <p>ひたすら話し続けるうちに、I の次には動詞の eat、その次には目的語の hamburger —— と、英語が勝手に出てくるようになりました。</p>
-            <p>話すときに文法を組み立てない。聞くときに日本語に訳さない。その2つがなくなるだけで、会話はまったく別物になります。後から調べて、これには名前がついていることを知りました。</p>
-
-            <h4>Procedural Memory（手続き記憶）</h4>
-            <p>体で覚える記憶のことです。自転車の乗り方を、説明書を読んで覚えた人はいません。何度も転んで、体が覚えた。一度入ってしまえば、何年ぶりでもまた乗れる。考えなくても動くのが、この記憶の特徴です。</p>
-            <p>英語も、同じ場所に入れてしまえばいい。「知識として覚える」のではなく、「口が覚える」まで回数を重ねる。だから A-PUSH は、理解した回数ではなく口に出した回数で設計しています。</p>
-
-            <h4>BICS と CALP</h4>
-            <p>言語能力は、2つに分かれます。<b>BICS</b> —— 「こんにちは」「はじめまして」「趣味は何ですか」といった基本の言語。<b>CALP</b> —— 勉強や議論など、複雑な内容を扱う言語。順番は、BICSの上にCALPです。</p>
-            <p>難しい会話は、そもそも言語を考えなくても話せる状態でないと成立しません。英語の意味を考えるのに脳のリソースを使っていると、話す内容まで頭が回らない。脳の過剰負担です。</p>
-            <p>だからまず、基礎の素振りを重ねる。考えなくても話せる状態をつくってから、学習に入る。日本の英語教育は、ここが逆になっています。CALPから入って、BICSが育たないまま終わる。だから「読めるのに話せない」人が生まれます。17歳の私が、まさにそれでした。</p>
-
-            <h4>英語が話せると、どんな世界が待っているのか</h4>
-            <ol>
-              <li><b>1. 価値観が変わる</b>情報源が変わります。日本語で流れてくるものだけを見ていた頃とは、世界の解像度が違う。同じニュースでも、国によって書かれ方がまったく違うことを知ります。</li>
-              <li><b>2. 人との出会いが変わる</b>まったく違う教育・生活環境・文化で育った人と、直接話せる。そこで受ける刺激が、また価値観を広げてくれます。教養とは、たぶんこういうことの積み重ねです。</li>
-              <li><b>3. 自分が変わる</b>世界のどこでも、やっていける。生きていける。そして、助けてくれる友人ができる。この安心感は、想像以上に大きいです。</li>
-              <li><b>4. 最後に、キャリア</b>ワーキングホリデー、外資系、輸出入。できることが一気に広がります。ただ正直に言うと —— 前の3つが大きすぎて、私個人としてはこれが一番小さいと感じています。</li>
-            </ol>
-
-            <h4>英語は、コスパがかなりいい</h4>
-            <p>一度身につければ、一生使えます。そしてその先に広がるものは、キャリアだけではありません。</p>
-            <p>17歳の私がフィリピンで受け取ったものを、日本でも渡せるようにする。それが A-PUSH をつくった理由です。</p>
-            <p class="ev-ref">出典：Ullman, Declarative/Procedural Model（手続き記憶）／ Cummins, BICS &amp; CALP</p>
-          </div>
-        </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4. なぜ、やり遂げられるのか ============ -->
-<section>
-  <div class="wrap reveal">
-    <p class="label">WHY YOU CAN FINISH</p>
-    <h2>忙しくても、<br><em>やるしかない、3ヶ月。</em></h2>
-    <p class="lead">「本当に動いている」現場の仕組みを、そのままお見せします。</p>
-    <div class="cards">
-      <div class="card">
-        <span class="num">00</span>
-        <h3>コーチから、こちらが連絡します</h3>
-        <p>英会話は、通う日だけ話して終わり。<br>結局それが続かないから、伸びません。<br>だから、こちらから連絡します。<br>私たちが見ているのは、レッスンの外です。</p>
-        <p class="note-sm">※ ご質問への回答は、質問数にかかわらず原則1日1回にまとめてお送りします。対応時間は原則14:00〜22:00です（緊急対応・即時対応・24時間対応は行っておりません）。</p>
-      </div>
-    </div>
-    <div class="cards cards-half">
-      <div class="card">
-        <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
-        <span class="num">01</span>
-        <h3>公式LINEでの個別リマインド</h3>
-        <p>やるべきことを、忘れさせません。毎日の課題の案内から、提出された音声の確認・フィードバックまで。</p>
-        <button type="button" class="more-btn" data-popup="lineModal">▼ 詳しく見る</button>
-      </div>
-      <div class="card">
-        <div class="card-visual" aria-hidden="true">
-          <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-            <rect width="640" height="480" fill="#141417"/>
-            <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
-            <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
-            <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
-            <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
-            <circle cx="32" cy="86" r="14" fill="#FF2D16"/><text x="32" y="91" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
-            <text x="56" y="91" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
-            <text x="600" y="91" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
-            <rect x="56" y="102" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="102" width="374" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="176" r="14" fill="#FF2D16"/><text x="32" y="181" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
-            <text x="56" y="181" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
-            <text x="600" y="181" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
-            <rect x="56" y="192" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="192" width="234" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="266" r="14" fill="#FF2D16"/><text x="32" y="271" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
-            <text x="56" y="271" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
-            <text x="600" y="271" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
-            <rect x="56" y="282" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="282" width="312" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="356" r="14" fill="#FF2D16"/><text x="32" y="361" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
-            <text x="56" y="361" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
-            <text x="600" y="361" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
-            <rect x="56" y="372" width="520" height="10" rx="5" fill="#2a2a2e"/>
-            <rect x="56" y="372" width="156" height="10" rx="5" fill="#FF2D16"/>
-            <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
-            <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
-          </svg>
-        </div>
-        <span class="num">02</span>
-        <h3>ダッシュボードで、今日やることが常に明確に（2026年11月 正式版提供予定）</h3>
-        <p>「今日、何をやればいいんだっけ」で迷う時間をゼロに。進捗と次にやるべきことが、開いた瞬間に分かります。</p>
-        <p class="note-sm" style="font-size:.86rem">※ 学習ダッシュボードは2026年9月下旬にプレリリース版、2026年11月に正式版の提供を開始する予定です。画面は開発中のイメージです。提供開始までの間は、公式LINEによる学習サポートにより学習進捗を管理します。</p>
-        <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
-      </div>
-    </div>
-
-    <div class="online-full">
-      <div class="ov" aria-hidden="true">
-        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="24" width="120" height="76" rx="4" fill="#141417" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
-          <rect x="48" y="32" width="104" height="60" rx="2" fill="rgba(255,255,255,.06)"/>
-          <path d="M78 60 l14 14 26-30" fill="none" stroke="#FF2D16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 118 h160 l-8 12 h-144 z" fill="#141417" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
-          <rect x="92" y="100" width="16" height="18" fill="#141417" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
-        </svg>
-      </div>
-      <div class="ot">
-        <span class="num">03</span>
-        <h3>オンラインで、<em>ご都合に合わせて</em>＆<em>どこでも</em></h3>
-        <p>移動時間も、出張先も、在宅の日も。忙しい社会人が3ヶ月をやり切れるように、場所に縛られない設計にしています。</p>
-        <div class="online-pts">
-          <div>
-            <b>いつでも</b>
-            <p>曜日は固定されていません。<br>レッスンは事前予約制で、開講日時（対面は土・日・月・火・木 18:00〜22:00）の範囲内で、ご都合に合わせて組んでいただけます。<br>オンラインの実施可能時間はお申込み時にご案内します。</p>
-          </div>
-          <div>
-            <b>どこでも</b>
-            <p>目黒の教室でも、自宅でも、出張先のホテルでも。オンラインと対面を自由に組み合わせて受講できます。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3-2b. 長期記憶（忘却曲線 × 公式LINE） ============ -->
-<section id="memory">
-  <div class="wrap reveal">
-    <p class="label">MANAGEMENT</p>
-    <h2>長期記憶を、<em>作り上げる。</em></h2>
-    <p class="lead">人は、忘れます。だから A-PUSH の学習管理は根性論ではありません。「人はいつ忘れるのか」という研究をもとに<b>復習のタイミングそのものを設計</b>し、コーチが見つけたあなたの苦手を、そのタイミングに乗せて出し続けます。</p>
-
-    <div class="mgmt-grid">
-      <!-- 忘却曲線 -->
-      <div class="curve-card">
-        <h3>忘却曲線と、復習のタイミング</h3>
-        <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
-        <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
-          <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
-          <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
-          <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
-          <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
-          <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
-          <text class="cv-ylab" x="14" y="150" transform="rotate(-90 14 150)" text-anchor="middle">覚えている量</text>
-          <text class="cv-tick" x="66"  y="274" text-anchor="start">直後</text>
-          <text class="cv-tick" x="205" y="274" text-anchor="middle">1日後</text>
-          <text class="cv-tick" x="395" y="274" text-anchor="middle">1週間後</text>
-          <text class="cv-tick" x="604" y="274" text-anchor="end">1か月後</text>
-          <path class="cv-line forget" d="M70,30 C120,115 160,150 200,165 C280,182 330,190 390,195 C470,203 530,208 590,212"/>
-          <path class="cv-line keep" d="M70,30 C105,68 130,95 150,115 L150,30 C190,62 220,80 250,95 L250,30 C310,55 350,70 390,80 L390,30 C470,42 530,50 590,58"/>
-          <circle class="cv-dot" cx="150" cy="30" r="7"/>
-          <circle class="cv-dot" cx="250" cy="30" r="7"/>
-          <circle class="cv-dot" cx="390" cy="30" r="7"/>
-          <text class="cv-badge" x="272" y="18">↑ ここで復習</text>
-        </svg>
-        <div class="curve-legend">
-          <span><i></i>復習しない（よくある英語学習）</span>
-          <span class="on"><i></i>A-PUSH の学習管理</span>
-        </div>
-        <p class="curve-read">覚えたことは、<b>1日後にはその多くを忘れます</b>。逆に言えば、忘れかけた瞬間に短く復習を挟むだけで、記憶は高い水準のまま保てる。A-PUSH は<b><em>この「忘れかけ」のタイミングに合わせて</em></b>、その日の課題をお渡しします。</p>
-        <p class="ev-ref">参考：<a href="https://en.wikipedia.org/wiki/Hermann_Ebbinghaus" target="_blank" rel="noopener">Ebbinghaus, Forgetting Curve（忘却曲線）</a></p>
-      </div>
-
-      <!-- 公式LINE風モック -->
-      <div>
-        <div class="phone">
-          <div class="li-head">
-            <span class="back" aria-hidden="true">‹</span>
-            <span class="ttl">A-PUSH</span>
-          </div>
-          <div class="li-body">
-            <div class="li-row">
-              <span class="li-av" aria-hidden="true">AP</span>
-              <div class="li-card">
-                <p class="c-ttl">こんにちは！</p>
-                <p class="c-sub">昨日の夜＆今朝は復習できましたか？</p>
-                <div class="c-q">
-                  <p class="c-lab">chapter 5 初回</p>
-                  <div class="c-btns"><span class="b on">✓ はい</span><span class="b">いいえ</span></div>
-                  <p class="c-lab">chapter 6 初回</p>
-                  <div class="c-btns"><span class="b">はい</span><span class="b">いいえ</span></div>
-                </div>
-                <p class="c-note">「はい」を押すと、チャプターごとに音声の送信をご案内します🎤</p>
-              </div>
-              <span class="li-time">12:35</span>
-            </div>
-
-            <div class="li-row">
-              <span class="li-av" aria-hidden="true">AP</span>
-              <div class="li-b">先に chapter 5 のボイスメモを送ってください、間違ってても大丈夫です！</div>
-              <span class="li-time">12:35</span>
-            </div>
-
-            <div class="li-row me">
-              <div class="li-voice"><span class="play" aria-hidden="true">▶</span><svg class="wave" viewBox="0 0 124 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0.0" y="2" width="2.4" height="36" rx="1.2"/><rect x="4.2" y="15" width="2.4" height="10" rx="1.2"/><rect x="8.4" y="10" width="2.4" height="20" rx="1.2"/><rect x="12.6" y="16" width="2.4" height="8" rx="1.2"/><rect x="16.8" y="7" width="2.4" height="26" rx="1.2"/><rect x="21.0" y="7" width="2.4" height="26" rx="1.2"/><rect x="25.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="29.4" y="2" width="2.4" height="36" rx="1.2"/><rect x="33.6" y="13" width="2.4" height="14" rx="1.2"/><rect x="37.8" y="6" width="2.4" height="28" rx="1.2"/><rect x="42.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="46.2" y="14" width="2.4" height="12" rx="1.2"/><rect x="50.4" y="7" width="2.4" height="26" rx="1.2"/><rect x="54.6" y="8" width="2.4" height="24" rx="1.2"/><rect x="58.8" y="4" width="2.4" height="32" rx="1.2"/><rect x="63.0" y="16" width="2.4" height="8" rx="1.2"/><rect x="67.2" y="16" width="2.4" height="8" rx="1.2"/><rect x="71.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="75.6" y="4" width="2.4" height="32" rx="1.2"/><rect x="79.8" y="11" width="2.4" height="18" rx="1.2"/><rect x="84.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="88.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="92.4" y="16" width="2.4" height="8" rx="1.2"/><rect x="96.6" y="3" width="2.4" height="34" rx="1.2"/><rect x="100.8" y="16" width="2.4" height="8" rx="1.2"/><rect x="105.0" y="14" width="2.4" height="12" rx="1.2"/><rect x="109.2" y="8" width="2.4" height="24" rx="1.2"/><rect x="113.4" y="2" width="2.4" height="36" rx="1.2"/><rect x="117.6" y="12" width="2.4" height="16" rx="1.2"/><rect x="121.8" y="8" width="2.4" height="24" rx="1.2"/></svg><span class="dur">00:46</span></div>
-              <span class="li-time read">既読<br>12:36</span>
-            </div>
-
-            <div class="li-row">
-              <span class="li-av" aria-hidden="true">AP</span>
-              <div class="li-b"><b>chapter 5 の音声を受け取りました！</b><br>これで全部完了です。お疲れ様でした！</div>
-              <span class="li-time">12:36</span>
-            </div>
-
-            <div class="li-row">
-              <span class="li-av ghost" aria-hidden="true"></span>
-              <div class="li-b">🎤 chapter 6 のボイスメモを送ってください、間違ってても大丈夫です！</div>
-              <span class="li-time">12:36</span>
-            </div>
-
-            <div class="li-row me">
-              <div class="li-voice"><span class="play" aria-hidden="true">▶</span><svg class="wave" viewBox="0 0 124 40" preserveAspectRatio="none" aria-hidden="true"><rect x="0.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="4.2" y="7" width="2.4" height="26" rx="1.2"/><rect x="8.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="12.6" y="2" width="2.4" height="36" rx="1.2"/><rect x="16.8" y="7" width="2.4" height="26" rx="1.2"/><rect x="21.0" y="6" width="2.4" height="28" rx="1.2"/><rect x="25.2" y="3" width="2.4" height="34" rx="1.2"/><rect x="29.4" y="5" width="2.4" height="30" rx="1.2"/><rect x="33.6" y="3" width="2.4" height="34" rx="1.2"/><rect x="37.8" y="6" width="2.4" height="28" rx="1.2"/><rect x="42.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="46.2" y="16" width="2.4" height="8" rx="1.2"/><rect x="50.4" y="6" width="2.4" height="28" rx="1.2"/><rect x="54.6" y="11" width="2.4" height="18" rx="1.2"/><rect x="58.8" y="9" width="2.4" height="22" rx="1.2"/><rect x="63.0" y="8" width="2.4" height="24" rx="1.2"/><rect x="67.2" y="4" width="2.4" height="32" rx="1.2"/><rect x="71.4" y="15" width="2.4" height="10" rx="1.2"/><rect x="75.6" y="6" width="2.4" height="28" rx="1.2"/><rect x="79.8" y="9" width="2.4" height="22" rx="1.2"/><rect x="84.0" y="7" width="2.4" height="26" rx="1.2"/><rect x="88.2" y="4" width="2.4" height="32" rx="1.2"/><rect x="92.4" y="12" width="2.4" height="16" rx="1.2"/><rect x="96.6" y="2" width="2.4" height="36" rx="1.2"/><rect x="100.8" y="10" width="2.4" height="20" rx="1.2"/><rect x="105.0" y="5" width="2.4" height="30" rx="1.2"/><rect x="109.2" y="10" width="2.4" height="20" rx="1.2"/><rect x="113.4" y="9" width="2.4" height="22" rx="1.2"/><rect x="117.6" y="14" width="2.4" height="12" rx="1.2"/><rect x="121.8" y="4" width="2.4" height="32" rx="1.2"/></svg><span class="dur">00:37</span></div>
-              <span class="li-time read">既読<br>12:37</span>
-            </div>
-          </div>
-          <p class="li-foot">チャプターごとに、復習 → 音読の提出 → 確認。<br>これを、3か月毎日。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 9. お客様の声 ============ -->
-<!-- ✏️ 編集OK ⑤ お客様の声：<div class="vcard"> ごとコピーすれば人数を増やせます -->
-<section class="sec-grey">
-  <div class="wrap reveal">
-    <p class="label">VOICE</p>
-    <h2>すでに、変化は<em>始まっている。</em></h2>
-    <p class="note-sm" style="margin-top:0">掲載している体験談は、ご本人の同意を得て掲載しています。これらは個々の受講者の体験であり、すべての方が同様の結果を得られるものではありません。学習効果には個人差があります。</p>
-    <p class="voice-hint" aria-hidden="true">横にスクロールできます</p>
-
-    <div class="vscroll">
-      <div class="vcard">
-        <figure class="vphoto">
-          <img src="assets/voice-student.jpg" alt="受講生 Kさん" loading="lazy">
-          <figcaption class="cap">
-            <p class="role">STUDENT'S VOICE</p>
-            <h3>K さん</h3>
-            <p>3ヶ月プラン受講／国際学会でプレゼン</p>
-          </figcaption>
-        </figure>
-        <div>
-          <p class="vlead">『My name is...』しか言えなかった私が、<em>3ヶ月後に国際学会で大成功。</em></p>
-          <p class="vnote">※ 個人の体験です。同様の結果を保証するものではありません。</p>
-          <div class="bubbles">
-            <p class="bub">正直、学校の英語が本当に苦手で、英会話なんて一切できないレベルでした。しかし<b>3ヶ月後に韓国で開催される国際学会でのプレゼン</b>が決まり、「このままではマズい…」と思い切って受講を決意しました。</p>
-            <p class="bub">レッスンは反復が中心で、最初は必死でしたが、回数を重ねるうちに不思議と脳が英語に順応していく感覚がありました。気がついた時には、<b>頭で日本語を作らなくても自然と英語が口から出てくる</b>ように。</p>
-            <p class="bub win">本番では自信を持ってプレゼンができ、国境を越えて充実した人脈を築くことができました。<b>あの時踏み出して本当に良かったです。</b></p>
-          </div>
-          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
-        </div>
-      </div>
-
-      <div class="vcard">
-        <figure class="vphoto">
-          <img src="assets/voice-keira.jpg" alt="受講生 けいらさん" loading="lazy">
-          <figcaption class="cap">
-            <p class="role">STUDENT'S VOICE</p>
-            <h3>けいら さん</h3>
-            <p>海外で働くことを目標に受講</p>
-            <a class="ig-link" href="https://www.instagram.com/babykeirachan/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
-              @babykeirachan
-            </a>
-          </figcaption>
-        </figure>
-        <div>
-          <p class="vlead">英語は苦手。でも、<em>海外で働く夢は諦めたくなかった。</em></p>
-          <p class="vnote">※ 個人の体験です。同様の結果を保証するものではありません。</p>
-          <div class="bubbles">
-            <p class="bub win">今では、<b>海外で生活して働く自分の姿を、本気で想像できます。</b></p>
-            <p class="bub">昔からとにかく英語が苦手でした。文法も単語もややこしくて、覚えることが多すぎて勉強が続かない。だから英会話は自分には無理かも…と諦めていました。</p>
-            <p class="bub">でも「<b>世界中のいろんな人ともっと話したい</b>」という思いだけはずっと消えなくて、勇気を出してスタート。続けるうちに、気づけば<b>英語が自然と頭に浮かび、口からも出てくる</b>ように。自分でもびっくり、革命的でした。</p>
-          </div>
-          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- MEMO（表示されません）: 要確認Kimiさんの許可が取れ次第、実際の Versant スコア（受講前 → 受講後）を添えます。許可が下りない場合は「スコアなしの体験談のみで構成」か「この章を保留」かを、事前に決めてください。 / また、お名前の表記（実名／イニシャル）と写真の掲載許諾も、公開前にご確認ください。 -->
-  </div>
-</section>
-
-<!-- ============ 7. 保証 ============ -->
-<section>
-  <div class="wrap reveal">
-    <p class="label">GUARANTEE</p>
-    <h2>私たちは、本気です。<br><em>だから、伸ばせる。</em></h2>
-    <div class="grt">
-      <div class="grt-mark"><b>+1</b><span>MONTH FREE</span></div>
-      <div class="grt-txt">
-        <h3>条件を満たして Versant スコアが所定の伸びに達しなかった場合、<br>受講期間を1ヶ月、無償で延長します。</h3>
-        <span class="note-sm">本保証は「受講期間の無償延長」を保証するものであり、スコアの到達、英語力の習得、転職・昇進等の成果を保証するものではありません。学習効果には個人差があります。保証の適用条件・申請方法は受講規約第20条に定めます。</span>
-        <p>途中で投げ出さず取り組んでいただいた方が、結果だけを理由に損をすることがないように。返金ではなく、<b>伸びるまで一緒に続ける</b>という形での保証です。</p>
-        <div class="grt-cond">
-          <span>学習進捗の提出 80%以上</span>
-          <span>レッスン出席率 80%以上</span>
-          <span>3ヶ月以上のプランが対象</span>
-        </div>
-      </div>
-    </div>
-    <!-- MEMO（表示されません）: 要確認いただいた画像の見出しは「成績保証／100%返金」でしたが、上の保証ブロックは「返金ではなく1ヶ月無償延長」と明記しています。どちらが正なのか（返金なのか、延長なのか、両方選べるのか）をご確認ください。現状は既存の文言に合わせ、見出しを「成績保証の判定基準」として掲載しています。景品表示法・特定商取引法の対象になる表記のため、公開前に必ず確定させてください。 -->
-    <div class="gscore">
-      <p class="gscore-h">成績保証（受講期間の1ヶ月無償延長）の判定基準</p>
-      <div class="gscore-kpi">
-        <div><b>80<small>%</small></b><span>学習進捗の提出</span></div>
-        <div><b>80<small>%</small></b><span>レッスンの出席</span></div>
-        <div><b>3<small>か月〜</small></b><span>3か月以上のコースが対象</span></div>
-        <div><b style="font-size:clamp(1.3rem,3.2vw,1.9rem)">Versant</b><span>スコアで客観的に判定</span></div>
-      </div>
-      <p class="gscore-t">受講開始時のスコア別・保証するスコアの伸び</p>
-      <table>
-        <thead>
-          <tr><th>受講開始時のスコア</th><th>保証内容</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>45<small>未満</small></td><td><span class="up">+10<small>ポイント保証</small></span></td></tr>
-          <tr><td>45<small>以上</small> 55<small>未満</small></td><td><span class="up">+5<small>ポイント保証</small></span></td></tr>
-          <tr><td>55<small>以上</small></td><td><span class="none">成績保証の対象外</span></td></tr>
-        </tbody>
-      </table>
-      <p class="gscore-f">テストは<b>入会時と受講終了時の2回</b>実施します。</p>
-    </div>
-
-    <p class="price-note">※ 成績の判定は、受講開始時と受講終了時に実施する Versant のスコアで行います。受験費用は当社が負担します。終了時テストは受講期間終了日から14日以内にお受けいただき、保証のお申請は判定結果の通知から14日以内にお願いします。条件を満たさない場合（提出率・出席率が80%未満、期限内に終了時テストを受験されなかった場合等）は保証の対象外となります。詳細は受講規約第20条をご確認ください。</p>
-  </div>
-</section>
-
-<!-- ============ 8. 講師陣 ============ -->
-<!-- ✏️ 編集OK ④ 講師：名前・紹介文・写真（assets/ の画像を差し替え） -->
-<section class="sec-grey">
-  <div class="wrap reveal">
-    <p class="label">COACHES</p>
-    <h2>あなたに、<em>伴走する人。</em></h2>
-    <p class="lead">レッスンはネイティブ講師が、日々の学習管理は英会話コーチが担当します。</p>
-    <div class="team">
-      <div class="member">
-        <div class="ph"><img src="assets/alex.jpg" alt="講師 Alex" loading="lazy"></div>
-        <div class="info">
-          <p class="role">TEACHER</p>
-          <h3>Alex</h3>
-          <p>明るく楽しく、でも本気のあなたには真剣な Alex。明るく楽しいムードメーカーな彼女は、あなたの緊張と恥ずかしさを、そっと外してくれます！</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="ph"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></div>
-        <div class="info">
-          <p class="role">COACH &amp; TEACHER</p>
-          <h3>Taro Ocoyne</h3>
-          <p>日英ネイティブ。講師としてもコーチとしても、あなたをサポート。日本の英語教育も受けているから、あなたの「わからない」も不安も理解しています。論理的かつ丁寧で、優しくサポーティブなコーチ兼講師です。</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="ph"><img src="assets/founder.jpg" alt="Coach &amp; Founder Kimi（佐野 公章）" loading="lazy"></div>
-        <div class="info">
-          <p class="role">COACH &amp; FOUNDER</p>
-          <h3>Kimi</h3>
-          <p>家庭環境も学校環境もなしで、ネイティブレベルまで持っていった経験のすべてを、あなたのキャリアのために注ぎます。</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="ph"><img src="assets/phoebe.jpg" alt="講師 Phoebe" loading="lazy"></div>
-        <div class="info">
-          <p class="role">TEACHER</p>
-          <h3>Phoebe</h3>
-          <p>緊張がいちばんの敵です。フィビィは生徒さんが肩の力を抜いて、リラックスした雰囲気を作るのが上手です。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 12. スクール・時間割 ============ -->
-<!-- ✏️ 編集OK ⑦ 教室：営業日・時間・アクセス -->
-<section class="sec-dark">
-  <div class="wrap reveal">
-    <p class="label">SCHOOL</p>
-    <h2>教室と、<em>時間割。</em></h2>
-    <p class="lead">対面での受講は目黒のみ。ご都合に合わせて、オンラインとの併用も可能です。</p>
-    <div class="school">
-      <p class="area">目黒</p>
-      <dl>
-        <dt>OPEN</dt><dd class="jp">土・日・月・火・木</dd>
-        <dt>TIME</dt><dd>18:00 – 22:00</dd>
-        <dt>ACCESS</dt><dd class="jp">目黒駅 徒歩1分／BLOCKS MEGURO 621号室</dd>
-      </dl>
-      <p class="note-sm">※ 1日研修会は日曜13:00〜17:00に実施します。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. 比較・ポジショニング ============ -->
-<section class="sec-grey">
-  <div class="wrap reveal">
-    <p class="label">POSITIONING</p>
-    <h2>英語コーチは、<br><em>大きく2種類</em>に分かれます。</h2>
-    <p class="lead">「なんとなく英会話を教えるサービス」と、A-PUSH のように<b>転職・異動という明確なゴールから逆算して設計されたプログラム</b>です。多くの英会話スクールやアプリは日常会話の練習が中心で、ビジネスの現場で本当に必要な運用力（CALP）まで踏み込みません。独学では、そもそも「話す機会」自体が作れません。</p>
-
-    <!-- 料金・サービス比較 -->
-    <div class="vs-head">
-      <p class="vs-eyebrow">英会話コーチング 3ヶ月コース ／ 料金・サービス比較</p>
-      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 <em>200,000円</em>（2026年10月31日までのお申込み）。</h3>
-      <span class="note-sm">A-PUSH の200,000円は、2026年10月31日までのお申込みに適用されるオープン記念割引の価格です。<br>2026年11月1日以降のお申込みは250,000円となります。<br>他社の金額は各社の通常価格であり、同一条件の比較ではありません。</span>
-    </div>
-
-    <div class="vs-scroll">
-      <div class="vs">
-        <!-- 見出し行 -->
-        <div class="vs-l blank"></div>
-        <div class="vs-u t"><span class="vs-pill">10月31日までの価格</span><p class="vs-brand">A-PUSH</p></div>
-        <div class="vs-o t"><p class="vs-co">A社</p><p class="vs-co-sub">マンツーマン型 大手</p></div>
-        <div class="vs-o t"><p class="vs-co">B社</p><p class="vs-co-sub">コンサル型 大手</p></div>
-        <div class="vs-o t"><p class="vs-co">C社</p><p class="vs-co-sub">通い放題 併用型</p></div>
-
-        <!-- マンツーマン -->
-        <div class="vs-l">マンツーマン</div>
-        <div class="vs-u"><span class="vs-div"></span><p class="vs-mk"><span class="o">○</span>全24回</p><span class="vs-chip">対面 &amp; オンライン</span></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span>24回</p><p class="vs-sub">対面／オンライン</p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="x">✕</span>なし</p><p class="vs-sub">週1回の面談のみ</p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span>24回</p><p class="vs-sub">対面／オンライン</p></div>
-
-        <!-- コーチング -->
-        <div class="vs-l">コーチング</div>
-        <div class="vs-u"><span class="vs-div"></span><p class="vs-mk"><span class="o">○</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
-
-        <!-- 学習管理 -->
-        <div class="vs-l">学習管理</div>
-        <div class="vs-u"><span class="vs-div"></span><p class="vs-mk"><span class="o">○</span>毎日の伴走</p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
-
-        <!-- 入会金 -->
-        <div class="vs-l">入会金</div>
-        <div class="vs-u"><span class="vs-div"></span><p class="vs-fee zero">0<span class="jp"> 円</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-fee">55,000<span class="jp">円</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-fee">55,000<span class="jp">円</span></p></div>
-        <div class="vs-o"><span class="vs-divo"></span><p class="vs-fee">55,000<span class="jp">円</span></p></div>
-
-        <!-- 総額 -->
-        <div class="vs-l last">3ヶ月 総額<small>税込・入会金含む</small></div>
-        <div class="vs-u b">
-          <span class="vs-div"></span>
-          <p class="vs-total">200,000<span class="y">円</span></p>
-          <p class="vs-cap">2026年10月31日までのお申込み</p>
-        </div>
-        <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">635,800<span class="y">円</span></p><span class="vs-plus">+435,800円</span></div>
-        <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">632,500<span class="y">円</span></p><span class="vs-plus">+432,500円</span></div>
-        <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">594,000<span class="y">円</span></p><span class="vs-plus">+394,000円</span></div>
-      </div>
-    </div>
-    <p class="scroll-hint">← 横にスクロールできます →</p>
-
-    <div class="vs-sum">
-      <span class="t1">マンツーマン型2社（A社・C社）の総額の平均</span>
-      <span class="v1">614,900<span class="jp">円</span></span>
-      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.3em;color:rgba(255,255,255,.72)">A-PUSH は、2026年10月31日までのお申込みで200,000円、11月1日以降のお申込みで250,000円です。<br>「オフ」「割引」は当社の値下げを意味するものではなく、他社の通常価格との差を示したものです。</span>
-    </div>
-
-    <div class="vs-foot">
-      <p class="cond">※ 比較条件：3ヶ月間・マンツーマンレッスン24回相当を含むコースの総額（税込・入会金込み）を比較しています。B社はマンツーマンレッスンを持たず週1回のコンサルティング面談のみのため、参考として掲載し、平均額の算出には含めていません。</p>
-      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHの受講料は、お申込みを受領した日が属する期間の価格を適用します。</p>
-      <p>※ 各社の金額は2026年9月20日時点の各社公式サイトの記載に基づきます。根拠となる画面の記録は当社にて保管しています。比較条件が異なる項目については上記の注記をご確認ください。</p>
-    </div>
-
-    <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。募集期限（10月31日）を過ぎたら、この表の日付と枠数も必ず更新してください。 -->
-  </div>
-</section>
-
-<!-- ============ 6-0. このままでいるコスト／キャリア以外の広がり ============ -->
-<section class="sec-dark" style="padding-top:0">
-  <div class="wrap reveal">
-    <p class="label" style="font-size:.62rem">00</p>
-    <h2>このまま何もしないと、<br><em>何を失うのか。</em></h2>
-    <h3 style="font-weight:900;font-size:clamp(1.1rem,2.4vw,1.4rem);margin-top:1.2em">出会う人も、<em style="color:var(--red)">広くなる。</em></h3>
-    <p class="lead" style="margin-top:1em">まったく違う教育、暮らしのなかで育った人と、誰かを挟まずに話せる。相手の言葉のまま、相手の温度のまま受け取れる。そこで受ける刺激が、また価値観を広げてくれます。教養とは、たぶんこういうことの積み重ねです。</p>
-    <p class="cost-close" style="margin-top:1.8em;font-size:clamp(1rem,2.1vw,1.3rem)">そして、一番は<em>自信です。</em></p>
-    <p class="lead" style="margin-top:1em">世界のどこでも、やっていける。生きていける。困ったときに、どこにいても助けてくれる友人がいる。この安心感は、想像以上に大きいです。</p>
-
-    <div class="cost" style="margin-top:2.8em">
-      <div class="cost-i">
-        <span class="n">01 / TIME</span>
-        <p>来年の今日も、同じ会議で黙ったままです。3ヶ月は、待っていても勝手には過ぎません。</p>
-      </div>
-      <div class="cost-i">
-        <span class="n">02 / CHANCE</span>
-        <p>海外案件も、異動も、英語が条件の求人も。すべて「話せる人」に回っていきます。</p>
-      </div>
-      <div class="cost-i">
-        <span class="n">03 / CONFIDENCE</span>
-        <p>言いたいことを飲み込む回数が増えるほど、「自分は英語が苦手だ」という前提が固まっていきます。</p>
-      </div>
-    </div>
-    <p class="cost-close">迷っている時間も、<em>コストです。</em></p>
-  </div>
-</section>
-
 <!-- ============ 6. 料金 ============ -->
 <!-- ✏️ 編集OK ③ 料金：金額を変えるときはページ末尾の PLANS の数字も必ず揃えてください -->
 <section id="price">
@@ -1855,43 +1067,443 @@ body{padding-bottom:92px}
 </section>
 
 
-<!-- ============ 11. FAQ ============ -->
-<!-- ✏️ 編集OK ⑥ FAQ：<details> ごとコピーすれば質問を増やせます -->
+<!-- ============ 7. 保証 ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="label">GUARANTEE</p>
+    <h2>私たちは、本気です。<br><em>だから、伸ばせる。</em></h2>
+    <div class="grt">
+      <div class="grt-mark"><b>+1</b><span>MONTH FREE</span></div>
+      <div class="grt-txt">
+        <h3>条件を満たして Versant スコアが所定の伸びに達しなかった場合、<br>受講期間を1ヶ月、無償で延長します。</h3>
+        <span class="note-sm">本保証は「受講期間の無償延長」を保証するものであり、スコアの到達、英語力の習得、転職・昇進等の成果を保証するものではありません。学習効果には個人差があります。保証の適用条件・申請方法は受講規約第20条に定めます。</span>
+        <p>途中で投げ出さず取り組んでいただいた方が、結果だけを理由に損をすることがないように。返金ではなく、<b>伸びるまで一緒に続ける</b>という形での保証です。</p>
+        <div class="grt-cond">
+          <span>学習進捗の提出 80%以上</span>
+          <span>レッスン出席率 80%以上</span>
+          <span>3ヶ月以上のプランが対象</span>
+        </div>
+      </div>
+    </div>
+    <!-- MEMO（表示されません）: 要確認いただいた画像の見出しは「成績保証／100%返金」でしたが、上の保証ブロックは「返金ではなく1ヶ月無償延長」と明記しています。どちらが正なのか（返金なのか、延長なのか、両方選べるのか）をご確認ください。現状は既存の文言に合わせ、見出しを「成績保証の判定基準」として掲載しています。景品表示法・特定商取引法の対象になる表記のため、公開前に必ず確定させてください。 -->
+    <div class="gscore">
+      <p class="gscore-h">成績保証（受講期間の1ヶ月無償延長）の判定基準</p>
+      <div class="gscore-kpi">
+        <div><b>80<small>%</small></b><span>学習進捗の提出</span></div>
+        <div><b>80<small>%</small></b><span>レッスンの出席</span></div>
+        <div><b>3<small>か月〜</small></b><span>3か月以上のコースが対象</span></div>
+        <div><b style="font-size:clamp(1.3rem,3.2vw,1.9rem)">Versant</b><span>スコアで客観的に判定</span></div>
+      </div>
+      <p class="gscore-t">受講開始時のスコア別・保証するスコアの伸び</p>
+      <table>
+        <thead>
+          <tr><th>受講開始時のスコア</th><th>保証内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>45<small>未満</small></td><td><span class="up">+10<small>ポイント保証</small></span></td></tr>
+          <tr><td>45<small>以上</small> 55<small>未満</small></td><td><span class="up">+5<small>ポイント保証</small></span></td></tr>
+          <tr><td>55<small>以上</small></td><td><span class="none">成績保証の対象外</span></td></tr>
+        </tbody>
+      </table>
+      <p class="gscore-f">テストは<b>入会時と受講終了時の2回</b>実施します。</p>
+    </div>
+
+    <p class="price-note">※ 成績の判定は、受講開始時と受講終了時に実施する Versant のスコアで行います。受験費用は当社が負担します。終了時テストは受講期間終了日から14日以内にお受けいただき、保証のお申請は判定結果の通知から14日以内にお願いします。条件を満たさない場合（提出率・出席率が80%未満、期限内に終了時テストを受験されなかった場合等）は保証の対象外となります。詳細は受講規約第20条をご確認ください。</p>
+  </div>
+</section>
+
+<!-- ============ 2-3. アウトプットの量 ============ -->
+<section>
+  <div class="wrap reveal">
+    <p class="label">OUTPUT GAP</p>
+    <h2>日本人に足りてないのは、<em>アウトプット量。</em></h2>
+    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
+      <div>
+        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人は、話していない。<br>でも、<b>文法・単語の知識はハイレベル</b>です。</p>
+        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">海外の英語教育は、アウトプットの時間が圧倒的に多い。<b>だから、話せるようになる。</b></p>
+        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
+        <p class="note-sm">※ レッスン時間のうち受講者が発話する時間の割合について、当社が標準的なレッスン構成に基づいて算出した設計値です。実際の割合は、受講者のレベル・当日の進行により変動します。</p>
+      </div>
+      <div class="curve-card" style="padding:2.2em 2em">
+        <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
+        <p class="sub">一般的な傾向を示す概念図です。特定の統計データに基づくものではありません。</p>
+        <svg viewBox="0 0 500 300" role="img" aria-label="日本と、アウトプット重視で知られる3カ国の英語教育における時間配分の違いを示す概念図">
+          <text class="cv-tick" x="0" y="16" style="font-weight:900">日本</text>
+          <rect x="0" y="24" width="500" height="34" rx="4" fill="#E4E4E7"/>
+          <rect x="0" y="24" width="400" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="392" y="24" width="108" height="34" rx="4" fill="var(--red)"/>
+
+          <text class="cv-tick" x="0" y="88" style="font-weight:900">オランダ</text>
+          <rect x="0" y="96" width="500" height="34" rx="4" fill="#E4E4E7"/>
+          <rect x="0" y="96" width="175" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="167" y="96" width="333" height="34" rx="4" fill="var(--red)"/>
+
+          <text class="cv-tick" x="0" y="160" style="font-weight:900">スウェーデン</text>
+          <rect x="0" y="168" width="500" height="34" rx="4" fill="#E4E4E7"/>
+          <rect x="0" y="168" width="200" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="192" y="168" width="308" height="34" rx="4" fill="var(--red)"/>
+
+          <text class="cv-tick" x="0" y="232" style="font-weight:900">デンマーク</text>
+          <rect x="0" y="240" width="500" height="34" rx="4" fill="#E4E4E7"/>
+          <rect x="0" y="240" width="190" height="34" rx="4" fill="#C6C6CB"/>
+          <rect x="182" y="240" width="318" height="34" rx="4" fill="var(--red)"/>
+        </svg>
+        <div class="curve-legend">
+          <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
+          <span class="on"><i></i>アウトプット（話す・書く）</span>
+        </div>
+        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。<br>※ オランダ・スウェーデン・デンマークが英語非母語国の中で英語運用力の上位に位置することについては、<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>を参照しています。EF EPI は英語運用力の指標であり、各国の授業時間配分を示すものではありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 何をするのか ============ -->
+<section class="sec-grey" id="what">
+  <div class="wrap reveal">
+    <p class="label">WHAT WE DO</p>
+    <h2>とにかく、<em>スピーキングを鍛える。</em></h2>
+    <p class="lead">ネイティブ講師と<b>週2回のマンツーマン</b>。<br>レッスンの中身は、9割が「あなたが話している時間」です。</p>
+
+    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:40px">
+
+      <!-- レッスンの内訳 -->
+      <div class="curve-card">
+        <h3>レッスン時間の内訳</h3>
+        <p class="sub">標準的なレッスン構成に基づく設計値です。</p>
+        <svg viewBox="0 0 500 150" role="img" aria-label="レッスン時間のうち約9割を受講者が話す時間にあてていることを示す図">
+          <rect x="0" y="34" width="500" height="62" rx="5" fill="#C6C6CB"/>
+          <rect x="0" y="34" width="450" height="62" rx="5" fill="var(--red)"/>
+          <text x="24" y="78" font-family="Archivo,sans-serif" font-size="40" font-weight="900" fill="#fff">90%</text>
+          <text x="150" y="76" font-family="Archivo,sans-serif" font-size="15" font-weight="800" letter-spacing="2" fill="rgba(255,255,255,.9)">SPEAKING</text>
+          <text x="462" y="74" font-family="Archivo,sans-serif" font-size="17" font-weight="900" fill="#fff" text-anchor="middle">10%</text>
+          <text x="0" y="132" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#7A7A82">あなたが話す ／ 文法の補足・フィードバック</text>
+        </svg>
+        <p class="note-sm">※ レッスン時間のうち受講者が発話する時間の割合について、当社が標準的なレッスン構成に基づいて算出した設計値です。実際の割合は、受講者のレベル・当日の進行により変動します。</p>
+      </div>
+
+      <!-- 受講できる時間 -->
+      <div class="curve-card">
+        <h3>受講できる時間</h3>
+        <p class="sub">水曜・金曜を除く週5日。事前予約制です。</p>
+        <div class="wk">
+          <span class="lb"></span>
+          <span class="hd">MON</span><span class="hd">TUE</span><span class="hd">WED</span><span class="hd">THU</span><span class="hd">FRI</span><span class="hd">SAT</span><span class="hd">SUN</span>
+          <span class="lb">朝<br>オンライン</span>
+          <span class="y">6–8</span><span class="y">6–8</span><span class="n">—</span><span class="y">6–8</span><span class="n">—</span><span class="y">6–8</span><span class="y">6–8</span>
+          <span class="lb">夜<br>対面 ＆ オンライン</span>
+          <span class="y">18–22</span><span class="y">18–22</span><span class="n">—</span><span class="y">18–22</span><span class="n">—</span><span class="y">18–22</span><span class="y">18–22</span>
+        </div>
+        <p class="curve-read" id="access">対面の教室は<b>目黒駅 徒歩1分</b>（BLOCKS MEGURO 621号室）。<br>出張中も在宅の日も、オンラインに切り替えて続けられます。</p>
+        <p class="note-sm">※ 1日研修会は日曜13:00〜17:00に実施します。<br>※ 時間は目安です。実際にご予約いただける枠は、講師の稼働状況により変動します。</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h">レッスンの外も、こちらから動きます。</h3>
+    <p class="lead">英会話は、通う日だけ話して終わり。結局それが続かないから、伸びません。<br><b>だから、こちらから連絡します。</b>私たちが見ているのは、レッスンの外です。</p>
+
+    <div class="cards cards-half">
+      <div class="card">
+        <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
+        <span class="num">01</span>
+        <h3>公式LINEで、忘れかけた頃にリマインド</h3>
+        <p>毎日の課題の案内から、提出された音声の確認・フィードバックまで。<br>復習のタイミングは、忘却曲線から逆算して設計しています。</p>
+        <p class="note-sm">※ ご質問への回答は、質問数にかかわらず原則1日1回にまとめてお送りします。対応時間は原則14:00〜22:00です（緊急対応・即時対応・24時間対応は行っておりません）。</p>
+        <button type="button" class="more-btn" data-popup="lineModal">▼ 詳しく見る</button>
+      </div>
+      <div class="card">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
+            <rect width="640" height="480" fill="#141417"/>
+            <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
+            <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
+            <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
+            <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
+            <circle cx="32" cy="86" r="14" fill="#FF2D16"/><text x="32" y="91" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
+            <text x="56" y="91" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">シャドーイング</text>
+            <text x="600" y="91" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+            <rect x="56" y="102" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="102" width="374" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="176" r="14" fill="#FF2D16"/><text x="32" y="181" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
+            <text x="56" y="181" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">リーディング</text>
+            <text x="600" y="181" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+            <rect x="56" y="192" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="192" width="234" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="266" r="14" fill="#FF2D16"/><text x="32" y="271" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
+            <text x="56" y="271" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">ライティング</text>
+            <text x="600" y="271" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+            <rect x="56" y="282" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="282" width="312" height="10" rx="5" fill="#FF2D16"/>
+            <circle cx="32" cy="356" r="14" fill="#FF2D16"/><text x="32" y="361" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">V</text>
+            <text x="56" y="361" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">英単語</text>
+            <text x="600" y="361" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+            <rect x="56" y="372" width="520" height="10" rx="5" fill="#2a2a2e"/>
+            <rect x="56" y="372" width="156" height="10" rx="5" fill="#FF2D16"/>
+            <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
+            <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
+          </svg>
+        </div>
+        <span class="num">02</span>
+        <h3>ダッシュボードで、今日やることが常に明確に（2026年11月 正式版提供予定）</h3>
+        <p>シャドーイング・リーディング・ライティング・英単語の進捗が、開いた瞬間に分かります。</p>
+        <p class="note-sm" style="font-size:.86rem">※ 学習ダッシュボードは2026年9月下旬にプレリリース版、2026年11月に正式版の提供を開始する予定です。画面は開発中のイメージです。提供開始までの間は、公式LINEによる学習サポートにより学習進捗を管理します。</p>
+        <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 比較・ポジショニング ============ -->
 <section class="sec-grey">
   <div class="wrap reveal">
-    <p class="label">FAQ</p>
-    <h2>よくある質問</h2>
-    <div class="faq">
-      <details>
-        <summary>英語が全くの初心者でも大丈夫ですか？</summary>
-        <p class="a">大丈夫です。A-PUSH はまず BICS（生活での基礎英語）から鍛える設計なので、難しい文法や語彙の知識は前提にしていません。足りない部分は「話しながら埋める」進め方になります。</p>
-      </details>
-      <details>
-        <summary>仕事が忙しくても続けられますか？</summary>
-        <p class="a">オンラインで受講でき、毎日の課題も公式LINEで届くため、移動中や在宅の日でも進められます。何をやるかはこちらが決めてお渡しするので、「メニューを考える時間」は必要ありません。<br>※ ご質問への回答は、質問数にかかわらず原則1日1回にまとめてお送りします。対応時間は原則14:00〜22:00です（緊急対応・即時対応・24時間対応は行っておりません）。</p>
-      </details>
-      <details>
-        <summary>マンツーマン以外の形式はありますか？</summary>
-        <p class="a">現在はマンツーマンのみです。話す時間がそのままレッスン時間になるため、スピーキングを伸ばす目的では最も効率が高い形式だと考えています。</p>
-      </details>
-      <details>
-        <summary>返金・解約はできますか？</summary>
-        <p class="a">できます。3ヶ月プラン・半年プランは特定商取引法上の「特定継続的役務提供」に該当するため、次のとおりです。<br>
-        <b>クーリング・オフ</b>：概要書面または契約書面のうち遅く受け取った日から8日以内は、書面またはメールで無条件に解約でき、お支払い済みの金額は全額返金します。<br>
-        <b>中途解約</b>：8日を過ぎた後も、契約期間中はいつでも解約できます。受講済みレッスン分の対価と所定の解約手数料（50,000円または契約残額の20%のいずれか低い額）を差し引いた残額を返金します。<br>
-        <b>成績保証</b>：上記とは別に、学習進捗の提出80%以上・レッスン出席率80%以上を満たしたうえで所定のテストで基準の伸びに達しなかった場合、受講期間を1ヶ月無償延長します（3ヶ月以上のプランが対象。返金ではありません）。<br>
-        詳細は<a href="kiyaku.html">受講規約</a>および<a href="tokusho.html">特定商取引法に基づく表記</a>をご確認ください。</p>
-      </details>
-      <details>
-        <summary>どのくらいの期間で話せるようになりますか？</summary>
-        <p class="a">到達度には個人差がありますが、A-PUSH は3ヶ月を一区切りとして設計しています。具体的な目標と現在地は、体験会でお伝えします。</p>
-      </details>
-      <details>
-        <summary>1日だけの研修や体験も可能ですか？</summary>
-        <p class="a">はい。毎週日曜日に、ネイティブとマンツーマンで3時間話し切る<b>スピーキング特化1日英語研修</b>をご用意しています。<br>13:00〜17:00・<b>15,000円（税込）</b>で、30分のコーチングセッションが付きます。<br>詳細・お申し込みは<a href="1day.html">1日研修のご案内ページ</a>からご確認ください。</p>
-      </details>
+    <p class="label">POSITIONING</p>
+    <h2>英語コーチは、<br><em>大きく2種類</em>に分かれます。</h2>
+    <p class="lead">「なんとなく英会話を教えるサービス」と、A-PUSH のように<b>転職・異動という明確なゴールから逆算して設計されたプログラム</b>です。多くの英会話スクールやアプリは日常会話の練習が中心で、ビジネスの現場で本当に必要な運用力（CALP）まで踏み込みません。独学では、そもそも「話す機会」自体が作れません。</p>
+
+    <!-- 料金・サービス比較 -->
+    <div class="vs-head">
+      <p class="vs-eyebrow">英会話コーチング 3ヶ月コース ／ 料金・サービス比較</p>
+      <h3 class="vs-title">入会金0円、マンツーマン24回。3ヶ月 <em>200,000円</em>（2026年10月31日までのお申込み）。</h3>
+      <span class="note-sm">A-PUSH の200,000円は、2026年10月31日までのお申込みに適用されるオープン記念割引の価格です。<br>2026年11月1日以降のお申込みは250,000円となります。<br>他社の金額は各社の通常価格であり、同一条件の比較ではありません。</span>
     </div>
-    <!-- MEMO（表示されません）: 要差し替え上記は仮のFAQです。実際のDM・問い合わせ履歴と照らし合わせて、内容と順番を差し替えてください。 -->
+
+    <div class="vs-scroll">
+      <div class="vs">
+        <!-- 見出し行 -->
+        <div class="vs-l blank"></div>
+        <div class="vs-u t"><span class="vs-pill">10月31日までの価格</span><p class="vs-brand">A-PUSH</p></div>
+        <div class="vs-o t"><p class="vs-co">A社</p><p class="vs-co-sub">マンツーマン型 大手</p></div>
+        <div class="vs-o t"><p class="vs-co">B社</p><p class="vs-co-sub">コンサル型 大手</p></div>
+        <div class="vs-o t"><p class="vs-co">C社</p><p class="vs-co-sub">通い放題 併用型</p></div>
+
+        <!-- マンツーマン -->
+        <div class="vs-l">マンツーマン</div>
+        <div class="vs-u"><span class="vs-div"></span><p class="vs-mk"><span class="o">○</span>全24回</p><span class="vs-chip">対面 &amp; オンライン</span></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span>24回</p><p class="vs-sub">対面／オンライン</p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="x">✕</span>なし</p><p class="vs-sub">週1回の面談のみ</p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span>24回</p><p class="vs-sub">対面／オンライン</p></div>
+
+        <!-- コーチング -->
+        <div class="vs-l">コーチング</div>
+        <div class="vs-u"><span class="vs-div"></span><p class="vs-mk"><span class="o">○</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
+
+        <!-- 学習管理 -->
+        <div class="vs-l">学習管理</div>
+        <div class="vs-u"><span class="vs-div"></span><p class="vs-mk"><span class="o">○</span>毎日の伴走</p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-mk"><span class="o">○</span></p></div>
+
+        <!-- 入会金 -->
+        <div class="vs-l">入会金</div>
+        <div class="vs-u"><span class="vs-div"></span><p class="vs-fee zero">0<span class="jp"> 円</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-fee">55,000<span class="jp">円</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-fee">55,000<span class="jp">円</span></p></div>
+        <div class="vs-o"><span class="vs-divo"></span><p class="vs-fee">55,000<span class="jp">円</span></p></div>
+
+        <!-- 総額 -->
+        <div class="vs-l last">3ヶ月 総額<small>税込・入会金含む</small></div>
+        <div class="vs-u b">
+          <span class="vs-div"></span>
+          <p class="vs-total">200,000<span class="y">円</span></p>
+          <p class="vs-cap">2026年10月31日までのお申込み</p>
+        </div>
+        <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">635,800<span class="y">円</span></p><span class="vs-plus">+435,800円</span></div>
+        <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">632,500<span class="y">円</span></p><span class="vs-plus">+432,500円</span></div>
+        <div class="vs-o b"><span class="vs-divo"></span><p class="vs-total">594,000<span class="y">円</span></p><span class="vs-plus">+394,000円</span></div>
+      </div>
+    </div>
+    <p class="scroll-hint">← 横にスクロールできます →</p>
+
+    <div class="vs-sum">
+      <span class="t1">マンツーマン型2社（A社・C社）の総額の平均</span>
+      <span class="v1">614,900<span class="jp">円</span></span>
+      <span class="note-sm" style="flex:0 0 100%;text-align:center;margin-top:.3em;color:rgba(255,255,255,.72)">A-PUSH は、2026年10月31日までのお申込みで200,000円、11月1日以降のお申込みで250,000円です。<br>「オフ」「割引」は当社の値下げを意味するものではなく、他社の通常価格との差を示したものです。</span>
+    </div>
+
+    <div class="vs-foot">
+      <p class="cond">※ 比較条件：3ヶ月間・マンツーマンレッスン24回相当を含むコースの総額（税込・入会金込み）を比較しています。B社はマンツーマンレッスンを持たず週1回のコンサルティング面談のみのため、参考として掲載し、平均額の算出には含めていません。</p>
+      <p>※ A社・B社・C社は英語コーチングスクール大手3社。金額は2026年9月20日時点の各社公式サイト記載額で、他社は入会金55,000円を含む3ヶ月コースの総額（税込）、A-PUSHは入会金なしの総額（税込）。B社はマンツーマンレッスンを持たず、週1回のコンサルティング面談のみ。レッスン・面談の対面／オンラインは3社とも選択可（A社の平日デイタイム限定コースはオンライン専用）。A-PUSHの受講料は、お申込みを受領した日が属する期間の価格を適用します。</p>
+      <p>※ 各社の金額は2026年9月20日時点の各社公式サイトの記載に基づきます。根拠となる画面の記録は当社にて保管しています。比較条件が異なる項目については上記の注記をご確認ください。</p>
+    </div>
+
+    <!-- MEMO（表示されません）: 掲載前の確認比較広告は、掲載時点で他社の料金が変わっていると不当表示になります。公開日に各社サイトを再確認し、根拠となるスクリーンショットを取得日つきで保管してください。募集期限（10月31日）を過ぎたら、この表の日付と枠数も必ず更新してください。 -->
+  </div>
+</section>
+
+<!-- ============ 5. 講師陣（代表を含む） ============ -->
+<section class="sec-grey">
+  <div class="wrap reveal">
+    <p class="label">COACHES</p>
+    <h2>英語は、<em>“話さないから話せない”</em></h2>
+    <div class="founder">
+      <figure class="founder-ph">
+        <img src="assets/founder.jpg" alt="A-PUSH 代表 佐野 公章" loading="lazy">
+      </figure>
+      <div>
+        <p class="role">FOUNDER</p>
+        <h3>佐野 公章<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
+        <p class="aff">テンプル大学ジャパンキャンパス 在学</p>
+
+        <p class="quote" style="font-size:.9rem;font-weight:700;line-height:1.9;border-left:0;padding-left:0">17歳、フィリピンに語学留学。<br>中学から英語をやったのに、<em>何を言っているかわからない。</em><br>"Slow please."とお願いして、ゆっくり言ってもらっても、やっぱりわからない。</p>
+        <p class="agi-punch" style="color:var(--ink)!important;border-color:var(--red)">あのときの恥ずかしさ —— <em>いまでもトラウマです。</em></p>
+
+        <p style="font-weight:900;font-size:1.1rem;margin-top:1.4em">だから、逆をやる。</p>
+        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">英語コーチングという事業は、本来「いかに長く通っていただくか」で設計されます。継続率が上がれば経営は安定する。事業としては、それが正解です。</p>
+        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em"><b style="color:var(--ink)">でも私は、早く卒業してほしい。</b>生徒が本当に話せるようになるかどうか。そこにだけコミットします。</p>
+      </div>
+    </div>
+
+    <div class="founder-story">
+        <details class="more more-story">
+          <summary><span class="lbl" aria-hidden="true"></span></summary>
+          <div class="ev-long">
+            <h4>高校2年の2月</h4>
+            <p>私がフィリピンに発ったのは、高校2年の2月でした。</p>
+            <p>中学からずっと英語をやってきました。文法は解ける。長文も読める。テストの点数だって、悪くはなかった。だから正直、少しは通じるだろうと思っていたんです。</p>
+            <p><b>通じませんでした。</b></p>
+            <p>相手が何を言っているのか、本当にわからない。何度も聞き返して、それでもわからなくて、「Slow please.」とお願いする。ゆっくり言ってもらう。それでも、わからない。</p>
+            <p>相手が困った顔をするのが、一番つらかった。何年も勉強してきたのに、自分は何をやっていたんだろう、と思いました。</p>
+
+            <h4>2週間で、英語がゆっくり聞こえた</h4>
+            <p>滞在は6週間。その施設で出会ったのが、この学習法でした。</p>
+            <p>やることは、驚くほど単純です。普通より速いペースで英語を浴びて、そのまま真似して、口に出す。同じ型を、何度も、何度も。</p>
+            <p>始めて2週間ほど経った頃、はっきりと変化がありました。<b>英語が、ゆっくり聞こえるんです。</b>相手の話す速度は変わっていません。変わったのは、私のほうでした。</p>
+
+            <h4>聞き取れなかった理由</h4>
+            <p>繰り返すうちに、自分がなぜリスニングが苦手だったのか、ようやくわかりました。英語の「音」を、そもそも知らなかった。</p>
+            <p>知らない音は、聞こえません。文字では知っている単語も、音としては一度も自分の中を通っていなかった。それに気づけたのは、自分で発音するようになったからでした。口が音をつくれるようになると、耳がその音を拾えるようになる。話す練習が、そのまま聞く力になっていたんです。</p>
+            <p>これは、教室で解説を聞いていても絶対にわからなかったと思います。</p>
+
+            <h4>考えなくてよくなる</h4>
+            <p>音がわかってからは、早かった。言いたいことが言えるようになる。少し難しい話にもついていける。理由はシンプルで、英語を「考えなくてよくなった」からです。</p>
+            <p>ひたすら話し続けるうちに、I の次には動詞の eat、その次には目的語の hamburger —— と、英語が勝手に出てくるようになりました。</p>
+            <p>話すときに文法を組み立てない。聞くときに日本語に訳さない。その2つがなくなるだけで、会話はまったく別物になります。後から調べて、これには名前がついていることを知りました。</p>
+
+            <h4>Procedural Memory（手続き記憶）</h4>
+            <p>体で覚える記憶のことです。自転車の乗り方を、説明書を読んで覚えた人はいません。何度も転んで、体が覚えた。一度入ってしまえば、何年ぶりでもまた乗れる。考えなくても動くのが、この記憶の特徴です。</p>
+            <p>英語も、同じ場所に入れてしまえばいい。「知識として覚える」のではなく、「口が覚える」まで回数を重ねる。だから A-PUSH は、理解した回数ではなく口に出した回数で設計しています。</p>
+
+            <h4>BICS と CALP</h4>
+            <p>言語能力は、2つに分かれます。<b>BICS</b> —— 「こんにちは」「はじめまして」「趣味は何ですか」といった基本の言語。<b>CALP</b> —— 勉強や議論など、複雑な内容を扱う言語。順番は、BICSの上にCALPです。</p>
+            <p>難しい会話は、そもそも言語を考えなくても話せる状態でないと成立しません。英語の意味を考えるのに脳のリソースを使っていると、話す内容まで頭が回らない。脳の過剰負担です。</p>
+            <p>だからまず、基礎の素振りを重ねる。考えなくても話せる状態をつくってから、学習に入る。日本の英語教育は、ここが逆になっています。CALPから入って、BICSが育たないまま終わる。だから「読めるのに話せない」人が生まれます。17歳の私が、まさにそれでした。</p>
+
+            <h4>英語が話せると、どんな世界が待っているのか</h4>
+            <ol>
+              <li><b>1. 価値観が変わる</b>情報源が変わります。日本語で流れてくるものだけを見ていた頃とは、世界の解像度が違う。同じニュースでも、国によって書かれ方がまったく違うことを知ります。</li>
+              <li><b>2. 人との出会いが変わる</b>まったく違う教育・生活環境・文化で育った人と、直接話せる。そこで受ける刺激が、また価値観を広げてくれます。教養とは、たぶんこういうことの積み重ねです。</li>
+              <li><b>3. 自分が変わる</b>世界のどこでも、やっていける。生きていける。そして、助けてくれる友人ができる。この安心感は、想像以上に大きいです。</li>
+              <li><b>4. 最後に、キャリア</b>ワーキングホリデー、外資系、輸出入。できることが一気に広がります。ただ正直に言うと —— 前の3つが大きすぎて、私個人としてはこれが一番小さいと感じています。</li>
+            </ol>
+
+            <h4>英語は、コスパがかなりいい</h4>
+            <p>一度身につければ、一生使えます。そしてその先に広がるものは、キャリアだけではありません。</p>
+            <p>17歳の私がフィリピンで受け取ったものを、日本でも渡せるようにする。それが A-PUSH をつくった理由です。</p>
+            <p class="ev-ref">出典：Ullman, Declarative/Procedural Model（手続き記憶）／ Cummins, BICS &amp; CALP</p>
+          </div>
+        </details>
+    </div>
+
+    <h3 class="sub-h">あなたに、伴走する人。</h3>
+    <p class="lead">レッスンはネイティブ講師が、日々の学習管理は英会話コーチが担当します。</p>
+    <div class="team">
+      <div class="member">
+        <div class="ph"><img src="assets/alex.jpg" alt="講師 Alex" loading="lazy"></div>
+        <div class="info">
+          <p class="role">TEACHER</p>
+          <h3>Alex</h3>
+          <p>明るく楽しく、でも本気のあなたには真剣な Alex。明るく楽しいムードメーカーな彼女は、あなたの緊張と恥ずかしさを、そっと外してくれます！</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="ph"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></div>
+        <div class="info">
+          <p class="role">COACH &amp; TEACHER</p>
+          <h3>Taro Ocoyne</h3>
+          <p>日英ネイティブ。講師としてもコーチとしても、あなたをサポート。日本の英語教育も受けているから、あなたの「わからない」も不安も理解しています。論理的かつ丁寧で、優しくサポーティブなコーチ兼講師です。</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="ph"><img src="assets/founder.jpg" alt="Coach &amp; Founder Kimi（佐野 公章）" loading="lazy"></div>
+        <div class="info">
+          <p class="role">COACH &amp; FOUNDER</p>
+          <h3>Kimi</h3>
+          <p>家庭環境も学校環境もなしで、ネイティブレベルまで持っていった経験のすべてを、あなたのキャリアのために注ぎます。</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="ph"><img src="assets/phoebe.jpg" alt="講師 Phoebe" loading="lazy"></div>
+        <div class="info">
+          <p class="role">TEACHER</p>
+          <h3>Phoebe</h3>
+          <p>緊張がいちばんの敵です。フィビィは生徒さんが肩の力を抜いて、リラックスした雰囲気を作るのが上手です。</p>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+<!-- ============ 9. お客様の声 ============ -->
+<!-- ✏️ 編集OK ⑤ お客様の声：<div class="vcard"> ごとコピーすれば人数を増やせます -->
+<section class="sec-grey">
+  <div class="wrap reveal">
+    <p class="label">VOICE</p>
+    <h2>すでに、変化は<em>始まっている。</em></h2>
+    <p class="note-sm" style="margin-top:0">掲載している体験談は、ご本人の同意を得て掲載しています。これらは個々の受講者の体験であり、すべての方が同様の結果を得られるものではありません。学習効果には個人差があります。</p>
+    <p class="voice-hint" aria-hidden="true">横にスクロールできます</p>
+
+    <div class="vscroll">
+      <div class="vcard">
+        <figure class="vphoto">
+          <img src="assets/voice-student.jpg" alt="受講生 Kさん" loading="lazy">
+          <figcaption class="cap">
+            <p class="role">STUDENT'S VOICE</p>
+            <h3>K さん</h3>
+            <p>3ヶ月プラン受講／国際学会でプレゼン</p>
+          </figcaption>
+        </figure>
+        <div>
+          <p class="vlead">『My name is...』しか言えなかった私が、<em>3ヶ月後に国際学会で大成功。</em></p>
+          <p class="vnote">※ 個人の体験です。同様の結果を保証するものではありません。</p>
+          <div class="bubbles">
+            <p class="bub">正直、学校の英語が本当に苦手で、英会話なんて一切できないレベルでした。しかし<b>3ヶ月後に韓国で開催される国際学会でのプレゼン</b>が決まり、「このままではマズい…」と思い切って受講を決意しました。</p>
+            <p class="bub">レッスンは反復が中心で、最初は必死でしたが、回数を重ねるうちに不思議と脳が英語に順応していく感覚がありました。気がついた時には、<b>頭で日本語を作らなくても自然と英語が口から出てくる</b>ように。</p>
+            <p class="bub win">本番では自信を持ってプレゼンができ、国境を越えて充実した人脈を築くことができました。<b>あの時踏み出して本当に良かったです。</b></p>
+          </div>
+          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
+        </div>
+      </div>
+
+      <div class="vcard">
+        <figure class="vphoto">
+          <img src="assets/voice-keira.jpg" alt="受講生 けいらさん" loading="lazy">
+          <figcaption class="cap">
+            <p class="role">STUDENT'S VOICE</p>
+            <h3>けいら さん</h3>
+            <p>海外で働くことを目標に受講</p>
+            <a class="ig-link" href="https://www.instagram.com/babykeirachan/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+              @babykeirachan
+            </a>
+          </figcaption>
+        </figure>
+        <div>
+          <p class="vlead">英語は苦手。でも、<em>海外で働く夢は諦めたくなかった。</em></p>
+          <p class="vnote">※ 個人の体験です。同様の結果を保証するものではありません。</p>
+          <div class="bubbles">
+            <p class="bub win">今では、<b>海外で生活して働く自分の姿を、本気で想像できます。</b></p>
+            <p class="bub">昔からとにかく英語が苦手でした。文法も単語もややこしくて、覚えることが多すぎて勉強が続かない。だから英会話は自分には無理かも…と諦めていました。</p>
+            <p class="bub">でも「<b>世界中のいろんな人ともっと話したい</b>」という思いだけはずっと消えなくて、勇気を出してスタート。続けるうちに、気づけば<b>英語が自然と頭に浮かび、口からも出てくる</b>ように。自分でもびっくり、革命的でした。</p>
+          </div>
+          <p class="note-sm">※ 受講者ご本人の体験談です。学習効果には個人差があり、同様の結果を保証するものではありません。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMO（表示されません）: 要確認Kimiさんの許可が取れ次第、実際の Versant スコア（受講前 → 受講後）を添えます。許可が下りない場合は「スコアなしの体験談のみで構成」か「この章を保留」かを、事前に決めてください。 / また、お名前の表記（実名／イニシャル）と写真の掲載許諾も、公開前にご確認ください。 -->
   </div>
 </section>
 
