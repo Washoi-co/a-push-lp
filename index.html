@@ -906,7 +906,7 @@ body{padding-bottom:92px}
 
 /* ---------- 長期記憶（忘却曲線 × 公式LINE） ---------- */
 .mgmt-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:start;margin-top:2.6em}
-@media(max-width:860px){.mgmt-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:860px){.mgmt-grid{grid-template-columns:1fr!important;gap:28px!important}}
 .curve-card{background:#fff;border:1px solid var(--line-l);border-radius:3px;padding:1.9em 1.8em 1.7em}
 .curve-card h3{font-weight:900;font-size:1.1rem;margin-bottom:.15em}
 .curve-card .sub{font-size:.82rem;color:#7A7A82;font-weight:700}
@@ -1087,7 +1087,7 @@ body{padding-bottom:92px}
     <!-- 価格オファー：数字は <head> の LAUNCH / COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
     <div class="offer" id="heroOffer">
       <div data-launch="open">
-        <p class="offer-tag">【オープン記念価格】3ヶ月コース（マンツーマン全24回）</p>
+        <p class="offer-tag">【オープン記念価格】マンツーマン24回コース</p>
         <p class="offer-price"><span class="n">200,000</span>円<small>（税込・入会金0円）</small></p>
         <p class="oc" data-cmp>英語コーチング大手3社の3ヶ月コースは<span class="en" data-cmp-range>616,000〜634,000</span>円。<span data-third>その約3分の1。</span></p>
         <div class="seat">
@@ -1097,7 +1097,7 @@ body{padding-bottom:92px}
         <p class="offer-note">※ 他社は<span data-asof>2026年9月24日</span>時点の各社公式サイト記載の通常価格（税込・入会金込、C社は教材費等別）。同一条件の比較ではありません。</p>
       </div>
       <div data-launch="closed" hidden>
-        <p class="offer-tag">3ヶ月コース（マンツーマン全24回）</p>
+        <p class="offer-tag">マンツーマン24回コース</p>
         <p class="offer-price"><span class="n">400,000</span>円<small>（税込・入会金0円）</small></p>
         <p class="oc" data-cmp>英語コーチング大手3社の3ヶ月コースは<span class="en" data-cmp-range>616,000〜634,000</span>円。</p>
         <p class="oc" data-soldout hidden>オープン記念価格の受付は定員に達したため終了しました</p>
@@ -1123,8 +1123,8 @@ body{padding-bottom:92px}
     <h2>日本人に足りてないのは、<em>アウトプット量。</em></h2>
     <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
       <div>
-        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人は、話していない。<br>でも、<b>文法・単語の知識はハイレベル</b>です。</p>
-        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">海外の英語教育は、アウトプットの時間が圧倒的に多い。<b>だから、話せるようになる。</b></p>
+        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">海外は、アウトプットが日本より圧倒的に多い。<br><b>だから、話せる。</b></p>
+        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b>今まで話す練習をやってきていないから。</b></p>
         <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
         <p class="note-sm">※ 標準的なレッスン構成に基づく設計値です。レベル・進行により変動します。</p>
       </div>
@@ -1316,8 +1316,10 @@ body{padding-bottom:92px}
 
         <p style="font-size:.94rem;color:#5C5C64;line-height:2">17歳で、フィリピンの語学学校へ。<br>中学から英語をやってきたのに、リスニングが本当に苦手でした。<br>ネイティブの英語は速くて、ついていけない。聞き取れないから、結局、言葉も出てこない。<br>"Slow please." と頼んでも、やっぱり聞き取れませんでした。</p>
         <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">変わったのは、とにかく話しまくる学習法に出会ってからです。<br>話すうちに、聞けるようにもなりました。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">よくある英会話は、1〜2年通うことを前提に設計されています。<br>週1回では話す時間が短く、次のレッスンまでに忘れてしまう。<br>「分かった」で終わって、口が覚えるまで繰り返さない。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">だから A-PUSH は、だらだら通うのではなく、<br><b style="color:var(--ink)">3ヶ月間集中して、英語を身につける期間を買っていただく</b>設計にしました。<br>あの時の学習法を作り直したのが、<b style="color:var(--ink)">A-PUSH Method</b>です。</p>
+        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">私は、塾に通う理由は1つしかないと思っています。</p>
+        <p style="font-weight:900;font-size:clamp(1.1rem,2.3vw,1.35rem);line-height:1.8;color:var(--red);margin-top:.5em">いかに早く結果が出るか。</p>
+        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">正直、独学でも身につけられると思います。<br>ですが、やり方を探すのに一苦労します。<br>だから、プロに頼る。<br>私たちは、自分が学習したときの失敗から、学習の近道を知っています。</p>
+        <p style="font-weight:900;font-size:clamp(1.1rem,2.3vw,1.35rem);line-height:1.8;color:var(--red);margin-top:.8em">私たちと、集中する3ヶ月を買いませんか？</p>
       </div>
     </div>
 
