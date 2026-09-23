@@ -471,6 +471,32 @@ h2 em{font-style:normal;color:var(--red)}
 .jp{font-family:var(--jp)}
 [hidden]{display:none!important}
 
+/* ---------- WHAT WE DO：24回の粒・ネイティブ講師の切り抜き・動画 ---------- */
+.lessons-card{display:flex;flex-direction:column;justify-content:center}
+.lessons-n{font-weight:900;line-height:1;margin-bottom:.5em}
+.lessons-n .en{font-family:var(--en);font-size:clamp(3.2rem,8vw,4.6rem);color:var(--red);letter-spacing:-.03em}
+.lessons-n .jp{font-size:1.3rem;margin-left:.1em}
+.lessons{display:grid;grid-template-columns:auto 1fr;gap:.7em 1em;align-items:center}
+.lessons .m{font-size:.8rem;font-weight:900;color:#5C5C64;white-space:nowrap}
+.lessons .row{display:grid;grid-template-columns:repeat(8,1fr);gap:5px}
+.lessons .row i{height:20px;border-radius:3px;background:var(--red)}
+.natives{position:relative;background:var(--red);border-radius:3px;display:flex;align-items:flex-end;justify-content:center;gap:0;padding:5.6em 1em 0;overflow:hidden;min-height:300px}
+.natives-t{position:absolute;top:1.1em;left:1.3em;color:#fff;font-weight:900;font-size:clamp(1.05rem,2.2vw,1.3rem);line-height:1.5;z-index:2}
+.natives figure{position:relative;margin:0}
+.natives img{height:clamp(200px,24vw,270px);width:auto;display:block}
+.natives figure+figure{margin-left:-1.4em}
+.natives figcaption{position:absolute;bottom:.8em;left:50%;transform:translateX(-50%);font-family:var(--en);font-weight:900;font-size:.72rem;letter-spacing:.12em;color:var(--ink);background:#fff;padding:.3em .9em;border-radius:999px}
+.demo-vid{margin-top:1.4em;max-width:820px;border-radius:3px;overflow:hidden;background:#000;aspect-ratio:1080/622}
+.demo-vid video{width:100%;height:100%;display:block;object-fit:cover}
+.mth-pop .formula{font-size:clamp(.8rem,1.8vw,.95rem)}
+.mth-steps,.mth-levels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1em}
+.mth-steps div,.mth-levels div{border:1px solid var(--line-l);border-top:3px solid var(--red);border-radius:3px;padding:.9em 1em}
+.mth-steps .n,.mth-levels .n{display:block;font-family:var(--en);font-weight:900;font-size:.72rem;letter-spacing:.1em;color:var(--red)}
+.mth-levels .n{font-family:var(--jp);font-size:.95rem;letter-spacing:0;color:var(--ink)}
+.mth-steps b{display:block;font-size:1rem;margin:.2em 0 .2em}
+.popup-card .pc-body .mth-steps p,.popup-card .pc-body .mth-levels p{font-size:.84rem;line-height:1.7}
+@media(max-width:620px){.mth-steps,.mth-levels{grid-template-columns:1fr}}
+
 /* ---------- 残り人数バー・価格のステップ（ファーストビュー） ---------- */
 .seat{margin:1em 0 .2em;text-align:left}
 .seat-lab{display:flex;justify-content:space-between;align-items:baseline;gap:.8em;flex-wrap:wrap;font-size:clamp(.8rem,1.8vw,.92rem);font-weight:700;color:rgba(255,255,255,.85)}
@@ -1125,8 +1151,6 @@ body{padding-bottom:92px}
       <div>
         <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">海外は、アウトプットが日本より圧倒的に多い。<br><b>だから、話せる。</b></p>
         <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b>今まで話す練習をやってきていないから。</b></p>
-        <p class="agi-punch" style="margin-top:1.6em;color:var(--ink)!important;font-size:clamp(1.4rem,3vw,1.9rem)">だから A-PUSH は、<br><em>90%以上をアウトプットに使う。</em></p>
-        <p class="note-sm">※ 標準的なレッスン構成に基づく設計値です。レベル・進行により変動します。</p>
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
@@ -1153,34 +1177,31 @@ body{padding-bottom:92px}
 <section class="sec-grey" id="what">
   <div class="wrap reveal">
     <p class="label">WHAT WE DO</p>
-    <h2>スピーキングを鍛える、<em>3ヶ月。</em></h2>
-    <p class="lead">ネイティブ講師と<b>週2回のマンツーマン</b>。<br>レッスンの中身は、9割が「あなたが話している時間」です。</p>
+    <h2>マンツーマン<em>24回</em>を、<em>3ヶ月</em>で。</h2>
+    <p class="lead">ネイティブ講師と、<b>週2回のマンツーマン</b>。<br>しかも、<b>スピーキング特化</b>です。</p>
 
-    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:40px">
-
-      <!-- レッスンの内訳 -->
-      <div class="curve-card">
-        <h3>レッスン時間の内訳</h3>
-        <p class="sub">標準的なレッスン構成に基づく設計値です（レベル・進行により変動）。</p>
-        <svg viewBox="0 0 500 150" role="img" aria-label="レッスン時間のうち約9割を受講者が話す時間にあてていることを示す図">
-          <rect x="0" y="34" width="500" height="62" rx="5" fill="#C6C6CB"/>
-          <rect x="0" y="34" width="450" height="62" rx="5" fill="var(--red)"/>
-          <text x="24" y="78" font-family="Archivo,sans-serif" font-size="40" font-weight="900" fill="#fff">90%</text>
-          <text x="150" y="76" font-family="Archivo,sans-serif" font-size="15" font-weight="800" letter-spacing="2" fill="rgba(255,255,255,.9)">SPEAKING</text>
-          <text x="462" y="74" font-family="Archivo,sans-serif" font-size="17" font-weight="900" fill="#fff" text-anchor="middle">10%</text>
-          <text x="0" y="132" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#7A7A82">あなたが話す ／ 文法の補足・フィードバック</text>
-        </svg>
+    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:24px;align-items:stretch">
+      <div class="curve-card lessons-card">
+        <p class="lessons-n"><span class="en">24</span><span class="jp">回</span></p>
+        <div class="lessons" aria-label="3ヶ月で24回のレッスン（1ヶ月8回）">
+          <span class="m">1ヶ月目</span><span class="row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="m">2ヶ月目</span><span class="row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="m">3ヶ月目</span><span class="row"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+        <p class="sub" style="margin-top:1em">1回50分 ／ 週2回</p>
       </div>
-
-      <!-- 話すと話せるようになるロジック -->
-      <div>
-        <h3 class="sub-h" style="margin-top:0">今まで、英語を<em>話す練習</em>を<br>してきましたか。</h3>
-        <p style="margin-top:1em;font-size:1.02rem;line-height:2.05">教える人がいないから、スピーキングはリーディング・リスニングに比べて<b>練習量が偏っています。</b></p>
-        <p class="agi-punch" style="color:var(--ink)!important;font-size:clamp(1.3rem,2.9vw,1.8rem);margin-top:1.2em">話せないのは、<em>話すトレーニングを<br>やっていないから。</em></p>
-        <p style="margin-top:1.4em;font-size:1.02rem;line-height:2.05;font-weight:900">だから、3ヶ月スピーキングに集中しませんか。</p>
-        <button type="button" class="more-btn" data-popup="startModal">▼ 説明会／体験会を見る</button>
+      <div class="natives">
+        <p class="natives-t">ネイティブ講師と、<br>マンツーマン。</p>
+        <figure><img src="assets/cut-phoebe.png" alt="講師 Phoebe" loading="lazy"><figcaption>Phoebe</figcaption></figure>
+        <figure><img src="assets/cut-alex.png" alt="講師 Alex" loading="lazy"><figcaption>Alex</figcaption></figure>
       </div>
     </div>
+
+    <h3 class="sub-h">レッスン中は、とにかく話す。<br>そして、<em style="font-style:normal;color:var(--red)">使えること</em>がゴールです。</h3>
+    <div class="demo-vid">
+      <video src="assets/method-demo.mp4" poster="assets/method-demo-poster.jpg" controls playsinline preload="none"></video>
+    </div>
+    <button type="button" class="more-btn" data-popup="methodModal">▼ A-PUSH METHOD を詳しく見る</button>
 
     <h3 class="sub-h">レッスンの外が、大切。</h3>
     <p class="lead">ついつい、英会話の日だけ英語に触るようになってしまう。<br>それが、伸びない1番の原因です。</p>
@@ -1239,32 +1260,6 @@ body{padding-bottom:92px}
   </div>
 </section>
 
-<!-- ============ 3-1. A-PUSH METHOD ============ -->
-<section class="sec-dark" id="method">
-  <div class="wrap reveal">
-    <p class="label">A-PUSH METHOD</p>
-    <h2>理解より、<em>慣れ。</em></h2>
-    <p class="lead">一つ一つのフレーズに集中する。<br>その型を動詞、場面を変えながら、ひたすらネイティブと繰り返す。<br>繰り返すうちに、考える前にわかる、出てくる。</p>
-    <div class="formula" style="margin-top:1.8em;background:var(--ink-2);color:#fff;border:1px solid var(--line-d)">
-      What have you been working on?<br>
-      We have been <i>working on</i> this project <i>for two weeks.</i><br>
-      How long have you been working with this client?<br>
-      We have been <i>working with</i> this client <i>for three years.</i>
-    </div>
-    <p class="note-sm">型はひとつ、中身だけ入れ替える。繰り返しているのは、文ではありません。型です。</p>
-
-    <div class="prods">
-      <div class="prod"><p class="pn">STEP 1</p><p class="ptag">文を見ながら、とにかく声に出す</p><p>正確さより回数。口が形を覚えるまで、ひたすら声に出します。</p></div>
-      <div class="prod"><p class="pn">STEP 2</p><p class="ptag">文を消して、絵だけで言う</p><p>見た瞬間に言えるまで繰り返す。絵と口のあいだに、日本語が入る隙がなくなっていきます。</p></div>
-      <div class="prod"><p class="pn">STEP 3</p><p class="ptag">覚えた型を、混ぜる</p><p>どれが来るか分からない状態で、絵を見て、選んで、言う。実際の会話にいちばん近い段階です。</p></div>
-    </div>
-
-    <p class="agi-punch">1チャプター <em><span style="font-family:var(--en)">200〜300</span>回</em>が目安。<br>「探している時間」がなくなるまで、繰り返します。</p>
-    <p class="note-sm">※ 必要な回数や変化の現れ方には個人差があります。</p>
-    <p class="lead" style="margin-top:1.6em">常にネイティブ講師が隣にいます。<br>ズレた瞬間にその場で直すので、間違った形のまま固まることを防ぎます。</p>
-  </div>
-</section>
-
 <!-- ============ 3-2. 受講できる時間 ============ -->
 <section id="access">
   <div class="wrap reveal">
@@ -1300,10 +1295,10 @@ body{padding-bottom:92px}
   </div>
 </section>
 
-<!-- ============ 5. 講師陣（代表を含む） ============ -->
+<!-- ============ 5. 代表メッセージ ============ -->
 <section class="sec-grey">
   <div class="wrap reveal">
-    <p class="label">COACHES</p>
+    <p class="label">MESSAGE</p>
     <h2>英語は、<em>“話さないから話せない”</em></h2>
     <div class="founder">
       <figure class="founder-ph">
@@ -1325,43 +1320,7 @@ body{padding-bottom:92px}
 
 
 
-    <h3 class="sub-h">あなたに、伴走する人。</h3>
-    <p class="lead">レッスンはネイティブ講師が、日々の学習管理は英会話コーチが担当します。</p>
-    <div class="team">
-      <div class="member">
-        <div class="ph"><img src="assets/alex.jpg" alt="講師 Alex" loading="lazy"></div>
-        <div class="info">
-          <p class="role">TEACHER</p>
-          <h3>Alex</h3>
-          <p>明るく楽しく、でも本気のあなたには真剣な Alex。明るく楽しいムードメーカーな彼女は、あなたの緊張と恥ずかしさを、そっと外してくれます！</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="ph"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></div>
-        <div class="info">
-          <p class="role">COACH &amp; TEACHER</p>
-          <h3>Taro Ocoyne</h3>
-          <p>日英ネイティブ。講師としてもコーチとしても、あなたをサポート。日本の英語教育も受けているから、あなたの「わからない」も不安も理解しています。論理的かつ丁寧で、優しくサポーティブなコーチ兼講師です。</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="ph"><img src="assets/founder.jpg" alt="Coach &amp; Founder Kimi（佐野 公章）" loading="lazy"></div>
-        <div class="info">
-          <p class="role">COACH &amp; FOUNDER</p>
-          <h3>Kimi</h3>
-          <p>話せなかった側から、話しまくる学習法で「話す」と「聞く」を変えてきました。その経験のすべてを、あなたのために注ぎます。</p>
-        </div>
-      </div>
-      <div class="member">
-        <div class="ph"><img src="assets/phoebe.jpg" alt="講師 Phoebe" loading="lazy"></div>
-        <div class="info">
-          <p class="role">TEACHER</p>
-          <h3>Phoebe</h3>
-          <p>緊張がいちばんの敵です。フィビィは生徒さんが肩の力を抜いて、リラックスした雰囲気を作るのが上手です。</p>
-        </div>
-      </div>
-    </div>
-    </div>
+  </div>
 </section>
 <!-- ============ 9. お客様の声 ============ -->
 <!-- ✏️ 編集OK ⑤ お客様の声：<div class="vcard"> ごとコピーすれば人数を増やせます -->
@@ -1758,6 +1717,34 @@ body{padding-bottom:92px}
       <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
     </svg>
     </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="methodModal" aria-hidden="true">
+  <div class="popup-card pc-wide">
+    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="pc-body mth-pop">
+      <p class="role">A-PUSH METHOD</p>
+      <h4>理解より、慣れ。</h4>
+      <p>自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れないからです。<br>英語も、その覚え方ができます。</p>
+
+      <div class="mth-steps">
+        <div><span class="n">STEP 1</span><b>見て、言う</b><p>文を見ながら、とにかく声に出す。</p></div>
+        <div><span class="n">STEP 2</span><b>絵だけで、言う</b><p>文を消して、見た瞬間に言えるまで。</p></div>
+        <div><span class="n">STEP 3</span><b>混ぜて、言う</b><p>どれが来るか分からない状態で、選んで言う。</p></div>
+      </div>
+
+      <p style="margin-top:1.4em"><b>型はひとつ、中身だけ入れ替える。</b></p>
+      <div class="formula">We have been <i>working on</i> this project <i>for two weeks.</i><br>We have been <i>working with</i> this client <i>for three years.</i></div>
+      <p>1チャプター <b><span style="font-family:var(--en)">200〜300</span>回</b>が目安。考えずに口から出てくるまで、ネイティブ講師と繰り返します。<span class="note-sm">※ 必要な回数や変化の現れ方には個人差があります。</span></p>
+
+      <p style="margin-top:1.6em"><b>3つのクラス</b>（今の英語力に合わせて進めます）</p>
+      <div class="mth-levels">
+        <div><span class="n">初級</span><p>"This is a pen." から、5W1H、時制まで</p></div>
+        <div><span class="n">中級</span><p>接続詞、比較級、完了形、助動詞、不定詞、動名詞など</p></div>
+        <div><span class="n">ビジネス</span><p>仕事の現場で使うフレーズ</p></div>
+      </div>
     </div>
   </div>
 </div>
