@@ -1582,7 +1582,7 @@ body{padding-bottom:92px}
 <section class="final" id="contact">
   <div class="wrap-n inner reveal">
     <h2>実感は、<em>受けてみてから。</em></h2>
-    <p class="lead">話せないところから、一緒に始めます。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（3,000円・税込／オンライン可・所要60分）。無料でサービス内容だけをお聞きになりたい方は、無料オンライン説明会（30分）をご利用ください。</span></p>
+    <p class="lead">話せないところから、一緒に始めます。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（3,000円・税込／オンライン可・所要60分）。無料のオンライン説明会（日曜・60分）や、コーチとの個別オンライン面談（30分）もご利用いただけます。</span></p>
     <div class="btns">
       <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・3,000円（税込）／オンライン可・所要60分</small></a>
     </div>
@@ -1636,19 +1636,24 @@ body{padding-bottom:92px}
   <div class="popup-card pc-start">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-start-head">
-      <span class="pc-od-badge"><span class="jp">はじめての方へ ／ 2つの入口</span></span>
+      <span class="pc-od-badge"><span class="jp">はじめての方へ ／ 3つの入口</span></span>
       <h4>まずは、<br>話してみませんか。</h4>
     </div>
     <div class="pc-body">
       <p class="lead-sm">目的に合わせて、選んでください。</p>
       <div class="startlist">
-        <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">
+        <a class="startitem" href="https://calendar.app.google/DPWiGSgA2heP5nUR8" target="_blank" rel="noopener" data-cta="consult">
           <span class="si-n">01</span>
-          <span class="si-t"><b>オンライン説明会</b><small>サービスの内容をひととおりご説明します。<br>所要30分／レッスン体験はありません</small></span>
+          <span class="si-t"><b>オンライン説明会</b><small>A-PUSH の学び方のご説明（30分）＋質疑応答・学習相談（30分）。<br>毎週日曜 11:00〜12:00／Google Meet</small></span>
+          <span class="si-p"><span class="jp">無料</span></span>
+        </a>
+        <a class="startitem" href="https://calendar.app.google/8DtBDACrZrHDfsKL8" target="_blank" rel="noopener" data-cta="meeting">
+          <span class="si-n">02</span>
+          <span class="si-t"><b>個別オンライン面談</b><small>英語学習のお悩みを、コーチに相談できます。<br>毎日 19:00〜21:00・30分／Google Meet</small></span>
           <span class="si-p"><span class="jp">無料</span></span>
         </a>
         <a class="startitem" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">
-          <span class="si-n">02</span>
+          <span class="si-n">03</span>
           <span class="si-t"><b>体験会</b><small>レッスンを実際に受けていただきます。<br>所要60分／オンライン可</small></span>
           <span class="si-p">¥3,000</span>
         </a>
@@ -1959,7 +1964,8 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     if(window.gtag) gtag('event','reserve_click',p);
     if(window.fbq)  fbq('track','Lead',{content_name:label,lead_id:attr.lid||''});
   }
-  links.forEach(function(a){
+  // 予約リンク（Reserva・Googleカレンダーの予約ページ）のクリックを計測
+  document.querySelectorAll('a[href*="reserva.be"],a[href*="calendar.app.google"]').forEach(function(a){
     a.addEventListener('click',function(){ fire((a.textContent||'').trim().slice(0,40)); });
   });
   window.AP_ATTR=attr;
