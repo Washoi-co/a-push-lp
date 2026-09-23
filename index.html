@@ -116,7 +116,7 @@ header{
 header .logo{font-size:1.45rem}
 .head-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
 .hbtn{
-  font-family:var(--jp);font-weight:900;font-size:.78rem;text-decoration:none;
+  font-family:var(--jp);font-weight:900;font-size:.78rem;text-decoration:none;border:0;cursor:pointer;
   padding:.75em 1.3em;border-radius:2px;letter-spacing:.02em;transition:all .22s;
 }
 .hbtn.ghost{color:#fff;border:1px solid rgba(255,255,255,.35)}
@@ -642,6 +642,19 @@ h2 em{font-style:normal;color:var(--red)}
 .plan ul li{padding-left:1.5em;position:relative;line-height:1.85}
 .plan ul li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--red)}
 
+/* 説明会／体験会の選択リスト */
+.startlist{display:grid;gap:10px;margin-top:1.4em}
+.startitem{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1em;
+  border:1px solid var(--line-l);border-radius:4px;padding:1em 1.2em;text-decoration:none;color:var(--ink);transition:all .2s}
+.startitem:hover{border-color:var(--red);background:rgba(255,45,22,.04)}
+.si-n{font-family:var(--en);font-weight:900;font-size:1.1rem;color:var(--red)}
+.si-t b{display:block;font-weight:900;font-size:1rem;line-height:1.5}
+.si-t small{display:block;font-size:.76rem;color:#7A7A82;line-height:1.7;margin-top:.15em}
+.si-p{font-family:var(--en);font-weight:900;font-size:1rem;color:var(--ink);white-space:nowrap}
+@media(max-width:520px){
+  .startitem{grid-template-columns:auto 1fr;row-gap:.3em;padding:.9em 1em}
+  .si-p{grid-column:2;text-align:right}
+}
 /* 週間スケジュールのグリッド */
 .wk{display:grid;grid-template-columns:auto repeat(7,1fr);gap:5px;margin-top:1.5em;text-align:center}
 .wk .hd{font-family:var(--en);font-weight:900;font-size:.68rem;letter-spacing:.06em;color:#8C8C94;padding:.2em 0}
@@ -767,7 +780,7 @@ body{padding-bottom:92px}
 .bb-txt{font-size:.92rem;font-weight:700;color:rgba(255,255,255,.8);line-height:1.6}
 .bb-txt b{color:#fff;font-weight:900}
 .bb-btn{
-  flex:none;background:var(--red);color:#fff;text-decoration:none;
+  border:0;cursor:pointer;font-family:var(--jp);flex:none;background:var(--red);color:#fff;text-decoration:none;
   font-weight:900;font-size:1rem;padding:.95em 2.4em;border-radius:2px;
   display:inline-flex;flex-direction:column;align-items:center;gap:.1em;
   box-shadow:0 8px 28px -8px var(--red-glow);transition:transform .22s,background .22s;
@@ -933,10 +946,7 @@ body{padding-bottom:92px}
   </a>
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
-    <!-- ▼ Google Meet の予約サイトURLが決まったら href を差し替え -->
-    <a class="hbtn ghost" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">無料オンライン説明会</a>
-    <a class="hbtn ghost" href="1day.html">1日研修</a>
-    <a class="hbtn solid" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約<small>2,000円</small></a>
+    <button type="button" class="hbtn solid" data-popup="startModal">説明会／体験会</button>
   </div>
 </header>
 
@@ -958,7 +968,7 @@ body{padding-bottom:92px}
     <div class="btns hero-btns">
       <!-- ▼ Google Meet の予約サイトURLが決まったら href を差し替えてください -->
       <a class="btn btn-primary" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">無料オンライン説明会はこちら<small>無料・所要30分／レッスン体験なし</small></a>
-      <a class="btn btn-ghost" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・2,000円（税込）／オンライン可・所要60分</small></a>
+      <a class="btn btn-ghost" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・3,000円（税込）／オンライン可・所要60分</small></a>
       <p class="access-note">体験会会場は<b>目黒駅 徒歩1分</b>／オンラインでの受講も可能です。</p>
     </div>
     <div class="hero-stats">
@@ -988,33 +998,20 @@ body{padding-bottom:92px}
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
-        <p class="sub">一般的な傾向を示す概念図です。特定の統計データに基づくものではありません。</p>
-        <svg viewBox="0 0 500 300" role="img" aria-label="日本と、アウトプット重視で知られる3カ国の英語教育における時間配分の違いを示す概念図">
+        <p class="sub">日本と他国の一般的な傾向を示す概念図です。特定の統計データに基づくものではありません。</p>
+        <svg viewBox="0 0 500 160" role="img" aria-label="日本と他国の英語教育における、インプットとアウトプットの時間配分の違いを示す概念図">
           <text class="cv-tick" x="0" y="16" style="font-weight:900">日本</text>
-          <rect x="0" y="24" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="24" width="400" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="392" y="24" width="108" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="88" style="font-weight:900">オランダ</text>
-          <rect x="0" y="96" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="96" width="175" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="167" y="96" width="333" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="160" style="font-weight:900">スウェーデン</text>
-          <rect x="0" y="168" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="168" width="200" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="192" y="168" width="308" height="34" rx="4" fill="var(--red)"/>
-
-          <text class="cv-tick" x="0" y="232" style="font-weight:900">デンマーク</text>
-          <rect x="0" y="240" width="500" height="34" rx="4" fill="#E4E4E7"/>
-          <rect x="0" y="240" width="190" height="34" rx="4" fill="#C6C6CB"/>
-          <rect x="182" y="240" width="318" height="34" rx="4" fill="var(--red)"/>
+          <rect x="0" y="24" width="500" height="40" rx="4" fill="#C6C6CB"/>
+          <rect x="392" y="24" width="108" height="40" rx="4" fill="var(--red)"/>
+          <text class="cv-tick" x="0" y="106" style="font-weight:900">他国</text>
+          <rect x="0" y="114" width="500" height="40" rx="4" fill="#C6C6CB"/>
+          <rect x="175" y="114" width="325" height="40" rx="4" fill="var(--red)"/>
         </svg>
         <div class="curve-legend">
           <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
           <span class="on"><i></i>アウトプット（話す・書く）</span>
         </div>
-        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。<br>※ オランダ・スウェーデン・デンマークが英語非母語国の中で英語運用力の上位に位置することについては、<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI（English Proficiency Index）</a>を参照しています。EF EPI は英語運用力の指標であり、各国の授業時間配分を示すものではありません。</p>
+        <p class="ev-ref">※ 上図の時間配分は、当社の指導方針を説明するための概念図であり、統計データに基づくものではありません。「他国」は、英語非母語国のうち英語運用力が高いとされる国々を指します（<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI</a> 参照）。EF EPI は英語運用力の指標であり、各国の授業時間配分を示すものではありません。</p>
       </div>
     </div>
   </div>
@@ -1024,7 +1021,7 @@ body{padding-bottom:92px}
 <section class="sec-grey" id="what">
   <div class="wrap reveal">
     <p class="label">WHAT WE DO</p>
-    <h2>とにかく、<em>スピーキングを鍛える。</em></h2>
+    <h2>スピーキングを鍛える、<em>3ヶ月。</em></h2>
     <p class="lead">ネイティブ講師と<b>週2回のマンツーマン</b>。<br>レッスンの中身は、9割が「あなたが話している時間」です。</p>
 
     <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:40px">
@@ -1044,27 +1041,23 @@ body{padding-bottom:92px}
         <p class="note-sm">※ レッスン時間のうち受講者が発話する時間の割合について、当社が標準的なレッスン構成に基づいて算出した設計値です。実際の割合は、受講者のレベル・当日の進行により変動します。</p>
       </div>
 
-      <!-- 受講できる時間 -->
-      <div class="curve-card">
-        <h3>受講できる時間</h3>
-        <p class="sub">水曜・金曜を除く週5日。事前予約制です。</p>
-        <div class="wk">
-          <span class="lb"></span>
-          <span class="hd">MON</span><span class="hd">TUE</span><span class="hd">WED</span><span class="hd">THU</span><span class="hd">FRI</span><span class="hd">SAT</span><span class="hd">SUN</span>
-          <span class="lb">朝<br>オンライン</span>
-          <span class="y">6–8</span><span class="y">6–8</span><span class="n">—</span><span class="y">6–8</span><span class="n">—</span><span class="y">6–8</span><span class="y">6–8</span>
-          <span class="lb">夜<br>対面 ＆ オンライン</span>
-          <span class="y">18–22</span><span class="y">18–22</span><span class="n">—</span><span class="y">18–22</span><span class="n">—</span><span class="y">18–22</span><span class="y">18–22</span>
-        </div>
-        <p class="curve-read" id="access">対面の教室は<b>目黒駅 徒歩1分</b>（BLOCKS MEGURO 621号室）。<br>出張中も在宅の日も、オンラインに切り替えて続けられます。</p>
-        <p class="note-sm">※ 1日研修会は日曜13:00〜17:00に実施します。<br>※ 時間は目安です。実際にご予約いただける枠は、講師の稼働状況により変動します。</p>
+      <!-- 話すと話せるようになるロジック -->
+      <div>
+        <h3 class="sub-h" style="margin-top:0">なぜ、話すと話せるようになるのか。</h3>
+        <p style="margin-top:.9em;font-size:.98rem;line-height:2.05">話せないのは、知識が足りないからではありません。<br><b>英語を口に出した回数が、足りていないだけ</b>です。</p>
+        <p style="margin-top:1em;font-size:.98rem;line-height:2.05">同じ型を何度も口に出すと、文を組み立てる作業が要らなくなります。考えてから話すのではなく、<b>先に口が動く</b>。自転車と同じで、一度この状態に入れば戻りません。</p>
+        <p style="margin-top:1em;font-size:.98rem;line-height:2.05">そして、自分で発音できる音は聞き取れるようになります。<b>話す練習が、そのまま聞く力になる。</b></p>
+        <p style="margin-top:1em;font-size:.98rem;line-height:2.05">だから A-PUSH は、理解した回数ではなく<b>口に出した回数</b>で設計しています。</p>
+        <p class="note-sm">詳しくは、無料のオンライン説明会・個別面談でお話しします。</p>
+        <button type="button" class="more-btn" data-popup="startModal">▼ 説明会／体験会を見る</button>
       </div>
     </div>
 
-    <h3 class="sub-h">レッスンの外も、こちらから動きます。</h3>
-    <p class="lead">英会話は、通う日だけ話して終わり。結局それが続かないから、伸びません。<br><b>だから、こちらから連絡します。</b>私たちが見ているのは、レッスンの外です。</p>
+    <h3 class="sub-h">レッスンの外が、大切。</h3>
+    <p class="lead">ついつい、英会話の日だけ英語に触るようになってしまう。<br>それが、伸びない1番の原因です。</p>
+    <p class="agi-punch" style="color:var(--ink)!important;font-size:clamp(1.25rem,2.8vw,1.7rem)">だから、<em>コーチとサボらないシステム</em>がいます。</p>
 
-    <div class="cards cards-half">
+    <div class="cards">
       <div class="card">
         <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
         <span class="num">01</span>
@@ -1111,6 +1104,49 @@ body{padding-bottom:92px}
         <p class="note-sm" style="font-size:.86rem">※ 学習ダッシュボードは2026年9月下旬にプレリリース版、2026年11月に正式版の提供を開始する予定です。画面は開発中のイメージです。提供開始までの間は、公式LINEによる学習サポートにより学習進捗を管理します。</p>
         <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
       </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>コーチが、放っておきません</h3>
+        <p>ログインが途切れたとき、レッスンに来られなかったとき。<br>こちらから連絡します。続かない理由は人それぞれなので、まず話を聞きます。</p>
+        <p class="note-sm">※ ご連絡の頻度・方法はご相談のうえ調整できます。連絡を希望されない設定も可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3-2. 受講できる時間 ============ -->
+<section id="access">
+  <div class="wrap reveal">
+    <p class="label">YOUR TIMING</p>
+    <h2>あなたのタイミングで、<em>受講できる。</em></h2>
+    <p class="lead">曜日は固定されていません。事前予約制なので、生活のリズムに合わせて組めます。</p>
+
+    <div class="cards cards-half">
+      <div class="card">
+        <span class="num">AM</span>
+        <h3>朝 6:00 – 9:00<span style="display:block;font-size:.72em;color:#7A7A82;margin-top:.3em">オンライン</span></h3>
+        <p><b>英会話を、習慣にしませんか。</b><br>出社前の1時間を英語にあてるだけで、3ヶ月後の景色が変わります。</p>
+      </div>
+      <div class="card">
+        <span class="num">PM</span>
+        <h3>夜 18:00 – 22:00<span style="display:block;font-size:.72em;color:#7A7A82;margin-top:.3em">対面 ＆ オンライン</span></h3>
+        <p><b>仕事終わりに、いかがでしょう。</b><br>目黒駅 徒歩1分。その日の予定次第で、オンラインにも切り替えられます。</p>
+      </div>
+    </div>
+
+    <div class="curve-card" style="margin-top:2.4em">
+      <h3>週間スケジュール</h3>
+      <p class="sub">水曜・金曜を除く週5日。事前予約制です。</p>
+      <div class="wk">
+        <span class="lb"></span>
+        <span class="hd">MON</span><span class="hd">TUE</span><span class="hd">WED</span><span class="hd">THU</span><span class="hd">FRI</span><span class="hd">SAT</span><span class="hd">SUN</span>
+        <span class="lb">朝<br>オンライン</span>
+        <span class="y">6–9</span><span class="y">6–9</span><span class="n">—</span><span class="y">6–9</span><span class="n">—</span><span class="y">6–9</span><span class="y">6–9</span>
+        <span class="lb">夜<br>対面 ＆ オンライン</span>
+        <span class="y">18–22</span><span class="y">18–22</span><span class="n">—</span><span class="y">18–22</span><span class="n">—</span><span class="y">18–22</span><span class="y">18–22</span>
+      </div>
+      <p class="curve-read">対面の教室は<b>目黒駅 徒歩1分</b>（BLOCKS MEGURO 621号室）。<br>出張中も在宅の日も、オンラインに切り替えて続けられます。</p>
+      <p class="note-sm">※ 1日研修会は日曜13:00〜17:00に実施します。<br>※ 上記は開講時間です。実際にご予約いただける枠は、講師の稼働状況により変動します。</p>
     </div>
   </div>
 </section>
@@ -1503,9 +1539,9 @@ body{padding-bottom:92px}
 <section class="final" id="contact">
   <div class="wrap-n inner reveal">
     <h2>3ヶ月後、社内で<em>一番英語が話せる</em>あなたに。</h2>
-    <p class="lead">まずは体験会で、いまの英語力と、3ヶ月で届く場所をお伝えします。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（2,000円・税込／オンライン可・所要60分）。無料でサービス内容だけをお聞きになりたい方は、無料オンライン説明会（30分）をご利用ください。</span></p>
+    <p class="lead">まずは体験会で、いまの英語力と、3ヶ月で届く場所をお伝えします。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（3,000円・税込／オンライン可・所要60分）。無料でサービス内容だけをお聞きになりたい方は、無料オンライン説明会（30分）をご利用ください。</span></p>
     <div class="btns">
-      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・2,000円（税込）／オンライン可・所要60分</small></a>
+      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・3,000円（税込）／オンライン可・所要60分</small></a>
     </div>
   </div>
 </section>
@@ -1543,15 +1579,49 @@ body{padding-bottom:92px}
 <div class="bottombar">
   <div class="bb-in">
     <p class="bb-txt"><b>海外式コーチとお話ししましょう。</b></p>
-    <a class="bb-btn bb-ghost" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">無料オンライン説明会<small>無料・30分</small></a>
-    <a class="bb-btn bb-ghost" href="1day.html">1日研修<small>15,000円・日曜</small></a>
-    <a class="bb-btn" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約<small>2,000円・60分</small></a>
+    <button type="button" class="bb-btn" data-popup="startModal">説明会／体験会を予約する<small>オンライン説明会・個別面談・体験会・1日研修</small></button>
   </div>
 </div>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lb-close" type="button" aria-label="閉じる">&times;</button>
   <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- 説明会／体験会の選択ポップアップ -->
+<div class="popup" id="startModal" aria-hidden="true">
+  <div class="popup-card">
+    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
+    <div class="pc-content">
+      <div class="pc-body">
+        <p class="role"><span class="jp">はじめての方へ</span></p>
+        <h4>まずは、話してみませんか。</h4>
+        <div class="startlist">
+          <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="consult">
+            <span class="si-n">01</span>
+            <span class="si-t"><b>オンライン説明会</b><small>無料・所要30分／レッスン体験なし</small></span>
+            <span class="si-p">無料</span>
+          </a>
+          <a class="startitem" href="https://reserva.be/washoiii?ap_lid=ap-260921-DEJJMW" target="_blank" rel="noopener" data-cta="meeting">
+            <span class="si-n">02</span>
+            <span class="si-t"><b>個別面談</b><small>無料・あなたの目標と現在地をうかがいます</small></span>
+            <span class="si-p">無料</span>
+          </a>
+          <a class="startitem" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">
+            <span class="si-n">03</span>
+            <span class="si-t"><b>体験会</b><small>オンライン可・所要60分／レッスンを実際に受けられます</small></span>
+            <span class="si-p">¥3,000</span>
+          </a>
+          <a class="startitem" href="1day.html">
+            <span class="si-n">04</span>
+            <span class="si-t"><b>1日研修</b><small>毎週日曜13:00〜／ネイティブとマンツーマン</small></span>
+            <span class="si-p">¥15,000</span>
+          </a>
+        </div>
+        <p class="note-sm">※ 体験会・1日研修は有料です（税込）。表示価格は2026年9月23日時点のものです。</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="popup" id="lineModal" aria-hidden="true">
