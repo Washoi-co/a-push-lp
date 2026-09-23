@@ -414,7 +414,13 @@ h2 em{font-style:normal;color:var(--red)}
 .pc-media-line{padding:1.6em 1.8em;justify-content:center}
 .pc-media-line .pc-img{border-radius:14px;box-shadow:0 14px 40px -12px rgba(0,0,0,.35)}
 @media(min-width:720px){
-  .pc-media-line{max-width:340px;margin-left:auto}
+  .pc-media-line{max-width:380px;margin-left:auto}
+  .popup-card.pc-line{max-width:1120px}
+  .pc-line .pc-content{grid-template-columns:1fr 400px}
+  .pc-line .pc-body{padding:2.6em 2.8em}
+}
+@media(min-width:1000px){
+  .popup{padding:3vw}
 }
 
 /* ---------- 1日研修ポップアップ（派手仕様） ---------- */
@@ -1622,13 +1628,12 @@ body{padding-bottom:92px}
 </div>
 
 <div class="popup" id="lineModal" aria-hidden="true">
-  <div class="popup-card pc-wide">
+  <div class="popup-card pc-wide pc-line">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-content">
     <div class="pc-body">
       <p class="role">01<span class="jp"> ／ 公式LINE</span></p>
       <h4>個別リマインドの中身</h4>
-      <p class="lead-sm">リマインドするのは、<b>A-PUSH Method &amp; Words</b> の内容です。</p>
       <p>エビングハウスの忘却曲線にあわせて、復習のタイミングを設計しています。忘れかけたころに、ちょうど思い出せる。</p>
       <p>だから、一度覚えたことが長期的にしっかり定着します。</p>
       <p class="note-sm">＊ ご質問への回答は、質問数にかかわらず原則1日1回にまとめてお送りします。対応時間は原則14:00〜22:00です（緊急対応・即時対応・24時間対応は行っておりません）。</p>
