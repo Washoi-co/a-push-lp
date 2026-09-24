@@ -1040,6 +1040,37 @@ body{padding-bottom:92px}
 .vline.bot{height:clamp(28px,5vh,60px);margin-bottom:1.4em}
 .hero-logo{font-size:clamp(3.2rem,10.5vw,7rem)}
 .hero .eyebrow{font-size:clamp(1rem,2.4vw,1.5rem);padding:.6em 1.6em;margin-bottom:1.5em}
+/* 開いた最初の画面はロゴ〜見出しだけ（PC）。価格は下の予約バナーより下から始まる */
+.hero-top{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:calc(100vh - 110px - 60px);min-height:calc(100svh - 110px - 60px)}
+@media(min-width:721px){
+  .vline.top{height:clamp(40px,10vh,130px)}
+  .vline.bot{height:clamp(28px,6vh,72px)}
+  .hero-logo{font-size:clamp(4rem,min(12vw,17vh),10rem)}
+  .hero .eyebrow{font-size:clamp(1.1rem,min(2.6vw,3.6vh),1.9rem)}
+  .hero h1{font-size:clamp(2.6rem,min(6.8vw,10vh),6rem);margin-bottom:0}
+}
+/* スマホ：最初の画面で「200,000円」と「約3分の1」まで見える高さ */
+@media(max-width:720px){
+  .hero-top{min-height:calc(100svh - 110px - 300px)}
+  .vline.top{height:clamp(24px,8vh,100px)}
+  .vline.bot{height:clamp(20px,4.5vh,56px);margin-bottom:1.1em}
+  .hero-logo{font-size:clamp(3.4rem,19vw,6rem)}
+  .hero .eyebrow{font-size:clamp(.88rem,4vw,1.1rem);padding:.6em 1.2em;white-space:nowrap;margin-bottom:1em}
+  .hero h1{font-size:clamp(1.8rem,8.2vw,2.5rem);white-space:nowrap}
+}
+@media(min-width:400px) and (max-width:720px){.hero-top{min-height:calc(100svh - 110px - 230px)}}
+@media(max-width:720px) and (max-height:760px){
+  .hero{padding-top:84px}
+  .vline.top{height:16px}
+  .vline.bot{height:14px;margin-bottom:.8em}
+  .hero-logo{font-size:3rem}
+  .hero .eyebrow{margin-bottom:.6em}
+}
+@media(max-width:720px) and (max-height:700px){
+  .hero{padding-top:70px}
+  .vline.top{height:10px}
+  .hero h1{font-size:1.85rem}
+}
 .hero{padding-top:110px}
 .hero h1{margin-bottom:.35em}
 .hero-sub{font-weight:900;font-size:clamp(1rem,2.3vw,1.3rem);line-height:1.7;color:rgba(255,255,255,.9);margin-bottom:1.8em}
@@ -1113,6 +1144,7 @@ body{padding-bottom:92px}
   </div>
   <p class="hero-word" aria-hidden="true">PUSH</p>
   <div class="wrap hero-inner">
+    <div class="hero-top">
     <span class="vline top" aria-hidden="true"></span>
     <a class="logo hero-logo" href="#top" aria-label="A-PUSH"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
     <span class="vline bot" aria-hidden="true"></span>
@@ -1120,6 +1152,7 @@ body{padding-bottom:92px}
     <h1>
       <span class="l">3ヶ月、<em>話しまくる。</em></span>
     </h1>
+    </div>
 
     <!-- 価格オファー：数字は <head> の LAUNCH / COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
     <div class="offer" id="heroOffer">
