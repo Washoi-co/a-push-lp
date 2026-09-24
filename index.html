@@ -53,8 +53,8 @@ const COMPETITORS = {
 <script>
 window.EC_CONFIG = {
   GTM_ID:     '',   // 例: 'GTM-XXXXXXX'
-  GA4_ID:     '',   // 例: 'G-XXXXXXXXXX'（GTMを使うなら空でOK）
-  META_PIXEL: '',   // 例: '123456789012345'
+  GA4_ID:     'G-1BFLM1VN5G',   // 例: 'G-XXXXXXXXXX'（GTMを使うなら空でOK）
+  META_PIXEL: '4532947230319768',   // 例: '123456789012345'
   NOINDEX:    true  // ★確認用URLの間は true。本番公開のタイミングで false に
 };
 if (window.EC_CONFIG.NOINDEX) {
@@ -450,17 +450,8 @@ h2 em{font-style:normal;color:var(--red)}
   .popup{padding:3vw}
 }
 
-/* ---------- 1日研修ポップアップ（派手仕様） ---------- */
-.pc-oneday{max-width:600px}
-.pc-od-head{background:linear-gradient(135deg,#FF8A00,#FF5A00);padding:2em 1.9em 1.7em;border-radius:6px 6px 0 0}
+/* ---------- ポップアップのバッジ ---------- */
 .pc-od-badge{display:inline-block;font-family:var(--en);font-weight:900;font-size:.66rem;letter-spacing:.12em;color:var(--ink);background:#fff;padding:.5em 1.1em;border-radius:20px}
-.pc-od-head h4{font-weight:900;font-size:1.35rem;line-height:1.5;color:#fff;margin-top:.8em}
-.pc-oneday .pc-body{padding-top:1.6em}
-.pc-oneday .pc-body .lead-sm{color:var(--red)}
-.pc-od-gift{margin-top:1.3em;background:#FFF1E4;border-left:4px solid #FF5A00;padding:.9em 1.1em;font-size:.92rem;border-radius:0 4px 4px 0}
-.pc-od-gift b{color:#FF5A00}
-.pc-od-book{margin-top:1.5em;width:100%;justify-content:center;background:linear-gradient(135deg,#FF8A00,#FF5A00);box-shadow:0 14px 34px -10px rgba(255,90,0,.55)}
-.pc-od-book:hover{box-shadow:0 18px 40px -10px rgba(255,90,0,.65)}
 
 .more-btn{
   margin-top:1.3em;list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.6em;
@@ -690,38 +681,6 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
 .cost-close{margin-top:2.4em;font-weight:900;font-size:clamp(1.1rem,2.4vw,1.5rem);line-height:1.75;color:#fff!important}
 .cost-close em{font-style:normal;color:var(--red)}
 
-/* ---------- 1日研修（プランの前に差し込み） ---------- */
-.oneday{
-  background:linear-gradient(135deg,#FF8A00,#FF5A00);border:none;border-radius:6px;
-  padding:1.9em 2em;margin-top:2.4em;display:flex;flex-wrap:wrap;align-items:center;gap:1.4em 2em;
-  box-shadow:0 24px 54px -26px rgba(255,90,0,.6);
-}
-.oneday-top{display:flex;flex-wrap:wrap;align-items:center;gap:.9em;flex-basis:100%}
-.oneday-tag{font-family:var(--jp);font-weight:900;font-size:.68rem;letter-spacing:.08em;color:#fff;background:var(--ink);padding:.45em 1em;border-radius:2px}
-.oneday-date{font-family:var(--jp);font-size:.84rem;font-weight:900;color:var(--ink)}
-.oneday-date small{font-family:var(--jp);font-weight:700;font-size:.9em;margin-left:.3em;opacity:.85}
-.oneday h3{font-weight:900;font-size:1.35rem;letter-spacing:-.01em;flex-basis:100%;color:#fff}
-.oneday-lead{font-size:.98rem;font-weight:900;color:#fff;line-height:1.75;flex:1 1 320px}
-.oneday-foot{display:flex;align-items:center;gap:1.4em;flex-wrap:wrap}
-.oneday-time{font-family:var(--en);font-weight:900;font-size:1rem;color:var(--ink)}
-.oneday-price{font-family:var(--en);font-weight:900;font-size:1.7rem;color:var(--ink);letter-spacing:-.02em}
-.oneday-price small{font-size:.34em;font-family:var(--jp);font-weight:900;color:var(--ink);margin-left:.25em}
-.oneday .more-btn{margin-top:0;background:transparent;color:#fff;border-color:#fff}
-.oneday .more-btn:hover{background:#fff;color:var(--ink);border-color:#fff}
-.oneday-book{
-  display:inline-flex;align-items:center;font-family:var(--jp);font-weight:900;font-size:.9rem;
-  color:#fff;background:var(--ink);padding:.78em 1.7em;border-radius:2px;text-decoration:none;
-  transition:transform .22s,box-shadow .22s;box-shadow:0 10px 28px -10px rgba(0,0,0,.5);
-}
-.oneday-book:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(0,0,0,.6)}
-.timetable{margin-top:1.4em;display:flex;flex-direction:column;gap:.6em}
-.tt-row{display:flex;align-items:center;gap:1.1em;font-size:.9rem;line-height:1.6}
-.tt-time{flex:0 0 108px;font-family:var(--en);font-weight:900;color:#fff;font-size:.78rem;text-align:center;background:linear-gradient(135deg,#FF8A00,#FF5A00);padding:.4em .3em;border-radius:5px}
-.tt-txt{color:#3a3a3f;font-weight:700}
-.tt-row.tt-break{gap:0;padding-left:126px}
-.tt-row.tt-break .tt-time{display:none}
-.tt-row.tt-break .tt-txt{color:#9a9aa0;font-size:.82rem;font-weight:500}
-
 /* ---------- 料金 ---------- */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:2.8em;align-items:stretch}
 .plan{
@@ -755,6 +714,10 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
 .startitem{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.2em;
   border:1px solid var(--line-l);border-radius:5px;padding:1.15em 1.3em;text-decoration:none;color:var(--ink);transition:all .2s}
 .startitem:hover{border-color:var(--red);background:rgba(255,45,22,.04);transform:translateY(-1px)}
+.startitem.si-line{background:#06C755;border-color:#06C755;color:#fff}
+.startitem.si-line:hover{background:#05b34c;border-color:#05b34c}
+.startitem.si-line .si-n svg{width:1.6em;height:1.6em;fill:#fff;display:block}
+.startitem.si-line .si-t small,.startitem.si-line .si-p{color:#fff}
 .si-n{font-family:var(--en);font-weight:900;font-size:1.25rem;color:var(--red);line-height:1}
 .si-t b{display:block;font-weight:900;font-size:1.04rem;line-height:1.5}
 .si-t small{display:block;font-size:.78rem;color:#7A7A82;line-height:1.8;margin-top:.3em}
@@ -1107,7 +1070,7 @@ body{padding-bottom:92px}
 <body>
 
 <header>
-  <a class="logo" href="#top" aria-label="A-Push">
+  <a class="logo" href="#top" aria-label="A-PUSH">
     <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span>
   </a>
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
@@ -1127,7 +1090,7 @@ body{padding-bottom:92px}
   <p class="hero-word" aria-hidden="true">PUSH</p>
   <div class="wrap hero-inner">
     <span class="vline top" aria-hidden="true"></span>
-    <a class="logo hero-logo" href="#top" aria-label="A-Push"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
+    <a class="logo hero-logo" href="#top" aria-label="A-PUSH"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
     <span class="vline bot" aria-hidden="true"></span>
     <p class="eyebrow">スピーキング特化の英会話スクール</p>
     <h1>
@@ -1173,25 +1136,24 @@ body{padding-bottom:92px}
     <h2>日本人に足りてないのは、<em>アウトプット量。</em></h2>
     <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
       <div>
-        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">海外は、アウトプットが日本より圧倒的に多い。<br><b>だから、話せる。</b></p>
-        <p class="lead" style="margin-top:1em;font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b><em style="font-style:normal;color:var(--red);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.6;display:inline-block;margin-top:.2em">今まで話す練習を<br>やってきていないから。</em></b></p>
+        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b><em style="font-style:normal;color:var(--red);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.6;display:inline-block;margin-top:.2em">今まで話す練習を<br>やってきていないから。</em></b></p>
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
-        <h3 style="font-size:1.2rem">英語教育の時間配分</h3>
+        <h3 style="font-size:1.2rem">授業とレッスンの時間配分</h3>
         <p class="sub">指導方針を説明する概念図です（統計データではありません）。</p>
-        <svg viewBox="0 0 500 160" role="img" aria-label="日本と他国の英語教育における、インプットとアウトプットの時間配分の違いを示す概念図">
-          <text class="cv-tick" x="0" y="16" style="font-weight:900">日本</text>
+        <svg viewBox="0 0 500 160" role="img" aria-label="これまでの英語の授業はインプット中心、A-PUSHのレッスンは約9割が話す時間であることを示す概念図">
+          <text class="cv-tick" x="0" y="16" style="font-weight:900">これまでの英語の授業（インプット中心）</text>
           <rect x="0" y="24" width="500" height="40" rx="4" fill="#C6C6CB"/>
           <rect x="392" y="24" width="108" height="40" rx="4" fill="var(--red)"/>
-          <text class="cv-tick" x="0" y="106" style="font-weight:900">他国</text>
+          <text class="cv-tick" x="0" y="106" style="font-weight:900">A-PUSHのレッスン（約9割が話す時間）</text>
           <rect x="0" y="114" width="500" height="40" rx="4" fill="#C6C6CB"/>
-          <rect x="175" y="114" width="325" height="40" rx="4" fill="var(--red)"/>
+          <rect x="50" y="114" width="450" height="40" rx="4" fill="var(--red)"/>
         </svg>
         <div class="curve-legend">
           <span><i style="background:#C6C6CB"></i>インプット（文法・読解・リスニング）</span>
-          <span class="on"><i></i>アウトプット（話す・書く）</span>
+          <span class="on"><i></i>アウトプット（話す）</span>
         </div>
-        <p class="ev-ref">※「他国」は、英語運用力が高いとされる英語非母語国です（<a href="https://www.ef.com/wwen/epi/" target="_blank" rel="noopener">EF EPI</a> 参照）。</p>
+        <p class="ev-ref">※ A-PUSHのレッスンの割合は、標準的なレッスン構成に基づく設計値です（レベル・進行により変動します）。</p>
       </div>
     </div>
   </div>
@@ -1247,28 +1209,28 @@ body{padding-bottom:92px}
             <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
             <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
             <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
-            <circle cx="32" cy="80" r="14" fill="#FF2D16"/><text x="32" y="85" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
-            <text x="56" y="85" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">シャドーイング</text>
+            <circle cx="32" cy="80" r="14" fill="#FF2D16"/><text x="32" y="85" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
+            <text x="56" y="85" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
             <text x="600" y="85" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
             <rect x="56" y="96" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="96" width="374" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="148" r="14" fill="#FF2D16"/><text x="32" y="153" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
-            <text x="56" y="153" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">リーディング</text>
+            <circle cx="32" cy="148" r="14" fill="#FF2D16"/><text x="32" y="153" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
+            <text x="56" y="153" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
             <text x="600" y="153" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
             <rect x="56" y="164" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="164" width="234" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="216" r="14" fill="#FF2D16"/><text x="32" y="221" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
-            <text x="56" y="221" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">ライティング</text>
+            <circle cx="32" cy="216" r="14" fill="#FF2D16"/><text x="32" y="221" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
+            <text x="56" y="221" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
             <text x="600" y="221" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
             <rect x="56" y="232" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="232" width="312" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="284" r="14" fill="#FF2D16"/><text x="32" y="289" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">V</text>
-            <text x="56" y="289" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">英単語</text>
+            <circle cx="32" cy="284" r="14" fill="#FF2D16"/><text x="32" y="289" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
+            <text x="56" y="289" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
             <text x="600" y="289" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
             <rect x="56" y="300" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="300" width="156" height="10" rx="5" fill="#FF2D16"/>
             <circle cx="32" cy="352" r="14" fill="#FF2D16"/><text x="32" y="357" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">G</text>
-            <text x="56" y="357" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">文法</text>
+            <text x="56" y="357" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Grammar</text>
             <text x="600" y="357" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">50%</text>
             <rect x="56" y="368" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="368" width="260" height="10" rx="5" fill="#FF2D16"/>
@@ -1340,7 +1302,7 @@ body{padding-bottom:92px}
       <div>
         <p class="role">FOUNDER</p>
         <h3>佐野 公章<span class="f-soc"><a href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener" aria-label="佐野 公章の Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a><a href="https://note.com/lucky_bear5896" target="_blank" rel="noopener" aria-label="佐野 公章の note"><i class="note-logo" aria-hidden="true"></i></a></span><span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
-        <p class="aff">テンプル大学ジャパンキャンパス 在学</p>
+        <p class="aff">米国テンプル大学 在学</p>
 
         <p style="font-size:.94rem;color:#5C5C64;line-height:2">17歳で、フィリピンの語学学校へ。<br>中学から英語をやってきたのに、リスニングが本当に苦手でした。<br>ネイティブの英語は速くて、ついていけない。聞き取れないから、結局、言葉も出てこない。<br>"Slow please." と頼んでも、やっぱり聞き取れませんでした。</p>
         <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">変わったのは、とにかく話しまくる学習法に出会ってからです。<br>話すうちに、聞けるようにもなりました。</p>
@@ -1511,6 +1473,7 @@ body{padding-bottom:92px}
           </figcaption>
         </figure>
         <div>
+          <p class="vnote" style="margin:0 0 .6em;color:var(--ink)">【PR】けいらさんには、受講料を無償とする代わりに、A-PUSH のPR（SNSでの紹介）にご協力いただいています。</p>
           <p class="vlead">英語は苦手。でも、<em>海外で働く夢は諦めたくなかった。</em></p>
           <p class="vnote">※ 個人の体験です。効果には個人差があります。</p>
           <div class="bubbles">
@@ -1601,7 +1564,7 @@ body{padding-bottom:92px}
     <h2>実感は、<em>受けてみてから。</em></h2>
     <p class="lead">話せないところから、一緒に始めます。<br>その場でお申し込みいただく必要はありません。<span class="note-sm">体験会は有料です（3,000円・税込／オンライン可・所要60分）。面談／説明会／体験会をご利用ください！</span></p>
     <div class="btns">
-      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener">体験会を予約する<small>有料・3,000円（税込）／オンライン可・所要60分</small></a>
+      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">体験会を予約する<small>有料・3,000円（税込）／オンライン可・所要60分</small></a>
     </div>
   </div>
 </section>
@@ -1611,7 +1574,7 @@ body{padding-bottom:92px}
 <footer>
   <div class="f-in">
     <div>
-      <a class="logo mono f-logo" href="#top" aria-label="A-Push">
+      <a class="logo mono f-logo" href="#top" aria-label="A-PUSH">
         <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span>
       </a>
       <p class="f-tag">英語をキャリアで活かすための、<br>海外式スピーキング特化の3ヶ月。</p>
@@ -1654,12 +1617,17 @@ body{padding-bottom:92px}
   <div class="popup-card pc-start">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-start-head">
-      <span class="pc-od-badge"><span class="jp">はじめての方へ ／ 3つの入口</span></span>
+      <span class="pc-od-badge"><span class="jp">はじめての方へ ／ 4つの入口</span></span>
       <h4>まずは、<br>話してみませんか。</h4>
     </div>
     <div class="pc-body">
       <p class="lead-sm">目的に合わせて、選んでください。</p>
       <div class="startlist">
+        <a class="startitem si-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">
+          <span class="si-n" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6.1C21.6 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg></span>
+          <span class="si-t"><b>LINEで気楽に相談</b><small>気になることを、LINEで気軽に聞けます。</small></span>
+          <span class="si-p"><span class="jp">無料</span></span>
+        </a>
         <a class="startitem" href="https://calendar.app.google/DPWiGSgA2heP5nUR8" target="_blank" rel="noopener" data-cta="consult">
           <span class="si-n">01</span>
           <span class="si-t"><b>オンライン説明会</b><small>A-PUSH の学び方のご説明（30分）＋質疑応答・学習相談（30分）。<br>毎週日曜 11:00〜12:00／Google Meet</small></span>
@@ -1733,7 +1701,7 @@ body{padding-bottom:92px}
         <li><b>A-PUSH Writing</b> —— 英作文</li>
         <li><b>A-PUSH Grammar</b> —— 文法</li>
       </ul>
-      <p style="margin-top:1.2em">シャドーイング・リーディング・ライティング・英単語・文法の進捗が、開いた瞬間に分かります。</p>
+      <p style="margin-top:1.2em">5つの進捗と今日やることが、開いた瞬間に分かります。</p>
       <p class="note-sm">＊ 学習ダッシュボードは、2026年9月24日よりプレリリース版の提供を開始しています。正式版は2026年11月に提供を開始する予定です。掲載の画面は開発中のイメージであり、実際の画面とは異なる場合があります。</p>
     </div>
     <div class="pc-media">
@@ -1975,16 +1943,27 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     }catch(e){}
   });
 
-  function fire(label){
-    var p={event:'reserve_click',cta_label:label,ap_lid:attr.lid||'',
+  // 計測：予約の入口（Reserva・Googleカレンダー）と LINE は Meta の Lead、GA4 はイベントで送る。
+  // どのボタンかは data-cta（trial=体験会／consult=説明会／meeting=個別面談／line=LINE）で区別する
+  function send(name,cta,text,meta){
+    var p={event:name,cta_label:cta,cta_text:text,ap_lid:attr.lid||'',
            utm_source:attr.utm_source||'',utm_campaign:attr.utm_campaign||''};
     (window.dataLayer=window.dataLayer||[]).push(p);
-    if(window.gtag) gtag('event','reserve_click',p);
-    if(window.fbq)  fbq('track','Lead',{content_name:label,lead_id:attr.lid||''});
+    if(window.gtag) gtag('event',name,{cta_label:cta,cta_text:text,ap_lid:attr.lid||''});
+    if(window.fbq && meta) fbq(meta[0],meta[1],{content_name:cta,cta_text:text,lead_id:attr.lid||''});
   }
-  // 予約リンク（Reserva・Googleカレンダーの予約ページ）のクリックを計測
-  document.querySelectorAll('a[href*="reserva.be"],a[href*="calendar.app.google"]').forEach(function(a){
-    a.addEventListener('click',function(){ fire((a.textContent||'').trim().slice(0,40)); });
+  document.querySelectorAll('a[href*="reserva.be"],a[href*="calendar.app.google"],a[href*="lin.ee"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var cta=a.dataset.cta||'other', text=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,40);
+      send(cta==='line'?'line_click':'reserve_click',cta,text,['track','Lead']);
+    });
+  });
+  // 説明会／体験会のポップアップを開くボタン
+  document.querySelectorAll('[data-popup="startModal"]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var where=b.closest('header')?'header':b.closest('.hero')?'hero':b.closest('.bottombar')?'bottombar':'section';
+      send('open_booking',where,(b.textContent||'').replace(/\s+/g,' ').trim().slice(0,40),['trackCustom','OpenBooking']);
+    });
   });
   window.AP_ATTR=attr;
 })();
