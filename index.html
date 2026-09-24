@@ -11,17 +11,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Jost:wght@200;300;400&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <!-- ===== OGP ===== -->
-<!-- ▼ 独自ドメインに移すときは、og:url・og:image・twitter:image の3つのURLを差し替えてください -->
+<!-- ▼ ドメインを変えるときは、canonical・og:url・og:image・twitter:image と CNAME ファイルを差し替えてください -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="A-PUSH｜スピーキング特化の英会話">
 <meta property="og:description" content="スピーキング特化の英会話スクールA-PUSH。ネイティブ講師とのマンツーマンで、レッスンの約9割があなたの話す時間（設計値）。目黒駅徒歩1分・オンライン可。">
-<meta property="og:url" content="https://washoi-co.github.io/a-push-lp/">
-<meta property="og:image" content="https://washoi-co.github.io/a-push-lp/assets/og.jpg">
+<link rel="canonical" href="https://lp.apush.jp/">
+<meta property="og:url" content="https://lp.apush.jp/">
+<meta property="og:image" content="https://lp.apush.jp/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="A-PUSH">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://washoi-co.github.io/a-push-lp/assets/og.jpg">
+<meta name="twitter:image" content="https://lp.apush.jp/assets/og.jpg">
 
 <!-- ===== オープン記念価格・他社比較の設定（この2つの数字を直せば、ページ全体が揃います） ===== -->
 <script>
@@ -55,7 +56,7 @@ window.EC_CONFIG = {
   GTM_ID:     '',   // 例: 'GTM-XXXXXXX'
   GA4_ID:     'G-1BFLM1VN5G',   // 例: 'G-XXXXXXXXXX'（GTMを使うなら空でOK）
   META_PIXEL: '4532947230319768',   // 例: '123456789012345'
-  NOINDEX:    true  // ★確認用URLの間は true。本番公開のタイミングで false に
+  NOINDEX:    false  // ★確認用URLの間は true。本番公開のタイミングで false に
 };
 if (window.EC_CONFIG.NOINDEX) {
   document.write('<meta name="robots" content="noindex,nofollow">');
