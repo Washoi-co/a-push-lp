@@ -1035,10 +1035,11 @@ body{padding-bottom:92px}
 
 /* ---------- ファーストビュー：サブコピー・価格オファー・入口 ---------- */
 /* 見出しを一番大きく・価格オファーを上に：ロゴと縦ライン・ラベルを小さく */
-.vline.top{height:clamp(36px,7vh,90px)}
-.vline.bot{height:clamp(24px,4vh,48px);margin-bottom:1.2em}
-.hero-logo{font-size:clamp(2rem,5.2vw,3.4rem)}
-.hero .eyebrow{font-size:clamp(.8rem,1.6vw,.98rem);padding:.5em 1.3em;margin-bottom:1.1em}
+/* 開いた時にロゴとジャンルを大きく見せる（以前のファーストビューと同じ大きさ） */
+.vline.top{height:clamp(40px,9vh,110px)}
+.vline.bot{height:clamp(28px,5vh,60px);margin-bottom:1.4em}
+.hero-logo{font-size:clamp(3.2rem,10.5vw,7rem)}
+.hero .eyebrow{font-size:clamp(1rem,2.4vw,1.5rem);padding:.6em 1.6em;margin-bottom:1.5em}
 .hero{padding-top:110px}
 .hero h1{margin-bottom:.35em}
 .hero-sub{font-weight:900;font-size:clamp(1rem,2.3vw,1.3rem);line-height:1.7;color:rgba(255,255,255,.9);margin-bottom:1.8em}
