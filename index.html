@@ -141,7 +141,7 @@ header{
   border-bottom:1px solid var(--line-d);
 }
 header .logo{font-size:1.45rem}
-.head-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+.head-actions{display:flex;align-items:stretch;gap:10px;margin-left:auto}
 .hbtn{
   font-family:var(--jp);font-weight:900;font-size:.78rem;text-decoration:none;border:0;cursor:pointer;
   padding:.75em 1.3em;border-radius:2px;letter-spacing:.02em;transition:all .22s;
@@ -516,18 +516,7 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
   .pstep-row{grid-template-columns:1fr auto;row-gap:.25em}
   .pstep-bar{grid-column:1/-1;grid-row:2}
 }
-/* ヘッダーの代表Instagram */
-.hbtn-ig{display:inline-flex;align-items:center;gap:.45em}
-.hbtn-ig,.hbtn-note{padding:0 .8em;height:2.9em;justify-content:center}
-.hbtn-note .note-logo{width:3.3em;height:.75em}
-.hbtn-ig svg{width:1.15em;height:1.15em;fill:currentColor}
-.hbtn-note{display:inline-flex;align-items:center;gap:.45em}
 .note-logo{display:inline-block;width:2.9em;height:.64em;background:currentColor;-webkit-mask:url(assets/note-logo.png) center/contain no-repeat;mask:url(assets/note-logo.png) center/contain no-repeat}
-@media(max-width:720px){
-  .hbtn.ghost.hbtn-ig{display:inline-flex;padding:.7em .75em}
-  .hbtn.ghost.hbtn-note{display:inline-flex;padding:.7em .75em}
-  .hbtn-ig span,.hbtn-note span{display:none}
-}
 .vnote{margin-top:.5em;font-size:.94rem;font-weight:700;color:#5C5C64}
 .sec-dark .vnote{color:rgba(255,255,255,.7)}
 .note-sm{display:block;margin-top:.8em;font-size:.78rem;line-height:1.8;color:#5C5C64}
@@ -575,14 +564,26 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
 .founder-ph .ph-empty{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--en);font-size:.8rem;font-weight:800;letter-spacing:.24em;color:#C6C6CB}
 .founder .role{font-family:var(--en);font-weight:800;font-size:.72rem;letter-spacing:.2em;color:var(--red)}
 .founder h3{font-weight:900;font-size:clamp(1.3rem,2.6vw,1.75rem);margin:.3em 0 .15em;line-height:1.4}
-.f-soc{display:inline-flex;gap:8px;margin-left:.6em;vertical-align:.15em}
-.f-soc a{display:inline-flex;align-items:center;justify-content:center;height:2em;min-width:2em;padding:0 .55em;border:1px solid var(--line-l);border-radius:999px;color:var(--ink);text-decoration:none;font-size:.55em;transition:all .2s}
-.f-soc a:hover{border-color:var(--red);color:var(--red)}
-.f-soc svg{width:1.2em;height:1.2em;fill:currentColor}
 .founder .aff{font-size:.86rem;font-weight:700;color:#7A7A82;margin-bottom:1.3em}
 .founder .quote{font-weight:900;font-size:clamp(1.1rem,2.3vw,1.5rem);line-height:1.8;border-left:3px solid var(--red);padding-left:1.2em}
 .founder .quote em{font-style:normal;color:var(--red)}
 @media(max-width:880px){.founder{grid-template-columns:1fr;gap:26px}.founder-ph{max-width:340px;aspect-ratio:1/1}}
+/* ヘッダーの公式LINEボタン */
+.hbtn-line{display:inline-flex;align-items:center;gap:.45em;padding-top:0;padding-bottom:0;background:#06C755;color:#fff}
+.hbtn-line:hover{background:#05b34c}
+.hbtn-line svg{width:1.15em;height:1.15em;fill:currentColor;flex:none;margin:-.2em 0}
+@media(max-width:520px){.hbtn-line span{display:none}.hbtn-line{padding:0 .8em}}
+/* 代表：肩書きと「代表の発信」 */
+.founder .f-title{display:block;font-size:.55em;font-weight:900;color:var(--red);letter-spacing:.08em;margin-bottom:.35em}
+.f-media{margin:-.3em 0 1.6em;padding:1em 1.1em;border:2px solid var(--red);border-radius:4px;background:rgba(255,45,22,.04)}
+.f-media-lab{font-weight:900;font-size:.9rem;color:var(--red);margin-bottom:.6em}
+.f-media-links{display:flex;flex-wrap:wrap;gap:10px}
+.f-media-links a{display:inline-flex;align-items:center;gap:.5em;height:2.8em;padding:0 1.2em;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--en);font-weight:800;font-size:.9rem;text-decoration:none;transition:background .2s}
+.f-media-links a:hover{background:var(--red)}
+.f-media-links svg{width:1.15em;height:1.15em;fill:currentColor}
+.f-media-links .note-logo{width:3.2em;height:.72em}
+@media(max-width:520px){.f-media{padding:.9em .9em}.f-media-links{gap:7px}.f-media-links a{height:2.6em;padding:0 .8em;font-size:.8rem}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .founder-story{margin-top:3em;padding-top:2.8em;border-top:1px solid var(--line-l);max-width:760px}
 
 /* ---------- 料金・サービス比較 ---------- */
@@ -1130,8 +1131,7 @@ body{padding-bottom:92px}
   </a>
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
-    <a class="hbtn ghost hbtn-ig" href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener" aria-label="代表 Kimi の Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
-    <a class="hbtn ghost hbtn-note" href="https://note.com/lucky_bear5896" target="_blank" rel="noopener" aria-label="代表 Kimi の note"><i class="note-logo" aria-hidden="true"></i></a>
+    <a class="hbtn hbtn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line" aria-label="A-PUSH 公式LINE"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span>公式LINE</span></a>
     <button type="button" class="hbtn solid" data-popup="startModal">説明会／体験会</button>
   </div>
 </header>
@@ -1357,9 +1357,16 @@ body{padding-bottom:92px}
         <img src="assets/founder.jpg" alt="A-PUSH 代表 佐野 公章" loading="lazy">
       </figure>
       <div>
-        <p class="role">FOUNDER</p>
-        <h3>佐野 公章<span class="f-soc"><a href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener" aria-label="佐野 公章の Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a><a href="https://note.com/lucky_bear5896" target="_blank" rel="noopener" aria-label="佐野 公章の note"><i class="note-logo" aria-hidden="true"></i></a></span><span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
+        <h3><span class="f-title">代表取締役</span>佐野 公章（kimi）<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
         <p class="aff">米国テンプル大学 在学</p>
+        <div class="f-media">
+          <p class="f-media-lab">代表の発信</p>
+          <div class="f-media-links">
+            <a href="https://www.threads.com/@kimi_eipush" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>Threads</a>
+            <a href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>Instagram</a>
+            <a href="https://note.com/lucky_bear5896" target="_blank" rel="noopener"><i class="note-logo" aria-hidden="true"></i><span class="sr">note</span></a>
+          </div>
+        </div>
 
         <p style="font-size:.94rem;color:#5C5C64;line-height:2">17歳で、フィリピンの語学学校へ。<br>中学から英語をやってきたのに、リスニングが本当に苦手でした。<br>ネイティブの英語は速くて、ついていけない。聞き取れないから、結局、言葉も出てこない。<br>"Slow please." と頼んでも、やっぱり聞き取れませんでした。</p>
         <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">変わったのは、とにかく話しまくる学習法に出会ってからです。<br>話すうちに、聞けるようにもなりました。</p>
