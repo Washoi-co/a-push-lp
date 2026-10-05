@@ -1089,6 +1089,36 @@ body{padding-bottom:92px}
 .offer-mkt .v .en{font-size:1.35em;margin:0 .05em}
 .offer-mkt .third{color:#fff;background:var(--red);font-size:.8rem;padding:.3em .9em;border-radius:2px}
 .offer-note{margin-top:.9em;padding-top:.8em;border-top:1px solid rgba(255,255,255,.16);font-size:.76rem;line-height:1.85;color:rgba(255,255,255,.72);text-align:left}
+/* ファーストビュー：講師の顔を最初に・ロゴは小さく（写真は480pxなので表示は140pxまで） */
+.hero-faces{display:flex;justify-content:center;gap:clamp(16px,5vw,32px);margin-bottom:.8em}
+.hero-faces figure{margin:0}
+.hero-faces img{width:clamp(96px,28vw,140px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 10px 30px -10px rgba(0,0,0,.7)}
+.hero-faces figcaption{margin-top:.4em;font-size:.8rem;font-weight:900;color:#fff}
+.hero .hero-logo{font-size:clamp(1.5rem,4vw,2.4rem);margin:0 0 .6em}
+.hero-badge{margin:.2em 0 1em;padding:.35em 1.1em;background:#fff;color:var(--ink);font-weight:900;font-size:clamp(.9rem,3.8vw,1.1rem);border-radius:2px}
+/* スマホ：講師の顔〜予約ボタンまでを1画面に（375×812で確認） */
+@media(max-width:720px){
+  .hero{padding-top:66px}
+  .hero-top{min-height:0}
+  .hero-faces{margin-bottom:.4em}
+  .hero-faces img{width:84px}
+  .hero-faces figcaption{font-size:.72rem;margin-top:.25em}
+  .hero .hero-logo{font-size:1.35rem;margin-bottom:.45em}
+  .hero .eyebrow{font-size:.85rem;padding:.4em 1em;margin-bottom:.45em}
+  .hero h1{font-size:1.75rem;margin-bottom:.25em}
+  .hero-badge{margin:.1em 0 .7em;font-size:.88rem}
+  .offer{padding:.9em 1em .8em;margin-bottom:.9em}
+  .offer-tag{font-size:.76rem}
+  .offer-price{margin:.1em 0 .3em}
+  .offer-price .n{font-size:2.6rem}
+  .offer-mkt{flex-wrap:nowrap;gap:.45em;margin:.1em 0 .2em}
+  .offer-mkt .lab{font-size:.64rem;padding:.2em .7em;white-space:nowrap}
+  .offer-mkt .v{font-size:.95rem;white-space:nowrap}
+  .offer-mkt .third{font-size:.7rem;padding:.25em .6em;white-space:nowrap}
+  .seat{margin:.6em 0 .1em}
+  .seat-bar i{height:9px}
+  .offer-note{margin-top:.6em;padding-top:.5em;font-size:.66rem;line-height:1.7}
+}
 .hero-cta{display:flex;flex-direction:column;align-items:center;gap:.9em;max-width:640px;margin:0 auto}
 .hero-cta .note-sm{margin-top:0;color:rgba(255,255,255,.7)}
 .hero-link{color:#fff;font-weight:900;font-size:.92rem;text-decoration:underline;text-underline-offset:.25em;text-decoration-color:rgba(255,255,255,.45)}
@@ -1145,13 +1175,17 @@ body{padding-bottom:92px}
   <p class="hero-word" aria-hidden="true">PUSH</p>
   <div class="wrap hero-inner">
     <div class="hero-top">
-    <span class="vline top" aria-hidden="true"></span>
+    <div class="hero-faces">
+      <figure><img src="assets/face-phoebe.jpg" alt="ネイティブ講師 フィビィ先生" width="480" height="480" loading="eager"><figcaption>フィビィ先生</figcaption></figure>
+      <figure><img src="assets/face-alex.jpg" alt="ネイティブ講師 アレックス先生" width="480" height="480" loading="eager"><figcaption>アレックス先生</figcaption></figure>
+    </div>
     <a class="logo hero-logo" href="#top" aria-label="A-PUSH"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
-    <span class="vline bot" aria-hidden="true"></span>
     <p class="eyebrow">スピーキング特化の英会話スクール</p>
     <h1>
       <span class="l">3ヶ月、<em>話しまくる。</em></span>
     </h1>
+    <!-- 範囲の限定（「レッスン講師は」）を外さないこと：コーチングは対象外のため、外すと優良誤認のおそれ -->
+    <p class="hero-badge">レッスン講師は100%ネイティブ</p>
     </div>
 
     <!-- 価格オファー：数字は <head> の LAUNCH / COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
@@ -2015,13 +2049,29 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     a.addEventListener('click',function(){
       var cta=a.dataset.cta||'other', text=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,40);
       send(cta==='line'?'line_click':'reserve_click',cta,text,['track','Lead']);
+      // LINE・Reserva は、押された場所（location）つきの専用イベントも送る
+      var isLine=a.href.indexOf('lin.ee')>-1, isRes=a.href.indexOf('reserva.be')>-1, loc=where(a);
+      if(!isLine && !isRes) return;
+      if(window.gtag) gtag('event',isLine?'cta_line_click':'cta_reserva_click',{location:loc,transport_type:'beacon'});
+      if(window.fbq) fbq('trackCustom',isLine?'LineClick':'ReservaClick',{location:loc});
     });
   });
+  // 押された場所：header / hero / sticky / body / footer。ポップアップ内は、開いたボタンの場所を引き継ぐ
+  var popupFrom='body';
+  function where(el){
+    if(el.closest('.popup')) return popupFrom;
+    if(el.closest('header')) return 'header';
+    if(el.closest('.hero')) return 'hero';
+    if(el.closest('.bottombar')) return 'sticky';
+    if(el.closest('footer')) return 'footer';
+    return 'body';
+  }
   // 面談／体験会のポップアップを開くボタン
   document.querySelectorAll('[data-popup="startModal"]').forEach(function(b){
     b.addEventListener('click',function(){
-      var where=b.closest('header')?'header':b.closest('.hero')?'hero':b.closest('.bottombar')?'bottombar':'section';
-      send('open_booking',where,(b.textContent||'').replace(/\s+/g,' ').trim().slice(0,40),['trackCustom','OpenBooking']);
+      popupFrom=where(b);
+      var w=b.closest('header')?'header':b.closest('.hero')?'hero':b.closest('.bottombar')?'bottombar':'section';
+      send('open_booking',w,(b.textContent||'').replace(/\s+/g,' ').trim().slice(0,40),['trackCustom','OpenBooking']);
     });
   });
   window.AP_ATTR=attr;
