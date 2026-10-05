@@ -582,6 +582,9 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
 /* ヘッダーの公式LINEボタン */
 .hbtn-line{display:inline-flex;align-items:center;gap:.45em;padding-top:0;padding-bottom:0;background:#06C755;color:#fff}
 .hbtn-line:hover{background:#05b34c}
+.hbtn-voice{display:inline-flex;align-items:center;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.hbtn-voice:hover{border-color:var(--red);color:var(--red)}
+@media(max-width:520px){.head-actions{gap:6px}.hbtn-voice{padding:0 .6em}}
 .hbtn-line svg{width:1.15em;height:1.15em;fill:currentColor;flex:none;margin:-.2em 0}
 @media(max-width:520px){.hbtn-line{flex-direction:column;justify-content:center;gap:0;padding:0 .7em;line-height:1.35;white-space:nowrap}}
 /* 代表：肩書きと「代表の発信」 */
@@ -1160,6 +1163,7 @@ body{padding-bottom:92px}
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
     <a class="hbtn hbtn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line"><span>LINEで</span><span>無料ツール配布中</span></a>
+    <a class="hbtn hbtn-voice" href="voice.html">生徒の声</a>
     <button type="button" class="hbtn solid" data-popup="startModal">面談／体験会</button>
   </div>
 </header>
@@ -1655,6 +1659,8 @@ body{padding-bottom:92px}
         </div>
       </div>
     </div>
+
+    <p style="text-align:center;margin-top:2em"><a class="more-btn" href="voice.html">生徒の声をもっと見る →</a></p>
 
     <!-- MEMO（表示されません）: 要確認Kimiさんの許可が取れ次第、実際の Versant スコア（受講前 → 受講後）を添えます。許可が下りない場合は「スコアなしの体験談のみで構成」か「この章を保留」かを、事前に決めてください。 / また、お名前の表記（実名／イニシャル）と写真の掲載許諾も、公開前にご確認ください。 -->
   </div>
