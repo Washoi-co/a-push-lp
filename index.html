@@ -898,6 +898,8 @@ body{padding-bottom:92px}
 }
 .bb-btn small{font-size:.66rem;font-weight:700;opacity:.85}
 .bb-btn:hover{transform:translateY(-2px);background:#fff;color:var(--ink)}
+.btn-line,.bb-btn.bb-line{background:#06C755;box-shadow:0 10px 30px -10px rgba(6,199,85,.55)}
+.btn-line:hover,.bb-btn.bb-line:hover{background:#05b34c;color:#fff}
 .bb-btn.bb-ghost{background:transparent;border:1px solid rgba(255,255,255,.45);box-shadow:none}
 .bb-btn.bb-ghost:hover{background:#fff;border-color:#fff}
 @media(max-width:720px){
@@ -1169,7 +1171,6 @@ p,li,dd{text-wrap:pretty}
   <div class="head-actions">
     <a class="hbtn hbtn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line"><span>LINEで</span><span>無料ツール配布中</span></a>
     <a class="hbtn hbtn-voice" href="voice.html">生徒の声</a>
-    <button type="button" class="hbtn solid" data-popup="startModal">面談／体験会</button>
   </div>
 </header>
 
@@ -1464,7 +1465,7 @@ p,li,dd{text-wrap:pretty}
       </div>
     </div>
     <div class="hero-cta">
-      <button type="button" class="btn btn-primary" data-popup="startModal">面談／体験会を予約する</button>
+      <a class="btn btn-primary btn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINEで無料スピーキングツールを受け取る</a>
     </div>
   </div>
 </section>
@@ -1652,10 +1653,6 @@ p,li,dd{text-wrap:pretty}
         </div>
       </details>
       <details>
-        <summary><span class="qt"><span class="qm">Q.</span>体験会では何をしますか？ 勧誘はありますか？</span></summary>
-        <p class="a"><span class="qm">A.</span>60分のうち、最初にA-PUSH Methodの説明、続いて約35分の体験レッスン、最後の20分で英語学習のお悩みをうかがい、コースのご案内をします。その場でお申込みいただく必要はありません。</p>
-      </details>
-      <details>
         <summary><span class="qt"><span class="qm">Q.</span>レッスン以外に、1日どれくらい勉強しますか？</span></summary>
         <p class="a"><span class="qm">A.</span>1日1〜2時間が目安です。その日にやることは、公式LINEでお送りします。</p>
       </details>
@@ -1694,10 +1691,10 @@ p,li,dd{text-wrap:pretty}
 <!-- ============ 13. クロージング ============ -->
 <section class="final" id="contact">
   <div class="wrap-n inner reveal">
-    <h2>実感は、<em>受けてみてから。</em></h2>
-    <p class="lead">話せないところから、一緒に始めます。<br>その場での申し込みは不要です。<span class="note-sm">体験会は有料です（3,000円・税込／オンライン可・所要60分）。</span></p>
+    <h2>まずは、<em>公式LINEから。</em></h2>
+    <p class="lead">無料のスピーキングツールを配布中です。<br>気になることも、LINEで気軽に聞けます。</p>
     <div class="btns">
-      <a class="btn btn-primary" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">体験会を予約する<small>有料・3,000円（税込）／オンライン可・所要60分</small></a>
+      <a class="btn btn-primary btn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINEで無料スピーキングツールを受け取る</a>
     </div>
   </div>
 </section>
@@ -1735,46 +1732,13 @@ p,li,dd{text-wrap:pretty}
 
 <div class="bottombar">
   <div class="bb-in">
-    <p class="bb-txt"><b>まずは、話してみませんか。</b></p>
-    <button type="button" class="bb-btn" data-popup="startModal">面談／体験会を予約する</button>
+    <a class="bb-btn bb-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINEで無料スピーキングツール配布！</a>
   </div>
 </div>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="lb-close" type="button" aria-label="閉じる">&times;</button>
   <img id="lightboxImg" src="" alt="">
-</div>
-
-<!-- 面談／体験会の選択ポップアップ -->
-<div class="popup" id="startModal" aria-hidden="true">
-  <div class="popup-card pc-start">
-    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
-    <div class="pc-start-head">
-      <span class="pc-od-badge"><span class="jp">はじめての方へ ／ 3つの入口</span></span>
-      <h4>まずは、<br>話してみませんか。</h4>
-    </div>
-    <div class="pc-body">
-      <p class="lead-sm">目的に合わせて、選んでください。</p>
-      <div class="startlist">
-        <a class="startitem si-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">
-          <span class="si-n" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6.1C21.6 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg></span>
-          <span class="si-t"><b>LINEで気楽に相談</b><small>気になることを、LINEで気軽に聞けます。</small></span>
-          <span class="si-p"><span class="jp">無料</span></span>
-        </a>
-        <a class="startitem" href="https://calendar.app.google/8DtBDACrZrHDfsKL8" target="_blank" rel="noopener" data-cta="meeting">
-          <span class="si-n">01</span>
-          <span class="si-t"><b>個別オンライン面談</b><small>英語学習のお悩みを、コーチに相談できます。<br>毎日 19:00〜21:00・30分／Google Meet</small></span>
-          <span class="si-p"><span class="jp">無料</span></span>
-        </a>
-        <a class="startitem" href="https://reserva.be/washoiii/reserve?mode=service_staff&search_evt_no=95eJwzNbY0tbQEAARxAUk" target="_blank" rel="noopener" data-cta="trial">
-          <span class="si-n">02</span>
-          <span class="si-t"><b>体験会</b><small>レッスンを実際に受けていただきます。<br>所要60分／オンライン可</small></span>
-          <span class="si-p">¥3,000</span>
-        </a>
-      </div>
-      <p class="note-sm">※体験会は有料です（税込）。表示価格は2026年9月23日時点のものです。</p>
-    </div>
-  </div>
 </div>
 
 <div class="popup" id="lineModal" aria-hidden="true">
@@ -2110,16 +2074,6 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     });
   });
   window.AP_ATTR=attr;
-})();
-</script>
-<script>
-// ?open=booking（または #booking）で開いたら、面談／体験会のポップアップを最初から開く（LINE・広告のリンク先用）
-(function(){
-  var q = new URLSearchParams(location.search);
-  if (q.get('open') !== 'booking' && location.hash !== '#booking') return;
-  var b = document.querySelector('[data-popup="startModal"]');
-  if (b) { b.click(); }   // 既存の open_booking 計測もそのまま発火する
-  else { var p = document.getElementById('startModal'); if (p) p.classList.add('on'); }
 })();
 </script>
 <script type="module">
