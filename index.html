@@ -956,6 +956,10 @@ body{padding-bottom:92px}
 .curve-legend span{display:flex;align-items:center;gap:.5em}
 .curve-legend i{width:1.7em;height:5px;border-radius:3px;background:#C6C6CB;display:block}
 .curve-legend .on i{background:var(--red)}
+.jk-steps{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:.5em .6em;margin:1.4em 0 1.6em;padding:0;font-weight:900;font-size:1rem}
+.jk-steps li{white-space:nowrap}
+.jk-steps li:not(:last-child)::after{content:"→";color:var(--red);margin-left:.6em}
+.jk-steps li:last-child{background:var(--red);color:#fff;border-radius:999px;padding:.35em 1em}
 .curve-read{margin-top:1.3em;border-top:1px dashed var(--line-l);padding-top:1.1em;font-size:.92rem;line-height:2.05;color:#5C5C64}
 .curve-read b{color:var(--ink);font-weight:900}
 .curve-read b em{font-style:normal;color:var(--red)}
@@ -1240,8 +1244,49 @@ body{padding-bottom:92px}
   </div>
 </section>
 
+<!-- ============ 2-4. 足りないのは実感 ============ -->
+<section class="sec-grey" id="jikkan">
+  <div class="wrap reveal">
+    <p class="label">REAL FEELING</p>
+    <h2>日本人に圧倒的に足りないのは、<em>実感。</em></h2>
+    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
+      <div>
+        <p class="lead">学校で習った文法と単語は、机の上の知識。<br>使ってみるまで、本当の意味では分かりません。</p>
+        <ol class="jk-steps" aria-label="英語が理解につながるまで">
+          <li>話す</li><li>伝わる</li><li>意味が分かる</li><li>実感する</li><li><b>理解・定着</b></li>
+        </ol>
+        <p class="lead">自分で口に出し、相手に伝わってはじめて、英語は「知っている」から<b>「使える」</b>に変わります。<br>文法も同じです。話すたびに、覚えた形を自分で思い出して組み立てるので、<b>読むだけより記憶に残り、使える形で身につきます。</b></p>
+      </div>
+      <div class="curve-card" style="padding:2.2em 2em">
+        <h3 style="font-size:1.2rem">文法が「使える」ようになるまで</h3>
+        <p class="sub">指導方針を説明する概念図です（統計データではありません）。</p>
+        <svg viewBox="0 0 620 300" role="img" aria-label="覚えるだけの学習は使える文法があまり増えず、話して使う学習は期間とともに使える文法が増えていくことを示した概念図">
+          <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
+          <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
+          <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
+          <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
+          <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
+          <text class="cv-ylab" x="14" y="133" transform="rotate(-90 14 133)" text-anchor="middle">使える文法</text>
+          <text class="cv-tick" x="66"  y="274" text-anchor="start">はじめ</text>
+          <text class="cv-tick" x="247" y="274" text-anchor="middle">1ヶ月</text>
+          <text class="cv-tick" x="423" y="274" text-anchor="middle">2ヶ月</text>
+          <text class="cv-tick" x="604" y="274" text-anchor="end">3ヶ月</text>
+          <path class="cv-line forget" d="M70,230 C140,200 200,192 260,196 C340,201 450,204 590,206"/>
+          <path class="cv-line keep" d="M70,230 C150,200 230,160 320,118 C410,78 500,52 590,40"/>
+          <circle class="cv-dot" cx="590" cy="40" r="7"/>
+        </svg>
+        <div class="curve-legend">
+          <span><i></i>覚えるだけ（文法・単語の暗記）</span>
+          <span class="on"><i></i>話して使う（A-PUSH）</span>
+        </div>
+        <p class="ev-ref">※ 参考にした研究・理論は「よくある質問」に記載しています。学習効果には個人差があり、成果を保証するものではありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 3-1. レッスン中は、とにかく話す ============ -->
-<section class="sec-grey">
+<section>
   <div class="wrap reveal">
     <h2>レッスン中は、<em>とにかく話す。</em></h2>
     <p class="lead">話しながら、覚える。だから、<b><em style="font-style:normal;color:var(--red)">文法に詳しくなくても大丈夫です。</em></b></p>
@@ -1253,7 +1298,7 @@ body{padding-bottom:92px}
 </section>
 
 <!-- ============ 3-2. コーチとサボらないシステム ============ -->
-<section>
+<section class="sec-grey">
   <div class="wrap reveal">
     <h2>コーチとサボらないシステムが、<br><em style="font-style:normal;color:var(--red)">レッスンがない日の習慣</em>を作ります。</h2>
 
@@ -1316,7 +1361,7 @@ body{padding-bottom:92px}
 </section>
 
 <!-- ============ 3-3. 公式LINEの無料学習ツール ============ -->
-<section class="sec-grey" id="line-tool">
+<section id="line-tool">
   <div class="wrap reveal">
     <p class="label">FREE TOOL</p>
     <h2>公式LINEで、<em>無料学習ツール</em>を配布中。</h2>
@@ -1339,7 +1384,7 @@ body{padding-bottom:92px}
 </section>
 
 <!-- ============ 3-5. 受講できる時間 ============ -->
-<section id="access">
+<section class="sec-grey" id="access">
   <div class="wrap reveal">
     <p class="label">YOUR TIMING</p>
     <h2>あなたのタイミングで、<em>受講できる。</em></h2>
