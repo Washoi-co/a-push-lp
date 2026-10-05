@@ -68,6 +68,16 @@ h2{font-weight:900;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.45;margin:.3
 .ig-link svg{width:1em;height:1em;fill:currentColor}
 .vlead{font-weight:900;font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.6}
 .vnote{font-size:.78rem;color:#7A7A82;font-weight:700;margin:.3em 0 1em}
+.vcard.nophoto{grid-template-columns:1fr}
+.role-sm{font-family:var(--en);font-weight:800;font-size:.7rem;letter-spacing:.18em;color:var(--red)}
+.qa-name{font-weight:900;font-size:1.3rem}
+.qa-meta{font-size:.85rem;color:#5C5C64;font-weight:700;margin-bottom:.8em}
+.qa{margin-top:.4em}
+.qa dt{font-weight:900;font-size:1rem;margin-top:1.4em;padding-left:2em;position:relative}
+.qa dt::before{content:"Q";position:absolute;left:0;top:0;font-family:var(--en);color:var(--red);font-size:1.1em}
+.qa dd{margin:.5em 0 0;padding:1em 1.2em 1em 2em;background:var(--paper-2);border-radius:4px;font-size:.95rem;line-height:1.95;position:relative}
+.qa dd::before{content:"A";position:absolute;left:.7em;top:1em;font-family:var(--en);font-weight:900;color:#7A7A82}
+.qa dd b{font-weight:900}
 .bubbles{display:flex;flex-direction:column;gap:12px}
 .bub{background:var(--paper-2);border-radius:4px;padding:1em 1.2em;font-size:.95rem;line-height:1.95}
 .bub b{font-weight:900}
@@ -123,6 +133,31 @@ footer a:hover{color:var(--red)}
     <p class="label">INTERVIEW</p>
     <h2>すでに、変化は<em>始まっている。</em></h2>
     <div class="vlist">
+      <!-- ✏️ 写真が届いたら、<div class="vcard qa-card"> の先頭に <figure class="vphoto"><img src="assets/voice-student-3.jpg" alt="受講生"></figure> を入れ、qa-card の nophoto クラスを外す -->
+      <div class="vcard qa-card nophoto">
+        <div>
+          <p class="role-sm">INTERVIEW</p>
+          <h3 class="qa-name">学生団体を運営する受講生</h3>
+          <p class="qa-meta">海外研修で年に2回、海外へ</p>
+          <p class="vlead">話さないといけない立場なのに、<em>話せなかった。</em></p>
+          <p class="vnote">※ 個人の体験です。効果には個人差があります。</p>
+          <dl class="qa">
+            <dt>なぜ、英語を学ぶのですか？</dt>
+            <dd>学生団体を運営していて、海外研修で年に2回、海外に行く機会があります。現地では、立場的に英語で話さないといけない。<b>英語は、本当に必要なんです。</b></dd>
+            <dt>英語で、何がトラウマでしたか？</dt>
+            <dd>毎回、話さないといけない立場なのに、話せない…。<b>それがずっと、すごくコンプレックスでした。</b></dd>
+            <dt>何が苦手でしたか？</dt>
+            <dd>学生時代から英語は得意ではなくて、文法もなんとかついていけていたくらい。最初は、まったく英語ができませんでした。<br>日本の学校では文法ばかりで、正しいかどうかをすごくチェックされる。だから<b>「常に正しく話せないといけない」</b>と感じていました。</dd>
+            <dt>何がきっかけで、A-PUSH に？</dt>
+            <dd>次の海外研修までに、話せないコンプレックスをなくしたかった。文法を覚えるより、<b>とにかく話す練習ができる</b>ところを選びました。</dd>
+            <dt>どんな変化がありましたか？</dt>
+            <dd>A-PUSH メソッドは、とにかく話すしかないんです。話して、話して…。続けるうちに、<b>だんだん英語が自然と、感覚的にわかってきました。</b></dd>
+            <dt>今は、どうですか？</dt>
+            <dd>「正しく話さないと」と固まるより、<b>まず口に出してみる。</b>そう思えるようになったのが、一番の変化です。</dd>
+          </dl>
+        </div>
+      </div>
+
       <div class="vcard">
         <figure class="vphoto">
           <img src="assets/voice-student.jpg" alt="受講生 Kさん">
