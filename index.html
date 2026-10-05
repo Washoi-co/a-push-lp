@@ -254,7 +254,12 @@ h2 em{font-style:normal;color:var(--red)}
   letter-spacing:-.025em;margin-bottom:1.3em;text-shadow:0 2px 30px rgba(0,0,0,.5);
 }
 .hero h1 .l{display:block}
-.hero h1 .s{display:block;font-size:.5em;letter-spacing:0;margin-bottom:.35em;color:rgba(255,255,255,.92)}
+.hero-points{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:.4em 0 1.1em;padding:0}
+.hero-points li{border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(11,11,12,.45);padding:.5em 1.2em;font-weight:900;font-size:clamp(.95rem,2vw,1.25rem);color:#fff}
+.hero-points li::before{content:"✓";color:var(--red);margin-right:.45em}
+.hero-points b{color:var(--red);font-family:var(--en)}
+.hero-tag{font-weight:900;font-size:clamp(1.05rem,2.4vw,1.5rem);color:#fff;letter-spacing:.04em}
+.hero-tag b{color:var(--red);margin:0 .15em}
 .hero h1 em{font-style:normal;color:var(--red)}
 .hero .btns{justify-content:center}
 /* 2つのCTAを大きく・中央に */
@@ -1052,7 +1057,7 @@ body{padding-bottom:92px}
   .hero h1{font-size:clamp(2.6rem,min(6.8vw,10vh),6rem);margin-bottom:0}
 }
 /* スマホ：最初の画面で「200,000円」と「約3分の1」まで見える高さ */
-@media(max-width:720px){.hero h1{white-space:normal!important}.hero h1 .s{font-size:.52em}}
+@media(max-width:720px){.hero h1{white-space:normal!important}}
 @media(min-width:721px){.hero h1{font-size:clamp(2.2rem,min(4.4vw,8vh),4.2rem)}}
 @media(max-width:720px){
   .hero-top{min-height:calc(100svh - 110px - 300px)}
@@ -1152,11 +1157,14 @@ body{padding-bottom:92px}
     <span class="vline top" aria-hidden="true"></span>
     <a class="logo hero-logo" href="#top" aria-label="A-PUSH"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
     <span class="vline bot" aria-hidden="true"></span>
-    <p class="eyebrow">海外式スピーキング特化スクール</p>
     <h1>
-      <span class="s">ネイティブと24回のマンツーマン＆コーチングで</span>
-      <span class="l">3ヶ月間英語に<em>みっちり集中する</em></span>
+      <span class="l">3ヶ月間みっちり、<wbr><em>英語漬け</em></span>
     </h1>
+    <ul class="hero-points">
+      <li>ネイティブマンツーマン<b>×24回</b></li>
+      <li>コーチング</li>
+    </ul>
+    <p class="hero-tag">コーチ<b>×</b>ネイティブでやり遂げる。</p>
     </div>
   </div>
 </section>
