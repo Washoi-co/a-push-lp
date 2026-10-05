@@ -78,11 +78,6 @@ h2{font-weight:900;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.45;margin:.3
 .qa dd{margin:.5em 0 0;padding:1em 1.2em 1em 2em;background:var(--paper-2);border-radius:4px;font-size:.95rem;line-height:1.95;position:relative}
 .qa dd::before{content:"A";position:absolute;left:.7em;top:1em;font-family:var(--en);font-weight:900;color:#7A7A82}
 .qa dd b{font-weight:900}
-.bubbles{display:flex;flex-direction:column;gap:12px}
-.bub{background:var(--paper-2);border-radius:4px;padding:1em 1.2em;font-size:.95rem;line-height:1.95}
-.bub b{font-weight:900}
-.bub.win{background:var(--ink);color:#fff}
-.bub.win b{color:#fff}
 .cta{background:var(--ink);color:#fff;text-align:center}
 .cta h2{color:#fff}
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:1.4em}
@@ -172,31 +167,11 @@ footer a:hover{color:var(--red)}
         </div>
       </div>
 
-      <div class="vcard">
-        <figure class="vphoto">
-          <img src="assets/voice-student.jpg" alt="受講生 Kさん">
-          <figcaption class="cap">
-            <p class="role">STUDENT'S VOICE</p>
-            <h3>K さん</h3>
-            <p>3ヶ月コース受講／国際学会でプレゼン</p>
-          </figcaption>
-        </figure>
-        <div>
-          <p class="vlead">『My name is...』しか言えなかった私が、<em>3ヶ月後に国際学会で大成功。</em></p>
-          <p class="vnote">※ 個人の体験です。効果には個人差があります。</p>
-          <div class="bubbles">
-            <p class="bub">正直、学校の英語が本当に苦手で、英会話なんて一切できないレベルでした。しかし<b>3ヶ月後に韓国で開催される国際学会でのプレゼン</b>が決まり、「このままではマズい…」と思い切って受講を決意しました。</p>
-            <p class="bub">レッスンは反復が中心で、最初は必死でしたが、回数を重ねるうちに不思議と脳が英語に順応していく感覚がありました。気がついた時には、<b>頭で日本語を作らなくても自然と英語が口から出てくる</b>ように。</p>
-            <p class="bub win">本番では自信を持ってプレゼンができ、国境を越えて充実した人脈を築くことができました。<b>あの時踏み出して本当に良かったです。</b></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="vcard">
+      <div class="vcard qa-card">
         <figure class="vphoto">
           <img src="assets/voice-keira.jpg" alt="受講生 けいらさん">
           <figcaption class="cap">
-            <p class="role">STUDENT'S VOICE</p>
+            <p class="role">INTERVIEW</p>
             <h3>けいら さん</h3>
             <p>受講中／海外で働くことを目標に受講</p>
             <a class="ig-link" href="https://www.instagram.com/babykeirachan/" target="_blank" rel="noopener">
@@ -209,11 +184,28 @@ footer a:hover{color:var(--red)}
           <p class="vnote" style="margin:0 0 .6em;color:var(--ink)">【PR】けいらさんには、受講料を無償とする代わりに、A-PUSH のPR（SNSでの紹介）にご協力いただいています。</p>
           <p class="vlead">英語は苦手。でも、<em>海外で働く夢は諦めたくなかった。</em></p>
           <p class="vnote">※ 個人の体験です。効果には個人差があります。</p>
-          <div class="bubbles">
-            <p class="bub win">今では、<b>海外で生活して働く自分の姿を、本気で想像できます。</b></p>
-            <p class="bub">昔からとにかく英語が苦手でした。文法も単語もややこしくて、覚えることが多すぎて勉強が続かない。だから英会話は自分には無理かも…と諦めていました。</p>
-            <p class="bub">でも「<b>世界中のいろんな人ともっと話したい</b>」という思いだけはずっと消えなくて、勇気を出してスタート。続けるうちに、気づけば<b>英語が自然と頭に浮かび、口からも出てくる</b>ように。自分でもびっくり、革命的でした。</p>
-          </div>
+          <dl class="qa">
+            <dt>なぜ、英語を学ぶのですか？</dt>
+            <dd>いつか、海外で生活して働きたいんです。それに、<b>世界中のいろんな人と、もっと話したい。</b>その思いだけは、昔からずっと消えませんでした。<br><br>英語ができないままだと、その夢には一歩も近づけない。だから、ちゃんと向き合おうと決めました。</dd>
+
+            <dt>英語で、何がトラウマでしたか？</dt>
+            <dd>昔からとにかく英語が苦手で、「英会話は自分には無理かも…」と、半分あきらめていました。<br><br>英語を話す場面になると、間違えたらどうしよう、変に思われたらどうしようと、恥ずかしさが先に来てしまう。話したい気持ちはあるのに、<b>恥ずかしくて口が開かない</b>。それがずっと、もどかしかったです。</dd>
+
+            <dt>何が苦手でしたか？</dt>
+            <dd>文法も単語もややこしくて、覚えることが多すぎる。勉強を始めても、続かないんです。<br><br>机に向かって覚えようとするほど、英語が「勉強」になって、どんどん遠いものになっていく感じがしていました。</dd>
+
+            <dt>何がきっかけで、A-PUSH に？</dt>
+            <dd>「世界中の人と話したい」という気持ちが、どうしても消えなかったからです。覚えるのが続かないなら、<b>とにかく話すやり方</b>なら、自分にも合うかもしれない。そう思って、勇気を出して始めました。</dd>
+
+            <dt>どんな変化がありましたか？</dt>
+            <dd>一番驚いたのは、レッスンの雰囲気です。<b>気まずい空気や、恥ずかしい空気が、まったくない。</b><br><br>先生もコーチも、みんな紳士的で、ムードメーカー。言葉に詰まっても、間違えても、笑顔で待ってくれて、気づいたらこっちまで笑って話している。合言葉は<b>「Don't be shy!」</b>。その一言で、肩の力がふっと抜けるんです。<br><br>恥ずかしさがなくなると、口が動くようになる。話して、話して…。続けるうちに、気づけば<b>英語が自然と頭に浮かび、口からも出てくる</b>ように。自分でもびっくり、革命的でした。</dd>
+
+            <dt>今は、どうですか？</dt>
+            <dd>今では、<b>海外で生活して働く自分の姿を、本気で想像できます。</b><br><br>前は「無理かも」と思っていた夢が、ちゃんと目標になりました。英語を話すのが、怖いことじゃなくて、楽しいことに変わったのが一番大きいです。</dd>
+
+            <dt>これから始める人へ、ひとこと。</dt>
+            <dd>英語が苦手でも、恥ずかしがり屋でも大丈夫です。A-PUSH には、恥ずかしいと思わせない空気があります。<b>Don't be shy!</b> まずは一回、話してみてください。</dd>
+          </dl>
         </div>
       </div>
     </div>
