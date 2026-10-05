@@ -1152,6 +1152,11 @@ body{padding-bottom:92px}
 .cite dt{font-weight:900;color:var(--ink);font-size:.92rem;border-left:3px solid var(--red);padding-left:.7em}
 .cite dd{margin:.3em 0 0;font-size:.88rem;line-height:1.9}
 .cite cite{display:block;margin-top:.4em;font-style:normal;font-size:.72rem;line-height:1.7;color:#8C8C94}
+
+/* 改行を自然に：見出しは文節で折り返して行の長さをそろえ、強調語（em）は途中で切らない。本文は1文字だけの行を作らない */
+h1,h2,h3,h4,.lead,.vlead,.sub-h,.natives-t{word-break:auto-phrase;text-wrap:balance}
+h2 em,h3 em,.vlead em{display:inline-block}
+p,li,dd{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -2144,6 +2149,15 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   if (b) { b.click(); }   // 既存の open_booking 計測もそのまま発火する
   else { var p = document.getElementById('startModal'); if (p) p.classList.add('on'); }
 })();
+</script>
+<script type="module">
+// Safari など word-break:auto-phrase が効かないブラウザだけ、BudouX で文節ごとに折り返す
+if (!CSS.supports('word-break', 'auto-phrase')) {
+  import('https://cdn.jsdelivr.net/npm/budoux@0.9.3/+esm').then(function (m) {
+    var parser = m.loadDefaultJapaneseParser();
+    document.querySelectorAll('h1,h2,h3,h4,dt,.lead,.vlead,.sub-h,.natives-t,.offer-tag,.hero-points li,.jk-steps li,.inc-list li,.lt-course,.qa dd,.bub,.vnote,.note-sm,.cap p,figcaption,.sub,.ev-ref,.offer-note').forEach(function (el) { parser.applyToElement(el); });
+  }).catch(function () {});
+}
 </script>
 </body>
 </html>
