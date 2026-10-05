@@ -2156,5 +2156,15 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   window.AP_ATTR=attr;
 })();
 </script>
+<script>
+// ?open=booking（または #booking）で開いたら、面談／体験会のポップアップを最初から開く（LINE・広告のリンク先用）
+(function(){
+  var q = new URLSearchParams(location.search);
+  if (q.get('open') !== 'booking' && location.hash !== '#booking') return;
+  var b = document.querySelector('[data-popup="startModal"]');
+  if (b) { b.click(); }   // 既存の open_booking 計測もそのまま発火する
+  else { var p = document.getElementById('startModal'); if (p) p.classList.add('on'); }
+})();
+</script>
 </body>
 </html>
