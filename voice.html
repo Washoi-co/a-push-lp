@@ -68,10 +68,10 @@ h2{font-weight:900;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.45;margin:.3
 .ig-link svg{width:1em;height:1em;fill:currentColor}
 .vlead{font-weight:900;font-size:clamp(1.15rem,2.6vw,1.5rem);line-height:1.6}
 .vnote{font-size:.78rem;color:#7A7A82;font-weight:700;margin:.3em 0 1em}
-.vcard.nophoto{grid-template-columns:1fr}
-.role-sm{font-family:var(--en);font-weight:800;font-size:.7rem;letter-spacing:.18em;color:var(--red)}
-.qa-name{font-weight:900;font-size:1.3rem}
-.qa-meta{font-size:.85rem;color:#5C5C64;font-weight:700;margin-bottom:.8em}
+.qa-card .vphoto{align-self:start;position:sticky;top:84px}
+@media(max-width:760px){.qa-card .vphoto{position:static}}
+.qa-photo{margin:1.6em 0 0}
+.qa-photo img{width:100%;max-height:420px;object-fit:cover;border-radius:4px}
 .qa{margin-top:.4em}
 .qa dt{font-weight:900;font-size:1rem;margin-top:1.4em;padding-left:2em;position:relative}
 .qa dt::before{content:"Q";position:absolute;left:0;top:0;font-family:var(--en);color:var(--red);font-size:1.1em}
@@ -133,27 +133,41 @@ footer a:hover{color:var(--red)}
     <p class="label">INTERVIEW</p>
     <h2>すでに、変化は<em>始まっている。</em></h2>
     <div class="vlist">
-      <!-- ✏️ 写真が届いたら、<div class="vcard qa-card"> の先頭に <figure class="vphoto"><img src="assets/voice-student-3.jpg" alt="受講生"></figure> を入れ、qa-card の nophoto クラスを外す -->
-      <div class="vcard qa-card nophoto">
+            <div class="vcard qa-card">
+        <figure class="vphoto">
+          <img src="assets/voice-a.jpg" alt="A-PUSHのテキストを持つ受講生 Aさん" style="object-position:center 20%">
+          <figcaption class="cap">
+            <p class="role">INTERVIEW</p>
+            <h3>A さん</h3>
+            <p>学生団体を運営／海外研修で年に2回、海外へ</p>
+          </figcaption>
+        </figure>
         <div>
-          <p class="role-sm">INTERVIEW</p>
-          <h3 class="qa-name">学生団体を運営する受講生</h3>
-          <p class="qa-meta">海外研修で年に2回、海外へ</p>
           <p class="vlead">話さないといけない立場なのに、<em>話せなかった。</em></p>
           <p class="vnote">※ 個人の体験です。効果には個人差があります。</p>
           <dl class="qa">
             <dt>なぜ、英語を学ぶのですか？</dt>
-            <dd>学生団体を運営していて、海外研修で年に2回、海外に行く機会があります。現地では、立場的に英語で話さないといけない。<b>英語は、本当に必要なんです。</b></dd>
+            <dd>学生団体を運営していて、海外研修で年に2回、海外に行く機会があります。現地の学生や受け入れ先の方と話す場面がたくさんあって、運営する側として、前に立って英語で話さないといけない。<br><br>行くたびに「英語ができないと、この立場はつとまらない」と感じていました。自分のためというより、団体のために、<b>英語は本当に必要なんです。</b></dd>
+
             <dt>英語で、何がトラウマでしたか？</dt>
-            <dd>毎回、話さないといけない立場なのに、話せない…。<b>それがずっと、すごくコンプレックスでした。</b></dd>
+            <dd>毎回、話さないといけない立場なのに、話せない…。<br><br>話しかけられても、頭の中で日本語の文を作って、英語に直して、文法が合っているか確かめているうちに、会話はもう次に進んでいる。結局、笑ってうなずくだけで終わってしまう。<br><br>メンバーの前に立つ立場なのに、肝心なところで言葉が出てこない。帰りの飛行機で「今回も話せなかったな」と思うのが、毎回の決まりでした。<b>それがずっと、すごくコンプレックスでした。</b></dd>
+
             <dt>何が苦手でしたか？</dt>
-            <dd>学生時代から英語は得意ではなくて、文法もなんとかついていけていたくらい。最初は、まったく英語ができませんでした。<br>日本の学校では文法ばかりで、正しいかどうかをすごくチェックされる。だから<b>「常に正しく話せないといけない」</b>と感じていました。</dd>
+            <dd>学生時代から英語は得意ではなくて、文法もなんとかついていけていたくらいです。A-PUSH に来たときは、本当にまったく英語ができませんでした。<br><br>日本の学校では文法、文法ばかりで、答えが正しいかどうかをすごくチェックされますよね。間違えると×がつく。その感覚がずっと残っていて、話すときも<b>「常に正しく話せないといけない」</b>と思い込んでいました。<br><br>だから、話す前に止まってしまう。間違えるくらいなら黙っていよう、と。英語が苦手というより、<b>英語を口に出すこと自体が怖かった</b>んだと思います。</dd>
+
+            <figure class="qa-photo"><img src="assets/voice-a-class.jpg" alt="教室でテキストを開く Aさん" loading="lazy"></figure>
+
             <dt>何がきっかけで、A-PUSH に？</dt>
-            <dd>次の海外研修までに、話せないコンプレックスをなくしたかった。文法を覚えるより、<b>とにかく話す練習ができる</b>ところを選びました。</dd>
+            <dd>次の海外研修までに、このコンプレックスをどうにかしたかったんです。<br><br>文法の参考書を開き直しても、また「正しいかどうか」の世界に戻るだけな気がしました。足りないのは知識じゃなくて、<b>実際に口に出した回数</b>なんじゃないか。そう思っていたときに、レッスンのほとんどを話す時間にあてる A-PUSH を知りました。<br><br>ネイティブの先生とマンツーマンで、とにかく話す。正直、最初は不安もありましたが、今のままでは何も変わらないと思って決めました。</dd>
+
             <dt>どんな変化がありましたか？</dt>
-            <dd>A-PUSH メソッドは、とにかく話すしかないんです。話して、話して…。続けるうちに、<b>だんだん英語が自然と、感覚的にわかってきました。</b></dd>
+            <dd>A-PUSH メソッドは、とにかく話すしかないんです。考えて黙っている時間がない。<br><br>最初のころは、知っている単語を並べるだけで精一杯でした。でも先生は、文法が合っているかより、まず言ってみることを大事にしてくれる。言えたら、そこから少しずつ形を直していく。<br><br>話して、話して、話して…。それを続けるうちに、ある日ふと、日本語に訳さなくても英語のまま出てくる瞬間がありました。ルールとして覚えた文法じゃなくて、<b>「こういうときは、こう言う」が感覚でわかってきた</b>んです。<br><br>学校で何年もやった文法が、口を動かしているうちに、やっとつながった感じがしました。</dd>
+
             <dt>今は、どうですか？</dt>
-            <dd>「正しく話さないと」と固まるより、<b>まず口に出してみる。</b>そう思えるようになったのが、一番の変化です。</dd>
+            <dd>いちばん変わったのは、気持ちです。<br><br>前は「正しく話さないと」と固まっていましたが、今は<b>まず口に出してみる。</b>間違えても、伝わればいいし、伝わらなければ言い直せばいい。そう思えるようになりました。<br><br>英語は、机の上で正解を探すものじゃなくて、相手と使うものなんだと、やっと実感できています。次の海外研修では、運営として、自分の言葉で話すのが目標です。</dd>
+
+            <dt>これから始める人へ、ひとこと。</dt>
+            <dd>私も、本当にゼロからでした。文法が苦手でも、間違えるのが怖くても大丈夫です。<b>話さないと、話せるようにはならない。</b>まずは一回、口に出してみてください。</dd>
           </dl>
         </div>
       </div>
