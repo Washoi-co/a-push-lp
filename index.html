@@ -586,7 +586,7 @@ button.btn{border:0;cursor:pointer;font-family:var(--jp)}
 .hbtn-voice:hover{border-color:var(--red);color:var(--red)}
 @media(max-width:520px){.head-actions{gap:6px}.hbtn-voice{padding:0 .6em}}
 .hbtn-line svg{width:1.15em;height:1.15em;fill:currentColor;flex:none;margin:-.2em 0}
-@media(max-width:520px){.hbtn-line{flex-direction:column;justify-content:center;gap:0;padding:0 .7em;line-height:1.35;white-space:nowrap}}
+@media(max-width:520px){.hbtn-line{gap:.35em;padding:0 .6em;line-height:1.3;white-space:nowrap}.hbtn-line .hl-t{display:flex;flex-direction:column}}
 /* 代表：肩書きと「代表の発信」 */
 .founder .f-title{display:block;font-size:.55em;font-weight:900;color:var(--red);letter-spacing:.08em;margin-bottom:.35em}
 .f-media{margin:-.3em 0 1.6em;padding:1em 1.1em;border:2px solid var(--red);border-radius:4px;background:rgba(255,45,22,.04)}
@@ -900,6 +900,8 @@ body{padding-bottom:92px}
 .bb-btn:hover{transform:translateY(-2px);background:#fff;color:var(--ink)}
 .btn-line,.bb-btn.bb-line{background:#06C755;box-shadow:0 10px 30px -10px rgba(6,199,85,.55)}
 .btn-line:hover,.bb-btn.bb-line:hover{background:#05b34c;color:#fff}
+.bb-btn.bb-line{flex-direction:row;gap:.55em}
+.bb-btn.bb-line svg{width:1.6em;height:1.6em;fill:currentColor;flex:none}
 .bb-btn.bb-ghost{background:transparent;border:1px solid rgba(255,255,255,.45);box-shadow:none}
 .bb-btn.bb-ghost:hover{background:#fff;border-color:#fff}
 @media(max-width:720px){
@@ -970,6 +972,30 @@ body{padding-bottom:92px}
 .jk-steps li{white-space:nowrap}
 .jk-steps li:not(:last-child)::after{content:"→";color:var(--red);margin-left:.6em}
 .jk-steps li:last-child{background:var(--red);color:#fff;border-radius:999px;padding:.35em 1em}
+/* 01 コーチ（大きく1面） */
+.coach-one{background:var(--ink);color:#fff;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:clamp(64px,7vw,96px) 0}
+.coach-one .wrap{width:100%}
+.co-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(32px,5vw,72px);align-items:center}
+.co-lead{font-weight:700;font-size:clamp(.95rem,1.6vw,1.05rem);line-height:1.9;color:rgba(255,255,255,.62)}
+.co-num{display:block;font-family:var(--en);font-weight:900;font-size:clamp(3.2rem,7vw,4.8rem);line-height:1;color:var(--red);margin:.3em 0 .1em}
+.coach-one h2{color:#fff;font-size:clamp(2.1rem,4.8vw,3.5rem);line-height:1.25;margin-bottom:.3em}
+.coach-one p{font-size:clamp(1rem,1.7vw,1.15rem);line-height:2;color:rgba(255,255,255,.8);margin-top:1em}
+.coach-one .co-strong{font-weight:900;color:#fff;font-size:clamp(1.15rem,2.3vw,1.5rem);line-height:1.9}
+.coach-one .co-strong em{font-style:normal;color:var(--red)}
+.coach-one .note-sm{color:rgba(255,255,255,.5);font-size:.78rem}
+.co-ph{margin:0;aspect-ratio:4/5;max-height:72vh;border-radius:3px;overflow:hidden;background:#141417}
+.co-ph img{width:100%;height:100%;object-fit:cover;object-position:top center}
+@media(max-width:820px){.co-grid{grid-template-columns:1fr;gap:24px}.co-ph{order:-1;width:120px;aspect-ratio:1/1;border-radius:50%}}
+/* 無料学習ツール：実際の画面 */
+.lt-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:center;margin-top:2em}
+.lt-shot{margin:0;justify-self:center;width:100%;max-width:360px;text-align:center}
+.lt-shot img{display:block;width:100%;height:auto;border:8px solid var(--ink);border-radius:28px;background:var(--ink);box-shadow:0 30px 60px -30px rgba(11,11,12,.55)}
+.lt-shot figcaption{margin-top:.9em;font-size:.78rem;font-weight:700;color:#7A7A82}
+@media(max-width:820px){.lt-grid{grid-template-columns:1fr}.lt-shot{max-width:300px}}
+/* OUTPUT GAP：「だから、私たちは特化する。」を大きく */
+.spec-big{margin:auto 0;padding-top:.4em;font-weight:900;font-size:clamp(3rem,7.2vw,5.8rem);line-height:1.2;letter-spacing:-.02em}
+.spec-big em{font-style:normal;color:var(--red)}
+@media(max-width:860px){.spec-big{font-size:16vw}}
 .lt-course{margin-top:1.6em;padding:1em 1.2em;border-left:4px solid var(--red);background:#fff;font-size:.95rem;font-weight:700;line-height:1.9}
 .lt-course b{color:var(--red)}
 .curve-read{margin-top:1.3em;border-top:1px dashed var(--line-l);padding-top:1.1em;font-size:.92rem;line-height:2.05;color:#5C5C64}
@@ -1169,7 +1195,7 @@ p,li,dd{text-wrap:pretty}
   </a>
   <a class="head-access" href="#access">目黒駅 徒歩1分</a>
   <div class="head-actions">
-    <a class="hbtn hbtn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line"><span>LINEで</span><span>無料ツール配布中</span></a>
+    <a class="hbtn hbtn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line" aria-label="公式LINE：スピーキングトレーニング配布＆無料面談受付"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span class="hl-t"><span>スピーキングトレーニング配布</span><span>＆無料面談受付</span></span></a>
     <a class="hbtn hbtn-voice" href="voice.html">生徒の声</a>
   </div>
 </header>
@@ -1239,8 +1265,8 @@ p,li,dd{text-wrap:pretty}
     <p class="label">OUTPUT GAP</p>
     <h2>日本人に足りてないのは、<em>アウトプット量。</em></h2>
     <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
-      <div>
-        <p class="lead" style="font-size:clamp(1.05rem,2vw,1.2rem)">日本人が話せないのは、<br><b><em style="font-style:normal;color:var(--red);font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.6;display:inline-block;margin-top:.2em">今まで話す練習を<br>やってきていないから。</em></b></p>
+      <div style="align-self:stretch;display:flex;flex-direction:column">
+        <p class="spec-big">だから、<br>私たちは<br><em>特化する。</em></p>
       </div>
       <div class="curve-card" style="padding:2.2em 2em">
         <h3 style="font-size:1.2rem">授業とレッスンの時間配分</h3>
@@ -1263,68 +1289,31 @@ p,li,dd{text-wrap:pretty}
   </div>
 </section>
 
-<!-- ============ 2-4. 足りないのは実感 ============ -->
-<section class="sec-grey" id="jikkan">
-  <div class="wrap reveal">
-    <p class="label">REAL FEELING</p>
-    <h2>日本人に圧倒的に足りないのは、<em>実感。</em></h2>
-    <div class="mgmt-grid" style="grid-template-columns:1fr 1fr;gap:48px">
-      <div>
-        <p class="lead">文法と単語は、机の上の知識。<br>使ってみて、はじめて分かる。</p>
-        <ol class="jk-steps" aria-label="英語が理解につながるまで">
-          <li>話す</li><li>伝わる</li><li>意味が分かる</li><li>実感する</li><li><b>理解・定着</b></li>
-        </ol>
-        <p class="lead">話すたびに、覚えた形を自分で組み立てる。<br>だから文法も、<b>「知っている」から「使える」</b>に変わります。</p>
-      </div>
-      <div class="curve-card" style="padding:2.2em 2em">
-        <h3 style="font-size:1.2rem">文法が「使える」ようになるまで</h3>
-        <p class="sub">指導方針を説明する概念図です（統計データではありません）。</p>
-        <svg viewBox="0 0 620 300" role="img" aria-label="覚えるだけの学習は使える文法があまり増えず、話して使う学習は期間とともに使える文法が増えていくことを示した概念図">
-          <line class="cv-grid" x1="70" y1="30"  x2="600" y2="30"/>
-          <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
-          <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
-          <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
-          <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
-          <text class="cv-ylab" x="14" y="133" transform="rotate(-90 14 133)" text-anchor="middle">使える文法</text>
-          <text class="cv-tick" x="66"  y="274" text-anchor="start">はじめ</text>
-          <text class="cv-tick" x="247" y="274" text-anchor="middle">1ヶ月</text>
-          <text class="cv-tick" x="423" y="274" text-anchor="middle">2ヶ月</text>
-          <text class="cv-tick" x="604" y="274" text-anchor="end">3ヶ月</text>
-          <path class="cv-line forget" d="M70,230 C140,200 200,192 260,196 C340,201 450,204 590,206"/>
-          <path class="cv-line keep" d="M70,230 C150,200 230,160 320,118 C410,78 500,52 590,40"/>
-          <circle class="cv-dot" cx="590" cy="40" r="7"/>
-        </svg>
-        <div class="curve-legend">
-          <span><i></i>覚えるだけ（文法・単語の暗記）</span>
-          <span class="on"><i></i>話して使う（A-PUSH）</span>
-        </div>
-        <p class="ev-ref">※ 参考にした研究・理論は「よくある質問」に記載しています。学習効果には個人差があり、成果を保証するものではありません。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 3-1. レッスン中は、とにかく話す ============ -->
-<section>
-  <div class="wrap reveal">
-    <h2>レッスン中は、<em>とにかく話す。</em></h2>
-    <p class="lead">話しながら、覚える。だから、<b><em style="font-style:normal;color:var(--red)">文法に詳しくなくても大丈夫です。</em></b></p>
-    <div class="demo-vid">
-      <video src="assets/method-demo.mp4" poster="assets/method-demo-poster.jpg" controls playsinline preload="none"></video>
-    </div>
-    <button type="button" class="more-btn" data-popup="methodModal">▼ A-PUSH METHOD を詳しく見る</button>
-  </div>
-</section>
-
 <!-- ============ 3-2. コーチとサボらないシステム ============ -->
+<!-- 01 コーチ：大きく1面 -->
+<section class="coach-one" id="coach">
+  <div class="wrap reveal">
+    <div class="co-grid">
+      <div>
+        <p class="co-lead">コーチとサボらないシステムが、<br>レッスンがない日の習慣を作ります。</p>
+        <span class="co-num">01</span>
+        <h2>コーチが<em>黙ってないです。</em></h2>
+        <p>忙しいのは分かります。<br>でも、せっかく英語をやるなら、集中して3ヶ月で終わらせる気でやらないと、いつまで経っても話せるようにならない。</p>
+        <p class="co-strong">だから、コーチが黙ってないです。<br><em>あなたの進捗が止まる時は、コーチが見ています。</em></p>
+        <p class="note-sm">※ ご連絡の頻度・方法はご相談のうえ調整できます。連絡を希望されない設定も可能です。</p>
+      </div>
+      <figure class="co-ph"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 02・03 -->
 <section class="sec-grey">
   <div class="wrap reveal">
-    <h2>コーチとサボらないシステムが、<br><em style="font-style:normal;color:var(--red)">レッスンがない日の習慣</em>を作ります。</h2>
-
     <div class="cards">
       <div class="card">
         <div class="card-visual"><img src="assets/line-remind.png" alt="公式LINEでのリマインドとやり取りの画面" loading="lazy"></div>
-        <span class="num">01</span>
+        <span class="num">02</span>
         <h3>公式LINEで、忘却曲線の考え方を<br>取り入れたサポート</h3>
         <button type="button" class="more-btn" data-popup="lineModal">▼ 詳しく見る</button>
       </div>
@@ -1333,49 +1322,29 @@ p,li,dd{text-wrap:pretty}
           <svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
             <rect width="640" height="480" fill="#141417"/>
             <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
-            <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
             <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
-            <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
-            <circle cx="32" cy="80" r="14" fill="#FF2D16"/><text x="32" y="85" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
-            <text x="56" y="85" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
-            <text x="600" y="85" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+            <circle cx="32" cy="80" r="14" fill="#FF2D16"/>
             <rect x="56" y="96" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="96" width="374" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="148" r="14" fill="#FF2D16"/><text x="32" y="153" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
-            <text x="56" y="153" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
-            <text x="600" y="153" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+            <circle cx="32" cy="148" r="14" fill="#FF2D16"/>
             <rect x="56" y="164" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="164" width="234" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="216" r="14" fill="#FF2D16"/><text x="32" y="221" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
-            <text x="56" y="221" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
-            <text x="600" y="221" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+            <circle cx="32" cy="216" r="14" fill="#FF2D16"/>
             <rect x="56" y="232" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="232" width="312" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="284" r="14" fill="#FF2D16"/><text x="32" y="289" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
-            <text x="56" y="289" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
-            <text x="600" y="289" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+            <circle cx="32" cy="284" r="14" fill="#FF2D16"/>
             <rect x="56" y="300" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="300" width="156" height="10" rx="5" fill="#FF2D16"/>
-            <circle cx="32" cy="352" r="14" fill="#FF2D16"/><text x="32" y="357" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">G</text>
-            <text x="56" y="357" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Grammar</text>
-            <text x="600" y="357" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">50%</text>
+            <circle cx="32" cy="352" r="14" fill="#FF2D16"/>
             <rect x="56" y="368" width="520" height="10" rx="5" fill="#2a2a2e"/>
             <rect x="56" y="368" width="260" height="10" rx="5" fill="#FF2D16"/>
             <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
-            <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
           </svg>
         </div>
-        <span class="num">02</span>
+        <span class="num">03</span>
         <h3>ダッシュボードで、今日やることが常に明確</h3>
         <button type="button" class="more-btn" data-popup="dashModal">▼ 詳しく見る</button>
       </div>
-      <div class="card">
-        <div class="card-visual"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></div>
-        <span class="num">03</span>
-        <h3>コーチが、放っておきません</h3>
-        <button type="button" class="more-btn" data-popup="coachModal">▼ 詳しく見る</button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1384,6 +1353,9 @@ p,li,dd{text-wrap:pretty}
   <div class="wrap reveal">
     <p class="label">FREE TOOL</p>
     <h2>公式LINEで、<em>無料学習ツール</em>を配布中。</h2>
+    <div class="lt-grid">
+    <figure class="lt-shot"><img src="assets/line-tool.jpg" alt="無料学習ツールの画面：絵を見て、I should の後に合う英語を3つから選ぶ" loading="lazy"><figcaption>実際のツールの画面</figcaption></figure>
+    <div>
     <p class="lead"><b>助動詞・疑問文・時制（未来・現在・過去）</b>のスピーキングトレーニング。<br>絵を見て選んで、声に出して3回。1回2分です。</p>
     <ul class="inc-list">
       <li>絵を見て、合う英語を選ぶ（20秒）</li>
@@ -1392,6 +1364,8 @@ p,li,dd{text-wrap:pretty}
     </ul>
     <p class="lt-course">本コースでは、すべてのコースに準じて<b>完了形・不定詞・動名詞などの文法から、日常・ビジネスの言い回しまで</b>練習できます。</p>
     <div class="btns" style="margin-top:2em"><a class="btn btn-primary" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINEで受け取る（無料）</a></div>
+    </div>
+    </div>
   </div>
 </section>
 
@@ -1470,40 +1444,6 @@ p,li,dd{text-wrap:pretty}
   </div>
 </section>
 
-<!-- ============ 5. 代表メッセージ ============ -->
-<section class="sec-grey">
-  <div class="wrap reveal">
-    <p class="label">MESSAGE</p>
-    <h2>英語は、<em>“話さないから話せない”</em></h2>
-    <div class="founder">
-      <figure class="founder-ph">
-        <img src="assets/founder.jpg" alt="A-PUSH 代表 佐野 公章" loading="lazy">
-      </figure>
-      <div>
-        <h3><span class="f-title">代表取締役</span>佐野 公章（kimi）<span style="display:block;font-family:var(--en);font-size:.55em;color:#7A7A82;letter-spacing:.06em;margin-top:.2em">KIMIAKI SANO</span></h3>
-        <p class="aff">米国テンプル大学 在学</p>
-        <div class="f-media">
-          <p class="f-media-lab">代表の発信</p>
-          <div class="f-media-links">
-            <a href="https://www.threads.com/@kimi_eipush" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>Threads</a>
-            <a href="https://www.instagram.com/kimi_eipush/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.39C1.34 2.69.93 3.36.62 4.15c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.31 1.34 20.64.93 19.85.62c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>Instagram</a>
-            <a href="https://note.com/lucky_bear5896" target="_blank" rel="noopener"><i class="note-logo" aria-hidden="true"></i><span class="sr">note</span></a>
-          </div>
-        </div>
-
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2">17歳で、フィリピンの語学学校へ。<br>聞き取れない、言葉も出てこない。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">変わったのは、とにかく話しまくってから。<br>話すうちに、聞けるようにもなりました。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">スクールに通う理由は、1つだけ。</p>
-        <p style="font-weight:900;font-size:clamp(1.1rem,2.3vw,1.35rem);line-height:1.8;color:var(--red);margin-top:.5em">いかに早く結果が出るか。</p>
-        <p style="font-size:.94rem;color:#5C5C64;line-height:2;margin-top:.8em">独学でもできます。でも、やり方探しに時間がかかる。<br>私たちは、自分の失敗から近道を知っています。</p>
-        <p style="font-weight:900;font-size:clamp(1.1rem,2.3vw,1.35rem);line-height:1.8;color:var(--red);margin-top:.8em">私たちと、集中する3ヶ月を買いませんか？</p>
-      </div>
-    </div>
-
-
-
-  </div>
-</section>
 <!-- ============ 5. 比較・ポジショニング ============ -->
 <section id="compare">
   <div class="wrap reveal">
@@ -1732,7 +1672,7 @@ p,li,dd{text-wrap:pretty}
 
 <div class="bottombar">
   <div class="bb-in">
-    <a class="bb-btn bb-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINEで無料スピーキングツール配布！</a>
+    <a class="bb-btn bb-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line" aria-label="公式LINE：スピーキングトレーニング配布＆無料面談受付"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span>スピーキングトレーニング配布＆無料面談受付</span></a>
   </div>
 </div>
 
@@ -1745,7 +1685,7 @@ p,li,dd{text-wrap:pretty}
   <div class="popup-card pc-line-s">
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-body">
-      <p class="role">01<span class="jp"> ／ 公式LINE</span></p>
+      <p class="role">02<span class="jp"> ／ 公式LINE</span></p>
       <div class="curve-card" style="margin-top:.8em;padding:1.3em 1.3em 1.1em">
         <h3>忘却曲線と、復習のタイミング</h3>
         <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
@@ -1784,7 +1724,7 @@ p,li,dd{text-wrap:pretty}
     <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
     <div class="pc-content">
     <div class="pc-body">
-      <p class="role">02<span class="jp"> ／ ダッシュボード</span></p>
+      <p class="role">03<span class="jp"> ／ ダッシュボード</span></p>
       <h4>まとめて見える、5つの進捗</h4>
       <ul>
         <li><b>A-PUSH Method</b> —— 反復練習</li>
@@ -1794,89 +1734,29 @@ p,li,dd{text-wrap:pretty}
         <li><b>A-PUSH Grammar</b> —— 文法</li>
       </ul>
       <p style="margin-top:1.2em">5つの進捗と今日やることが、開いた瞬間に分かります。</p>
-      <p class="note-sm">＊ 学習ダッシュボードは、2026年9月24日よりプレリリース版の提供を開始しています。正式版は2026年11月に提供を開始する予定です。掲載の画面は開発中のイメージであり、実際の画面とは異なる場合があります。</p>
     </div>
     <div class="pc-media">
     <svg class="pc-img" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
       <rect width="640" height="480" fill="#141417"/>
       <rect x="0" y="0" width="640" height="56" fill="#0B0B0C"/>
-      <text x="26" y="35" font-family="Archivo,sans-serif" font-size="19" font-weight="900" fill="#fff">A-PUSH Dashboard</text>
       <circle cx="602" cy="28" r="15" fill="#FF2D16"/>
-      <text x="602" y="33" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">K</text>
-      <circle cx="32" cy="80" r="14" fill="#FF2D16"/><text x="32" y="85" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">M</text>
-      <text x="56" y="85" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Method</text>
-      <text x="600" y="85" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">72%</text>
+      <circle cx="32" cy="80" r="14" fill="#FF2D16"/>
       <rect x="56" y="96" width="520" height="10" rx="5" fill="#2a2a2e"/>
       <rect x="56" y="96" width="374" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="148" r="14" fill="#FF2D16"/><text x="32" y="153" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">S</text>
-      <text x="56" y="153" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH シャドーイング</text>
-      <text x="600" y="153" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">45%</text>
+      <circle cx="32" cy="148" r="14" fill="#FF2D16"/>
       <rect x="56" y="164" width="520" height="10" rx="5" fill="#2a2a2e"/>
       <rect x="56" y="164" width="234" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="216" r="14" fill="#FF2D16"/><text x="32" y="221" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">R</text>
-      <text x="56" y="221" font-family="'Zen Kaku Gothic New',sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSHリーディング</text>
-      <text x="600" y="221" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">60%</text>
+      <circle cx="32" cy="216" r="14" fill="#FF2D16"/>
       <rect x="56" y="232" width="520" height="10" rx="5" fill="#2a2a2e"/>
       <rect x="56" y="232" width="312" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="284" r="14" fill="#FF2D16"/><text x="32" y="289" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">W</text>
-      <text x="56" y="289" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Writing</text>
-      <text x="600" y="289" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">30%</text>
+      <circle cx="32" cy="284" r="14" fill="#FF2D16"/>
       <rect x="56" y="300" width="520" height="10" rx="5" fill="#2a2a2e"/>
       <rect x="56" y="300" width="156" height="10" rx="5" fill="#FF2D16"/>
-      <circle cx="32" cy="352" r="14" fill="#FF2D16"/><text x="32" y="357" font-family="Archivo,sans-serif" font-size="12" font-weight="900" fill="#fff" text-anchor="middle">G</text>
-      <text x="56" y="357" font-family="Archivo,sans-serif" font-size="15" font-weight="700" fill="#fff">A-PUSH Grammar</text>
-      <text x="600" y="357" font-family="Archivo,sans-serif" font-size="14" font-weight="900" fill="#FF6647" text-anchor="end">50%</text>
+      <circle cx="32" cy="352" r="14" fill="#FF2D16"/>
       <rect x="56" y="368" width="520" height="10" rx="5" fill="#2a2a2e"/>
       <rect x="56" y="368" width="260" height="10" rx="5" fill="#FF2D16"/>
       <rect x="26" y="424" width="588" height="40" rx="6" fill="rgba(255,45,22,.15)" stroke="#FF2D16"/>
-      <text x="320" y="449" font-family="Zen Kaku Gothic New,sans-serif" font-size="14" font-weight="900" fill="#fff" text-anchor="middle">今日のタスク：Chapter 7 のシャドーイング</text>
     </svg>
-    </div>
-    </div>
-  </div>
-</div>
-
-<div class="popup" id="methodModal" aria-hidden="true">
-  <div class="popup-card pc-wide">
-    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
-    <div class="pc-body mth-pop">
-      <p class="role">A-PUSH METHOD</p>
-
-      <h4><span class="mth-no">1</span>理解より、慣れ。</h4>
-      <p>自転車は、何年ぶりでも乗れます。体で覚えたことは、忘れないからです。<br>英語も、その覚え方ができます。<br>最初はとにかく形を覚える、そして発展していく。</p>
-      <div class="mth-steps">
-        <div><span class="n">STEP 1</span><small>形を覚える</small><b>見て、言う</b><p>文を見ながら、とにかく声に出す。</p></div>
-        <div><span class="n">STEP 2</span><small>形をイメージに落とし込む</small><b>絵だけで、言う</b><p>文章を覚えた後に、絵を見ながら答えていく。覚えた文章を、実際のイメージに合わせにいく。</p></div>
-        <div><span class="n">STEP 3</span><small>自分の物にする</small><b>混ぜて、言う</b><p>覚えた単語を入れ替えて、自然と出てくるように鍛える。</p></div>
-      </div>
-
-      <h4 style="margin-top:1.8em"><span class="mth-no">2</span>アウトプットで、インプットする。</h4>
-      <p>アウトプットを通じて、インプットを行う。<br>イメージから学習できるので、理解が深まる。<br>だから、<b>文法に詳しくなくても大丈夫です。</b></p>
-
-      <h4 style="margin-top:1.8em"><span class="mth-no">3</span>あなたのレベルから。</h4>
-      <p>初級・中級・ビジネスの3つのクラスから、今の英語力に合わせて進めます。</p>
-      <div class="mth-levels">
-        <div><span class="n">初級</span><p>"This is a pen." から、5W1H、時制まで</p></div>
-        <div><span class="n">中級</span><p>接続詞、比較級、完了形、助動詞、不定詞、動名詞など</p></div>
-        <div><span class="n">ビジネス</span><p>仕事の現場で使うフレーズ</p></div>
-      </div>
-      <p class="note-sm">※ 学習効果には個人差があります。</p>
-    </div>
-  </div>
-</div>
-
-<div class="popup" id="coachModal" aria-hidden="true">
-  <div class="popup-card pc-wide">
-    <button class="pc-close" type="button" aria-label="閉じる">&times;</button>
-    <div class="pc-content">
-    <div class="pc-body">
-      <p class="role">03<span class="jp"> ／ コーチ</span></p>
-      <h4>コーチが、放っておきません</h4>
-      <p>ログインが途切れたとき、レッスンに来られなかったとき。<br>こちらから連絡します。続かない理由は人それぞれなので、まず話を聞きます。</p>
-      <p class="note-sm">※ ご連絡の頻度・方法はご相談のうえ調整できます。連絡を希望されない設定も可能です。</p>
-    </div>
-    <div class="pc-media">
-      <img class="pc-img" src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne">
     </div>
     </div>
   </div>
