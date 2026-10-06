@@ -1060,6 +1060,13 @@ body{padding-bottom:92px}
 .inc-box ul{list-style:none;margin-top:1em;display:flex;flex-direction:column;gap:.55em;font-size:.95rem;line-height:1.8}
 .inc-box li{padding-left:1.5em;position:relative}
 .inc-box li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:900}
+.inc-tools{margin-top:1.3em;padding-top:1.1em;border-top:1px dashed rgba(255,255,255,.3)}
+.inc-tools h4{font-weight:900;font-size:1.02rem}
+.inc-tools ol{list-style:none;counter-reset:t;margin-top:.7em;display:flex;flex-direction:column;gap:.55em;font-size:.95rem;line-height:1.7}
+.inc-tools li{counter-increment:t;padding-left:2em;position:relative}
+.inc-tools li::before{content:counter(t);position:absolute;left:0;top:.1em;width:1.45em;height:1.45em;border-radius:50%;background:var(--red);color:#fff;font-family:var(--en);font-weight:900;font-size:.8em;display:grid;place-items:center}
+.inc-tools li span{display:block;font-size:.85em;color:rgba(255,255,255,.75)}
+.inc-plus{margin-top:.7em;font-weight:900;color:#fff}
 .inc-free{margin-top:1.3em;background:var(--red);border-radius:3px;padding:.9em 1.1em;display:flex;flex-wrap:wrap;align-items:baseline;gap:.3em 1em}
 .inc-free b{font-weight:900;font-size:clamp(1.25rem,2.8vw,1.6rem)}
 .inc-free span{font-weight:700;font-size:.9rem}
@@ -1517,8 +1524,17 @@ p,li,dd{text-wrap:pretty}
         <li>レッスンで使う教材</li>
         <li>対面（目黒駅 徒歩1分）・オンラインのどちらでも受講可</li>
       </ul>
+      <div class="inc-tools">
+        <h4>学習ツール</h4>
+        <ol>
+          <li><b>シャドーイング</b></li>
+          <li><b>A-PUSH Method</b></li>
+          <li><b>A-PUSH 単語</b><span>TOEIC®・英検®・IELTS・ビジネス・スラング・日常など、あなたの用途に合った専用の英単語トレーニング</span></li>
+        </ol>
+        <p class="inc-plus">＋ 忘却曲線にもとづいた学習管理</p>
+      </div>
       <p class="inc-free"><b>追加料金は一切かかりません。</b><span>入会金・教材費・システム利用料 0円</span></p>
-      <p class="inc-small">※ 銀行振込の振込手数料、オンライン受講の通信料、教室までの交通費はお客様のご負担です。</p>
+      <p class="inc-small">※ 銀行振込の振込手数料、オンライン受講の通信料、教室までの交通費はお客様のご負担です。<br>※ TOEICはETSの登録商標です。英検は公益財団法人 日本英語検定協会の登録商標です。IELTSは、ブリティッシュ・カウンシル、IDP:IELTS Australia およびケンブリッジ大学英語検定機構が共同で運営する試験です。本サービスは、これらの団体により承認・推奨されたものではありません。</p>
     </div>
     <div class="issho">
       <h3>一緒に割（2名で同時入会）</h3>
