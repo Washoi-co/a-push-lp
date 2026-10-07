@@ -1832,7 +1832,7 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
     }catch(e){}
   });
 
-  // 計測：予約の入口（Reserva・Googleカレンダー）と LINE は Meta の Lead、GA4 はイベントで送る。
+  // 計測：予約の入口（Reserva・Googleカレンダー）は Meta の Lead、LINE は Meta の Contact、GA4 はイベントで送る。
   // どのボタンかは data-cta（trial=体験会／meeting=個別面談／line=LINE）で区別する
   function send(name,cta,text,meta){
     var p={event:name,cta_label:cta,cta_text:text,ap_lid:attr.lid||'',
@@ -1844,7 +1844,7 @@ setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.clas
   document.querySelectorAll('a[href*="reserva.be"],a[href*="calendar.app.google"],a[href*="lin.ee"]').forEach(function(a){
     a.addEventListener('click',function(){
       var cta=a.dataset.cta||'other', text=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,40);
-      send(cta==='line'?'line_click':'reserve_click',cta,text,['track','Lead']);
+      send(cta==='line'?'line_click':'reserve_click',cta,text,['track',a.href.indexOf('lin.ee')>-1?'Contact':'Lead']);
       // LINE・Reserva は、押された場所（location）つきの専用イベントも送る
       var isLine=a.href.indexOf('lin.ee')>-1, isRes=a.href.indexOf('reserva.be')>-1, loc=where(a);
       if(!isLine && !isRes) return;
