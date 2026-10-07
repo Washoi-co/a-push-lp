@@ -105,7 +105,7 @@ p,li,dd{text-wrap:pretty}
 <body>
 <header><div class="wrap">
   <a class="logo" href="index.html" aria-label="A-PUSH トップへ"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6 L94 94 L72 94 L50 50 L28 94 L6 94 Z"/></svg><span class="bar" aria-hidden="true"></span><span class="txt">Push</span></a>
-  <a class="hbtn line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINE</a>
+  <a class="hbtn line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line" data-line>公式LINE</a>
 </div></header>
 
 <div class="top">
@@ -187,7 +187,7 @@ p,li,dd{text-wrap:pretty}
     <h2>次は、<em>あなたの番です。</em></h2>
     <p class="note-sm" style="color:rgba(255,255,255,.7)">無料のスピーキングツールを、公式LINEで配布中です。</p>
     <div class="btns">
-      <a class="btn" style="background:#06C755" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line">公式LINEで無料スピーキングツールを受け取る</a>
+      <a class="btn" style="background:#06C755" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line" data-line>公式LINEで無料スピーキングツールを受け取る</a>
     </div>
   </div>
 </section>
@@ -206,9 +206,9 @@ p,li,dd{text-wrap:pretty}
 
 <script>
 // 計測：LINE・Reserva のクリック（location は voice）
-document.querySelectorAll('a[href*="lin.ee"],a[href*="reserva.be"]').forEach(function(a){
+document.querySelectorAll('a[data-line],a[href*="reserva.be"]').forEach(function(a){
   a.addEventListener('click',function(){
-    var isLine=a.href.indexOf('lin.ee')>-1;
+    var isLine=a.hasAttribute('data-line');
     if(window.gtag) gtag('event',isLine?'cta_line_click':'cta_reserva_click',{location:'voice',transport_type:'beacon'});
     if(window.fbq) fbq('trackCustom',isLine?'LineClick':'ReservaClick',{location:'voice'});
     if(window.fbq) fbq('track',isLine?'Contact':'Lead',{content_name:a.dataset.cta||'other'});
@@ -224,5 +224,6 @@ if (!CSS.supports('word-break', 'auto-phrase')) {
   }).catch(function () {});
 }
 </script>
+<script src="assets/line.js"></script>
 </body>
 </html>
