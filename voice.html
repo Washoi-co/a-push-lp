@@ -211,6 +211,7 @@ document.querySelectorAll('a[href*="lin.ee"],a[href*="reserva.be"]').forEach(fun
     var isLine=a.href.indexOf('lin.ee')>-1;
     if(window.gtag) gtag('event',isLine?'cta_line_click':'cta_reserva_click',{location:'voice',transport_type:'beacon'});
     if(window.fbq) fbq('trackCustom',isLine?'LineClick':'ReservaClick',{location:'voice'});
+    if(window.fbq) fbq('track',isLine?'Contact':'Lead',{content_name:a.dataset.cta||'other'});
   });
 });
 </script>
