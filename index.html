@@ -1140,11 +1140,15 @@ body{padding-bottom:92px}
 .cur p{font-size:.92rem;line-height:1.95;color:#5C5C64}
 .cur .shot{display:block;width:100%;max-width:240px;height:auto;margin:1.4em auto 0;border:6px solid var(--ink);border-radius:24px;box-shadow:0 20px 40px -24px rgba(11,11,12,.5)}
 .cur{display:flex;flex-direction:column}
+.plan-grid{display:grid;grid-template-columns:auto auto;justify-content:center;align-items:center;gap:clamp(32px,6vw,88px);margin-top:3.2em}
+.plan-grid .sub-h{margin:0 0 .8em}
+.plan-grid .jk-steps{margin-bottom:1em}
+@media(max-width:720px){.plan-grid{grid-template-columns:1fr;text-align:center}.plan-grid .jk-steps{justify-content:center}}
 .plan-shot{display:block;width:100%;max-width:240px;height:auto;margin:0 auto;border:6px solid var(--ink);border-radius:24px;box-shadow:0 20px 40px -24px rgba(11,11,12,.5)}
 .cur .shot{margin-top:auto;padding-top:0}
 .cur>ul,.cur>p{margin-bottom:1.4em}
 .cur ul{margin-top:.6em;padding-left:1.2em;font-size:.88rem;line-height:1.9;color:#5C5C64}
-#voice{border-top:1px solid var(--line-l)}
+#outside{border-top:1px solid var(--line-l)}
 .cur-vid-t{font-weight:900;font-size:1.1rem;margin-top:2.6em}
 @media(max-width:820px){.cur-grid{grid-template-columns:1fr}}
 .lt-course{margin-top:1.6em;padding:1em 1.2em;border-left:4px solid var(--red);background:#fff;font-size:.95rem;font-weight:700;line-height:1.9}
@@ -1460,29 +1464,11 @@ p,li,dd{text-wrap:pretty}
   </div>
 </section>
 
-<!-- ============ 3-2. コーチとサボらないシステム ============ -->
-<!-- 01 コーチ：大きく1面 -->
-<section class="coach-one" id="coach">
-  <div class="wrap reveal">
-    <div class="co-grid">
-      <div>
-        <span class="co-num">03</span>
-        <h2>コーチが、<em>伴走します。</em></h2>
-        <p>あなたが諦めそうな時。<br>忙しくて、続けられない時。</p>
-        <p class="co-strong"><em>コーチが、あなたを支えます。</em></p>
-        <p class="note-sm">※ 連絡の頻度・方法はご相談のうえ調整でき、連絡なしも選べます。</p>
-        <p class="mendan">学習法・カリキュラムなどは、<b>無料面談でより詳しく</b>お話しさせてください。<a href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="trial" data-line>LINEで体験を予約する（無料） →</a><span class="line-note">友だち追加のあと、メニューの『予約』から日時を選べます</span></p>
-      </div>
-      <figure class="co-ph"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 04 レッスンの外 ============ -->
+<!-- ============ 03 レッスンの外 ============ -->
 <section id="outside">
   <div class="wrap reveal">
     <p class="label">OUTSIDE THE LESSON</p>
-    <span class="sec-num">04</span>
+    <span class="sec-num">03</span>
     <h2>私たちは、<em>レッスンの外</em>を見る。</h2>
     <p class="lead">英会話は、ついつい<b>「レッスンに来る日だけ」</b>になりがち。<br>でも、いちばん大切なのは<b>継続</b>です。<br>だから私たちは、レッスンの外を見ます。</p>
     <div class="cur-grid">
@@ -1511,9 +1497,9 @@ p,li,dd{text-wrap:pretty}
       </div>
     </div>
 
-    <h3 class="sub-h">計画と復習</h3>
-    <div class="mgmt-grid">
+    <div class="plan-grid">
       <div>
+        <h3 class="sub-h">計画と復習</h3>
         <p class="mth-lead">忘却曲線に沿って、<br>私たちは<em>あなたの学習を計画して、<br>リマインドします。</em></p>
         <ol class="jk-steps">
           <li>計画</li><li>練習</li><li>リマインド</li><li>復習</li>
@@ -1521,6 +1507,24 @@ p,li,dd{text-wrap:pretty}
         <p class="mth-body">忘れかけたころに、復習のお知らせが届きます。だから、一度覚えた英語が残ります。</p>
       </div>
       <img class="shot plan-shot" src="assets/shot-plan.jpg" alt="アプリの「今日＆計画」画面：今日のゴールと、今日やること（チャンクトレーニング・新しい単語・シャドーイング）" width="858" height="1762" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3-2. コーチとサボらないシステム ============ -->
+<!-- 01 コーチ：大きく1面 -->
+<section class="coach-one" id="coach">
+  <div class="wrap reveal">
+    <div class="co-grid">
+      <div>
+        <span class="co-num">04</span>
+        <h2>コーチが、<em>伴走します。</em></h2>
+        <p>あなたが諦めそうな時。<br>忙しくて、続けられない時。</p>
+        <p class="co-strong"><em>コーチが、あなたを支えます。</em></p>
+        <p class="note-sm">※ 連絡の頻度・方法はご相談のうえ調整でき、連絡なしも選べます。</p>
+        <p class="mendan">学習法・カリキュラムなどは、<b>無料面談でより詳しく</b>お話しさせてください。<a href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="trial" data-line>LINEで体験を予約する（無料） →</a><span class="line-note">友だち追加のあと、メニューの『予約』から日時を選べます</span></p>
+      </div>
+      <figure class="co-ph"><img src="assets/taro.jpg" alt="コーチ兼講師 Taro Ocoyne" loading="lazy"></figure>
     </div>
   </div>
 </section>
