@@ -1506,6 +1506,43 @@ p,li,dd{text-wrap:pretty}
         <img class="app-img" src="assets/app-review.webp" alt="言えた単語は、決まった日に戻ってくる：今日→1日後→3日後→7日後→14日後→30日後→覚えた" width="1600" height="900" loading="lazy">
       </div>
     </div>
+
+    <h3 class="sub-h">計画と復習</h3>
+    <div class="mgmt-grid">
+      <div class="curve-card">
+        <h3>忘却曲線と、復習のタイミング</h3>
+        <p class="sub">エビングハウスの忘却曲線をもとにした概念図です。</p>
+        <svg viewBox="0 0 620 300" role="img" aria-label="復習をしない場合は記憶が急速に下がり、適切なタイミングで復習をすると高い水準を保てることを示した概念図">
+          <line class="cv-grid" x1="70" y1="30" x2="600" y2="30"/>
+          <line class="cv-grid" x1="70" y1="120" x2="600" y2="120"/>
+          <line class="cv-grid" x1="70" y1="210" x2="600" y2="210"/>
+          <line class="cv-axis" x1="70" y1="18" x2="70" y2="248"/>
+          <line class="cv-axis" x1="70" y1="248" x2="600" y2="248"/>
+          <text class="cv-ylab" x="14" y="150" transform="rotate(-90 14 150)" text-anchor="middle">覚えている量</text>
+          <text class="cv-tick" x="66" y="274" text-anchor="start">直後</text>
+          <text class="cv-tick" x="205" y="274" text-anchor="middle">1日後</text>
+          <text class="cv-tick" x="395" y="274" text-anchor="middle">1週間後</text>
+          <text class="cv-tick" x="604" y="274" text-anchor="end">1か月後</text>
+          <path class="cv-line forget" d="M70,30 C120,115 160,150 200,165 C280,182 330,190 390,195 C470,203 530,208 590,212"/>
+          <path class="cv-line keep" d="M70,30 C105,68 130,95 150,115 L150,30 C190,62 220,80 250,95 L250,30 C310,55 350,70 390,80 L390,30 C470,42 530,50 590,58"/>
+          <circle class="cv-dot" cx="150" cy="30" r="7"/>
+          <circle class="cv-dot" cx="250" cy="30" r="7"/>
+          <circle class="cv-dot" cx="390" cy="30" r="7"/>
+          <text class="cv-badge" x="272" y="18">↑ ここで復習</text>
+        </svg>
+        <div class="curve-legend">
+          <span><i></i>復習しない（よくある英語学習）</span>
+          <span class="on"><i></i>A-PUSH の計画とリマインド</span>
+        </div>
+      </div>
+      <div>
+        <p class="mth-lead">忘却曲線に沿って、<br>私たちは<em>あなたの学習を計画して、<br>リマインドします。</em></p>
+        <ol class="jk-steps">
+          <li>計画</li><li>練習</li><li>リマインド</li><li>復習</li>
+        </ol>
+        <p class="mth-body">忘れかけたころに、復習のお知らせが届きます。だから、一度覚えた英語が残ります。</p>
+      </div>
+    </div>
   </div>
 </section>
 
