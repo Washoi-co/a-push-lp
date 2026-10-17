@@ -1051,7 +1051,8 @@ body{padding-bottom:92px}
 .taiken-sub{margin-top:.4em;font-size:.92rem;font-weight:700;color:#5C5C64}
 .taiken-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:1.4em 0 1.5em;text-align:left}
 .taiken-grid figure{margin:0}
-.taiken-grid img{width:100%;height:auto;filter:hue-rotate(147deg) saturate(1.3);border:1px solid var(--line-l);border-radius:10px}
+.app-img{filter:hue-rotate(147deg) saturate(1.3)}
+.taiken-grid img{width:100%;height:auto;border:1px solid var(--line-l);border-radius:10px}
 .taiken-grid figcaption{margin-top:.6em;line-height:1.5}
 .taiken-grid figcaption b{display:block;font-weight:900;font-size:.95rem}
 .taiken-grid figcaption span{font-size:.8rem;color:#7A7A82}
@@ -1137,6 +1138,9 @@ body{padding-bottom:92px}
 .cur-en{font-family:var(--en);font-weight:900;font-size:.8rem;letter-spacing:.18em;color:var(--red)}
 .cur h3{font-weight:900;font-size:1.25rem;margin:.4em 0 .6em}
 .cur p{font-size:.92rem;line-height:1.95;color:#5C5C64}
+.cur img{display:block;width:100%;height:auto;margin-top:1.2em;border:1px solid var(--line-l);border-radius:6px}
+.cur ul{margin-top:.6em;padding-left:1.2em;font-size:.88rem;line-height:1.9;color:#5C5C64}
+#voice{border-top:1px solid var(--line-l)}
 .cur-vid-t{font-weight:900;font-size:1.1rem;margin-top:2.6em}
 @media(max-width:820px){.cur-grid{grid-template-columns:1fr}}
 .lt-course{margin-top:1.6em;padding:1em 1.2em;border-left:4px solid var(--red);background:#fff;font-size:.95rem;font-weight:700;line-height:1.9}
@@ -1412,8 +1416,8 @@ p,li,dd{text-wrap:pretty}
           <h3 class="taiken-h">無料で、<em>A-PUSH</em>を体感して。</h3>
           <p class="taiken-sub">アプリのトレーニングを、公式LINEから無料で使えます。</p>
           <div class="taiken-grid">
-            <figure><img src="assets/app-speaking.webp" alt="スピーキングのやり方：絵を見る→20秒で選ぶ→声に出して3回→くり返す" width="1600" height="900" loading="lazy"><figcaption><b>Speaking特化トレーニング</b><span>絵を見て、選んで、声に出して3回</span></figcaption></figure>
-            <figure><img src="assets/app-words.webp" alt="単語のやり方：日本語を見る→3つから選ぶ→正解を見る→声に出して3回" width="1600" height="900" loading="lazy"><figcaption><b>TOEIC単語トレーニング</b><span>朝・夜・翌日で、忘れない</span></figcaption></figure>
+            <figure><img class="app-img" src="assets/app-speaking.webp" alt="スピーキングのやり方：絵を見る→20秒で選ぶ→声に出して3回→くり返す" width="1600" height="900" loading="lazy"><figcaption><b>Speaking特化トレーニング</b><span>絵を見て、選んで、声に出して3回</span></figcaption></figure>
+            <figure><img class="app-img" src="assets/app-words.webp" alt="単語のやり方：日本語を見る→3つから選ぶ→正解を見る→声に出して3回" width="1600" height="900" loading="lazy"><figcaption><b>TOEIC単語トレーニング</b><span>朝・夜・翌日で、忘れない</span></figcaption></figure>
           </div>
           <a class="btn btn-primary btn-line" href="https://lin.ee/Wxep7BH" target="_blank" rel="noopener" data-cta="line" data-line aria-label="公式LINE：無料トレーニングを受け取る"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg><span>公式LINEで受け取る</span></a>
         </div>
@@ -1470,11 +1474,46 @@ p,li,dd{text-wrap:pretty}
   </div>
 </section>
 
+<!-- ============ 04 レッスンの外 ============ -->
+<section id="outside">
+  <div class="wrap reveal">
+    <p class="label">OUTSIDE THE LESSON</p>
+    <span class="sec-num">04</span>
+    <h2>私たちは、<em>レッスンの外</em>を見る。</h2>
+    <p class="lead">英会話は、ついつい<b>「レッスンに来る日だけ」</b>になりがち。<br>でも、いちばん大切なのは<b>継続</b>です。<br>だから私たちは、レッスンの外を見ます。</p>
+    <div class="cur-grid">
+      <div class="cur">
+        <p class="cur-en">SPEAKING</p>
+        <h3>A-PUSH Method</h3>
+        <p>絵を見て、選んで、声に出して3回。考える前に、英語が口から出るまでくり返します。</p>
+        <img class="app-img" src="assets/app-method.webp" alt="英語を、九九にする：考えながら言える→型なら速く言える→考えずに口から出る" width="1600" height="900" loading="lazy">
+      </div>
+      <div class="cur">
+        <p class="cur-en">SHADOWING</p>
+        <h3>シャドーイング 50本</h3>
+        <p>Level 1〜5まで、全50本。聞いて、重ねて言って、本物の英語の音とスピードに口を慣らします。</p>
+        <img class="app-img" src="assets/app-shadowing.webp" alt="シャドーイングのやり方：字幕なしで見る→英文と訳を読む→目で追って聞く→一緒に言う→シャドーイング→最初と比べる" width="1600" height="900" loading="lazy">
+      </div>
+      <div class="cur">
+        <p class="cur-en">WORDS</p>
+        <h3>単語コース</h3>
+        <ul>
+          <li>中学レベル 1〜3</li>
+          <li>高校レベル 1〜3</li>
+          <li>TOEIC・IELTS・TOEFL</li>
+          <li>ネイティブがよく使うフレーズだけのコース</li>
+        </ul>
+        <img class="app-img" src="assets/app-review.webp" alt="言えた単語は、決まった日に戻ってくる：今日→1日後→3日後→7日後→14日後→30日後→覚えた" width="1600" height="900" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 03 受講者の声（Aさん 簡略版。全文は voice.html） ============ -->
 <section id="voice">
   <div class="wrap reveal">
     <p class="label">VOICE</p>
-    <span class="sec-num">04</span>
+    <span class="sec-num">05</span>
     <h2>すでに、変化は<em>始まっている。</em></h2>
     <div class="va">
       <figure class="va-ph"><img src="assets/voice-a.jpg" alt="A-PUSHのテキストを持つ受講生 Aさん" loading="lazy" style="object-position:center 20%"><figcaption><b>A さん</b>海外挑戦学生団体　運営メンバー</figcaption></figure>
@@ -1496,7 +1535,7 @@ p,li,dd{text-wrap:pretty}
 <section class="offer-sec" id="offer">
   <div class="wrap reveal">
     <p class="label">PRICE</p>
-    <span class="sec-num">05</span>
+    <span class="sec-num">06</span>
     <h2>費用</h2>
     <!-- 短期コース・月額会員（※ 特商法・受講規約への追記と、価格表示の確認が済むまで公開しない） -->
     <div class="plan2">
@@ -1515,10 +1554,12 @@ p,li,dd{text-wrap:pretty}
       <div class="p2">
         <p class="p2-en">MONTHLY</p>
         <h3>月額会員</h3>
-        <p class="p2-price"><span class="n">60,000</span>円<small>／月（税込）</small></p>
+        <p class="p2-price"><span class="n">30,000</span>円〜<small>／月（税込）</small></p>
         <p class="p2-extra">＋ 教材費 別途（1冊 3,000円）</p>
         <ul>
-          <li>マンツーマンレッスン 月4回</li>
+          <li>月2回コース：30,000円／月</li>
+          <li>月4回コース：40,000円／月</li>
+          <li>追加レッスン：1回 10,000円</li>
           <li>コーチング 月1回</li>
           <li>学習ダッシュボード 利用</li>
         </ul>
