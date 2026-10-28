@@ -1072,7 +1072,7 @@ body{padding-bottom:92px}
 @media(max-width:720px){.taiken{padding:26px 14px 16px}.taiken-grid{grid-template-columns:1fr}.taiken .btn{width:100%}}
 .why-big em{font-style:normal;color:var(--red)}
 @media(max-width:820px){.why-cards{grid-template-columns:1fr}}
-/* 05 費用：短期コース・月額会員（2つ並べる）＋ 3ヶ月コース（おすすめ） */
+/* 05 費用：月額会員（おすすめ）・短期コース ＋ 3ヶ月コース */
 .plan2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:760px;margin:2em auto 0}
 .p2{border:1px solid var(--line-l);border-radius:4px;padding:1.4em 1.5em;background:#fff}
 .p2-en{font-family:var(--en);font-weight:900;font-size:.72rem;letter-spacing:.2em;color:var(--red)}
@@ -1084,10 +1084,13 @@ body{padding-bottom:92px}
 .p2 ul{list-style:none;margin-top:.9em;display:flex;flex-direction:column;gap:.45em;font-size:.9rem;line-height:1.7;color:#333}
 .p2 li{padding-left:1.4em;position:relative}
 .p2 li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:900}
+.p2 li.p2-no{color:#5C5C64}
+.p2 li.p2-no::before{content:"−";color:#5C5C64}
 .p2-note{max-width:760px;margin:1em auto 0;font-size:.76rem;color:#5C5C64;line-height:1.8}
 .p2-note a{color:inherit;text-decoration:underline}
 .reco-h{max-width:640px;margin:2.6em auto 1em;font-weight:900;font-size:clamp(1.3rem,3vw,1.7rem);color:var(--ink);display:flex;align-items:center;gap:.6em}
 .reco-h span{background:var(--red);color:#fff;font-size:.6em;padding:.35em .8em;border-radius:999px}
+.p2 .reco-tag{display:inline-block;background:var(--red);color:#fff;font-size:.6em;padding:.35em .8em;border-radius:999px;margin-right:.6em;vertical-align:middle}
 @media(max-width:720px){.plan2{grid-template-columns:1fr}}
 /* 05 費用：含まれるもの・追加料金なし */
 .inc-box{max-width:760px;margin:2em auto 0;border:2px solid var(--red);border-radius:4px;padding:1.6em 1.8em;color:var(--ink);background:#fff;text-align:left}
@@ -1563,6 +1566,19 @@ p,li,dd{text-wrap:pretty}
     <!-- 短期コース・月額会員（※ 特商法・受講規約への追記と、価格表示の確認が済むまで公開しない） -->
     <div class="plan2">
       <div class="p2">
+        <p class="p2-en">MONTHLY</p>
+        <h3><span class="reco-tag">おすすめ</span>月額会員</h3>
+        <p class="p2-price"><span class="n">30,000</span>円〜<small>／月（税込）</small></p>
+        <p class="p2-extra">入会金・教材費・システム利用料 0円</p>
+        <ul>
+          <li>月2回コース：30,000円／月</li>
+          <li>月4回コース：40,000円／月</li>
+          <li>あなた専用の単語帳＆教材を提供</li>
+          <li>毎日の学習報告（LINE）＋ PUSH面談 月1回</li>
+          <li>自動更新。やめたい時にやめられます</li>
+        </ul>
+      </div>
+      <div class="p2">
         <p class="p2-en">SHORT</p>
         <h3>2週間お試しコース</h3>
         <p class="p2-price"><span class="n">40,000</span>円<small>（税込）</small></p>
@@ -1572,24 +1588,12 @@ p,li,dd{text-wrap:pretty}
           <li>コーチング 2回</li>
           <li>学習ダッシュボード 4週間利用</li>
           <li>3ヶ月コースへの移行が可能</li>
-        </ul>
-      </div>
-      <div class="p2">
-        <p class="p2-en">MONTHLY</p>
-        <h3>月額会員</h3>
-        <p class="p2-price"><span class="n">30,000</span>円〜<small>／月（税込）</small></p>
-        <p class="p2-extra">＋ 教材費 別途（1冊 3,000円）</p>
-        <ul>
-          <li>月2回コース：30,000円／月</li>
-          <li>月4回コース：40,000円／月</li>
-          <li>追加レッスン：1回 10,000円</li>
-          <li>コーチング 月1回</li>
-          <li>学習ダッシュボード 利用</li>
+          <li class="p2-no">あなた専用オリジナルの単語帳＆教材は つきません</li>
         </ul>
       </div>
     </div>
     <p class="p2-note">※ 3ヶ月コースへの移行（受講料から40,000円を差し引き、残り約2ヶ月半・レッスン20回）・月額会員の自動更新や解約などの条件は、<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。無料面談でもご説明します。</p>
-    <h3 class="reco-h"><span>おすすめ</span>3ヶ月コース</h3>
+    <h3 class="reco-h">3ヶ月コース</h3>
     <!-- 価格オファー：数字は <head> の LAUNCH / COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
     <div class="offer">
       <div data-launch="open">
@@ -1614,6 +1618,7 @@ p,li,dd{text-wrap:pretty}
       <h3>3ヶ月コースに含まれるもの</h3>
       <ul>
         <li>ネイティブ講師とのマンツーマンレッスン 1回50分×全24回（週2回）</li>
+        <li>あなた専用の単語帳＆教材を提供</li>
         <li>コーチング 月1回（全3回）</li>
         <li>公式LINEでの学習管理</li>
         <li>レッスンで使う教材</li>
