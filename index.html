@@ -24,17 +24,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lp.apush.jp/assets/og.jpg?v=2">
 
-<!-- ===== オープン記念価格・他社比較の設定（この2つの数字を直せば、ページ全体が揃います） ===== -->
+<!-- ===== 他社比較の設定 ===== -->
 <script>
-// ===== オープン記念価格の設定（kimiが更新する） =====
-// 残り人数は、入会の手続きをするたびに実際の数に更新すること。
-// 0 にすると、オープン記念価格の表示が自動で終了します。
-const LAUNCH = {
-  remaining: 3,               // 残り人数（2026-10-23時点：3名）
-  capacity: 10,               // 全コース合計の定員
-  endDate: '2026-11-01T00:00:00+09:00', // この日時（日本時間）からは11/1以降の価格を表示
-};
-
 // ===== 他社の3ヶ月コースの総額（税込・入会金込） =====
 // 金額を変えた時は、必ず各社の公式ページの画面を保存し、asOf の日付も直すこと。
 const COMPETITORS = {
@@ -1270,7 +1261,6 @@ body{padding-bottom:92px}
   .hero .eyebrow{font-size:clamp(1.1rem,min(2.6vw,3.6vh),1.9rem)}
   .hero h1{font-size:clamp(2.6rem,min(6.8vw,10vh),6rem);margin-bottom:0}
 }
-/* スマホ：最初の画面で「200,000円」と「約3分の1」まで見える高さ */
 @media(max-width:720px){.hero h1{white-space:normal!important}}
 /* ヒーロー：ロゴは控えめ、「コミットする。」を主役に、2項目は同じ幅でそろえる */
 .hero .hero-logo{font-size:clamp(2.2rem,7vw,4.2rem)}
@@ -1313,6 +1303,8 @@ body{padding-bottom:92px}
 .offer p.oc{font-size:clamp(.84rem,1.8vw,.95rem);font-weight:700;color:#333;line-height:1.8}
 .offer p.oc b{color:var(--ink);font-weight:900}
 .offer .en{font-family:var(--en)}
+.offer-stu{font-weight:900;color:var(--ink);margin:-.2em 0 .6em}
+.offer-stu b{font-family:var(--en);font-size:1.6em;letter-spacing:-.02em;margin:0 .08em}
 .offer-mkt{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.3em .7em;margin:.2em 0 .4em;font-weight:900;color:#5C5C64}
 .offer-mkt .lab{font-size:.72rem;border:1px solid var(--line-l);border-radius:999px;padding:.25em .9em}
 .offer-mkt .v{font-size:clamp(1rem,2.2vw,1.2rem)}
@@ -1557,7 +1549,7 @@ p,li,dd{text-wrap:pretty}
   </div>
 </section>
 
-<!-- ============ 05 費用（オープン記念価格） ============ -->
+<!-- ============ 05 費用 ============ -->
 <section class="offer-sec" id="offer">
   <div class="wrap reveal">
     <p class="label">PRICE</p>
@@ -1572,7 +1564,9 @@ p,li,dd{text-wrap:pretty}
         <p class="p2-extra">入会金・教材費・システム利用料 0円</p>
         <ul>
           <li>月2回コース：30,000円／月</li>
-          <li>月4回コース：40,000円／月</li>
+          <li>月4回コース：55,000円／月</li>
+          <li>学生料金（月2回）：21,000円／月</li>
+          <li>学生料金（月4回）：38,500円／月</li>
           <li>あなた専用の単語帳＆教材を提供</li>
           <li>毎日の学習報告（LINE）＋ PUSH面談 月1回</li>
           <li>自動更新。やめたい時にやめられます</li>
@@ -1594,23 +1588,13 @@ p,li,dd{text-wrap:pretty}
     </div>
     <p class="p2-note">※ 3ヶ月コースへの移行（受講料から40,000円を差し引き、残り約2ヶ月半・レッスン20回）・月額会員の自動更新や解約などの条件は、<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。無料面談でもご説明します。</p>
     <h3 class="reco-h">3ヶ月コース</h3>
-    <!-- 価格オファー：数字は <head> の LAUNCH / COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
+    <!-- 他社相場の数字は <head> の COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
     <div class="offer">
-      <div data-launch="open">
-        <p class="offer-tag">【オープン記念価格】マンツーマン24回コース</p>
-        <p class="offer-price"><span class="n">200,000</span>円</p>
-        <p class="offer-mkt" data-cmp><span class="lab">他社相場</span><span class="v">約<span class="en" data-cmp-man>62〜63</span>万円</span><span class="third" data-third>→ 約3分の1</span></p>
-        <div class="seat">
-          <p class="seat-lab"><span>10/31まで・先着<span class="en" data-capacity>10</span>名</span><b>残り<span class="en" data-remaining>3</span>名</b></p>
-          <div class="seat-bar" data-seatbar aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-        <p class="offer-note">※ 他社相場＝英語コーチング大手3社の3ヶ月コース（<span data-asof>2026年9月24日</span>時点・税込・入会金込）。同一条件の比較ではありません。</p>
-      </div>
-      <div data-launch="closed" hidden>
+      <div>
         <p class="offer-tag">マンツーマン24回コース</p>
         <p class="offer-price"><span class="n">350,000</span>円</p>
-        <p class="offer-mkt" data-cmp><span class="lab">他社相場</span><span class="v">約<span class="en" data-cmp-man>62〜63</span>万円</span></p>
-        <p class="oc" data-soldout hidden>オープン記念価格の受付は定員に達したため終了しました</p>
+        <p class="offer-stu">学生料金<b>245,000</b>円</p>
+        <p class="offer-mkt" data-cmp><span class="lab">他社相場</span><span class="v">約<span class="en" data-cmp-man>62〜63</span>万円</span><span class="third">他社相場より約<span class="en" data-cmp-pct>43〜45</span>%安い</span></p>
         <p class="offer-note">※ 他社相場＝英語コーチング大手3社の3ヶ月コース（<span data-asof>2026年9月24日</span>時点・税込・入会金込）。同一条件の比較ではありません。</p>
       </div>
     </div>
@@ -1639,12 +1623,12 @@ p,li,dd{text-wrap:pretty}
     <div class="issho">
       <h3>一緒に割（2名で同時入会）</h3>
       <p>2名が同じ日に同時入会すると、2名とも受講料から10%割引になります。コースは別々でもかまいません。</p>
-      <p class="issho-note">オープン記念割引（先着10名）とは併用できません。先着10名に達した後のお申込みと、11月1日以降のお申込みが対象です。例：3ヶ月コースなら、お1人あたり315,000円（350,000円から10%割引）。詳しくは<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。</p>
+      <p class="issho-note">学生料金とは併用できません。例：3ヶ月コースなら、お1人あたり315,000円（350,000円から10%割引）。詳しくは<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。</p>
     </div>
     <p class="price-note offer-notes">
-      ※ 適用される受講料は、お申込みを受領した日の価格です（ご契約の成立が11月1日以降になっても増額されません）。契約手続きの際に明示し、契約書面に記載します。<br>
-      ※ オープン記念割引は、全コース合計で先着10名です。定員に達した時点で、10月31日を待たずに受付を終了します。先着10名に達した時点でオープン記念割引の受付を終了し、それ以降のお申込みは、10月31日までであっても11月1日以降と同じ価格になります。<br>
-      ※ お支払いは銀行振込です。分割払いは、1ヶ月集中コース・3ヶ月コースが3回、半年コースが3回・6回・12回から選べます（分割手数料はいただきません）。<br>
+      ※ 適用される受講料は、お申込みを受領した日の価格です（その後に価格が変わっても、ご契約の受講料は変わりません）。契約手続きの際に明示し、契約書面に記載します。<br>
+      ※ 学生料金は、お申込みの時点で学生の方が対象です。<br>
+      ※ お支払いは銀行振込です。3ヶ月コースは3回の分割払いも選べます（分割手数料はいただきません）。<br>
       ※ 学習効果には個人差があり、特定の成果・スコア等を保証するものではありません。
     </p>
     <div class="hero-cta">
@@ -1793,81 +1777,21 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.classList.add('on')),6000);
 
-/* ---------- オープン記念価格の表示切替（設定は <head> の LAUNCH / COMPETITORS） ----------
-   ・受付中＝ LAUNCH.remaining が1以上 かつ 日本時間で LAUNCH.endDate より前
-   ・受付終了後は、ファーストビュー／比較の横棒／料金プランを 11/1以降の価格に切り替えます
-   ・COMPETITORS.list を null にすると、ファーストビューの比較の行と比較セクションを非表示にします */
+/* ---------- 他社相場の表示（設定は <head> の COMPETITORS） ----------
+   ・COMPETITORS.list を null にすると、比較の行を非表示にします */
 (function(){
-  var PRICE_TIERS={          // [オープン記念割引, 11/1以降]
-    m1:[100000,175000],
-    m3:[200000,350000],
-    m6:[350000,600000]
-  };
-  var L=(typeof LAUNCH!=='undefined')?LAUNCH:{remaining:0,capacity:0,endDate:'2026-11-01T00:00:00+09:00'};
   var C=(typeof COMPETITORS!=='undefined')?COMPETITORS:{asOf:'',list:null};
-  var soldOut=!(L.remaining>0);
-  var open=!soldOut && Date.now()<Date.parse(L.endDate);
-  var idx=open?0:1;
-  var num=function(v){ return v.toLocaleString('ja-JP'); };
-  var yen=function(v){ return '¥'+num(v); };
-  var $$=function(sel,root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); };
-
-  // 受付中／終了の出し分け
-  $$('[data-launch]').forEach(function(el){ el.hidden = (el.dataset.launch==='open') !== open; });
-  $$('[data-remaining]').forEach(function(el){ el.textContent=L.remaining; });
-  $$('[data-capacity]').forEach(function(el){ el.textContent=L.capacity; });
-  // 残り人数のバー（定員の数だけマスを並べ、残りの分を赤に）
-  $$('[data-seatbar]').forEach(function(el){
-    var cap=Math.max(+L.capacity||0,0), rem=Math.min(Math.max(+L.remaining||0,0),cap), h='';
-    for(var i=0;i<cap;i++) h+='<i'+(i<rem?' class="on"':'')+'></i>';
-    el.innerHTML=h;
-  });
-  $$('[data-soldout]').forEach(function(el){ el.hidden=!soldOut; });
+  var $$=function(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); };
   $$('[data-asof]').forEach(function(el){ el.textContent=C.asOf; });
-
-  // 他社の金額
   var list=Array.isArray(C.list)?C.list.filter(function(c){ return c && isFinite(c.price) && c.price>0; }):[];
-  var hasComp=Array.isArray(C.list) && C.list.length>0 && list.length===C.list.length;
-  var usPrice=PRICE_TIERS.m3[idx];
-  if(!hasComp){
-    $$('[data-cmp]').forEach(function(el){ el.hidden=true; });
-    var sec=document.getElementById('compare'); if(sec) sec.hidden=true;
-  }else{
-    var ps=list.map(function(c){ return c.price; });
-    var lo=Math.min.apply(null,ps), hi=Math.max.apply(null,ps);
-    var mLo=Math.round(lo/10000), mHi=Math.round(hi/10000);
-    $$('[data-cmp-man]').forEach(function(el){ el.textContent= mLo===mHi ? String(mLo) : mLo+'〜'+mHi; });
-    // 「その約3分の1」は、200,000円÷各社の金額がすべて30%以上37%未満の時だけ表示
-    var third=ps.every(function(p){ var r=PRICE_TIERS.m3[0]/p; return r>=0.30 && r<0.37; });
-    $$('[data-third]').forEach(function(el){ el.hidden=!third; });
-    if(!third && window.console) console.warn('[A-PUSH] 「その約3分の1」の条件（30%以上37%未満）を外れた会社があるため、非表示にしました。');
-
-    // 横棒（0円起点・金額に比例）
-    var max=Math.max(hi,usPrice);
-    var setBar=function(row,price){
-      var f=row.querySelector('.bar-fill'), v=row.querySelector('.bar-val');
-      f.style.width='calc((100% - 7.5em) * '+(price/max).toFixed(5)+')';
-      v.innerHTML=num(price)+'<span class="jp">円</span>';
-    };
-    $$('#priceBars [data-comp]').forEach(function(row){
-      var c=list[+row.dataset.comp];
-      if(!c){ row.hidden=true; return; }
-      row.querySelector('.bar-lab').textContent=(row.dataset.comp==='0'?'英語コーチング大手 ':'')+c.label;
-      setBar(row,c.price);
-    });
-    var us=document.querySelector('#priceBars [data-us]'); if(us) setBar(us,usPrice);
-  }
-
-  // 料金プラン
-  var CAPS=['2026年10月31日までのお申込み', soldOut && Date.now()<Date.parse(L.endDate) ? 'オープン記念価格の受付は定員に達したため終了しました' : '2026年11月1日以降のお申込み'];
-  Object.keys(PRICE_TIERS).forEach(function(key){
-    var plan=document.querySelector('.plan[data-plan="'+key+'"]'); if(!plan) return;
-    var el;
-    if((el=plan.querySelector('.now')))     el.innerHTML=yen(PRICE_TIERS[key][idx])+'<small>（税込）</small>';
-    if((el=plan.querySelector('.now-lab'))) el.textContent=CAPS[idx];
-    if((el=plan.querySelector('.ptier [data-p="'+idx+'"]'))) el.classList.add('is-current');
-    if(!open && (el=plan.querySelector('.ptier [data-p="0"] span'))) el.textContent='〜10/31（受付終了）';
-  });
+  if(!list.length || list.length!==C.list.length){ $$('[data-cmp]').forEach(function(el){ el.hidden=true; }); return; }
+  var ps=list.map(function(c){ return c.price; });
+  var mLo=Math.round(Math.min.apply(null,ps)/10000), mHi=Math.round(Math.max.apply(null,ps)/10000);
+  $$('[data-cmp-man]').forEach(function(el){ el.textContent= mLo===mHi ? String(mLo) : mLo+'〜'+mHi; });
+  // 3ヶ月コースの価格（料金.md）が、各社の金額より何%安いか
+  var M3=350000;
+  var pLo=Math.round(100-M3/Math.min.apply(null,ps)*100), pHi=Math.round(100-M3/Math.max.apply(null,ps)*100);
+  $$('[data-cmp-pct]').forEach(function(el){ el.textContent= pLo===pHi ? String(pLo) : pLo+'〜'+pHi; });
 })();
 
 /* ============================================================
