@@ -24,20 +24,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lp.apush.jp/assets/og.jpg?v=2">
 
-<!-- ===== 他社比較の設定 ===== -->
-<script>
-// ===== 他社の3ヶ月コースの総額（税込・入会金込） =====
-// 金額を変えた時は、必ず各社の公式ページの画面を保存し、asOf の日付も直すこと。
-const COMPETITORS = {
-  asOf: '2026年9月24日',
-  list: [
-    { label: 'A社', price: 634000 },  // 3ヶ月 579,000円＋入会金55,000円
-    { label: 'B社', price: 632500 },  // 3ヶ月 入会金55,000円込み
-    { label: 'C社', price: 616000 },  // 90日間集中プログラム 受講料561,000円＋入会金55,000円（別途、教材費等）
-  ],
-};
-</script>
-
 <!-- ===== 計測タグの設定 =====================================================
      ここに ID を入れるだけで計測が有効になります。空のままなら何も読み込みません。
      アカウントはすべて甲名義で開設し、乙は管理者として招待を受けてください。
@@ -1563,19 +1549,16 @@ p,li,dd{text-wrap:pretty}
         <p class="p2-price"><span class="n">30,000</span>円〜<small>／月（税込）</small></p>
         <p class="p2-extra">入会金・教材費・システム利用料 0円</p>
         <ul>
-          <li>月2回コース：30,000円／月</li>
-          <li>月4回コース：55,000円／月</li>
-          <li>学生料金（月2回）：21,000円／月</li>
-          <li>学生料金（月4回）：38,500円／月</li>
+          <li>マンツーマンレッスン 月2回＋コーチング 月1回</li>
           <li>あなた専用の単語帳＆教材を提供</li>
-          <li>毎日の学習報告（LINE）＋ PUSH面談 月1回</li>
+          <li>毎日の学習報告（LINE）</li>
           <li>自動更新。やめたい時にやめられます</li>
         </ul>
       </div>
       <div class="p2">
         <p class="p2-en">SHORT</p>
-        <h3>2週間お試しコース</h3>
-        <p class="p2-price"><span class="n">40,000</span>円<small>（税込）</small></p>
+        <h3>2週間集中コース</h3>
+        <p class="p2-price"><span class="n">40,000</span>円〜<small>（税込）</small></p>
         <p class="p2-extra">＋ 教材費 別途（1冊 3,000円）</p>
         <ul>
           <li>マンツーマンレッスン 4回</li>
@@ -1588,15 +1571,9 @@ p,li,dd{text-wrap:pretty}
     </div>
     <p class="p2-note">※ 3ヶ月コースへの移行（受講料から40,000円を差し引き、残り約2ヶ月半・レッスン20回）・月額会員の自動更新や解約などの条件は、<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。無料面談でもご説明します。</p>
     <h3 class="reco-h">3ヶ月コース</h3>
-    <!-- 他社相場の数字は <head> の COMPETITORS から自動で入ります（下はJSが動かない時の初期表示） -->
     <div class="offer">
-      <div>
-        <p class="offer-tag">マンツーマン24回コース</p>
-        <p class="offer-price"><span class="n">350,000</span>円</p>
-        <p class="offer-stu">学生料金<b>245,000</b>円</p>
-        <p class="offer-mkt" data-cmp><span class="lab">他社相場</span><span class="v">約<span class="en" data-cmp-man>62〜63</span>万円</span><span class="third">他社相場より約<span class="en" data-cmp-pct>43〜45</span>%安い</span></p>
-        <p class="offer-note">※ 他社相場＝英語コーチング大手3社の3ヶ月コース（<span data-asof>2026年9月24日</span>時点・税込・入会金込）。同一条件の比較ではありません。</p>
-      </div>
+      <p class="offer-tag">マンツーマン24回コース</p>
+      <p class="oc">料金は、無料面談の最後にご案内します。</p>
     </div>
     <div class="inc-box">
       <h3>3ヶ月コースに含まれるもの</h3>
@@ -1623,9 +1600,10 @@ p,li,dd{text-wrap:pretty}
     <div class="issho">
       <h3>一緒に割（2名で同時入会）</h3>
       <p>2名が同じ日に同時入会すると、2名とも受講料から10%割引になります。コースは別々でもかまいません。</p>
-      <p class="issho-note">学生料金とは併用できません。例：3ヶ月コースなら、お1人あたり315,000円（350,000円から10%割引）。詳しくは<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。</p>
+      <p class="issho-note">学生料金とは併用できません。詳しくは<a href="tokusho.html">特定商取引法に基づく表記</a>・<a href="kiyaku.html">受講規約</a>をご覧ください。</p>
     </div>
     <p class="price-note offer-notes">
+      ※ 3ヶ月コース・月4回コース・学生料金を含む、すべてのコースの料金は、<a href="tokusho.html">特定商取引法に基づく表記</a>に載せています。<br>
       ※ 適用される受講料は、お申込みを受領した日の価格です（その後に価格が変わっても、ご契約の受講料は変わりません）。契約手続きの際に明示し、契約書面に記載します。<br>
       ※ 学生料金は、お申込みの時点で学生の方が対象です。<br>
       ※ お支払いは銀行振込です。3ヶ月コースは3回の分割払いも選べます（分割手数料はいただきません）。<br>
@@ -1777,22 +1755,6 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.on)').forEach(el=>el.classList.add('on')),6000);
 
-/* ---------- 他社相場の表示（設定は <head> の COMPETITORS） ----------
-   ・COMPETITORS.list を null にすると、比較の行を非表示にします */
-(function(){
-  var C=(typeof COMPETITORS!=='undefined')?COMPETITORS:{asOf:'',list:null};
-  var $$=function(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); };
-  $$('[data-asof]').forEach(function(el){ el.textContent=C.asOf; });
-  var list=Array.isArray(C.list)?C.list.filter(function(c){ return c && isFinite(c.price) && c.price>0; }):[];
-  if(!list.length || list.length!==C.list.length){ $$('[data-cmp]').forEach(function(el){ el.hidden=true; }); return; }
-  var ps=list.map(function(c){ return c.price; });
-  var mLo=Math.round(Math.min.apply(null,ps)/10000), mHi=Math.round(Math.max.apply(null,ps)/10000);
-  $$('[data-cmp-man]').forEach(function(el){ el.textContent= mLo===mHi ? String(mLo) : mLo+'〜'+mHi; });
-  // 3ヶ月コースの価格（料金.md）が、各社の金額より何%安いか
-  var M3=350000;
-  var pLo=Math.round(100-M3/Math.min.apply(null,ps)*100), pHi=Math.round(100-M3/Math.max.apply(null,ps)*100);
-  $$('[data-cmp-pct]').forEach(function(el){ el.textContent= pLo===pHi ? String(pLo) : pLo+'〜'+pHi; });
-})();
 
 /* ============================================================
    広告の計測：UTMの引き継ぎ と 予約クリックの計測
